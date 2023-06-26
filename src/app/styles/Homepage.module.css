@@ -1,0 +1,905 @@
+.main {
+    width: 100%;
+    height: fit-content;
+    color: white;
+    background-color: white;
+  }
+  
+  .logoSpace {  
+    height: 30%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .button {
+    appearance: none;
+    background-color: rgb(254, 190, 104);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    will-change: transform;
+  }
+  .button:disabled {
+    opacity: 0.5;
+  }
+  .phoneNumber {
+    background-color: transparent;
+    outline: none;
+    color: rgb(117, 117, 117);
+    border: none;
+    border-bottom: 1px black solid;
+    width: 100%;
+    font-size: 20px;
+  }
+  .phoneNumber:focus {
+    border: none;
+  }
+  
+  .center {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-size: 40px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: flex-end;
+    letter-spacing: 1.5px;
+  }
+  
+  .centerReview {
+    height: 50%;
+    display: flex;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.5px;
+  }
+  
+  .centerLarge {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: flex-end;
+    letter-spacing: 1px;
+  }
+  
+  .button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .buttonContainer {
+    width: 200px;
+  }
+  
+  .thirdSection {
+    display: flex;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .paragraphContainer {
+    width: 30%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .paragraphContainerBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 65%;
+  }
+  
+  .smaller {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+  }
+  
+  .paragraph {
+    color: black;
+    font-size: 25px;
+    font-weight: 200;
+  }
+  
+  .logo {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+  }
+  
+  .menuRow {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+  }
+  
+  .image {
+    width: 500px;
+  }
+  
+  .img {
+    max-width: 130%;
+    border-radius: 10px;
+  }
+  
+  .somethingContainer {
+    height: 75vh;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .repair {
+    background-image: url("/static/tech.webp");
+    height: 30vh;
+    width: 20vw;
+    background-size: cover;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .toner {
+    background-image: url("/static/toner-min.webp");
+    height: 30vh;
+    width: 20vw;
+    background-size: cover;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .itWork {
+    background-image: url("/static/itworks.webp");
+    height: 30vh;
+    width: 20vw;
+    background-size: cover;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .construction {
+    background-image: url("/static/constructionsmall.webp");
+    height: 30vh;
+    width: 20vw;
+    background-size: cover;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .woman {
+    background-image: url("/static/buy.webp");
+    height: 66vh;
+    margin-left: 90px;
+    width: 65%;
+    background-size: cover;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .shade {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .shadeBig {
+    padding: 10px;
+    border-radius: 10px;
+    width: 45%;
+  }
+  
+  .shadeBig:hover {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .shade:hover {
+  }
+  
+  .sectionBig {
+    box-shadow: 1px 1px 9px gray;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    border-radius: 15px;
+  }
+  
+  .smallRow {
+    width: 100%;
+    display: flex;
+  }
+  
+  .square {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .text {
+    text-align: center;
+    font-weight: 200;
+  }
+  
+  .title {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+  .copiersTitle {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    border: 1px rgb(119, 119, 119) solid;
+    border-color: rgb(219, 221, 233);
+    width: 15%;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+  
+  .titleBig {
+    color: black;
+    font-size: 50px;
+    letter-spacing: 1.5px;
+  }
+  .titleMed {
+    color: black;
+    font-size: 35px;
+    width: 65%;
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+  
+  .reviewBig {
+    color: black;
+    font-size: 40px;
+    letter-spacing: 1.5px;
+    font-weight: 300;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .needSpace {
+    padding-bottom: 20px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-evenly;
+  }
+  
+  .titleSmall {
+    color: black;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 35px;
+    width: 100%;
+  }
+  
+  .middle {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .smallParagraph {
+    font-weight: 200;
+  }
+  
+  
+  .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 46vh;
+  }
+  
+  .reviewRow {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: 100%;
+    height: 30vh;
+  }
+  
+  .photoBox {
+    width: 800px;
+    height: 350px;
+    background-color: white;
+  }
+  
+  .flex {
+    display: flex;
+    height: 77vh;
+    color: aliceblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .secondSection {
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(245, 247, 248);
+    height: 60vh;
+    width: 30vw;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .number {
+    background-color: #5fcf80;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+  }
+  
+  .black {
+    font-size: 25px;
+    color: black;
+  }
+  .bottomRow{
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    border: none;
+    outline: none;
+    border-bottom: 1px black solid;
+    background-color: transparent;
+    border-color: rgb(169, 172, 173);
+    font-size: 17px;
+  }
+  
+  .numberContainer {
+    width: 95%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .light {
+    font-weight: 250;
+    color: rgb(169, 172, 173);
+  }
+  
+  .subHeader {
+    font-weight: 200;
+    padding: 10px;
+  }
+  
+  .textarea {
+    width: 100%;
+    border-bottom: 1px solid black;
+    color: black;
+  }
+  
+  .textarea:focus {
+    outline: none;
+  }
+  
+  .space {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+  }
+  
+  .inputSingle {
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: black;
+    border-bottom: 1px black solid;
+  }
+  
+  .button:disabled {
+    pointer-events: none;
+  }
+  
+  .button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .selected {
+    width: 60%;
+    height: 30px;
+    color: rgb(147, 147, 147);
+    border-color: rgb(147, 147, 147);
+  }
+  
+  .inputDouble {
+    display: flex;
+    align-items: center;
+  }
+  .cartoon {
+    background-image: url("/static/copierCartoon.webp");
+    height: 65vh;
+    width: 26vw;
+    background-size: cover;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  @media (max-width: 1000px) {
+    .container {
+      width: 50vw;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .container {
+      width: 45vw;
+      font-size: 27px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      width: 80vw;
+      font-size: 27px;
+    }
+  }
+  
+  .section {
+    height: 100vh;
+    background-color: white;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .fourthSection {
+    height: 500px;
+    background-color: white;
+    flex-direction: column;
+    width: 87vw;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .thirdParagraph {
+    font-size: 20px;
+    line-height: 33px;
+    text-align: center;
+    color: rgb(119, 119, 119);
+  }
+  .contactHeader {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    color: black;
+    overflow: hidden;
+    justify-content: flex-end;
+    align-items: center;
+    height: 7.5vh;
+    object-fit: cover;
+  }
+  
+  .pieceContainer {
+    height: 100%;
+    color: white;
+    display: flex;
+    border-radius: 10px;
+  }
+  
+  .pieceContainer:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .headerContainer {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    justify-content: space-evenly;
+    color: white;
+    background-color: black;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 25px;
+    width: 25px;
+  }
+  
+  .picture {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    filter: brightness(60%);
+  }
+  
+  .headerPieces {
+    margin: 0px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition-delay: 100ms;
+    transition-timing-function: ease-out;
+    padding: 10px;
+  }
+  
+  .pic {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .lineContainer {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: white;
+  }
+  
+  .line {
+    height: 1px;
+    width: 90%;
+    background-color: rgb(218, 221, 233);
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  .copiersLine {
+    height: 1px;
+    width: 30%;
+    background-color: rgb(229, 229, 229);
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .linearImage {
+    background: linear-gradient(to top, #3204fdba, #9907facc),
+      url(/public/oldLady.jpg) no-repeat top center;
+  }
+  
+  .logoSpaceContainer {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .infoSmall {
+    color: black;
+    font-size: 17px;
+  }
+  
+  .infoMedium {
+    color: black;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  
+  .infoBig {
+    color: black;
+    font-weight: 700;
+    font-size: 30px;
+  }
+  
+  .columnContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+  }
+  
+  .middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .hide {
+    color: white;
+    opacity: 0;
+    width: 100px;
+    transition: ease-in-out all 0.7s;
+  }
+  
+  .parent:hover .hide {
+    opacity: 1;
+  }
+  
+  .parent div {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    border-radius: 10px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    position: relative;
+  }
+  
+  .parent {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .mediumColumn {
+    display: flex;
+    flex-direction: column;
+  }
+  .thirdSectionRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .h3 {
+    font-size: 17px;
+    color: black;
+    font-weight: 200;
+    text-align: center;
+    padding: 12px;
+    letter-spacing: 1.5px;
+  }
+  .front {
+    display: flex;
+    height: 75%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  @media (max-width: 1100px) {
+    .mediumColumn {
+      flex-direction: column;
+    }
+    .bottomRow{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .main {
+      height: fit-content;
+    }
+    .flex {
+      flex-direction: column;
+      align-items: center;
+      height: 140vh;
+    }
+    .secondSection {
+      align-items: center;
+      height: fit-content;
+      width: 100%;
+    }
+    .copiersTitle{
+      width: 30%;
+    }
+    .shadeBig {
+      width: fit-content;
+    }
+    .woman {
+      height: 55vh;
+      width: 64vw;
+      margin-left: 0px;
+    }
+    .toner {
+      width: 35vw;
+    }
+    .repair {
+      width: 35vw;
+    }
+    .construction {
+      width: 35vw;
+    }
+    .itWork {
+      width: 35vw;
+    }
+    .somethingContainer {
+      width: 76%;
+    }
+    .shadeBig:hover {
+      padding: 10px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+    }
+  }
+  
+  @media (max-width: 950px) {
+    .cartoon {
+      height: 46vh;
+      width: 41vw;
+    }
+    .front {
+      height: 63%;
+    }
+    .container {
+      margin: 10px;
+      width: 50vw;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .columnContainer {
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
+    }
+  
+    .logoSpace {
+      width: 95%;
+      justify-content: space-around;
+    }
+    .container {
+      width: 85vw;
+    }
+  }
+  
+  @media (max-width: 790px) {
+    .woman {
+      width: 100%;
+    }
+    .toner {
+      width: 45vw;
+    }
+    .construction {
+      width: 45vw;
+    }
+    .itWork {
+      width: 45vw;
+    }
+    .repair {
+      width: 45vw;
+    }
+    .somethingContainer {
+      width: 87%;
+    }
+    .centerLarge {
+      font-size: 45px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .infoMedium {
+      font-size: 17px;
+    }
+    .fourthSection{
+      height: 1000px;
+    }
+    .centerReview{
+      align-items: flex-end;
+    }
+    .titleMed{
+      font-size: 27px;
+      padding-bottom: 10px;
+    }
+    .reviewBig {
+      font-size: 20px;
+    }
+    .titleSmall {
+      line-height: 21px;
+      font-size: 13px;
+    }
+    .middle {
+      height: 55%;
+    }
+    .thirdSectionRow {
+      flex-direction: column;
+    }
+    .cartoon {
+      width: 63vw;
+      height: 39vh;
+    }
+    .title {
+      font-size: 19px;
+    }
+    .secondSection {
+      height: fit-content;
+    }
+    .section {
+      height: 125vh;
+    }
+    .middle {
+      height: 15%;
+    }
+    .front {
+      height: 47%;
+    }
+    .infoBig {
+      font-size: 25px;
+    }
+    .woman{
+      margin-left: 0px;
+    }
+    .needSpace{
+      height: 70vh;
+    }
+  }
+  
+  @media (max-width: 510px) {
+    .center {
+      font-size: 22px;
+    }
+  }
+  
