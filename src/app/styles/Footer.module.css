@@ -1,7 +1,8 @@
 .footer {
     display: flex;
     justify-content: space-around;
-    height: 35vh;
+    height: fit-content;
+    padding: 10px;
     background-color: black;
     color: white;
     align-items: center;

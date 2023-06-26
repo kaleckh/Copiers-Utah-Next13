@@ -207,7 +207,7 @@ export default function Home() {
             </div>
             <div className={styles.row}>
               <div className={styles.shade}>
-                <Link href="https://copiersutah.com/it/" title="it services">
+                <Link href="/It" title="it services">
                   <div className={styles.parent}>
                     <div className={styles.itWork} />
                     <div className={styles.overlay} />
@@ -217,7 +217,7 @@ export default function Home() {
               </div>
               <div className={styles.shade}>
                 <Link
-                  href="https://copiersutah.com/shortTerm/"
+                  href="/ShortTerm"
                   title="leasing and rental services"
                 >
                   <div className={styles.parent}>

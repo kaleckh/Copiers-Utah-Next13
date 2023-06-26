@@ -495,7 +495,7 @@
   .cartoon {
     background-image: url("/static/copierCartoon.webp");
     height: 65vh;
-    width: 26vw;
+    width: 30vw;
     background-size: cover;
     border-radius: 15px;
     background-repeat: no-repeat;

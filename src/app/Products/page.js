@@ -1,14 +1,14 @@
 "use client"
-import React, { useRef, useState } from './node_modules/react'
+import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
-import Head from './node_modules/next/head'
+import Head from 'next/head'
 import Sliver from '../components/Sliver'
-import Image from './node_modules/next/image'
+import Image from 'next/image'
 import Footer from '../components/Footer'
-import { useRouter } from './node_modules/next/navigation'
+import { useRouter } from 'next/navigation'
 
 import styles from '../styles/product.module.css'
-import TawkMessengerReact from './node_modules/@tawk.to/tawk-messenger-react'
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const Products = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -106,7 +106,7 @@ const Products = () => {
         <div className={styles.copierRow}>
           <div
             onClick={() => {
-              router.push('/lexmark')
+              router.push('/Lexmark')
             }}
             className={styles.copierContainer}
           >
@@ -118,7 +118,7 @@ const Products = () => {
           <div
             className={styles.copierContainer}
             onClick={() => {
-              router.push('/konika')
+              router.push('/Konika')
             }}
           >
             <h2 className={styles.title}>Konica Minolta</h2>
@@ -129,7 +129,7 @@ const Products = () => {
           <div
             className={styles.copierContainer}
             onClick={() => {
-              router.push('/epson')
+              router.push('/Epson')
             }}
           >
             <h2 className={styles.title}>Epson</h2>

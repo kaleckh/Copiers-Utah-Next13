@@ -1,18 +1,18 @@
 "use client"
-import React, { useEffect, useRef, useState } from "./node_modules/react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
-import Image from "./node_modules/next/image";
+import Image from "next/image";
 import Sliver from '../components/Sliver'
 // import Form from "./Form";
-import { PatternFormat } from "./node_modules/react-number-format";
-import Head from "./node_modules/next/head";
-import ReCAPTCHA from "./node_modules/react-google-recaptcha";
+import { PatternFormat } from "react-number-format";
+import Head from "next/head";
+import ReCAPTCHA from "react-google-recaptcha";
 // import Menu from "../Photos/menu.png";
 // import Repair from "../Photos/repair.jpg";
 import styles from "../styles/buy.module.css";
 
 import Footer from "../components/Footer";
-import TawkMessengerReact from "./node_modules/@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Buy = (props) => {
   const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
@@ -73,7 +73,6 @@ const Buy = (props) => {
   };
 
   var verifyCallback = function (response) {
-    debugger;
     setRecaptchaResponse(response);
   };
 
