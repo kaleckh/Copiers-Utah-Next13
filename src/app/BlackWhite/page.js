@@ -126,7 +126,7 @@ const BlackWhite = () => {
       <Sliver />
       <Head>
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/products/" />
+        <link rel="canonical" href="https://copiersutah.com/BlackWhite/" />
         <title>
           Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers
           Utah

@@ -103,7 +103,7 @@ const It = (props) => {
             <Sliver />
             <Head>
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://copiersutah.com/it/" />
+                <link rel="canonical" href="https://copiersutah.com/It/" />
                 <title>
                     IT Services and Support | Get a Quote Today | Copiers Utah
         </title>

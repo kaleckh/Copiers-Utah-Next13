@@ -73,7 +73,7 @@ const Finance = () => {
   return (
     <div className={styles.main}>
       <Head>
-        <link rel="canonical" href="https://copiersutah.com/finance/" />
+        <link rel="canonical" href="https://copiersutah.com/Finance/" />
         <title>
           Financing and Buying Copiers | Get a Quote Today | Copiers Utah
         </title>

@@ -79,7 +79,7 @@ export default function Home() {
       <Head>
         <meta name="robots" content="index, follow" />
 
-        <link rel="canonical" href="https://copiersutah.com/home/" />
+        <link rel="canonical" href="https://copiersutah.com/" />
         <title>
           Copiers for Sale and Rent | Office Copy Machines | Copiers Utah
         </title>

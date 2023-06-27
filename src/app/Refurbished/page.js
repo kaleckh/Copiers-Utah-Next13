@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 
 import styles from '../styles/Stuff.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
-const Multicolor = () => {
+const Refurbished = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [number, setNumber] = useState('')
@@ -240,7 +240,7 @@ const Multicolor = () => {
       <Sliver />
       <Head>
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/products/" />
+        <link rel="canonical" href="https://copiersutah.com/Refurbished/" />
         <title>
           Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers
           Utah
@@ -351,4 +351,4 @@ const Multicolor = () => {
   )
 }
 
-export default Multicolor
+export default Refurbished

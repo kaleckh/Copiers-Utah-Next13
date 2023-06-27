@@ -1,0 +1,170 @@
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(245, 247, 248);
+    height: 55vh;
+    width: 30vw;
+    border-radius: 10px;
+  }
+  
+  .line {
+    height: 0.1px;
+    display: none;
+    width: 100%;
+    background-color: black;
+  }
+  
+  .number {
+    background-color: #5fcf80;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+  }
+  
+  .black {
+    font-size: 30px;
+    color: black;
+  }
+  
+  .input {
+    border: none;
+    outline: none;
+    border-bottom: 1px black solid;
+    background-color: transparent;
+    border-color: rgb(169, 172, 173);
+    font-size: 17px;
+  }
+  
+  .numberContainer {
+    width: 95%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .light {
+    font-weight: 250;
+    color: rgb(169, 172, 173);
+  }
+  
+  .subHeader {
+    font-weight: 200;
+    padding: 10px;
+  }
+  
+  .textarea {
+    width: 100%;
+    border-bottom: 1px solid black;
+    color: black;
+  }
+  
+  .textarea:focus {
+    outline: none;
+  }
+  
+  .space {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+  }
+  
+  .inputSingle {
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: black;
+    border-bottom: 1px black solid;
+  }
+  
+  .button {
+    appearance: none;
+    background-color: rgb(254, 190, 104);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+    border: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+    will-change: transform;
+  }
+  
+  .button:disabled {
+    pointer-events: none;
+  }
+  
+  .button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .selected {
+    width: 60%;
+    height: 30px;
+    color: rgb(147, 147, 147);
+    border-color: rgb(147, 147, 147);
+  }
+  
+  .inputDouble {
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 1000px) {
+    .container {
+      width: 50vw;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .container {
+      width: 45vw;
+      font-size: 27px;
+    }
+    .woman {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      width: 80vw;
+      font-size: 27px;
+    }
+    .woman {
+      display: none;
+    }
+  }
+  

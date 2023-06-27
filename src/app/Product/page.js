@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Sliver from '../components/Sliver'
-// import Form from './Form'
+import Form from '../components/Form'
 import Footer from '../components/Footer'
 import Image from 'next/image'
 import { PatternFormat } from 'react-number-format'
@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation'
 import ReCAPTCHA from 'react-google-recaptcha'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 import { useState } from 'react'
-const Lexmark = () => {
+const Product = () => {
   const router = useRouter()
   const [recaptchaResponse, setRecaptchaResponse] = useState(false)
   const tawkMessengerRef = useRef()
@@ -245,4 +245,4 @@ const Lexmark = () => {
   )
 }
 
-export default Lexmark
+export default Product

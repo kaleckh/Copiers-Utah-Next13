@@ -15,7 +15,7 @@ import styles from "../styles/shortTerm.module.css";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
-const Home = () => {
+const ShortTerm = () => {
   const tawkMessengerRef = useRef();
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [nameRes, setNameRes] = useState(false);
@@ -104,7 +104,7 @@ const Home = () => {
       <Sliver/>
       <Head>
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/shortTerm/" />
+        <link rel="canonical" href="https://copiersutah.com/ShortTerm/" />
         <title>Short-Term Copier Rentals | Copiers Utah</title>
         <meta
           name="description"
@@ -311,4 +311,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ShortTerm;

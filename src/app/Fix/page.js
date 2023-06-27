@@ -115,7 +115,7 @@ const Fix = () => {
       <Sliver/>
       <Head>
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/fix/" />
+        <link rel="canonical" href="https://copiersutah.com/Fix/" />
         <title>
           Copier Machine Repair Services | Get a Quote Today | Copiers Utah
         </title>
