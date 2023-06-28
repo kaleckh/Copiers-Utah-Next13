@@ -101,7 +101,7 @@ const ShortTerm = () => {
   };
   return (
     <div className={styles.main}>
-      <Sliver/>
+      <Sliver />
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/ShortTerm/" />
@@ -176,9 +176,9 @@ const ShortTerm = () => {
       <Header />
       <div className={styles.secondSection}>
         <div>
-          <div className={styles.title}>
+          <h1 className={styles.title}>
             Copiers Utah offers short and long term copier rentals.
-          </div>
+          </h1>
           <div className={styles.lineRow}>
             <div className={styles.column}>
               <div className={styles.woman} />
@@ -280,29 +280,31 @@ const ShortTerm = () => {
       <div className={styles.section}>
         <div className={styles.lineRow}>
           <div className={styles.line}></div>
-          <div className={styles.copiersTitle}>
+          <h2 className={styles.copiersTitle}>
             Copiers Utah Rental Services
-          </div>
+          </h2>
           <div className={styles.line}></div>
         </div>
-        <div style={{ padding: "20px" }} className={styles.title}>
+        <h3 style={{ padding: "20px" }} className={styles.title}>
           We Rent Copiers For All Types Of Events!
-        </div>
+        </h3>
         <div
-          style={{ display: "flex", justifyContent: "center", height: "50%" }}
+          style={{ display: "flex", justifyContent: "center", height: "fit-content", flexDirection:"column", alignItems:"center" }}
         >
           <div className={styles.row}>
             <div className={styles.Realcolumn}>
-              <li>Construction Trailers</li>
-              <li>Temporary Offices</li>
-              <li>Seasonal Work</li>
+              <li className={styles.small}>Construction Trailers</li>
+              <li className={styles.small}>Temporary Offices</li>
+              <li className={styles.small}>Seasonal Work</li>
             </div>
             <div className={styles.Realcolumn}>
-              <li>Construction Trailers</li>
-              <li>Temporary Offices</li>
-              <li>Short Term Business Projects</li>
+              <li className={styles.small}>Construction Trailers</li>
+              <li className={styles.small}>Temporary Offices</li>
+              <li className={styles.small}>Short Term Business Projects</li>
             </div>
           </div>
+          <div className={styles.paragraph}>At our company, we understand the diverse needs of different events and projects, which is why we offer copier rental services for a wide range of occasions. Whether it's a construction trailer where blueprints need to be printed and shared, or a temporary office where important documents need to be copied and scanned, we've got you covered. Our reliable copiers ensure that construction projects can run smoothly with efficient documentation and communication. We provide the necessary printing resources for professionals working in temporary offices, ensuring they have access to high-quality printing, copying, and scanning capabilities during their short-term assignments.</div>
+          <div className={styles.paragraph}>Moreover, our copier rentals are ideal for seasonal work arrangements, where businesses experience increased demands during peak periods. We understand the importance of keeping up with the workload and offer reliable printing solutions to support your seasonal workforce. Additionally, our copiers are perfectly suited for short-term business projects, enabling efficient data processing, documentation, and collaboration. We pride ourselves on delivering top-quality copiers that meet the unique printing needs of our clients, ensuring that you have the necessary tools to get the job done right, no matter the event or project.</div>
         </div>
       </div>
 

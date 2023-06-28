@@ -14,6 +14,8 @@ import { useRouter } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 export default function Home() {
+
+  
   const [name, setName] = useState("");
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [email, setEmail] = useState("");
@@ -161,7 +163,7 @@ export default function Home() {
             style={{ height: "75%", marginTop: "24px" }}
           >
             <Link
-              href="/Buy"
+              href="/buy"
               title="buy new and used copiers"
             >
               <div className={styles.parent}>
@@ -182,7 +184,7 @@ export default function Home() {
                 className={styles.shade}
               >
                 <Link
-                  href="/Fix"
+                  href="/fix"
                   title="copier maintenance"
                 >
                   <div className={styles.parent}>
@@ -194,7 +196,7 @@ export default function Home() {
               </div>
               <div
                 onClick={() => {
-                  router.push("/Buy");
+                  router.push("/buy");
                 }}
                 className={styles.shade}
               >
@@ -207,7 +209,7 @@ export default function Home() {
             </div>
             <div className={styles.row}>
               <div className={styles.shade}>
-                <Link href="/It" title="it services">
+                <Link href="/it" title="it services">
                   <div className={styles.parent}>
                     <div className={styles.itWork} />
                     <div className={styles.overlay} />
@@ -217,7 +219,7 @@ export default function Home() {
               </div>
               <div className={styles.shade}>
                 <Link
-                  href="/ShortTerm"
+                  href="/shortTerm"
                   title="leasing and rental services"
                 >
                   <div className={styles.parent}>

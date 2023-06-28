@@ -167,16 +167,16 @@ const Buy = (props) => {
       <Header />
       <div className={styles.main}>
         <div className={styles.centerContainer}>
-          <div className={styles.title}>
+          <h1 className={styles.title}>
             Want a copier? Fill out our quote form!
-          </div>
+          </h1>
         </div>
         <div className={styles.secondSection}>
           <div className={styles.woman} />
           {quoteToggle ? (
             <div>
               <div className={styles.container}>
-                <div className={styles.black}>Get Your free Quote!</div>
+                <h2 className={styles.black}>Get Your free Quote!</h2>
                 <div
                   style={{
                     width: "100%",
@@ -256,9 +256,9 @@ const Buy = (props) => {
               </div>
             </div>
           ) : (
-              <h1 className={styles.title}>
+              <h2 className={styles.title}>
                 Awesome, we will be contacting you shortly!
-              </h1>
+              </h2>
             )}
         </div>
         <div

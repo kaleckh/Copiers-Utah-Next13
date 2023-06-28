@@ -13,22 +13,22 @@ export default function Header(props) {
           </Link>
         </div>
         <div className={styles.pieceContainer}>
-          <Link href="/Products">
+          <Link href="/products">
             <div className={styles.headerPieces}>Product Line</div>
           </Link>
         </div>
         <div className={styles.pieceContainer}>
-          <Link href="/Refurbished">
+          <Link href="/refurbished">
             <div className={styles.headerPieces}>Refurbished Machines</div>
           </Link>
         </div>
         <div className={styles.pieceContainer}>
-          <Link href="/Finance">
+          <Link href="/finance">
             <div className={styles.headerPieces}>Financing</div>
           </Link>
         </div>
         <div className={styles.pieceContainer}>
-          <Link href="/Buy">
+          <Link href="/buy">
             <div className={styles.headerPieces}>Contact Us</div>
           </Link>
         </div>

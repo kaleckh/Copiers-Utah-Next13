@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: 
+Sitemap: https://copiersutah.com/sitemap.xml

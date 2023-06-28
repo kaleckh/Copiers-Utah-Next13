@@ -284,7 +284,7 @@ const Refurbished = () => {
       <Header />
       <div className={styles.section}>
         <div className={styles.center}>
-          <div className={styles.title}>Our Top Multicolor Machines</div>
+          <h1 className={styles.title}>Our Top Multicolor Machines</h1>
           <div className={styles.line}></div>
         </div>
         <div className={styles.grid}>

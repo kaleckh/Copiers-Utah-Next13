@@ -112,7 +112,7 @@ const Fix = () => {
 
   return (
     <div className={styles.main}>
-      <Sliver/>
+      <Sliver />
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/Fix/" />
@@ -131,7 +131,7 @@ const Fix = () => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: `
-    {
+      {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Copiers Utah",
@@ -152,8 +152,8 @@ const Fix = () => {
         "https://twitter.com/copiersutah",
         "https://www.linkedin.com/company/copiers-utah"
       ]
-    }
-  `,
+      }
+      `
           }}
         />
       </Head>
@@ -184,141 +184,154 @@ const Fix = () => {
         </div>
       </div>
       <Header />
-      <div style={{ display: "flex" }} className={styles.row}>
-        <div className={styles.mainSpace}>
-          <div>
+      <div style={{ display: "flex" }} className={styles.column}>
+        <div style={{ display: "flex", height: "fit-content" }} className={styles.row}>
+          <div className={styles.mainSpace}>
+            <div>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                className={styles.black}
+              >
+                We work with all brands, including!{" "}
+              </div>
+              <div className={styles.smallBlack}>But not limited to</div>
+            </div>
+            <div className={styles.line}></div>
             <div
               style={{
-                width: "100%",
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "space-evenly",
+                width: "100%",
               }}
-              className={styles.black}
             >
-              We work with all brands, including!{" "}
+              <div className={styles.epson}></div>
+              <div className={styles.Konika}></div>
+              <div className={styles.lexmark}></div>
             </div>
-            <div className={styles.smallBlack}>But not limited to</div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                width: "100%",
+              }}
+            >
+              <div className={styles.kycotera}></div>
+              <div className={styles.xerox}></div>
+              <div className={styles.hp}></div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                width: "100%",
+              }}
+            >
+              <div className={styles.ricoh}></div>
+              <div className={styles.sharp}></div>
+              <div className={styles.canon}></div>
+            </div>
           </div>
-          <div className={styles.line}></div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              width: "100%",
-            }}
-          >
-            <div className={styles.epson}></div>
-            <div className={styles.Konika}></div>
-            <div className={styles.lexmark}></div>
+
+          {toggle ? (
+            <div>
+              <div>Awesome, your next in line</div>
+            </div>
+          ) : (
+              <div style={{ width: "fit-content" }}>
+                <div className={styles.container}>
+                  <h1 className={styles.blackLarge}>
+                    Schedule A Maintanance Call!
+              </h1>
+                  <div style={{ width: "97%", display: "flex" }}>
+                    <div className={styles.number}>1</div>
+                    <input
+                      onChange={() => {
+                        setName(event.target.value);
+                      }}
+                      style={{ width: "82%", color: "black" }}
+                      className={styles.inputSingle}
+                      placeholder="First Name"
+                      type="text"
+                      name=""
+                      id=""
+                      required={true}
+                    />
+                  </div>
+                  <div style={{ width: "97%", display: "flex" }}>
+                    <div className={styles.number}>2</div>
+                    <PatternFormat
+                      format="+1 (###) ### ####"
+                      allowEmptyFormatting
+                      mask="_"
+                      className={styles.phoneNumber}
+                      onChange={(event) => {
+                        setNumber(event.target.value);
+                      }}
+                    />
+                  </div>
+                  <div style={{ width: "97%", display: "flex" }}>
+                    <div className={styles.number}>3</div>
+                    <input
+                      onChange={() => {
+                        setZipCode(event.target.value);
+                      }}
+                      className={styles.inputSingle}
+                      type="text"
+                      placeholder="Zip Code"
+                    />
+                  </div>
+                  <div style={{ width: "97%", display: "flex" }}>
+                    <div className={styles.number}>4</div>
+                    <input
+                      onChange={() => {
+                        setMessage(event.target.value);
+                      }}
+                      style={{ color: "black" }}
+                      className={styles.inputSingle}
+                      type="text"
+                      name=""
+                      id=""
+                      placeholder="What type of service?"
+                    />
+                  </div>
+
+                  <ReCAPTCHA
+                    style={{ display: "flex", justifyContent: "center" }}
+                    className="recaptcha"
+                    sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
+                    ref={captchaRef}
+                    onChange={verifyCallback}
+                  />
+                  <button
+                    onClick={(e) => {
+                      sendEmail(e);
+                      setToggle(!toggle);
+                    }}
+                    className={styles.button}
+                    disabled={!recaptchaResponse}
+                  >
+                    Get quote!
+              </button>
+                </div>
+              </div>
+            )}
+        </div>
+        <div className={styles.fifty}>
+          <div className={styles.lineRow}>
+            <div className={styles.line}></div>
+            <div className={styles.paddedBox}>Why Us?</div>
+            <div className={styles.line}></div>
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              width: "100%",
-            }}
-          >
-            <div className={styles.kycotera}></div>
-            <div className={styles.xerox}></div>
-            <div className={styles.hp}></div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              width: "100%",
-            }}
-          >
-            <div className={styles.ricoh}></div>
-            <div className={styles.sharp}></div>
-            <div className={styles.canon}></div>
+          <div className={styles.paragraph}>Our commitment to exceptional service extends beyond just offering reliable copiers. We take pride in providing top-notch maintenance services to keep your office running smoothly. Our dedicated team of friendly technicians is here to ensure that your copiers are always in optimal condition. Whether it's routine maintenance or addressing unexpected issues, we respond promptly and efficiently to minimize any disruptions to your workflow.
+          <div className={styles.paragraph}>What makes us unique is our ability to work with all copier brands. We understand that every business has different equipment needs, and we're here to support you, regardless of the brand you use. Our experienced technicians have the knowledge and expertise to handle maintenance and repairs for a wide range of copier models. From Konica Minolta to Lexmark, Epson, and more, we've got you covered.</div>
           </div>
         </div>
-
-        {toggle ? (
-          <div>
-            <div>Awesome, your next in line</div>
-          </div>
-        ) : (
-            <div style={{ width: "fit-content" }}>
-              <div className={styles.container}>
-                <h1 className={styles.blackLarge}>
-                  Schedule A Maintanance Call!
-              </h1>
-                <div style={{ width: "97%", display: "flex" }}>
-                  <div className={styles.number}>1</div>
-                  <input
-                    onChange={() => {
-                      setName(event.target.value);
-                    }}
-                    style={{ width: "82%", color: "black" }}
-                    className={styles.inputSingle}
-                    placeholder="First Name"
-                    type="text"
-                    name=""
-                    id=""
-                    required={true}
-                  />
-                </div>
-                <div style={{ width: "97%", display: "flex" }}>
-                  <div className={styles.number}>2</div>
-                  <PatternFormat
-                    format="+1 (###) ### ####"
-                    allowEmptyFormatting
-                    mask="_"
-                    className={styles.phoneNumber}
-                    onChange={(event) => {
-                      setNumber(event.target.value);
-                    }}
-                  />
-                </div>
-                <div style={{ width: "97%", display: "flex" }}>
-                  <div className={styles.number}>3</div>
-                  <input
-                    onChange={() => {
-                      setZipCode(event.target.value);
-                    }}
-                    className={styles.inputSingle}
-                    type="text"
-                    placeholder="Zip Code"
-                  />
-                </div>
-                <div style={{ width: "97%", display: "flex" }}>
-                  <div className={styles.number}>4</div>
-                  <input
-                    onChange={() => {
-                      setMessage(event.target.value);
-                    }}
-                    style={{ color: "black" }}
-                    className={styles.inputSingle}
-                    type="text"
-                    name=""
-                    id=""
-                    placeholder="What type of service?"
-                  />
-                </div>
-
-                <ReCAPTCHA
-                  style={{ display: "flex", justifyContent: "center" }}
-                  className="recaptcha"
-                  sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-                  ref={captchaRef}
-                  onChange={verifyCallback}
-                />
-                <button
-                  onClick={(e) => {
-                    sendEmail(e);
-                    setToggle(!toggle);
-                  }}
-                  className={styles.button}
-                  disabled={!recaptchaResponse}
-                >
-                  Get quote!
-              </button>
-              </div>
-            </div>
-          )}
       </div>
+
       <Footer />
     </div>
   );

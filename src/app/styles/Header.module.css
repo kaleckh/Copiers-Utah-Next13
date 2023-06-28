@@ -47,6 +47,7 @@
   
   .headerPieces {
     margin: 0px;
+    color: white;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;

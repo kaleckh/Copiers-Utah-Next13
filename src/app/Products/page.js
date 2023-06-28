@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Sliver from '../components/Sliver'
+import Link from "next/link";
 import Image from 'next/image'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/navigation'
@@ -105,38 +106,44 @@ const Products = () => {
         </div>
         <div className={styles.copierRow}>
           <div
-            onClick={() => {
-              router.push('/Lexmark')
-            }}
+
             className={styles.copierContainer}
           >
             <h2 className={styles.title}>Lexmark</h2>
             <div className={styles.imageContainerSmall}>
-              <Image src={'/static/Lexmark.webp'} fill={true} />
+              <Link href={'/lexmark'}>
+                <Image alt={"A Lexmark Copier For Sale"} src={'/static/Lexmark.webp'} fill={true} />
+              </Link>
             </div>
           </div>
           <div
             className={styles.copierContainer}
-            onClick={() => {
-              router.push('/Konika')
-            }}
+
           >
             <h2 className={styles.title}>Konica Minolta</h2>
             <div className={styles.imageContainer}>
-              <Image src={'/static/Konika.webp'} fill={true} />
+              <Link href={'/konika'}>
+                <Image alt={"A Konika Copier for Lease"} src={'/static/Konika.webp'} fill={true} />
+              </Link>
             </div>
           </div>
           <div
             className={styles.copierContainer}
-            onClick={() => {
-              router.push('/Epson')
-            }}
+
           >
             <h2 className={styles.title}>Epson</h2>
-            <div className={styles.imageContainer}> 
-              <Image src={'/static/epsonL.webp'} fill={true} />
+            <div className={styles.imageContainer}>
+              <Link href={'/epson'}>
+                <Image alt={"A Epson Copiers for Lease  "} src={'/static/epsonL.webp'} fill={true} />
+              </Link>
             </div>
-            
+
+          </div>
+        </div>
+        <div className={styles.smallSection}>
+          <div className={styles.title}>Why These Brands</div>
+          <div className={styles.fifty}>
+            <div className={styles.paragraph}>We take pride in offering only the most reliable copiers in the market, which is why we exclusively sell Konica Minolta, Lexmark, and Epson copiers. These brands have established themselves as industry leaders, renowned for their exceptional performance, durability, and advanced features. Konica Minolta copiers provide cutting-edge technology and unmatched print quality, ensuring that your documents are reproduced with precision. Lexmark copiers are known for their robust build, high-speed functionality, and extensive paper handling capabilities, making them a reliable choice for demanding office environments. Epson copiers offer outstanding color accuracy, energy efficiency, and user-friendly interfaces, making them an excellent option for businesses seeking top-notch printing solutions. Rest assured, with our selection of Konica Minolta, Lexmark, and Epson copiers, you'll have access to the most reliable and efficient printing equipment available.</div>
           </div>
         </div>
       </div>

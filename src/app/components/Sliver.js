@@ -15,7 +15,7 @@ import React, {
       <div style={{display:"flex", alignItems:"center"}}>
         <div className={styles.sliver}>
           Dont Know Where To Start?{' '}
-          <a style={{ paddingLeft: '15px' }} href="tel:8012610510">
+          <a style={{ paddingLeft: '15px', color:"white" }} href="tel:8012610510">
             {' '}
             Call Us At (801)-261 0510
           </a>

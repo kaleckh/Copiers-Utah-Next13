@@ -24,19 +24,19 @@ export default function Footer(props) {
         <div className={styles.line}></div>
         <div className={styles.exploreContainer}>
           <div className={styles.footerTitle}>Services</div>
-          <Link href="https://copiersutah.com/Buy">
+          <Link href="/buy">
             <h4 className={styles.h4}>Copiers for sale</h4>
           </Link>
-          <Link href="https://copiersutah.com/ShortTerm">
+          <Link href="/shortTerm">
             <h4 className={styles.h4}>Copier Rentals</h4>
           </Link>
-          <Link href="https://copiersutah.com/Fix">
+          <Link href="/fix">
             <h4 className={styles.h4}>Copier Maintanance</h4>
           </Link>
-          <Link href="https://copiersutah.com/Finance">
+          <Link href="/finance">
             <div className={styles.headerPieces}>Finance a Copier</div>
           </Link>
-          <Link href="https://copiersutah.com/Products">
+          <Link href="/products">
             <div className={styles.headerPieces}>
               Our top New and Used Copiers
             </div>
