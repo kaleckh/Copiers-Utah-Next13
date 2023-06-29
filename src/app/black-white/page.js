@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Footer from '../components/Footer'
 import Sliver from '../components/Sliver'
 import { useRouter } from 'next/navigation'
-
+import Link from "next/link";
 import styles from '../styles/Stuff.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const BlackWhite = () => {
@@ -170,7 +170,7 @@ const BlackWhite = () => {
       <Header />
       <div className={styles.section}>
         <div className={styles.center}>
-          <div className={styles.title}>Our Top Black and White Copiers</div>
+          <h1 className={styles.title}>Our Top Black and White Copiers</h1>
           <div className={styles.line}></div>
         </div>
         <div className={styles.grid}>
@@ -194,29 +194,31 @@ const BlackWhite = () => {
                       alignItems: 'center',
                     }}
                   >
-                    <button
-                      onClick={() => {
-                        router.push('/Product')
-                        localStorage.setItem('Image', `${copier.image}`)
-                        localStorage.setItem('Model', `${copier.model}`)
-                        localStorage.setItem(
-                          'PagesPerMinute',
-                          `${copier.PagesPerMinute}`,
-                        )
-                        localStorage.setItem('paperSize', `${copier.paperSize}`)
-                        localStorage.setItem('modelNumber', `${copier.modelNumber}`)
-                        localStorage.setItem('brand', `${copier.brand}`)
-                        localStorage.setItem('timeOut', `${copier.timeOut}`)
-                        localStorage.setItem('type', `${copier.type}`)
-                        localStorage.setItem(
-                          'description',
-                          `${copier.description}`,
-                        )
-                      }}
-                      className={styles.button}
-                    >
-                      See Details
+                    <Link href={'/product'}>
+                      <button
+                        onClick={() => {
+
+                          localStorage.setItem('Image', `${copier.image}`)
+                          localStorage.setItem('Model', `${copier.model}`)
+                          localStorage.setItem(
+                            'PagesPerMinute',
+                            `${copier.PagesPerMinute}`,
+                          )
+                          localStorage.setItem('paperSize', `${copier.paperSize}`)
+                          localStorage.setItem('modelNumber', `${copier.modelNumber}`)
+                          localStorage.setItem('brand', `${copier.brand}`)
+                          localStorage.setItem('timeOut', `${copier.timeOut}`)
+                          localStorage.setItem('type', `${copier.type}`)
+                          localStorage.setItem(
+                            'description',
+                            `${copier.description}`,
+                          )
+                        }}
+                        className={styles.button}
+                      >
+                        See Details
                     </button>
+                    </Link>
                   </div>
                   <div className={styles.fifty}>
                     <div className={styles.rowNumber}>

@@ -6,7 +6,7 @@ import Sliver from '../components/Sliver'
 import Image from 'next/image'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/navigation'
-
+import Link from "next/link";
 import styles from '../styles/Stuff.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const Multicolor = () => {
@@ -270,7 +270,7 @@ const Multicolor = () => {
       <Header />
       <div className={styles.section}>
         <div className={styles.center}>
-          <div className={styles.title}>Our Top Multicolor Machines</div>
+          <h1 className={styles.title}>Our Top Multicolor Machines</h1>
           <div className={styles.line}></div>
         </div>
         <div className={styles.grid}>
@@ -294,9 +294,10 @@ const Multicolor = () => {
                       alignItems: 'center',
                     }}
                   >
+                    <Link href={'/product'}>
                     <button
                       onClick={() => {
-                        router.push('/Product')
+                        
                         localStorage.setItem('Image', `${copier.image}`)
                         localStorage.setItem('Model', `${copier.model}`)
                         localStorage.setItem(
@@ -318,8 +319,9 @@ const Multicolor = () => {
                       }}
                       className={styles.button}
                     >
-                      See Details
+                        See Details
                     </button>
+                      </Link>
                   </div>
                   <div className={styles.fifty}>
                     <div className={styles.rowNumber}>

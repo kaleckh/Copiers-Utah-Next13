@@ -15,7 +15,7 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 export default function Home() {
 
-  
+
   const [name, setName] = useState("");
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [email, setEmail] = useState("");
@@ -194,18 +194,17 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
-              <div
-                onClick={() => {
-                  router.push("/buy");
-                }}
-                className={styles.shade}
-              >
-                <div className={styles.parent}>
-                  <div className={styles.toner} />
-                  <div className={styles.overlay} />
-                  <div className={styles.center}>Buy Toner</div>
+              <Link href={'/buy'}>
+                <div
+                  className={styles.shade}
+                >
+                  <div className={styles.parent}>
+                    <div className={styles.toner} />
+                    <div className={styles.overlay} />
+                    <div className={styles.center}>Buy Toner</div>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className={styles.row}>
               <div className={styles.shade}>

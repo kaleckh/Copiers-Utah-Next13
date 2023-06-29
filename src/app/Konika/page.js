@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Form from '../components/Form'
 import Footer from '../components/Footer'
 import Image from 'next/image'
+import Link from "next/link";
 import Sliver from '../components/Sliver'
 import styles from '../styles/konika.module.css'
 import { useRouter } from 'next/navigation'
@@ -199,11 +200,10 @@ const Konica = () => {
 
             <div className={styles.row}>
               <div className={styles.box}>
-                <Image
-
-                  P
+                <Image              
                   src={'/static/desktop.webp'}
                   height={100}
+                  alt={'Konika Minolta Desktop copiers'}
                   width={100}
                 />
                 <div className={styles.titleMid}>
@@ -221,6 +221,7 @@ const Konica = () => {
                   src={'/static/colorCopier.webp'}
                   height={100}
                   width={100}
+                  alt={'Konika Minolta Color Copiers'}
                 />
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
@@ -234,6 +235,7 @@ const Konica = () => {
                   src={'/static/blackAndWhite.webp'}
                   height={100}
                   width={100}
+                  alt={'Black and White Konika Minolta Copiers'}
                 />
                 <div className={styles.titleMid}>Black And White Copiers</div>
                 <Link href={'/black-white'}>

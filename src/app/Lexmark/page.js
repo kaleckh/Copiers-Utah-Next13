@@ -2,6 +2,7 @@
 import React, { useRef } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
+import Link from "next/link";
 import Sliver from '../components/Sliver'
 import Form from '../components/Form'
 import Footer from '../components/Footer'
@@ -108,7 +109,7 @@ const Lexmark = () => {
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <Image src={'/static/Lexmark.webp'} height={150} width={100} />
+            <Image src={'/static/Lexmark.webp'} height={150} width={100} alt={"Lexmark Copiers For Sale"} />
             <Link href={'/buy'}>
               <button
 
@@ -199,7 +200,7 @@ const Lexmark = () => {
 
             <div className={styles.row}>
               <div className={styles.box}>
-                <Image src={'/static/desktop.webp'} height={100} width={100} />
+                <Image src={'/static/desktop.webp'} height={100} width={100} alt={"Desktop Lexmark Copiers"} />
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
@@ -208,7 +209,7 @@ const Lexmark = () => {
                 </Link>
               </div>
               <div className={styles.box}>
-                <Image src={'/static/colorCopier.webp'} height={100} width={100} />
+                <Image src={'/static/colorCopier.webp'} height={100} width={100} alt={"Lexmark Color Copier for sale"} />
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
                 </div>
@@ -217,7 +218,7 @@ const Lexmark = () => {
                 </Link>
               </div>
               <div className={styles.box}>
-                <Image src={'/static/blackAndWhite.webp'} height={100} width={100} />
+                <Image src={'/static/blackAndWhite.webp'} height={100} width={100} alt={'Black And White Lexmark Copier'} />
                 <div className={styles.titleMid}>Black And White Copiers</div>
                 <Link href={'/black-white'}>
                   <button className={styles.button}>See Options</button>

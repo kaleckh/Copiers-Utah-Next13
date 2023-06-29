@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Footer from '../components/Footer'
 import Sliver from '../components/Sliver'
 import { useRouter } from 'next/navigation'
-
+import Link from "next/link";
 import styles from '../styles/Stuff.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const Desktop = () => {
@@ -15,7 +15,7 @@ const Desktop = () => {
   const [number, setNumber] = useState('')
   const [message, setMessage] = useState('this is the test message')
   const [copiers, setCopiers] = useState([
-   {
+    {
       model: 'Lexmark C6160 Desktop Printer',
       modelNumber: '21K0300',
       PagesPerMinute: '57',
@@ -36,7 +36,7 @@ const Desktop = () => {
       ScanSpeed: '80',
       timeOut: '6.4 ',
       type: 'Desktop',
-      description:"The C4342 is a medium-high volume printer. It offers top-level performance with a true business-class print engine."
+      description: "The C4342 is a medium-high volume printer. It offers top-level performance with a true business-class print engine."
     },
     {
       model: 'Lexmark C4150 Desktop Printer',
@@ -47,7 +47,7 @@ const Desktop = () => {
       ScanSpeed: '50',
       timeOut: '6.5 ',
       type: 'Desktop',
-      description:"The C4150 is proven color printer offered as a rebuild model. It is capable of handling moderate to high volumes with an incredibly reliable no-hassle performance."
+      description: "The C4150 is proven color printer offered as a rebuild model. It is capable of handling moderate to high volumes with an incredibly reliable no-hassle performance."
     },
     {
       model: 'Lexmark XC4140 Desktop Multifunction Printer',
@@ -77,7 +77,7 @@ const Desktop = () => {
       timeOut: '6 ',
       type: 'Desktop',
     },
- 
+
   ])
   const router = useRouter()
 
@@ -165,7 +165,7 @@ const Desktop = () => {
       <Header />
       <div className={styles.section}>
         <div className={styles.center}>
-          <div className={styles.title}>Our Top Desktop Copiers</div>
+          <h1 className={styles.title}>Our Top Desktop Copiers</h1>
           <div className={styles.line}></div>
         </div>
         <div className={styles.grid}>
@@ -189,30 +189,32 @@ const Desktop = () => {
                       alignItems: 'center',
                     }}
                   >
-                    <button
-                      onClick={() => {
-                        router.push('/Product')
-                        localStorage.setItem('Image', `${copier.image}`)
-                        localStorage.setItem('modelNumber', `${copier.modelNumber}`)
-                        localStorage.setItem('Model', `${copier.model}`)
-                        localStorage.setItem(
-                          'PagesPerMinute',
-                          `${copier.PagesPerMinute}`,
-                        )
-                        localStorage.setItem(
-                          'paperSize',
-                          `${copier.paperSize}`,
-                        )
-                        localStorage.setItem(
-                          'timeOut',
-                          `${copier.timeOut}`,
-                        )
-                        localStorage.setItem('type', `${copier.type}`)
-                      }}
-                      className={styles.button}
-                    >
-                      See Details
+                    <Link href={'/product'}>
+                      <button
+                        onClick={() => {
+
+                          localStorage.setItem('Image', `${copier.image}`)
+                          localStorage.setItem('modelNumber', `${copier.modelNumber}`)
+                          localStorage.setItem('Model', `${copier.model}`)
+                          localStorage.setItem(
+                            'PagesPerMinute',
+                            `${copier.PagesPerMinute}`,
+                          )
+                          localStorage.setItem(
+                            'paperSize',
+                            `${copier.paperSize}`,
+                          )
+                          localStorage.setItem(
+                            'timeOut',
+                            `${copier.timeOut}`,
+                          )
+                          localStorage.setItem('type', `${copier.type}`)
+                        }}
+                        className={styles.button}
+                      >
+                        See Details
                     </button>
+                    </Link>
                   </div>
                   <div className={styles.fifty}>
                     <div className={styles.rowNumber}>

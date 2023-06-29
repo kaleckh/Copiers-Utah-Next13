@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Head from 'next/head'
 import Sliver from '../components/Sliver'
 import Form from '../components/Form'
+import Link from "next/link";
 import Footer from '../components/Footer'
 import Image from 'next/image'
 import { PatternFormat } from 'react-number-format'
@@ -201,7 +202,7 @@ const Epson = () => {
 
             <div className={styles.row}>
               <div className={styles.box}>
-                <Image src={'/static/desktop.webp'} height={100} width={100} />
+                <Image src={'/static/desktop.webp'} height={100} width={100} alt={'Desktop printers for sale'} />
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
@@ -213,6 +214,7 @@ const Epson = () => {
                 <Image
                   src={'/static/colorCopier.webp'}
                   height={100}
+                  alt={'color copiers for sale'}
                   width={100}
                 />
                 <div className={styles.titleMid}>
@@ -227,6 +229,7 @@ const Epson = () => {
                   src={'/static/blackAndWhite.webp'}
                   height={100}
                   width={100}
+                  alt={'black and white copiers for sale'}
                 />
                 <div className={styles.titleMid}>Black And White Copiers</div>
                 <Link href={'/black-white'}>

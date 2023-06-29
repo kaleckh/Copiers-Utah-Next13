@@ -5,10 +5,10 @@ import {Redirect} from './redirect'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Copiers Utah',
-  description: 'Local Copier Company',
-}
+// export const metadata = {
+//   title: 'Copiers Utah',
+//   description: 'Local Copier Company',
+// }
 
 export default function RootLayout({ children }) {
   return (

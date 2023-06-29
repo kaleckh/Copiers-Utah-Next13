@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Sliver from '../components/Sliver'
+import Link from "next/link";
 import Form from '../components/Form'
 import Footer from '../components/Footer'
 import Image from 'next/image'
@@ -29,6 +30,8 @@ const Product = () => {
   const [paperSize, setpaperSize] = useState()
   const [modelNumber, setModelNumber] = useState()
   const [lastBullet, setLastBullet] = useState()
+  const[defaultType, setDefaultType] = useState("products")
+  const[defaultImage, setDefaultImage] = useState("epson.jpg")
   const [almostLastBullet, setAlmostLastBullet] = useState()
   const handleMinimize = () => {
     tawkMessengerRef.current.minimize()
@@ -50,8 +53,8 @@ const Product = () => {
     const paperSize = localStorage.getItem('paperSize')
     const desc = localStorage.getItem('description')
     setModel(storedModel)
-    setImage(photo)
-    setType(back)
+    setDefaultImage(photo)
+    setDefaultType(back)
     setPrintSpeed(speed)
     setModelNumber(modelNumber)
     setpaperSize(paperSize)
@@ -133,21 +136,21 @@ const Product = () => {
         }}
       >
         <div className={styles.backContainer}>
-          <div
-            onClick={() => {
-              router.push(`/${type}`)
-            }}
-            style={{
-              padding: '5px',
-              fontSize: '25px',
-              fontWeight: '400',
-              cursor: 'pointer',
-              borderRadius: '100%',
-            }}
-          >
-            {' '}
+          <Link href={`/${defaultType}`}>
+            <div
+
+              style={{
+                padding: '5px',
+                fontSize: '25px',
+                fontWeight: '400',
+                cursor: 'pointer',
+                borderRadius: '100%',
+              }}
+            >
+              {' '}
             X
           </div>
+          </Link>
         </div>
         <div className={styles.lineColumn}>
           <div className={styles.color}>{}</div>
@@ -155,16 +158,15 @@ const Product = () => {
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <Image src={`/static/${image}`} width={200} height={150} />
-            <button
-              style={{ width: '100%' }}
-              onClick={() => {
-                router.push('/buy')
-              }}
-              className={styles.button}
-            >
-              Request a quote
+            <Image src={`/static/${defaultImage}`} width={200} height={150} alt={'/a copier'} />
+            <Link href={'/buy'}>
+              <button
+                style={{ width: '100%' }}
+                className={styles.button}
+              >
+                Request a quote
             </button>
+            </Link>
             <div
               style={{
                 display: 'flex',
@@ -181,57 +183,57 @@ const Product = () => {
           {quote ? (
             <Form />
           ) : (
-            <div className={styles.column}>
-              <div className={styles.bigTitle}>{model}</div>
-              <div className={styles.aboutRow}>
-                <div
-                  onClick={() => {
-                    setGray(true)
-                  }}
-                  className={
-                    gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                  }
-                >
-                  About
+              <div className={styles.column}>
+                <h1 className={styles.bigTitle}>{model}</h1>
+                <div className={styles.aboutRow}>
+                  <div
+                    onClick={() => {
+                      setGray(true)
+                    }}
+                    className={
+                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
+                    }
+                  >
+                    About
                 </div>
-              </div>
-              <div className={styles.line}></div>
-              <div>
+                </div>
+                <div className={styles.line}></div>
                 <div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Print speeds at {printSpeed} pages per minute!
+                  <div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Print speeds at {printSpeed} pages per minute!
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Largest print size is {paperSize} inches
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      First page out time is {timeOut} seconds
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Largest print size is {paperSize} inches
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                     {lastBullet}
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      {almostLastBullet}
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        First page out time is {timeOut} seconds
+                    </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        {lastBullet}
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        {almostLastBullet}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
         </div>
         <div style={{ height: '40%' }} className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
