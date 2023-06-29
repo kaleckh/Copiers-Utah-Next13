@@ -18,5 +18,8 @@
     "react-dom": "18.2.0",
     "react-google-recaptcha": "^3.1.0",
     "react-number-format": "^5.2.2"
+  },
+  "devDependencies": {
+    "next-sitemap": "^4.1.3"
   }
 }

@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^copiersutah\.com$ [NC]
+RewriteRule ^(.*)$ https://www.copiersutah.com/$1 [R=301,L]

@@ -78,7 +78,7 @@ const Lexmark = () => {
       <div
         style={{
           height: 'fit-content',
-          padding:"20px",
+          padding: "20px",
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
@@ -86,95 +86,95 @@ const Lexmark = () => {
         }}
       >
         <div className={styles.backContainer}>
-          <div
-            onClick={() => {
-              router.push('/Products')
-            }}
-            style={{
-              padding: '5px',
-              fontSize: '25px',
-              fontWeight: '400',
-              cursor: 'pointer',
-              borderRadius: '100%',
-            }}
-          >
-            {' '}
-            {`X`}
-          </div>
+          <Link href={'/products'}>
+            <div
+
+              style={{
+                padding: '5px',
+                fontSize: '25px',
+                fontWeight: '400',
+                cursor: 'pointer',
+                borderRadius: '100%',
+              }}
+            >
+              {' '}
+              {`X`}
+            </div>
+          </Link>
         </div>
         <div className={styles.lineColumn}>
-          <div className={styles.color}>Lexmark</div>
+          <h1 className={styles.color}>Lexmark</h1>
           <div style={{ width: '150%' }} className={styles.line} />
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <Image src={'/static/Lexmark.webp'} height={150} width={100}/>
-            <button
-              onClick={() => {
-                router.push('/buy')
-              }}
-              className={styles.button}
-            >
-              Request a quote
+            <Image src={'/static/Lexmark.webp'} height={150} width={100} />
+            <Link href={'/buy'}>
+              <button
+
+                className={styles.button}
+              >
+                Request a quote
             </button>
+            </Link>
           </div>
           {quote ? (
             <Form />
           ) : (
-            <div className={styles.column}>
-              <div className={styles.aboutRow}>
-                <div
-                  onClick={() => {
-                    setGray(true)
-                  }}
-                  className={
-                    gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                  }
-                >
-                  About
+              <div className={styles.column}>
+                <div className={styles.aboutRow}>
+                  <div
+                    onClick={() => {
+                      setGray(true)
+                    }}
+                    className={
+                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
+                    }
+                  >
+                    About
                 </div>
-              </div>
-              <div className={styles.line}></div>
-              <div>
+                </div>
+                <div className={styles.line}></div>
                 <div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      The most reliable copier in the world!
+                  <div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        The most reliable copier in the world!
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      85% marketshare in HealthCare & Pharmacies because it
-                      always works.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Simple to use color, icon driven touch screen.
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        85% marketshare in HealthCare & Pharmacies because it
+                        always works.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Known for their fast print speeds and efficient
-                      performance.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Security is a top priority for Lexmark, and their copiers
-                      come with advanced security features like user
-                      authentication and data encryption
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Simple to use color, icon driven touch screen.
+                    </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Known for their fast print speeds and efficient
+                        performance.
+                    </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Security is a top priority for Lexmark, and their copiers
+                        come with advanced security features like user
+                        authentication and data encryption
+                    </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
         </div>
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -199,29 +199,29 @@ const Lexmark = () => {
 
             <div className={styles.row}>
               <div className={styles.box}>
-              <Image src={'/static/desktop.webp'} height={100} width={100}/>
+                <Image src={'/static/desktop.webp'} height={100} width={100} />
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
-                <button onClick={() => {
-                  router.push('/Desktop')
-                }} className={styles.button}>See Options</button>
+                <Link href={"/desktop"}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
               <div className={styles.box}>
-                <Image src={'/static/colorCopier.webp'} height={100} width={100}/>
+                <Image src={'/static/colorCopier.webp'} height={100} width={100} />
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
                 </div>
-                <button onClick={() => {
-                  router.push('/Multicolor')
-                }} className={styles.button}>See Options</button>
+                <Link href={"/multicolor"}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
               <div className={styles.box}>
-              <Image src={'/static/blackAndWhite.webp'} height={100} width={100}/>
+                <Image src={'/static/blackAndWhite.webp'} height={100} width={100} />
                 <div className={styles.titleMid}>Black And White Copiers</div>
-                <button onClick={() => {
-                  router.push('/BlackWhite')
-                }} className={styles.button}>See Options</button>
+                <Link href={'/black-white'}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
             </div>
           </div>

@@ -84,97 +84,97 @@ const Konica = () => {
         }}
       >
         <div className={styles.backContainer}>
-          <div
-            onClick={() => {
-              router.push('/Products')
-            }}
-            style={{
-              padding: '5px',
-              fontSize: '25px',
-              fontWeight: '400',
-              cursor: 'pointer',
-              borderRadius: '100%',
-            }}
-          >
-            {' '}
-            {`X`}
-          </div>
+        <Link href={'/products'}>
+            <div
+
+              style={{
+                padding: '5px',
+                fontSize: '25px',
+                fontWeight: '400',
+                cursor: 'pointer',
+                borderRadius: '100%',
+              }}
+            >
+              {' '}
+              {`X`}
+            </div>
+          </Link>
         </div>
         <div className={styles.lineColumn}>
-          <div className={styles.color}>Konica Minolta</div>
+          <h1 className={styles.color}>Konica Minolta</h1>
           <div style={{ width: '150%' }} className={styles.line} />
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
             <div className={styles.konika} />
-            <button
-              onClick={() => {
-                router.push('/buy')
-              }}
-              className={styles.button}
-            >
-              Request a quote
+            <Link href={'/buy'}>
+              <button
+
+                className={styles.button}
+              >
+                Request a quote
             </button>
+            </Link>
           </div>
           {quote ? (
             <Form />
           ) : (
-            <div className={styles.column}>
-              <div className={styles.aboutRow}>
-                <div
-                  onClick={() => {
-                    setGray(true)
-                  }}
-                  className={
-                    gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                  }
-                >
-                  About
+              <div className={styles.column}>
+                <div className={styles.aboutRow}>
+                  <div
+                    onClick={() => {
+                      setGray(true)
+                    }}
+                    className={
+                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
+                    }
+                  >
+                    About
                 </div>
-                <div className={styles.line}></div>
-              </div>
-              <div style={{ width: '100%' }} className={styles.line}></div>
-              <div>
+                  <div className={styles.line}></div>
+                </div>
+                <div style={{ width: '100%' }} className={styles.line}></div>
                 <div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Konica Minolta copiers have multifunction capabilities,
-                      allowing them to print, scan, copy, and fax documents.
+                  <div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Konica Minolta copiers have multifunction capabilities,
+                        allowing them to print, scan, copy, and fax documents.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Customizable workflows are available to improve
-                      productivity with Konica Minolta copiers.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Konica Minolta is committed to sustainability and offers
-                      eco-friendly features.
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Customizable workflows are available to improve
+                        productivity with Konica Minolta copiers.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Advanced security features are included to protect
-                      sensitive data on Konica Minolta copiers.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Konica Minolta copiers produce high-quality color or
-                      black-and-white documents.
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Konica Minolta is committed to sustainability and offers
+                        eco-friendly features.
+                    </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Advanced security features are included to protect
+                        sensitive data on Konica Minolta copiers.
+                    </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Konica Minolta copiers produce high-quality color or
+                        black-and-white documents.
+                    </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
         </div>
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -200,9 +200,7 @@ const Konica = () => {
             <div className={styles.row}>
               <div className={styles.box}>
                 <Image
-                  onClick={() => {
-                    router.push('/Desktop')
-                  }}
+
                   P
                   src={'/static/desktop.webp'}
                   height={100}
@@ -211,12 +209,12 @@ const Konica = () => {
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
-                <button className={styles.button}>See Options</button>
+                <Link href={"/desktop"}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
               <div
-                onClick={() => {
-                  router.push('/Multicolor')
-                }}
+
                 className={styles.box}
               >
                 <Image
@@ -227,21 +225,20 @@ const Konica = () => {
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
                 </div>
-                <button className={styles.button}>See Options</button>
+                <Link href={"/multicolor"}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
-              <div
-                onClick={() => {
-                  router.push('/BlackWhite')
-                }}
-                className={styles.box}
-              >
+              <div className={styles.box}>
                 <Image
                   src={'/static/blackAndWhite.webp'}
                   height={100}
                   width={100}
                 />
                 <div className={styles.titleMid}>Black And White Copiers</div>
-                <button className={styles.button}>See Options</button>
+                <Link href={'/black-white'}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
             </div>
           </div>

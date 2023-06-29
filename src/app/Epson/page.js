@@ -78,7 +78,7 @@ const Epson = () => {
       <div
         style={{
           height: 'fit-content',
-          padding:"20px",
+          padding: "20px",
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
@@ -86,92 +86,92 @@ const Epson = () => {
         }}
       >
         <div className={styles.backContainer}>
-          <div
-            onClick={() => {
-              router.push('/Products')
-            }}
-            style={{
-              padding: '5px',
-              fontSize: '25px',
-              fontWeight: '400',
-              cursor: 'pointer',
-              borderRadius: '100%',
-            }}
-          >
-            {' '}
-            {`X`}
-          </div>
+          <Link href={'/products'}>
+            <div
+
+              style={{
+                padding: '5px',
+                fontSize: '25px',
+                fontWeight: '400',
+                cursor: 'pointer',
+                borderRadius: '100%',
+              }}
+            >
+              {' '}
+              {`X`}
+            </div>
+          </Link>
         </div>
         <div className={styles.lineColumn}>
-          <div className={styles.color}>Epson</div>
+          <h1 className={styles.color}>Epson</h1>
           <div style={{ width: '150%' }} className={styles.line} />
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
             <div className={styles.epson} />
-            <button
-              onClick={() => {
-                router.push('/buy')
-              }}
-              className={styles.button}
-            >
-              Request a quote
+            <Link href={'/buy'}>
+              <button
+
+                className={styles.button}
+              >
+                Request a quote
             </button>
+            </Link>
           </div>
           {quote ? (
             <Form />
           ) : (
-            <div className={styles.column}>
-              <div className={styles.aboutRow}>
-                <div
-                  onClick={() => {
-                    setGray(true)
-                  }}
-                  className={
-                    gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                  }
-                >
-                  About
+              <div className={styles.column}>
+                <div className={styles.aboutRow}>
+                  <div
+                    onClick={() => {
+                      setGray(true)
+                    }}
+                    className={
+                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
+                    }
+                  >
+                    About
                 </div>
-                <div className={styles.line}></div>
-              </div>
-              <div style={{ width: '100%' }} className={styles.line}></div>
-              <div>
+                  <div className={styles.line}></div>
+                </div>
+                <div style={{ width: '100%' }} className={styles.line}></div>
                 <div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Epson copiers are multifunction devices.
+                  <div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Epson copiers are multifunction devices.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      They produce high-quality output.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      They have an easy-to-use interface.
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        They produce high-quality output.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      They are cost-effective.
                     </div>
-                  </div>
-                  <div className={styles.bulletContainer}>
-                    <div className={styles.bullet}>1s</div>
-                    <div className={styles.paragraphSmall}>
-                      Epson copiers utilize advanced printing technologies.
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        They have an easy-to-use interface.
+                    </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        They are cost-effective.
+                    </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Epson copiers utilize advanced printing technologies.
+                    </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
         </div>
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -205,14 +205,9 @@ const Epson = () => {
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
-                <button
-                  onClick={() => {
-                    router.push('/Desktop')
-                  }}
-                  className={styles.button}
-                >
-                  See Options
-                </button>
+                <Link href={"/desktop"}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
               <div className={styles.box}>
                 <Image
@@ -223,14 +218,9 @@ const Epson = () => {
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
                 </div>
-                <button
-                  onClick={() => {
-                    router.push('/Multicolor')
-                  }}
-                  className={styles.button}
-                >
-                  See Options
-                </button>
+                <Link href={"/multicolor"}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
               <div className={styles.box}>
                 <Image
@@ -239,14 +229,9 @@ const Epson = () => {
                   width={100}
                 />
                 <div className={styles.titleMid}>Black And White Copiers</div>
-                <button
-                  onClick={() => {
-                    router.push('/BlackWhite')
-                  }}
-                  className={styles.button}
-                >
-                  See Options
-                </button>
+                <Link href={'/black-white'}>
+                  <button className={styles.button}>See Options</button>
+                </Link>
               </div>
             </div>
           </div>
