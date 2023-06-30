@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import Sliver from '../components/Sliver'
+import { Metadata } from 'next'
 // import Form from "./Form";
 import { PatternFormat } from "react-number-format";
 import Head from "next/head";
@@ -82,6 +83,10 @@ const Buy = (props) => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
+  export const metadata = {
+  title: 'Get a Quote for High-Quality New and Refurbished Copiers | Copiers Utah',
+  description: 'Looking for a high-quality copier for your office? Copiers Utah offers a range of advanced copy machines for sale, including new and refurbished options. Fill out our easy form to get a personalized quote today',
+}
   return (
     <div className={styles.main}>
       <Sliver/>

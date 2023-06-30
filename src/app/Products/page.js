@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from 'next/image'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/navigation'
-
+import { Metadata } from 'next'
 import styles from '../styles/product.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const Products = () => {
@@ -52,6 +52,10 @@ const Products = () => {
       }
     })
   }
+  export const metadata = {
+  title: 'Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers Utah',
+  description: 'Copiers Utah offers a range of high-quality copiers for sale, including Konica Minolta, Epson, and Lexmark models. Explore our selection and find the perfect copier for your office',
+}
   return (
     <div className={styles.main}>
       <Sliver />

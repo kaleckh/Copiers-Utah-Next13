@@ -4,6 +4,7 @@ import Header from "../components/Header";
 // import Form from "./Form";
 import { PatternFormat } from "react-number-format";
 import Image from "next/image";
+import { Metadata } from 'next'
 import Sliver from '../components/Sliver'
 import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -99,6 +100,10 @@ const ShortTerm = () => {
       }
     });
   };
+  export const metadata = {
+  title: 'Short-Term Copier Rentals | Copiers Utah',
+  description: 'Need a copier for a short-term project or event? Copiers Utah offers flexible short-term copier rentals with advanced features and affordable prices. Contact us today to learn more',
+}
   return (
     <div className={styles.main}>
       <Sliver />

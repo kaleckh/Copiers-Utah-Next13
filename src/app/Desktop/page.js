@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import Sliver from '../components/Sliver'
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
+import { Metadata } from 'next'
 import styles from '../styles/Stuff.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const Desktop = () => {
@@ -116,6 +117,10 @@ const Desktop = () => {
       }
     })
   }
+  export const metadata = {
+  title: 'Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers Utah',
+  description: 'Copiers Utah offers a range of high-quality copiers for sale, including Konica Minolta, Epson, and Lexmark models. Explore our selection and find the perfect copier for your office',
+}
   return (
     <div className={styles.main}>
       <Sliver />

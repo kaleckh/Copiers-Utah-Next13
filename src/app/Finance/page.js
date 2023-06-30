@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import Head from "next/head";
+import { Metadata } from 'next'
 // import Form from "./Form";
 import { PatternFormat } from "react-number-format";
 import styles from "../styles/Finance.module.css";
@@ -68,7 +69,10 @@ const Finance = () => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
-
+  export const metadata = {
+  title: 'Financing and Buying Copiers | Get a Quote Today | Copiers Utah',
+  description: 'Copiers Utah offers a range of financing options for buying copiers. Fill out our easy form to get a personalized quote and learn more about our financing options',
+}
   console.log(number, "this is number");
   return (
     <div className={styles.main}>

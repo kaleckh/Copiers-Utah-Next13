@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Sliver from '../components/Sliver'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/navigation'
@@ -235,6 +236,10 @@ const Refurbished = () => {
       }
     })
   }
+  export const metadata = {
+  title: 'Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers Utah',
+  description: 'Copiers Utah offers a range of high-quality copiers for sale, including Konica Minolta, Epson, and Lexmark models. Explore our selection and find the perfect copier for your office',
+}
   return (
     <div className={styles.main}>
       <Sliver />

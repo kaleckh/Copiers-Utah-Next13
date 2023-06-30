@@ -7,6 +7,7 @@ import Sliver from '../components/Sliver'
 import Form from '../components/Form'
 import Footer from '../components/Footer'
 import Image from 'next/image'
+import { Metadata } from 'next'
 import { PatternFormat } from 'react-number-format'
 import styles from '../styles/lexmark.module.css'
 import { useRouter } from 'next/navigation'
@@ -30,6 +31,10 @@ const Lexmark = () => {
     setRecaptchaResponse(response)
   }
   const captchaRef = useRef(null)
+  export const metadata = {
+  title: ' New and Used Lexmark Copiers | High-Quality and Affordable | Copiers Utah',
+  description: 'Copiers Utah offers high-quality and affordable Lexmark copiers, both new and used. Learn more about Lexmark copiers and how they can benefit your office. Fill out our quote form to receive a customized quote',
+}
   return (
     <div className={styles.main}>
       <Sliver />

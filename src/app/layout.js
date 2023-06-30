@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Redirect/>
+      {/* <Redirect/> */}
       <body className={inter.className}>{children}</body>
     </html>
   )

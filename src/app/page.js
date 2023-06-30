@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Sliver from './components/sliver'
 import { PatternFormat } from "react-number-format";
 import Link from "next/link";
+import { Metadata } from 'next'
 import styles from "./styles/HomePage.module.css";
 import { Quote } from "./SVG/Quote";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -68,7 +69,10 @@ export default function Home() {
       }
     });
   };
-
+  export const metadata = {
+  title: 'Copiers for Sale and Rent | Office Copy Machines | Copiers Utah',
+  description: 'Copiers Utah: Quality copiers for sale/rent. Pick from various office machines with advanced features & affordable prices. Contact us now! ',
+}
   return (
     <div className={styles.main}>
       <Sliver />
@@ -81,7 +85,7 @@ export default function Home() {
       <Head>
         <meta name="robots" content="index, follow" />
 
-        <link rel="canonical" href="https://copiersutah.com/" />
+        <link rel="canonical" href="https://www.copiersutah.com/" />
         <title>
           Copiers for Sale and Rent | Office Copy Machines | Copiers Utah
         </title>

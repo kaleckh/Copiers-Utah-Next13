@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Head from 'next/head'
 import Sliver from '../components/Sliver'
 import Link from "next/link";
+import { Metadata } from 'next'
 import Form from '../components/Form'
 import Footer from '../components/Footer'
 import Image from 'next/image'
@@ -79,6 +80,10 @@ const Product = () => {
       setAlmostLastBullet("Energy efficiency: Konica Minolta copiers are designed with energy-saving features, helping businesses reduce their environmental footprint and save on energy costs.")
     }
   }, [])
+  export const metadata = {
+  title: 'New and Used Lexmark Copiers | High-Quality and Affordable | Copiers Utah',
+  description: 'Copiers Utah offers high-quality and affordable Lexmark copiers, both new and used. Learn more about Lexmark copiers and how they can benefit your office. Fill out our quote form to receive a customized quote',
+}
 
   return (
     <div className={styles.main}>

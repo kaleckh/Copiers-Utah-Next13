@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
+import { Metadata } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../components/Footer'
@@ -121,14 +122,18 @@ const BlackWhite = () => {
       }
     })
   }
+  export const metadata = {
+  title: 'Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers Utah',
+  description: 'Copiers Utah offers a range of high-quality copiers for sale, including Konica Minolta, Epson, and Lexmark models. Explore our selection and find the perfect copier for your office.',
+}
   return (
     <div className={styles.main}>
       <Sliver />
       <Head>
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/BlackWhite/" />
+        <link rel="canonical" href="https://www.copiersutah.com/BlackWhite/" />
         <title>
-          Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers
+        Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers
           Utah
         </title>
         <meta

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Head from "next/head";
 import Image from "next/image";
 // import Form from "./Form";
+import { Metadata } from 'next'
 import Sliver from '../components/Sliver'
 import { PatternFormat } from "react-number-format";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -98,6 +99,10 @@ const It = (props) => {
             }
         });
     };
+    export const metadata = {
+  title: 'IT Services and Support | Get a Quote Today | Copiers Utah',
+  description: 'Copiers Utah provides comprehensive IT services and support. Fill out our easy form to get a personalized quote and get the IT help you need',
+}
     return (
         <div className={styles.main}>
             <Sliver />

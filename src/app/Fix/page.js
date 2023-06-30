@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Sliver from '../components/Sliver'
 import Head from "next/head";
 import Axios from "axios";
+import { Metadata } from 'next'
 import { PatternFormat } from "react-number-format";
 import Image from "next/image";
 import styles from "../styles/Fix.module.css";
@@ -109,6 +110,11 @@ const Fix = () => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
+
+  export const metadata = {
+  title: 'Copier Machine Repair Services | Get a Quote Today | Copiers Utah',
+  description: 'Copiers Utah provides reliable and affordable copier machine repair services. Fill out our easy form to get a personalized quote and get your copier back up and running in no time',
+}
 
   return (
     <div className={styles.main}>
