@@ -507,11 +507,12 @@
     background-color: rgba(0, 0, 0, 0.3);
   }
   
-  @media (width < 1200px) {
+  @media (max-width:  1200px) {
     .keyPointTitle {
       font-size: 16px;
     }
   }
+  
   
   @media (max-width: 900px) {
     .Overview {
