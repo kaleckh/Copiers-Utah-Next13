@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../components/Footer'
-import Sliver from '../components/sliver'
+import Sliver from '../components/sliverrr'
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
 import { Metadata } from 'next'

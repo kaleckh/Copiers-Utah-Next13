@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Header from "./components/Header";
-import Sliver from './components/sliver'
+import Sliver from './components/sliverrr'
 import { PatternFormat } from "react-number-format";
 import Link from "next/link";
 import styles from "./styles/HomePage.module.css";

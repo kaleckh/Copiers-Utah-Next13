@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import { PatternFormat } from "react-number-format";
 import Image from "next/image";
 import { Metadata } from 'next'
-import Sliver from '../components/sliver'
+import Sliver from '../components/sliverrr'
 import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
 // import Logo from "../Photos/logo.webp";
