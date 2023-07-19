@@ -1,4 +1,4 @@
-import Data from './data'
+import Data from './dataa'
 export const metadata = {
   title: 'Top Refurbished Copiers for Sale | All Brands | Copiers Utah',
   description: 'Discover the Perfect Copier for Your Office - High-Quality and Affordable Models from Copiers Utah',
