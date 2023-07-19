@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
-import Sliver from '../components/sliverrr'
+import Sliver from '../components/sliverr'
 import Link from "next/link";
 import { Metadata } from 'next'
 import Form from '../components/Form'

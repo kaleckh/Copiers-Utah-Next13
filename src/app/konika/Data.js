@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from "next/link";
-import Sliver from '../components/sliverrr'
+import Sliver from '../components/sliverr'
 import styles from '../styles/konika.module.css'
 import { useRouter } from 'next/navigation'
 import ReCAPTCHA from 'react-google-recaptcha'

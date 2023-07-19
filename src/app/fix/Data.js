@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useState } from "react";
 import Header from "../components/Header";
-import Sliver from '../components/sliverrr'
+import Sliver from '../components/sliverr'
 import Head from "next/head";
 import Axios from "axios";
 import { Metadata } from 'next'

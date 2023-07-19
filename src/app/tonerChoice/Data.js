@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Client } from 'square';
 import { randomUUID } from 'crypto';
 import { PaymentForm, CreditCard, GooglePay, } from 'react-square-web-payments-sdk';
-import Sliver from '../components/sliverrr'
+import Sliver from '../components/sliverr'
 import { Metadata } from 'next'
 // import Form from "./Form";
 import { PatternFormat } from "react-number-format";
