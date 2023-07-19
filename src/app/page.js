@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Data from './dataa'
+import Data from './data'
 
 export const metadata = {
   title: 'Copiers for Sale and Rent | Office Copy Machines | Copiers Utah',
