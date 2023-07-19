@@ -1,5 +1,4 @@
 import styles from "../styles/Footer.module.css";
-import Socials from "../socials/page.js";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -18,7 +17,7 @@ export default function Footer(props) {
           <div className={styles.footerTags}>FAX: (801)261-1967</div>
           <div className={styles.footerTags}>
             E-MAIL: info@copiersutah.com
-            <Socials />
+            
           </div>
         </div>
         <div className={styles.line}></div>

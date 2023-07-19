@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Link from "next/link";
-import Sliver from '../components/Sliver'
+import Sliver from '../components/sliver'
 import Form from '../components/Form'
 import Footer from '../components/Footer'
 import Image from 'next/image'

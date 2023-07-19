@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
-import Sliver from '../components/Sliver'
+import Sliver from '../components/sliver'
 import { Metadata } from 'next'
 // import Form from "./Form";
 import { PatternFormat } from "react-number-format";
@@ -83,7 +83,7 @@ const Buy = (props) => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
- 
+  console.log(SECRET_KEY, "this is secret key")
   return (
     <div className={styles.main}>
       <Sliver/>

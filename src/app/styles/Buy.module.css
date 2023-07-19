@@ -430,7 +430,20 @@
     font-size: 30px;
     color: black;
   }
-  
+  .sliver a{
+    padding-right: 5px;
+  }
+  .padding{
+    padding-right: 40px;
+  }
+  .space{
+    padding-right: 5px;
+  }
+  .filter{
+    width: 25%;
+    height: 100%;
+    background-color: black;
+  }
   .blackButton {
     font-size: 40px;
     color: white;

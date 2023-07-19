@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
-import Sliver from '../components/Sliver'
+import Sliver from '../components/sliver'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Footer from '../components/Footer'
