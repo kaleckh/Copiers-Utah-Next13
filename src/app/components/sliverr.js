@@ -9,7 +9,7 @@ import Image from 'next/image';
 //   import { MDBInput, MDBTextArea } from 'mdb-react-ui-kit'
 import Axios from 'axios'
 import ReCAPTCHA from 'react-google-recaptcha'
-import styles from '../styles/buy.module.css'
+import styles from '../styles/buyy.module.css'
 
 const Sliver = () => {
   return (

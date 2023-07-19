@@ -10,7 +10,7 @@ import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
 // import Menu from "../Photos/menu.png";
 // import Repair from "../Photos/repair.jpg";
-import styles from "../styles/buy.module.css";
+import styles from "../styles/buyy.module.css";
 
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
