@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Sliver from './components/sliverr'
 import { PatternFormat } from "react-number-format";
 import Link from "next/link";
-import styles from "./styles/homePagee.module.css";
+import styles from "./styles/homepage.module.css";
 import { Quote } from "./SVG/Quote";
 import ReCAPTCHA from "react-google-recaptcha";
 import Footer from "./components/Footer";
