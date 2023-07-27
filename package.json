@@ -17,7 +17,9 @@
     "react-google-recaptcha": "^3.1.0",
     "react-number-format": "^5.2.2",
     "react-square-web-payments-sdk": "^3.2.1",
-    "square": "^28.0.1"
+    "square": "^28.0.1",
+    "uuid": "^9.0.0",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "eslint": "8.43.0",

@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import axios from 'axios';
+import { json2xml } from 'xml-js';
+import { v4 as uuidv4 } from 'uuid';
 import { Client } from 'square';
 import { randomUUID } from 'crypto';
 import { PaymentForm, CreditCard, GooglePay, } from 'react-square-web-payments-sdk';
@@ -33,17 +35,13 @@ const TonerChoice = (props) => {
     const [cash, setCash] = useState(true);
     const [finance, setFinance] = useState(false);
     const [rent, setRent] = useState(false);
+    const [orderId, setOrderId] = useState();
     const tawkMessengerRef = useRef();
     const captchaRef = useRef(null);
+    const [toner, setToner] = useState([{ oemNumber: 55, name: "toner black", itemPrice: 55 }])
 
-    // axios({
-    //     method: 'post',
-    //     url: '/login',
-    //     data: {
-    //       firstName: 'Finn',
-    //       lastName: 'Williams'
-    //     }
-    //   });
+
+
 
 
     const callback = (name, message, number) => {
@@ -75,7 +73,7 @@ const TonerChoice = (props) => {
                     number: number,
                     name: name,
                 },
-            }),
+            }),//
         }).then((res) => {
             console.log(res);
             if (res.status === 200) {
@@ -100,26 +98,46 @@ const TonerChoice = (props) => {
     };
 
     const { paymentsApi } = new Client({
-        accessToken: process.env.SQUARE_ACCESS_TOKEN,
+        accessToken: "EAAAEOBAWpWqMYtQnL6yMPRZZkl3ne8zZGGDli2HBC8pAivmZaGNoyOOtM-Uo7Ci",
         environment: 'sandbox'
-      });
-      
-    async function handler(req, res) {
-        if ( req.method === 'POST' ) {
-          const { result } = await paymentsApi.createPayment({
-            idempotencyKey: randomUUID(),
-            sourceId: req.body.sourceId,
-            amountMoney: {
-              currency: 'USD',
-              amount: 100
-            }
-          })
-          console.log(result);
-          res.status(200).json(result);
-        } else {
-          res.status(500).send();
-        }
-      }
+    });
+    async function getOrderData() {
+        const response = await fetch("/api/pay", { body: { "customerPoNumber": "", "dealerPoNumber": "", "name": "", "address": "", "city": "", "state": "", "zipcode": "", "oem": "", "quantity": "", "price": "" } })
+        const data = await response.json();
+        console.log(data, "this is get order data");
+    }
+    // useEffect(() => {    
+    //     getOrderData()
+    // }, [orderId]);
+
+    // async function createLink() {
+    //     const response = await fetch("/api/pay", { method: "POST" })
+    //     const data = await response.json();
+    //     setOrderId(data.orderId)
+    //     console.log(data, "this is the data");
+    // }
+
+
+    async function createDistribution() {
+        const response = await fetch("/api/pay/distribution", { method: "POST" })
+        const data = await response.json();
+        console.log(data, "this is the data");
+    }
+
+
+    function successCallback() {
+        const url = 'https://uat.portal.suppliesnet.net/PurchaseOrders/PurchaseOrder.asmx'
+        const data = "something"
+        axios.get(url, data)
+            .then(response => {
+                console.log('Data fetched successfully:', response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error.message);
+            });
+    }
+
+
 
 
 
@@ -168,8 +186,13 @@ const TonerChoice = (props) => {
                         <div className={styles.titleSmall}>* Example</div>
                         <div className={styles.titleSmall}>* Example</div>
                         <div className={styles.titleMedium}>Retail Price: 500.99</div>
+                        <div>
+                            <input type="text" />
+                            <input type="text" />
+                            <input type="text" />
+                        </div>
 
-                        <PaymentForm
+                        {/* <PaymentForm
                             createPaymentRequest={() => ({
                                 countryCode: "US",
                                 currencyCode: "USD",
@@ -179,16 +202,41 @@ const TonerChoice = (props) => {
                                 },
                             })}
                             applicationId="sandbox-sq0idb-Hjbfh1xVL93-HxQiP4csTg"
-                            cardTokenizeResponseReceived={(token, verifiedBuyer) => {
-                                console.log('token:', token);
-                                console.log('verifiedBuyer:', verifiedBuyer);
+                            cardTokenizeResponseReceived={async (token, verifiedBuyer) => {
+                                const response = await fetch("/api/pay", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-type": "application/json",
+                                    },
+                                    body: JSON.stringify({
+                                        sourceId: token.token,
+                                    }),
+                                });
+                                console.log(await response.json());
                             }}
+                            createVerificationDetails={() => ({
+                                amount: '1.00',
+                                billingContact: {
+                                    addressLines: ['123 Main Street', 'Apartment 1'],
+                                    familyName: 'Doe',
+                                    givenName: 'John',
+                                    countryCode: 'GB',
+                                    city: 'London',
+                                },
+                                currencyCode: 'GBP',
+                                intent: 'CHARGE',
+                            })}
                             locationId='LDMMSQDX5M7ZP'
                         >
 
                             <CreditCard />
                             <GooglePay />
-                        </PaymentForm>
+                        </PaymentForm> */}
+                        <button style={{ padding: "50px" }} onClick={() => {
+
+                            createDistribution()
+                        }}></button>
+
                     </div>
                 </div>
                 <div className={styles.secondSection}>
