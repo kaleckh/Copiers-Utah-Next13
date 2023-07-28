@@ -33,26 +33,26 @@ const Buy = (props) => {
     const captchaRef = useRef(null);
     const [toner, setToner] = useState([
         {
-            something: "yes",
-            somethingelse: "yes",
-            somethingkinda: "yes"
+            price: "10",
+            name: "yes",
+            oem: "5555"
         },
         {
-            something: "yes",
-            somethingelse: "yes",
-            somethingkinda: "yes"
+            price: "80",
+            name: "yes",
+            oem: "5555"
 
         },
         {
-            something: "yes",
-            somethingelse: "yes",
-            somethingkinda: "yes"
+            price: "100",
+            name: "yes",
+            oem: "5555"
 
         },
         {
-            something: "yes",
-            somethingelse: "yes",
-            somethingkinda: "yes"
+            price: "300",
+            name: "yes",
+            oem: "5555"
 
         }
     ])
@@ -200,7 +200,12 @@ const Buy = (props) => {
                     <div className={styles.boxContainer}>
                         {toner.map((item) => {
                             return (
-                                <div key={item.something} className={styles.box}>
+                                <div key={item.id} onClick={() => {
+                                    localStorage.setItem("oem", item.oem);
+                                    localStorage.setItem("name", item.name);
+                                    localStorage.setItem("price", item.price);
+                                }} key={item.something} className={styles.box}>
+
                                     <div className={styles.title}>This is a toner Title</div>
                                     <Link href={"/tonerChoice"}>
                                         <Image src={"/static/tech.webp"} width={150} height={150}></Image>

@@ -3,23 +3,35 @@ import { NextResponse } from 'next/server'
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
+
+
+
+
+
+
 // export async function POST() {
 //   return NextResponse.json({ "asdf": "adwf" })
 // }
 
 export async function GET(req, res) {
-  const headers = {
-    'Square-Version': '2023-07-20',
-    'Authorization': 'Bearer EAAAEOBAWpWqMYtQnL6yMPRZZkl3ne8zZGGDli2HBC8pAivmZaGNoyOOtM-Uo7Ci',
-    'Content-Type': 'application/json',
-  };
-  try {
-    const response = await axios.get(`https://connect.squareupsandbox.com/v2/orders/QB44qsSEG6VUNdEPzeevuiUk71RZY`, { headers })
-    // console.log(response, "order data");
-    return NextResponse.json({ "kale": response.data.order.fulfillments.shipment_details })
-  } catch (error) {
-    console.log(error);
-  }
+  const { searchParams } = new URL(req.url)
+  console.log(searchParams)
+  const id = searchParams.get('id')
+  console.log(id, "this is id")
+  
+  return NextResponse.json({id})
+  // const headers = {
+  //   'Square-Version': '2023-07-20',
+  //   'Authorization': 'Bearer EAAAEOBAWpWqMYtQnL6yMPRZZkl3ne8zZGGDli2HBC8pAivmZaGNoyOOtM-Uo7Ci',
+  //   'Content-Type': 'application/json',
+  // };
+  // try {
+  //   const response = await axios.get(`https://connect.squareupsandbox.com/v2/orders/${id}`, { headers })
+  //   console.log(response, "order data");
+  //   return NextResponse.json({ "kale": response.data.order.fulfillments.shipment_details })
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
 }
 

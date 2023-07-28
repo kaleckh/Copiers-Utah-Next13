@@ -28,6 +28,8 @@ const TonerChoice = (props) => {
 
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [quoteToggle, setQuoteToggle] = useState(true);
+    const [oem, setOem] = useState("");
+    const [price, setPrice] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
@@ -41,7 +43,13 @@ const TonerChoice = (props) => {
     const [toner, setToner] = useState([{ oemNumber: 55, name: "toner black", itemPrice: 55 }])
 
 
+    useEffect(() => {
+        const oem = localStorage.getItem("oem");
+        const price = localStorage.getItem("price");
+        const name = localStorage.getItem("name");
 
+
+    }, [])
 
 
     const callback = (name, message, number) => {
@@ -102,20 +110,22 @@ const TonerChoice = (props) => {
         environment: 'sandbox'
     });
     async function getOrderData() {
-        const response = await fetch("/api/pay", { body: { "customerPoNumber": "", "dealerPoNumber": "", "name": "", "address": "", "city": "", "state": "", "zipcode": "", "oem": "", "quantity": "", "price": "" } })
+        
+        const response = await axios.get(`/api/pay?id=ElHZEQ4XK7bLBrH4QucV0AimZuIZY`, {cache: "force-cache"})
         const data = await response.json();
         console.log(data, "this is get order data");
     }
-    // useEffect(() => {    
-    //     getOrderData()
-    // }, [orderId]);
+    useEffect(() => {   
+        console.log(orderId)
+        getOrderData()
+    }, [orderId]);
 
-    // async function createLink() {
-    //     const response = await fetch("/api/pay", { method: "POST" })
-    //     const data = await response.json();
-    //     setOrderId(data.orderId)
-    //     console.log(data, "this is the data");
-    // }
+    async function createLink() {
+        const response = await fetch("/api/pay", { method: "POST" })
+        const data = await response.json();
+        setOrderId(data.orderId)
+        console.log(data, "this is the data");
+    }
 
 
     async function createDistribution() {
@@ -234,7 +244,7 @@ const TonerChoice = (props) => {
                         </PaymentForm> */}
                         <button style={{ padding: "50px" }} onClick={() => {
 
-                            createDistribution()
+                            createLink()
                         }}></button>
 
                     </div>

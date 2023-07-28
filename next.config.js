@@ -1,6 +1,6 @@
 const nextConfig = {
   pageExtensions: ['js', 'jsx'],
-  output: "export",
+  // output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
 };
