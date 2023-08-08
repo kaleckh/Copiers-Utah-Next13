@@ -16,7 +16,7 @@ import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
 // import Menu from "../Photos/menu.png";
 // import Repair from "../Photos/repair.jpg";
-import styles from "../styles/filter.module.css";
+import styles from "../styles/fileChoice.module.css";
 
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
@@ -29,26 +29,36 @@ const TonerChoice = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [quoteToggle, setQuoteToggle] = useState(true);
     const [oem, setOem] = useState("");
-    const [price, setPrice] = useState("");
+    const [quantity, setQuantity] = useState("");
+    const [data, setData] = useState("");
     const [name, setName] = useState("");
+    const [color, setColor] = useState("");
+    const [address_line_1, setAddress1] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [zip, setZip] = useState("");
+    const [country, setCountry] = useState("US");
+    const [image, setImage] = useState("");
+    const [yieldStuff, setYield] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
     const [message, setMessage] = useState("");
     const [cash, setCash] = useState(true);
     const [finance, setFinance] = useState(false);
     const [rent, setRent] = useState(false);
-    const [orderId, setOrderId] = useState();
+    const [orderId, setOrderId] = useState("");
+    const [price, setPrice] = useState();
     const tawkMessengerRef = useRef();
     const captchaRef = useRef(null);
-    const [toner, setToner] = useState([{ oemNumber: 55, name: "toner black", itemPrice: 55 }])
+
 
 
     useEffect(() => {
-        const oem = localStorage.getItem("oem");
-        const price = localStorage.getItem("price");
-        const name = localStorage.getItem("name");
-
-
+        setOem(localStorage.getItem("oem"))
+        setPrice(localStorage.getItem("price"))
+        setName(localStorage.getItem("name"))
+        setImage(localStorage.getItem("image"))
+        setYield(localStorage.getItem("yield"))
     }, [])
 
 
@@ -110,15 +120,27 @@ const TonerChoice = (props) => {
         environment: 'sandbox'
     });
     async function getOrderData() {
+        const response = await fetch(`/api/pay`)
+        const data = await response.json() 
         
-        const response = await axios.get(`/api/pay?id=ElHZEQ4XK7bLBrH4QucV0AimZuIZY`, {cache: "force-cache"})
-        const data = await response.json();
-        console.log(data, "this is get order data");
+        setOrderId(data.data.order.id)
+        setName(data.data.order.fulfillments[0].shipment_details.recipient.display_name)
+        setData(data.data.order.fulfillments[0].shipment_details.recipient.address)    
     }
-    useEffect(() => {   
-        console.log(orderId)
-        getOrderData()
-    }, [orderId]);
+    async function setOrderData() {
+        setAddress1(data.address_line_1)
+        setCity(data.locality)
+        setState(data.administrative_district_level_1)
+        setZip(data.postal_code)
+        debugger
+        
+    }
+    // useEffect(() => {
+    //     debugger
+    //     if (orderId !== "") {
+    //         getOrderData()
+    //     }
+    // }, [orderId]);
 
     async function createLink() {
         const response = await fetch("/api/pay", { method: "POST" })
@@ -127,26 +149,41 @@ const TonerChoice = (props) => {
         console.log(data, "this is the data");
     }
 
+    // async function success() {
+    //     const response = await fetch("/api/pay/distribution", { method: "POST" })
+    //     const data = await response.json();
+    //     console.log(data, "this is the data");
+    // }
+
+
 
     async function createDistribution() {
-        const response = await fetch("/api/pay/distribution", { method: "POST" })
-        const data = await response.json();
-        console.log(data, "this is the data");
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({ city: city, state: state, zip: zip, addy: address_line_1, price: price, quantity: quantity, oem: oem, name: name, id: orderId })
+        };
+
+        const response = await fetch("/api/pay/distribution", requestOptions)
+        const data1 = await response.json();
+        // console.log(data1, "this is the data");
     }
 
 
-    function successCallback() {
-        const url = 'https://uat.portal.suppliesnet.net/PurchaseOrders/PurchaseOrder.asmx'
-        const data = "something"
-        axios.get(url, data)
-            .then(response => {
-                console.log('Data fetched successfully:', response.data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error.message);
-            });
-    }
-
+    // function successCallback() {
+    //     const url = 'https://uat.portal.suppliesnet.net/PurchaseOrders/PurchaseOrder.asmx'
+    //     const data = "something"
+    //     axios.get(url, data)
+    //         .then(response => {
+    //             console.log('Data fetched successfully:', response.data);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error fetching data:', error.message);
+    //         });
+    // }
 
 
 
@@ -184,99 +221,65 @@ const TonerChoice = (props) => {
             </div>
             <Header />
             <div className={styles.mainContent}>
+
                 <div className={styles.center}>
                     <div className={styles.column}>
-                        <div className={styles.titleLarge}>Lexmark C/MC3326 Black 3K Print Cartridge </div>
-                        <div className={styles.titleSmall}> Part #: C330H10</div>
-                        <Image src={'/static/favicon.ico'} width={250} height={200} />
+                        <div className={styles.titleLarge}>{name}</div>
+                        <div className={styles.titleSmall}> OEM #: {oem}</div>
+                        <Image src={image} width={300} height={250} />
 
                     </div>
                     <div className={styles.centerFeature}>
-                        <div className={styles.titleLargeBlack}>Features</div>
-                        <div className={styles.titleSmall}>* Example</div>
-                        <div className={styles.titleSmall}>* Example</div>
-                        <div className={styles.titleMedium}>Retail Price: 500.99</div>
-                        <div>
-                            <input type="text" />
-                            <input type="text" />
-                            <input type="text" />
+                        <div className={styles.aContainer}>
+                            <div className={styles.titleLargeBlack}>Features</div>
+                            <div className={styles.something}>
+                                <div className={styles.titleSmall}>Model: <div className={styles.small}>{oem}</div> </div>
+                                <div className={styles.titleSmall}>Yield: <div className={styles.small}>{yieldStuff}</div> </div>
+                                <div className={styles.titleSmall}>Retail Price:  <div className={styles.small}>${price}</div></div>
+                                <div className={styles.titleSmall}>Condition: <div className={styles.small}>New</div></div>
+                            </div>
                         </div>
-
-                        {/* <PaymentForm
-                            createPaymentRequest={() => ({
-                                countryCode: "US",
-                                currencyCode: "USD",
-                                total: {
-                                    amount: "1.00",
-                                    label: "Total",
-                                },
-                            })}
-                            applicationId="sandbox-sq0idb-Hjbfh1xVL93-HxQiP4csTg"
-                            cardTokenizeResponseReceived={async (token, verifiedBuyer) => {
-                                const response = await fetch("/api/pay", {
-                                    method: "POST",
-                                    headers: {
-                                        "Content-type": "application/json",
-                                    },
-                                    body: JSON.stringify({
-                                        sourceId: token.token,
-                                    }),
-                                });
-                                console.log(await response.json());
-                            }}
-                            createVerificationDetails={() => ({
-                                amount: '1.00',
-                                billingContact: {
-                                    addressLines: ['123 Main Street', 'Apartment 1'],
-                                    familyName: 'Doe',
-                                    givenName: 'John',
-                                    countryCode: 'GB',
-                                    city: 'London',
-                                },
-                                currencyCode: 'GBP',
-                                intent: 'CHARGE',
-                            })}
-                            locationId='LDMMSQDX5M7ZP'
-                        >
-
-                            <CreditCard />
-                            <GooglePay />
-                        </PaymentForm> */}
-                        <button style={{ padding: "50px" }} onClick={() => {
-
-                            createLink()
-                        }}></button>
+                        <div className={styles.buttonRow}>
+                            <button className={styles.button3} onClick={() => {
+                                getOrderData().then(() => {
+                                    setOrderData().then(() => {
+                                        createDistribution()
+                                    })
+                                })
+                                // setOrderData()
+                            }}>Buy Now!</button>
+                            <button className={styles.button3}>Add To Cart</button>
+                        </div>
 
                     </div>
                 </div>
                 <div className={styles.secondSection}>
                     <div className={styles.row}>
-                        <div className={styles.titleMediumSpec}>Specs</div>
-                        <div className={styles.titleMediumSpec}>Overview</div>
+                        <div>Lexmark 1234 Specs and Details</div>
                     </div>
                     <div>
                         <div className={styles.row}>
                             <div className={styles.titleSmallSpecNB}>Part #</div>
+                            <div className={styles.titleSmallSpec}>{oem}</div>
+                        </div>
+                        <div className={styles.line}></div>
+                        <div className={styles.row}>
+                            <div className={styles.titleSmallSpecNB}>Page Yield</div>
+                            <div className={styles.titleSmallSpec}>{yieldStuff}</div>
+                        </div>
+                        <div className={styles.line}></div>
+                        <div className={styles.row}>
+                            <div className={styles.titleSmallSpecNB}>Color</div>
+                            <div className={styles.titleSmallSpec}>{color}</div>
+                        </div>
+                        <div className={styles.line}></div>
+                        <div className={styles.row}>
+                            <div className={styles.titleSmallSpecNB}>Shipping Weight</div>
                             <div className={styles.titleSmallSpec}>12345</div>
                         </div>
                         <div className={styles.line}></div>
                         <div className={styles.row}>
-                            <div className={styles.titleSmallSpecNB}>Print Tech</div>
-                            <div className={styles.titleSmallSpec}>12345</div>
-                        </div>
-                        <div className={styles.line}></div>
-                        <div className={styles.row}>
-                            <div className={styles.titleSmallSpecNB}>Yield Value </div>
-                            <div className={styles.titleSmallSpec}>12345</div>
-                        </div>
-                        <div className={styles.line}></div>
-                        <div className={styles.row}>
-                            <div className={styles.titleSmallSpecNB}>Packaged Size </div>
-                            <div className={styles.titleSmallSpec}>12345</div>
-                        </div>
-                        <div className={styles.line}></div>
-                        <div className={styles.row}>
-                            <div className={styles.titleSmallSpecNB}>Packaged Weight</div>
+                            <div className={styles.titleSmallSpecNB}>Price</div>
                             <div className={styles.titleSmallSpec}>12345</div>
                         </div>
                         <div className={styles.line}></div>
