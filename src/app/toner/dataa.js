@@ -300,6 +300,7 @@ const Buy = (props) => {
                                     localStorage.setItem("oem", item.oem);
                                     localStorage.setItem("name", item.name);
                                     localStorage.setItem("price", item.price);
+                                    localStorage.setItem("color", item.color);
                                     localStorage.setItem("image", item.image);
                                     localStorage.setItem("yield", item.yield);
                                 }} key={item.something} className={styles.box}>

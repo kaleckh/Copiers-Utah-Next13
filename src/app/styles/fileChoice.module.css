@@ -14,9 +14,20 @@
   .column{
     display: flex;
     align-items: center;
-    padding-top: 50px;
+    margin-top: 90px;
     width: 50%;
     flex-direction: column;
+  }
+  .something input[type="number"]{
+    font-size: 12px;
+  }
+  .number{
+    width: 40px;
+    margin-left: 10px;
+    color: black;
+    font-size: 12px;
+    background-color: white;
+    text-align: center;
   }
   .columnContainer {
     display: flex;
@@ -189,12 +200,12 @@
   .line{
     width:110%;
     height: 1px;
-    background-color: black;
+    background-color: rgb(50,50,60);
   }
   .lineSmall{
-    width:100%;
+    width:35%;
     height: 1px;
-    background-color: white;
+    background-color: rgb(50,50,60);
     
   }
   .titleBig{
@@ -215,23 +226,30 @@
     padding-right: 150px;
     text-align: center;
   }
+  .big{
+    color: white;
+    background-color: rgb(50,50,60);
+    font-size: 20px;
+    border-radius: 2px;
+    padding: 10px;
+  }
   .titleSmall{
     font-size: 20px;
     font-weight: 500;
     display: flex;
     line-height: 25px;
     color: rgb(47,51,63);
-    padding: 5px;
+    padding-bottom: 5px;
   }
   .small{
     font-size: 15px;
     padding-left: 10px;
   }
   .titleSmallSpec{
-    font-size: 20px;
+    font-size: 16px;
+    text-align: center;
     width: 50%;
-    
-    color: black;
+    color: rgb(50,50,60);
     padding: 10px;
   }
   .titleSmallSpecNB{

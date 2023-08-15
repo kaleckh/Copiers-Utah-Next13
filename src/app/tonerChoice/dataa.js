@@ -29,8 +29,11 @@ const TonerChoice = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [quoteToggle, setQuoteToggle] = useState(true);
     const [oem, setOem] = useState("");
-    const [quantity, setQuantity] = useState("");
+    const [cart, setCart] = useState([]);
+    const [aboveOne, setAboveOne] = useState(false);
+    const [quantity, setQuantity] = useState(1);
     const [data, setData] = useState("");
+    const [tonerName, setTonerName] = useState("");
     const [name, setName] = useState("");
     const [color, setColor] = useState("");
     const [address_line_1, setAddress1] = useState("");
@@ -48,6 +51,7 @@ const TonerChoice = (props) => {
     const [rent, setRent] = useState(false);
     const [orderId, setOrderId] = useState("");
     const [price, setPrice] = useState();
+    const [newPrice, setNewPrice] = useState();
     const tawkMessengerRef = useRef();
     const captchaRef = useRef(null);
 
@@ -55,45 +59,51 @@ const TonerChoice = (props) => {
 
     useEffect(() => {
         setOem(localStorage.getItem("oem"))
+        console.log(localStorage.getItem("cart"), "this is the cart")
+        // setCart(localStorage.getItem("cart"))
+        setColor(localStorage.getItem("color"))
         setPrice(localStorage.getItem("price"))
-        setName(localStorage.getItem("name"))
+        setTonerName(localStorage.getItem("name"))
         setImage(localStorage.getItem("image"))
         setYield(localStorage.getItem("yield"))
     }, [])
+    useEffect(() => {
+        if (quantity > 1) {
+            setAboveOne(true)
+            setNewPrice(price * quantity)
+        } else {
+            setAboveOne(false)
+        }
 
+    }, [quantity])
+    useEffect(() => {
 
-    const callback = (name, message, number) => {
-        setName(name);
-        setMessage(message);
-        setNumber(number);
-    };
-
-    const sendEmail = (e) => {
+    })
+    const sendSuccessEmail = (e) => {
         e.preventDefault();
-        console.log("Sending");
-
         fetch("https://api.smtp2go.com/v3/email/send", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
+                api_key: "api-A4D77AA0362911EEA716F23C91C88F4E",
                 to: [`<info@copiersutah.com>`],
                 sender: "<info@copiersutah.com>",
                 subject: `This is${name}'s quote form. Her number is ${number}`,
                 text_body: `${message}`,
                 html_body: `<h1>${message}</h1>`,
-                template_id: "5120871",
+                template_id: "0107239",
                 template_data: {
-                    message: message,
-                    from: "buy a copier",
+                    ID: orderId,
                     number: number,
+                    toner: tonerName,
                     name: name,
+                    email: email
                 },
             }),//
         }).then((res) => {
-            console.log(res);
+
             if (res.status === 200) {
                 console.log("Response succeeded!");
                 // setSubmitted(true);
@@ -121,19 +131,20 @@ const TonerChoice = (props) => {
     });
     async function getOrderData() {
         const response = await fetch(`/api/pay`)
-        const data = await response.json() 
-        
+        const data = await response.json()
+        setNumber(data.data.order.fulfillments[0].shipment_details.recipient.phone_number)
+        setEmail(data.data.order.fulfillments[0].shipment_details.recipient.email_address)
         setOrderId(data.data.order.id)
         setName(data.data.order.fulfillments[0].shipment_details.recipient.display_name)
-        setData(data.data.order.fulfillments[0].shipment_details.recipient.address)    
+        setData(data.data.order.fulfillments[0].shipment_details.recipient.address)
+
     }
     async function setOrderData() {
         setAddress1(data.address_line_1)
         setCity(data.locality)
         setState(data.administrative_district_level_1)
         setZip(data.postal_code)
-        debugger
-        
+
     }
     // useEffect(() => {
     //     debugger
@@ -146,7 +157,6 @@ const TonerChoice = (props) => {
         const response = await fetch("/api/pay", { method: "POST" })
         const data = await response.json();
         setOrderId(data.orderId)
-        console.log(data, "this is the data");
     }
 
     // async function success() {
@@ -184,10 +194,6 @@ const TonerChoice = (props) => {
     //             console.error('Error fetching data:', error.message);
     //         });
     // }
-
-
-
-
     return (
         <div className={styles.main}>
             <Sliver />
@@ -224,7 +230,7 @@ const TonerChoice = (props) => {
 
                 <div className={styles.center}>
                     <div className={styles.column}>
-                        <div className={styles.titleLarge}>{name}</div>
+                        <div className={styles.titleLarge}>{tonerName}</div>
                         <div className={styles.titleSmall}> OEM #: {oem}</div>
                         <Image src={image} width={300} height={250} />
 
@@ -235,54 +241,64 @@ const TonerChoice = (props) => {
                             <div className={styles.something}>
                                 <div className={styles.titleSmall}>Model: <div className={styles.small}>{oem}</div> </div>
                                 <div className={styles.titleSmall}>Yield: <div className={styles.small}>{yieldStuff}</div> </div>
-                                <div className={styles.titleSmall}>Retail Price:  <div className={styles.small}>${price}</div></div>
+                                <div className={styles.titleSmall}>Quantity: <input onChange={(event) => { setQuantity(event.target.value) }} className={styles.number} placeholder={quantity} type="number" /></div>
+                                <div className={styles.titleSmall}>Retail Price:  <div className={styles.small}>${aboveOne ? newPrice : price}</div></div>
                                 <div className={styles.titleSmall}>Condition: <div className={styles.small}>New</div></div>
                             </div>
                         </div>
                         <div className={styles.buttonRow}>
-                            <button className={styles.button3} onClick={() => {
+                            <button className={styles.button3} onClick={(e) => {
                                 getOrderData().then(() => {
+                                    console.log(name, "this is my name")
                                     setOrderData().then(() => {
+                                        sendSuccessEmail(e)
                                         createDistribution()
                                     })
                                 })
-                                // setOrderData()
+                                setOrderData()
                             }}>Buy Now!</button>
-                            <button className={styles.button3}>Add To Cart</button>
+                            <Link href={'/cart'}>
+                                <button onClick={() => {
+                                    const stuff = [...cart, { name: name, oem: oem, price: price, quantity: quantity }]
+                                    localStorage.setItem("cart", JSON.stringify(stuff));
+                                }} className={styles.button3}>Add To Cart</button>
+                            </Link>
                         </div>
 
                     </div>
                 </div>
                 <div className={styles.secondSection}>
-                    <div className={styles.row}>
-                        <div>Lexmark 1234 Specs and Details</div>
+                    <div style={{ paddingBottom: "50px" }} className={styles.row}>
+                        <div className={styles.lineSmall}></div>
+                        <div className={styles.big}>Specs and Details</div>
+                        <div className={styles.lineSmall}></div>
                     </div>
-                    <div>
+                    <div style={{ width: "30%" }}>
                         <div className={styles.row}>
                             <div className={styles.titleSmallSpecNB}>Part #</div>
                             <div className={styles.titleSmallSpec}>{oem}</div>
                         </div>
                         <div className={styles.line}></div>
                         <div className={styles.row}>
-                            <div className={styles.titleSmallSpecNB}>Page Yield</div>
+                            <div className={styles.titleSmallSpecNB}>Page Yield:</div>
                             <div className={styles.titleSmallSpec}>{yieldStuff}</div>
                         </div>
                         <div className={styles.line}></div>
                         <div className={styles.row}>
-                            <div className={styles.titleSmallSpecNB}>Color</div>
+                            <div className={styles.titleSmallSpecNB}>Color:</div>
                             <div className={styles.titleSmallSpec}>{color}</div>
                         </div>
                         <div className={styles.line}></div>
                         <div className={styles.row}>
-                            <div className={styles.titleSmallSpecNB}>Shipping Weight</div>
+                            <div className={styles.titleSmallSpecNB}>Shipping Weight:</div>
                             <div className={styles.titleSmallSpec}>12345</div>
                         </div>
                         <div className={styles.line}></div>
                         <div className={styles.row}>
-                            <div className={styles.titleSmallSpecNB}>Price</div>
-                            <div className={styles.titleSmallSpec}>12345</div>
+                            <div className={styles.titleSmallSpecNB}>Price:</div>
+                            <div className={styles.titleSmallSpec}>${price}</div>
                         </div>
-                        <div className={styles.line}></div>
+
                     </div>
                 </div>
             </div>
