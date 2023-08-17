@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import axios from 'axios';
+import {getCart } from './localStorage'
 import { json2xml } from 'xml-js';
 import { v4 as uuidv4 } from 'uuid';
 import { Client } from 'square';
@@ -42,6 +43,7 @@ const TonerChoice = (props) => {
     const [zip, setZip] = useState("");
     const [country, setCountry] = useState("US");
     const [image, setImage] = useState("");
+    const [photo, setPhoto] = useState("");
     const [yieldStuff, setYield] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
@@ -55,12 +57,11 @@ const TonerChoice = (props) => {
     const tawkMessengerRef = useRef();
     const captchaRef = useRef(null);
 
-
+    
 
     useEffect(() => {
+        setCart(getCart())
         setOem(localStorage.getItem("oem"))
-        console.log(localStorage.getItem("cart"), "this is the cart")
-        // setCart(localStorage.getItem("cart"))
         setColor(localStorage.getItem("color"))
         setPrice(localStorage.getItem("price"))
         setTonerName(localStorage.getItem("name"))
@@ -259,8 +260,11 @@ const TonerChoice = (props) => {
                             }}>Buy Now!</button>
                             <Link href={'/cart'}>
                                 <button onClick={() => {
-                                    const stuff = [...cart, { name: name, oem: oem, price: price, quantity: quantity }]
-                                    localStorage.setItem("cart", JSON.stringify(stuff));
+                                    const stuff = [...cart, { name: tonerName, oem: oem, price: price, quantity: quantity, photo: image }]
+                                    getOrderData().then(() => {
+                                        localStorage.setItem("cart", JSON.stringify(stuff));
+                                    })
+
                                 }} className={styles.button3}>Add To Cart</button>
                             </Link>
                         </div>
