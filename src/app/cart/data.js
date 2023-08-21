@@ -1,9 +1,10 @@
 "use client"
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import Sliver from '../components/sliverr'
-import { getCart } from './localStorage'
+import { Context } from '../cart-context'
+import { getCart, deleteItem } from './localStorage'
 import { Metadata } from 'next'
 // import Form from "./Form";
 import { PatternFormat } from "react-number-format";
@@ -17,21 +18,24 @@ import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const cart = (props) => {
-    // const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
     // const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
-
+    // const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+    
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [quoteToggle, setQuoteToggle] = useState(true);
     const [name, setName] = useState("");
+    const { cart, setCart, cartLook } = useContext(Context)
+    const [newCart, setNewCart] = useState();
+    const [totalPrice, setTotalPrice] = useState();
     const [email, setEmail] = useState("");
+    const [noChange, setFalse] = useState(false);
     const [something, setSomething] = useState(false);
     const [price, setPrice] = useState("");
     const [newPrice, setNewPrice] = useState("");
     const [quantity, setQuantity] = useState("");
     const [number, setNumber] = useState("");
     const [message, setMessage] = useState("");
-    const [shoppingCart, setShoppingCart] = useState();
-    const [cart, setCart] = useState();
+    // const [shoppingCart, setShoppingCart] = useState();
     const [cash, setCash] = useState(true);
     const [finance, setFinance] = useState(false);
     const [rent, setRent] = useState(false);
@@ -41,14 +45,8 @@ const cart = (props) => {
 
 
     useEffect(() => {
-        setShoppingCart(getCart())
-        // setShoppingCart(JSON.parse(localStorage.getItem("cart")))
-        // setShoppingCart(JSON.parse(localStorage.getItem("cart")))
-        setQuantity(localStorage.getItem("quantity"))
-        console.log(JSON.parse(localStorage.getItem("cart")))
-        // console.log(shoppingCart, "this is hte cart that works ")
-        // console.log(localStorage.getItem("cart"), "this is something special ")
-    }, [])
+        setCart(JSON.parse(localStorage.getItem("cart")))
+    }, [noChange])
 
     useEffect(() => {
         setNewPrice(quantity * price)
@@ -93,8 +91,7 @@ const cart = (props) => {
         });
     };
     var removeCartItem = function (id) {
-        setShoppingCart(shoppingCart.splice(1, 1))
-        // debugger
+        setCart(cart.splice(id, 1))
     }
 
     var verifyCallback = function (response) {
@@ -107,8 +104,7 @@ const cart = (props) => {
     const onLoad = () => {
         console.log("onLoad works!");
     };
-
-    console.log(shoppingCart, "cart")
+    console.log(cart, "this is cart")
     return (
         <div className={styles.main}>
             <Sliver />
@@ -195,33 +191,36 @@ const cart = (props) => {
             <div className={styles.bottomMain}>
                 <div>
                     <div className={styles.mainTitleBig}>Your Shopping Cart</div>
-                    {shoppingCart?.map((cart, index) => {
+                    {cart ? <div style={{ color: "black" }}>Your cart is empty</div> : <div style={{ color: "black" }}>
+                    </div>}
+                    {cart?.map((item, index) => {
+                        // setNewPrice(newPrice + item.price)
                         return (
                             <div key={index} className={styles.thirdSection}>
                                 <div className={styles.buggy}>
-                                    <Image src={cart.photo} width={150} height={150}></Image>
+                                    <Image src={item.photo} width={150} height={150}></Image>
                                     <div className={styles.priceBox}>
-                                        <div className={styles.cartTitle}>{cart.name}</div>
+                                        <div className={styles.cartTitle}>{item.name}</div>
                                         <div style={{ display: "flex", paddingTop: "10px", alignItems: "center" }}>
                                             <div style={{ color: "black", fontSize: "15px", fontWeight: "600", paddingRight: "8px" }}>OEM:</div>
-                                            <div style={{ color: "black", fontSize: "14px" }}> {cart.oem}</div>
+                                            <div style={{ color: "black", fontSize: "14px" }}> {item.oem}</div>
                                         </div>
                                     </div>
                                     <div className={styles.cartRow}>
                                         <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                            <div onclick={() => {
+                                            <div onClick={() => {
                                                 setQuantity(quantity - 1)
                                             }} className={styles.plusButton} style={{ color: "black", fontSize: "23px", fontWeight: "300" }}>-</div>
-                                            <div style={{ color: "black", padding: "5px" }}>{quantity}</div>
+                                            <div style={{ color: "black", padding: "5px" }}>{item.quantity}</div>
                                             <div onClick={() => {
                                                 setQuantity(quantity + 1)
                                             }} className={styles.plusButton} style={{ color: "black", fontSize: "21px", fontWeight: "300" }}>+</div>
                                         </div>
                                         <div className={styles.removeBox}>
-                                            <div style={{ color: "black" }}>{something ? newPrice : price}</div>
-                                            <button onClick={() => {
-                                                removeCartItem()
-                                            }}>Remove</button>
+                                            <div style={{color:"black", cursor:"pointer"}} onClick={() => {
+                                                deleteItem(index)
+                                            }}>X</div>
+                                            <div style={{ color: "black" }}>{something ? newPrice : item.price}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -230,9 +229,7 @@ const cart = (props) => {
 
                         )
                     })}
-                    <div className={styles.buyButton}>
-                        <button className={styles.titleSmall}>Checkout</button>
-                    </div>
+
                 </div>
                 <div className={styles.boxContainer}>
                     <div className={styles.box}>
@@ -240,14 +237,16 @@ const cart = (props) => {
                         <div>
                             <div>
                                 <div>Sub-Total</div>
-                                <div>something</div>
+                                <div>{newPrice}</div>
                             </div>
                             <div>
                                 <div>Delivery</div>
                                 <div>something</div>
                             </div>
                         </div>
-                        <button className={styles.buttonCheck}>Checkout</button>
+                        <button onClick={() => {
+
+                        }} className={styles.buttonCheck}>Checkout</button>
                     </div>
                 </div>
             </div>

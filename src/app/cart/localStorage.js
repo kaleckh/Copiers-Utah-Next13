@@ -5,3 +5,10 @@ export function getCart() {
     return cartString ? JSON.parse(cartString) : []
 }
 
+export function deleteItem(id) {
+    const cartString = getCart()
+    const result = cartString.toSpliced(id, 1)
+    localStorage.setItem("cart", JSON.stringify(result))
+
+}
+

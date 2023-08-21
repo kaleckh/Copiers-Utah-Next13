@@ -1,9 +1,10 @@
 "use client"
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
+import { Context } from '../cart-context'
 import axios from 'axios';
-import {getCart } from './localStorage'
+import { getCart } from './localStorage'
 import { json2xml } from 'xml-js';
 import { v4 as uuidv4 } from 'uuid';
 import { Client } from 'square';
@@ -30,7 +31,7 @@ const TonerChoice = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [quoteToggle, setQuoteToggle] = useState(true);
     const [oem, setOem] = useState("");
-    const [cart, setCart] = useState([]);
+    const { cart, setCart, cartLook } = useContext(Context)
     const [aboveOne, setAboveOne] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const [data, setData] = useState("");
@@ -44,6 +45,7 @@ const TonerChoice = (props) => {
     const [country, setCountry] = useState("US");
     const [image, setImage] = useState("");
     const [photo, setPhoto] = useState("");
+    const [cartAccess, setCartAccess] = useState(true);
     const [yieldStuff, setYield] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
@@ -57,17 +59,26 @@ const TonerChoice = (props) => {
     const tawkMessengerRef = useRef();
     const captchaRef = useRef(null);
 
-    
 
     useEffect(() => {
-        setCart(getCart())
-        setOem(localStorage.getItem("oem"))
-        setColor(localStorage.getItem("color"))
-        setPrice(localStorage.getItem("price"))
-        setTonerName(localStorage.getItem("name"))
-        setImage(localStorage.getItem("image"))
-        setYield(localStorage.getItem("yield"))
+        setCart(JSON.parse(localStorage.getItem("cart")))
+        setOem(cartLook.oem)
+        setYield(cartLook.yield)
+        setPrice(cartLook.price)
+        setTonerName(cartLook.name)
+        setImage(cartLook.photo)
+        setColor(cartLook.color)
+        console.log(cartLook, "this is carlook")
     }, [])
+
+    useEffect(() => {
+        cart.map((item) => {
+            if (item.oem === oem) {
+                setCartAccess(false)
+            }
+        })
+    }, [oem])
+
     useEffect(() => {
         if (quantity > 1) {
             setAboveOne(true)
@@ -195,6 +206,8 @@ const TonerChoice = (props) => {
     //             console.error('Error fetching data:', error.message);
     //         });
     // }
+
+    console.log(cart, "this is the cart")
     return (
         <div className={styles.main}>
             <Sliver />
@@ -259,13 +272,12 @@ const TonerChoice = (props) => {
                                 setOrderData()
                             }}>Buy Now!</button>
                             <Link href={'/cart'}>
-                                <button onClick={() => {
+                                <button className={styles.button3}>{cartAccess ? <div onClick={() => {
                                     const stuff = [...cart, { name: tonerName, oem: oem, price: price, quantity: quantity, photo: image }]
-                                    getOrderData().then(() => {
-                                        localStorage.setItem("cart", JSON.stringify(stuff));
-                                    })
+                                    setCart(stuff)
+                                    localStorage.setItem("cart", JSON.stringifiy({ name: tonerName, oem: oem, price: price, quantity: quantity, photo: image }));
 
-                                }} className={styles.button3}>Add To Cart</button>
+                                }} >Add To Cart</div> : <div>Already Added</div>}</button>
                             </Link>
                         </div>
 

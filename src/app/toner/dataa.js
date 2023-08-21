@@ -1,7 +1,8 @@
 "use client"
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
+import {Context} from '../cart-context'
 import Link from "next/link";
 import Sliver from '../components/sliverr'
 import { Metadata } from 'next'
@@ -23,6 +24,7 @@ const Buy = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [quoteToggle, setQuoteToggle] = useState(true);
     const [name, setName] = useState("");
+    const {cart, setCart, setCartLook, cartLook} = useContext(Context)
     // const [image, setImage] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
@@ -296,7 +298,8 @@ const Buy = (props) => {
                     <div className={styles.boxContainer}>
                         {toner.map((item) => {
                             return (
-                                <div key={item.price} onClick={() => {
+                                <div key={item.price} onClick={() => {                                    
+                                    setCartLook({"name": item.name, "oem": item.oem, "price": item.price, "color": item.color, "photo": item.image, "yield": item.yield })
                                     localStorage.setItem("oem", item.oem);
                                     localStorage.setItem("name", item.name);
                                     localStorage.setItem("price", item.price);
