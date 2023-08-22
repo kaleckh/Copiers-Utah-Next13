@@ -2,7 +2,7 @@
 import React, { useContext, useRef, useState } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
-import { Context } from "../cart-context";
+import { CartContext, Context } from "../../providers/cart";
 import Link from "next/link";
 import Sliver from "../components/sliverr";
 import { Metadata } from "next";
@@ -24,18 +24,11 @@ const Buy = (props) => {
   // const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const [quoteToggle, setQuoteToggle] = useState(true);
   const [name, setName] = useState("");
-  const { cart, setCart, setCartLook, cartLook } = useContext(Context);
-  // const [image, setImage] = useState("");
-  const [email, setEmail] = useState("");
+  const { setCartLook } = useContext(CartContext);
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
-  const [cash, setCash] = useState(true);
-  const [finance, setFinance] = useState(false);
-  const [rent, setRent] = useState(false);
   const tawkMessengerRef = useRef();
-  const captchaRef = useRef(null);
 
   const callback = (name, message, number) => {
     setName(name);
