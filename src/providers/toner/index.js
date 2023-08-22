@@ -2,7 +2,7 @@
 
 import { createContext, useState } from "react";
 
-const TonerContext = createContext(undefined);
+export const TonerContext = createContext(undefined);
 
 export const TonerProvider = ({ children }) => {
   const [toners] = useState([

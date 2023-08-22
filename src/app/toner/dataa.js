@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useRef, useState, useContext } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import { Context } from "../cart-context";
@@ -16,7 +16,7 @@ import styles from "../styles/filter.module.css";
 
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import { TonerContext } from "@/providers/toner";
+import { TonerContext } from "../../providers/toner";
 
 const Buy = (props) => {
   const toners = useContext(TonerContext);
@@ -187,7 +187,10 @@ const Buy = (props) => {
                   className={styles.box}
                 >
                   <div className={styles.titleSmallBlack}>{toner.name}</div>
-                  <Link className={styles.somethingElse} href={"/tonerChoice"}>
+                  <Link
+                    className={styles.somethingElse}
+                    href={`/tonerChoice?oem=${toner.oem}`}
+                  >
                     <Image
                       style={{ borderRadius: "5px" }}
                       src={toner.image}
