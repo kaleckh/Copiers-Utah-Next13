@@ -3,55 +3,24 @@ import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import Sliver from "../components/sliverr";
-import { CartContext, Context } from "../../providers/cart";
-import { getCart, deleteItem } from "./localStorage";
-import { Metadata } from "next";
-// import Form from "./Form";
-import { PatternFormat } from "react-number-format";
+import { CartContext } from "../../providers/cart";
 import Head from "next/head";
-import ReCAPTCHA from "react-google-recaptcha";
-// import Menu from "../Photos/menu.png";
-// import Repair from "../Photos/repair.jpg";
 import styles from "../styles/cart.module.css";
 
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Cart = (props) => {
-  // const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
-  // const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
-
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const [quoteToggle, setQuoteToggle] = useState(true);
   const [name, setName] = useState("");
   const { cart, setCart, cartLook } = useContext(CartContext);
-  const [newCart, setNewCart] = useState();
-  const [totalPrice, setTotalPrice] = useState();
-  const [email, setEmail] = useState("");
   const [noChange, setFalse] = useState(false);
   const [something, setSomething] = useState(false);
   const [price, setPrice] = useState("");
   const [newPrice, setNewPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
-  // const [shoppingCart, setShoppingCart] = useState();
-  const [cash, setCash] = useState(true);
-  const [finance, setFinance] = useState(false);
-  const [rent, setRent] = useState(false);
   const tawkMessengerRef = useRef();
-  const captchaRef = useRef(null);
-
-  useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem("cart")));
-  }, [noChange]);
-
-  useEffect(() => {
-    setNewPrice(quantity * price);
-    if (quantity > 1) {
-      setSomething(true);
-    }
-  }, [quantity]);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -102,7 +71,7 @@ const Cart = (props) => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  console.log(cart, "this is cart");
+
   return (
     <div className={styles.main}>
       <Sliver />
@@ -190,19 +159,19 @@ const Cart = (props) => {
       <div className={styles.bottomMain}>
         <div>
           <div className={styles.mainTitleBig}>Your Shopping Cart</div>
-          {cart ? (
+          {cart.length === 0 ? (
             <div style={{ color: "black" }}>Your cart is empty</div>
           ) : (
             <div style={{ color: "black" }}></div>
           )}
-          {cart?.map((item, index) => {
+          {cart?.map((toner, index) => {
             // setNewPrice(newPrice + item.price)
             return (
               <div key={index} className={styles.thirdSection}>
                 <div className={styles.buggy}>
-                  <Image src={item.photo} width={150} height={150}></Image>
+                  <Image src={toner.image} width={150} height={150}></Image>
                   <div className={styles.priceBox}>
-                    <div className={styles.cartTitle}>{item.name}</div>
+                    <div className={styles.cartTitle}>{toner.name}</div>
                     <div
                       style={{
                         display: "flex",
@@ -222,7 +191,7 @@ const Cart = (props) => {
                       </div>
                       <div style={{ color: "black", fontSize: "14px" }}>
                         {" "}
-                        {item.oem}
+                        {toner.oem}
                       </div>
                     </div>
                   </div>
@@ -236,7 +205,17 @@ const Cart = (props) => {
                     >
                       <div
                         onClick={() => {
-                          setQuantity(quantity - 1);
+                          setCart(
+                            cart.map((t) => {
+                              if (t.oem === toner.oem) {
+                                return {
+                                  ...t,
+                                  quantity: t.quantity - 1,
+                                };
+                              }
+                              return t;
+                            })
+                          );
                         }}
                         className={styles.plusButton}
                         style={{
@@ -248,11 +227,11 @@ const Cart = (props) => {
                         -
                       </div>
                       <div style={{ color: "black", padding: "5px" }}>
-                        {item.quantity}
+                        {toner.quantity}
                       </div>
                       <div
                         onClick={() => {
-                          setQuantity(quantity + 1);
+                          // setQuantity(quantity + 1);
                         }}
                         className={styles.plusButton}
                         style={{
@@ -268,18 +247,18 @@ const Cart = (props) => {
                       <div
                         style={{ color: "black", cursor: "pointer" }}
                         onClick={() => {
-                          deleteItem(index);
+                          setCart(cart.filter((t) => t.oem !== toner.oem));
                         }}
                       >
                         X
                       </div>
                       <div style={{ color: "black" }}>
-                        {something ? newPrice : item.price}
+                        {something ? newPrice : toner.price}
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className={styles.line}></div>ww
+                <div className={styles.line}></div>
               </div>
             );
           })}

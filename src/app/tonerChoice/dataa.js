@@ -275,27 +275,16 @@ const TonerChoice = (props) => {
                   {cartAccess ? (
                     <div
                       onClick={() => {
-                        const stuff = [
+                        const updatedCart = [
                           ...cart,
                           {
-                            name: tonerName,
-                            oem: oem,
-                            price: price,
+                            oem: toner.oem,
+                            price: toner.price,
                             quantity: quantity,
-                            photo: image,
+                            image: toner.image,
                           },
                         ];
-                        setCart(stuff);
-                        localStorage.setItem(
-                          "cart",
-                          JSON.stringifiy({
-                            name: tonerName,
-                            oem: oem,
-                            price: price,
-                            quantity: quantity,
-                            photo: image,
-                          })
-                        );
+                        setCart(updatedCart);
                       }}
                     >
                       Add To Cart
