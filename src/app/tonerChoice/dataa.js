@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
-import { Context } from "../cart-context";
+import { CartContext } from "../../providers/cart";
 import { Client } from "square";
 import Sliver from "../components/sliverr";
 import styles from "../styles/fileChoice.module.css";
@@ -21,7 +21,7 @@ const TonerChoice = (props) => {
   const toner = toners.find((toner) => toner.oem === oem);
 
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const { cart, setCart, cartLook } = useContext(Context);
+  const { cart, setCart, cartLook } = useContext(CartContext);
   const [aboveOne, setAboveOne] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [data, setData] = useState("");

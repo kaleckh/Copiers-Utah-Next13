@@ -2,8 +2,7 @@
 
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { Context } from "./cart-context";
-import { useState, useEffect } from "react";
+import { CartProvider } from "../providers/cart";
 import { TonerProvider } from "../providers/toner";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,18 +13,12 @@ const inter = Inter({ subsets: ["latin"] });
 // }
 
 export default function RootLayout({ children }) {
-  let [cart, setCart] = useState([]);
-  let [cartLook, setCartLook] = useState([]);
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
   return (
     <html lang="en">
       <TonerProvider>
-        <Context.Provider value={{ cart, setCart, cartLook, setCartLook }}>
+        <CartProvider>
           <body className={inter.className}>{children}</body>
-        </Context.Provider>
+        </CartProvider>
       </TonerProvider>
     </html>
   );

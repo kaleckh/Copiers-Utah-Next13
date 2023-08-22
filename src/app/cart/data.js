@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import Sliver from "../components/sliverr";
-import { Context } from "../cart-context";
+import { CartContext, Context } from "../../providers/cart";
 import { getCart, deleteItem } from "./localStorage";
 import { Metadata } from "next";
 // import Form from "./Form";
@@ -24,7 +24,7 @@ const Cart = (props) => {
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [quoteToggle, setQuoteToggle] = useState(true);
   const [name, setName] = useState("");
-  const { cart, setCart, cartLook } = useContext(Context);
+  const { cart, setCart, cartLook } = useContext(CartContext);
   const [newCart, setNewCart] = useState();
   const [totalPrice, setTotalPrice] = useState();
   const [email, setEmail] = useState("");
