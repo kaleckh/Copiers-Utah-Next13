@@ -28,6 +28,11 @@ export default function Header(props) {
           </Link>
         </div>
         <div className={styles.pieceContainer}>
+          <Link href="/toner">
+            <div className={styles.headerPieces}>Toner</div>
+          </Link>
+        </div>
+        <div className={styles.pieceContainer}>
           <Link href="/buy">
             <div className={styles.headerPieces}>Contact Us</div>
           </Link>

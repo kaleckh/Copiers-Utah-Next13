@@ -277,7 +277,8 @@ const TonerChoice = (props) => {
                       onClick={() => {
                         const updatedCart = [
                           ...cart,
-                          {
+                            {
+                            name: toner.name,
                             oem: toner.oem,
                             price: toner.price,
                             quantity: quantity,

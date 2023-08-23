@@ -9,8 +9,14 @@ export const CartProvider = ({ children }) => {
   let [cartLook, setCartLook] = useState([]);
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    if (cart.length > 0) {
+      localStorage.setItem("cart", JSON.stringify(cart))
+    }
   }, [cart]);
+
+  useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem("cart")))
+  }, [])
 
   return (
     <CartContext.Provider value={{ cart, setCart, cartLook, setCartLook }}>
