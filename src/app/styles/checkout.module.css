@@ -6,12 +6,17 @@
   }
 .bottomMain {
     width: 100%;
+    color: black;
+    padding: 50px;
     min-height: 700px;
     height: fit-content;
     justify-content: space-evenly;
     display: flex;
     align-items: center;
     background-color: rgb(245,246,247);
+  }
+  .bottomMain div{
+    color: black;
   }
   
   .logoSpace {
@@ -54,13 +59,9 @@
   
   .center {
     display: flex;
-    height: 100%;
-    width: 100%;
-    font-size: 25px;
-    font-weight: 400;
-    justify-content: center;
-    align-items: flex-end;
-    letter-spacing: 1px;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
   }
   
   .centerLarge {
@@ -255,6 +256,7 @@
   .column {
     display: flex;
     flex-direction: column;
+
     
   }
   
@@ -292,7 +294,7 @@
   .title {
     font-size: 30px;
     font-weight: 500;
-    padding: 15px;
+    padding: 8px;
     color: black;
     text-align: center;
     letter-spacing: 1.5px;
@@ -316,9 +318,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    width: 90%;
-    height: 75%;
+    width: 102%;    
+  }
+  .row input{
+    color: black;
+  }
+  .rowTop {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 102%;    
+  }
+  .beginning{
+      display: flex;
+      width: 80%;
+  }
+  .beginning div{
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .rowTop div{
+      width: 200px;
+      text-align: center;
   }
   .column {
     display: flex;
@@ -326,7 +348,7 @@
     align-items: center;
     flex-direction: column;
     width: 90%;
-    height: 40%;
+
   }
   
   .photoBox {
@@ -520,15 +542,14 @@
     align-items: center;
     justify-content: space-around;
     background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height: 650px;
-    width: 500px;
+    height: 750px;
+    width: 550px;
     border-radius: 10px;
   }
   
   .line {
     height: 1.5px;
-    background-color: rgb(174,171,178);
+    background-color: rgb(211,211,211);
     color: rgb(245, 247, 248); ;
     width: 90%;
     
@@ -612,18 +633,30 @@
   }
   
   .titleSmall{
-    font-size: 12px;
-    padding: 3px;
-    margin-top: 5px;
-    width:5%
+    font-size: 21px;
   }
   .input {
-    border: none;
+    border: 1px solid rgb(211,211,211);
     outline: none;
+    border-radius: 4px;
+    width: 204px;
+    padding: 7px;
     border-bottom: 1px black solid;
     background-color: transparent;
     border-color: rgb(169, 172, 173);
     font-size: 17px;
+  }
+  .inputB {
+    border: 1px solid rgb(230, 230, 230);
+    outline: none;
+    border-radius: 4px;
+    padding: 7px;
+    border-bottom: 1px black solid;
+    background-color: transparent;
+    border-color: rgb(169, 172, 173);
+    font-size: 17px;
+    color: black;
+    width: 102%;
   }
   
   .numberContainer {

@@ -6,7 +6,7 @@ import Sliver from "../components/sliverr";
 import { CartContext } from "../../providers/cart";
 import Head from "next/head";
 import styles from "../styles/cart.module.css";
-
+import Link from "next/link";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
@@ -14,7 +14,7 @@ const Cart = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [name, setName] = useState("");
     const [orderId, setOrderId] = useState("");
-    const { cart, setCart, cartLook } = useContext(CartContext);
+    const { cart, setCart, cartLook, setRealPrice } = useContext(CartContext);
     const [noChange, setFalse] = useState(false);
     const [something, setSomething] = useState(false);
     const [price, setPrice] = useState("");
@@ -96,6 +96,7 @@ const Cart = (props) => {
     }
 
     const decimal = function (item) {
+        setRealPrice(item.toFixed(2))
         return item.toFixed(2)
     }
     useEffect(() => {
@@ -324,11 +325,13 @@ const Cart = (props) => {
                         </div>
                         <div className={styles.buttonContainterB}>
                         <button onClick={() => { }} className={styles.buttonCheck}>
-                            Add More Items
+                                Add More Items
             </button>
-                        <button onClick={() => { createLink().then(() => {setOrderId(data.orderId)}) }} className={styles.buttonCheckB}>
-                                Checkout
+                            <Link href={'/checkout'}>
+                        <button  className={styles.buttonCheckB}>
+                                    Checkout
             </button>
+            </Link>
             </div>
                     </div>
                 </div>

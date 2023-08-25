@@ -11,7 +11,10 @@
   "dependencies": {
     "@tawk.to/tawk-messenger-react": "^2.0.2",
     "@vercel/postgres": "^0.4.1",
+    "authorizenet": "^1.0.8",
     "axios": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "net": "^1.0.2",
     "next": "13.4.7",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
@@ -20,6 +23,7 @@
     "react-router-dom": "^6.14.2",
     "react-square-web-payments-sdk": "^3.2.1",
     "square": "^28.0.1",
+    "tls": "^0.0.1",
     "uuid": "^9.0.0",
     "xml-js": "^1.6.11"
   },
