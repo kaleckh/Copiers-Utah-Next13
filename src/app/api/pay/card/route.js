@@ -1,69 +1,96 @@
 import axios from 'axios';
 import { NextResponse } from 'next/server'
-import { ApiContracts, ApiControllers, Constants as SDKConstants } from 'authorizenet'
+import { APIContracts, APIControllers, Constants as SDKConstants } from 'authorizenet'
 
 export async function POST(req, res) {
-    console.log(req, "this is the of the charge credit card")
-    function chargeCreditCard(callback) {
-        var merchantAuthenticationType = new ApiContracts.MerchantAuthenticationType();
+    const newData = await req.json()
+    console.log(newData, "this is the body")
+    function getRandomString(text) {
+        return text + Math.floor((Math.random() * 100000) + 1);
+    }
+
+    function getRandomInt() {
+        return Math.floor((Math.random() * 100000) + 1);
+    }
+
+    function getRandomAmount() {
+        return ((Math.random() * 100) + 1).toFixed(2);
+    }
+
+    function getDate() {
+        return (new Date()).toISOString().substring(0, 10);
+    }
+    function chargeCreditCard() {
+        var merchantAuthenticationType = new APIContracts.MerchantAuthenticationType();
         merchantAuthenticationType.setName("48Z7dSXmGp");
         merchantAuthenticationType.setTransactionKey('5r85BHZ6Hf5wt34G');
 
-        var creditCard = new ApiContracts.CreditCardType();
-        creditCard.setCardNumber(cardInfo.card)
-        creditCard.setExpirationDate(cardInfo.card);
-        creditCard.setCardCode(cardInfo.card);
+        var creditCard = new APIContracts.CreditCardType();
+        // console.log(newData.cardInfo, "this is the of the charge credit card")
+        creditCard.setCardNumber(newData.cardInfo.card)
+        creditCard.setExpirationDate(newData.cardInfo.exp);
+        creditCard.setCardCode(newData.cardInfo.csv);
 
-        var paymentType = new ApiContracts.PaymentType();
+        var paymentType = new APIContracts.PaymentType();
         paymentType.setCreditCard(creditCard);
 
-        var orderDetails = new ApiContracts.OrderType();
+        var orderDetails = new APIContracts.OrderType();
         orderDetails.setInvoiceNumber('INV-12345');
         orderDetails.setDescription('Product Description');
 
-        var tax = new ApiContracts.ExtendedAmountType();
+        var tax = new APIContracts.ExtendedAmountType();
         tax.setAmount('4.26');
         tax.setName('level2 tax name');
         tax.setDescription('level2 tax');
 
-        var duty = new ApiContracts.ExtendedAmountType();
+        var duty = new APIContracts.ExtendedAmountType();
         duty.setAmount('8.55');
         duty.setName('duty name');
         duty.setDescription('duty description');
 
-        var shipping = new ApiContracts.ExtendedAmountType();
+        var shipping = new APIContracts.ExtendedAmountType();
         shipping.setAmount('2.99');
         shipping.setName('shipping name');
         shipping.setDescription('shipping description');
 
-        var billTo = new ApiContracts.CustomerAddressType();
-        billTo.setFirstName(personInfo.firstName);
-        billTo.setLastName(personInfo.lastName);
+        var billTo = new APIContracts.CustomerAddressType();
+        billTo.setFirstName(newData.personInfo.firstName);
+        billTo.setLastName(newData.personInfo.lastName);
         billTo.setCompany('Not needed');
-        billTo.setAddress(personInfo.address);
-        billTo.setCity(personInfo.city);
-        billTo.setState(personInfo.state);
-        billTo.setZip(personInfo.zip);
+        billTo.setAddress(newData.personInfo.address);
+        billTo.setCity(newData.personInfo.city);
+        billTo.setState(newData.personInfo.state);
+        billTo.setZip(newData.personInfo.zip);
         billTo.setCountry('USA');
 
-        var shipTo = new ApiContracts.CustomerAddressType();
-        shipTo.setFirstName(personInfo.firstName);
-        shipTo.setLastName(personInfo.lastName);
+        var shipTo = new APIContracts.CustomerAddressType();
+        shipTo.setFirstName(newData.personInfo.firstName);
+        shipTo.setLastName(newData.personInfo.lastName);
         shipTo.setCompany('Thyme for Tea');
-        shipTo.setAddress(personInfo.address);
-        shipTo.setCity(personInfo.city);
-        shipTo.setState(personInfo.state);
-        shipTo.setZip(personInfo.zip);
+        shipTo.setAddress(newData.personInfo.address);
+        shipTo.setCity(newData.personInfo.city);
+        shipTo.setState(newData.personInfo.state);
+        shipTo.setZip(newData.personInfo.zip);
         shipTo.setCountry('USA');
 
-        var lineItem_id1 = new ApiContracts.LineItemType();
+        // cart.map((item, index) => {
+
+        //     let`lineItem_${index}` = new APIContracts.LineItemType();
+        //     lineItem_id1.setItemId('1');
+        //     lineItem_id1.setName('vase');
+        //     lineItem_id1.setDescription('cannes logo');
+        //     lineItem_id1.setQuantity('18');
+        //     lineItem_id1.setUnitPrice(45.00);
+
+        // })
+        var lineItem_id1 = new APIContracts.LineItemType();
         lineItem_id1.setItemId('1');
         lineItem_id1.setName('vase');
         lineItem_id1.setDescription('cannes logo');
         lineItem_id1.setQuantity('18');
         lineItem_id1.setUnitPrice(45.00);
 
-        var lineItem_id2 = new ApiContracts.LineItemType();
+        var lineItem_id2 = new APIContracts.LineItemType();
         lineItem_id2.setItemId('2');
         lineItem_id2.setName('vase2');
         lineItem_id2.setDescription('cannes logo2');
@@ -74,14 +101,14 @@ export async function POST(req, res) {
         lineItemList.push(lineItem_id1);
         lineItemList.push(lineItem_id2);
 
-        var lineItems = new ApiContracts.ArrayOfLineItem();
+        var lineItems = new APIContracts.ArrayOfLineItem();
         lineItems.setLineItem(lineItemList);
 
-        var userField_a = new ApiContracts.UserField();
+        var userField_a = new APIContracts.UserField();
         userField_a.setName('A');
         userField_a.setValue('Aval');
 
-        var userField_b = new ApiContracts.UserField();
+        var userField_b = new APIContracts.UserField();
         userField_b.setName('B');
         userField_b.setValue('Bval');
 
@@ -89,14 +116,14 @@ export async function POST(req, res) {
         userFieldList.push(userField_a);
         userFieldList.push(userField_b);
 
-        var userFields = new ApiContracts.TransactionRequestType.UserFields();
+        var userFields = new APIContracts.TransactionRequestType.UserFields();
         userFields.setUserField(userFieldList);
 
-        var transactionSetting1 = new ApiContracts.SettingType();
+        var transactionSetting1 = new APIContracts.SettingType();
         transactionSetting1.setSettingName('duplicateWindow');
         transactionSetting1.setSettingValue('120');
 
-        var transactionSetting2 = new ApiContracts.SettingType();
+        var transactionSetting2 = new APIContracts.SettingType();
         transactionSetting2.setSettingName('recurringBilling');
         transactionSetting2.setSettingValue('false');
 
@@ -104,13 +131,13 @@ export async function POST(req, res) {
         transactionSettingList.push(transactionSetting1);
         transactionSettingList.push(transactionSetting2);
 
-        var transactionSettings = new ApiContracts.ArrayOfSetting();
+        var transactionSettings = new APIContracts.ArrayOfSetting();
         transactionSettings.setSetting(transactionSettingList);
 
-        var transactionRequestType = new ApiContracts.TransactionRequestType();
-        transactionRequestType.setTransactionType(ApiContracts.TransactionTypeEnum.AUTHCAPTURETRANSACTION);
+        var transactionRequestType = new APIContracts.TransactionRequestType();
+        transactionRequestType.setTransactionType(APIContracts.TransactionTypeEnum.AUTHCAPTURETRANSACTION);
         transactionRequestType.setPayment(paymentType);
-        transactionRequestType.setAmount(utils.getRandomAmount());
+        transactionRequestType.setAmount(getRandomAmount());
         transactionRequestType.setLineItems(lineItems);
         transactionRequestType.setUserFields(userFields);
         transactionRequestType.setOrder(orderDetails);
@@ -121,14 +148,14 @@ export async function POST(req, res) {
         transactionRequestType.setShipTo(shipTo);
         transactionRequestType.setTransactionSettings(transactionSettings);
 
-        var createRequest = new ApiContracts.CreateTransactionRequest();
+        var createRequest = new APIContracts.CreateTransactionRequest();
         createRequest.setMerchantAuthentication(merchantAuthenticationType);
         createRequest.setTransactionRequest(transactionRequestType);
 
         //pretty print request
-        console.log(JSON.stringify(createRequest.getJSON(), null, 2));
+        // console.log(JSON.stringify(createRequest.getJSON(), null, 2));
 
-        var ctrl = new ApiControllers.CreateTransactionController(createRequest.getJSON());
+        var ctrl = new APIControllers.CreateTransactionController(createRequest.getJSON());
         //Defaults to sandbox
         //ctrl.setEnvironment(SDKConstants.endpoint.production);
 
@@ -136,13 +163,16 @@ export async function POST(req, res) {
 
             var apiResponse = ctrl.getResponse();
 
-            var response = new ApiContracts.CreateTransactionResponse(apiResponse);
+            var response = new APIContracts.CreateTransactionResponse(apiResponse);
 
             //pretty print response
             console.log(JSON.stringify(response, null, 2));
+            // if (response.getTransactionResponse().getMessages().getMessage()[0].getCode() === 1) {
+
+            // }
 
             if (response != null) {
-                if (response.getMessages().getResultCode() == ApiContracts.MessageTypeEnum.OK) {
+                if (response.getMessages().getResultCode() == APIContracts.MessageTypeEnum.OK) {
                     if (response.getTransactionResponse().getMessages() != null) {
                         console.log('Successfully created transaction with Transaction ID: ' + response.getTransactionResponse().getTransId());
                         console.log('Response Code: ' + response.getTransactionResponse().getResponseCode());
@@ -174,7 +204,7 @@ export async function POST(req, res) {
                 console.log('Null Response.');
             }
 
-            callback(response);
+            // callback(response);
         });
     }
 

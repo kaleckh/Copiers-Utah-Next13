@@ -167,16 +167,16 @@ const Buy = (props) => {
               return (
                 <div
                   key={toner.oem}
-                  onClick={() => {
-                    setCartLook({
-                      name: toner.name,
-                      oem: toner.oem,
-                      price: toner.price,
-                      color: toner.color,
-                      photo: toner.image,
-                      yield: toner.yield,
-                    });
-                  }}
+                  // onClick={() => {
+                  //   setCartLook({
+                  //     name: toner.name,
+                  //     oem: toner.oem,
+                  //     price: toner.price,
+                  //     color: toner.color,
+                  //     photo: toner.image,
+                  //     yield: toner.yield,
+                  //   });
+                  // }}
                   className={styles.box}
                 >
                   <div className={styles.titleSmallBlack}>{toner.name}</div>

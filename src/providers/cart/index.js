@@ -8,7 +8,7 @@ export const CartProvider = ({ children }) => {
   let [realPrice, setRealPrice] = useState();
   let [cart, setCart] = useState([]);
   let [cartLook, setCartLook] = useState([]);
-  let [cardInfo, setCardInfoGlobal] = useState({});
+  let [cardInfo, setCardInfo] = useState({});
   let [personInfo, setPersonInfo] = useState({});
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
   }, [])
 
   return (
-    <CartContext.Provider value={{ cart, setCart, cartLook, setCartLook, setRealPrice, cardInfo, setCardInfoGlobal, personInfo, setPersonInfo }}>
+    <CartContext.Provider value={{ cart, setCart, setRealPrice, cardInfo, setCardInfo, personInfo, setPersonInfo }}>
       {children}
     </CartContext.Provider>
   );

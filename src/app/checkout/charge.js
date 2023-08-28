@@ -1,7 +1,7 @@
 'use strict';
 import { CartContext } from "../../providers/cart";
-// import authorizenet from 'authorizenet'
 import { ApiContracts, ApiControllers, Constants as SDKConstants } from 'authorizenet'
+// import authorizenet from 'authorizenet'
 // var utils = require('../utils.js');
 // var constants = require('../constants.js');
 export function chargeCreditCard(callback) {

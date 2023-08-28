@@ -19,6 +19,7 @@ const checkout = (props) => {
     const [exp, setExp] = useState();
     const [csv, setCsv] = useState();
     const [card, setCard] = useState();
+    const [localCart, setLocalCart] = useState();
     const [cardInfoLocal, setCardInfoLocal] = useState({});
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
@@ -26,7 +27,7 @@ const checkout = (props) => {
     const [phone, setPhone] = useState();
     const [noChange, setFalse] = useState(false);
     const [realPriceLocal, setRealPriceLocal] = useState();
-    const { realPrice, setPersonInfo, setCardInfoGlobal, personInfo, cardInfo } = useContext(CartContext);
+    const { realPrice, setPersonInfo, setCardInfo, personInfo, cardInfo, cart } = useContext(CartContext);
     const [something, setSomething] = useState(false);
     const [price, setPrice] = useState("");
     const [total, setTotal] = useState(0);
@@ -50,28 +51,36 @@ const checkout = (props) => {
 
     }, [firstName, lastName, email, phone])
     useEffect(() => {
-        setCardInfoGlobal({
+
+        setCardInfo({
             "card": card,
             "csv": csv,
             "exp": exp
         })
-        // setCardInfoGlobal(cardInfo)
 
     }, [csv, card, exp])
 
+    async function callBack() {
 
+    }
+    // useEffect(() => {
+    //     setLocalCart(cart)
+    // }, [cart])
 
 
     async function createDistribution() {
+
         const requestOptions = {
             method: "POST",
             body: JSON.stringify({
-                setCardInfoGlobal,
-                personInfo
+                cardInfo,
+                personInfo,
+                cart
+
             }),
         };
 
-        const response = await fetch('/api/pay/card', requestOptions);
+        const response = await fetch('/api/pay/card', requestOptions, callBack);
         const data1 = await response.json();
         // console.log(data1, "this is the data");
     }
