@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
   let [personInfo, setPersonInfo] = useState({});
 
   useEffect(() => {
-    if (cart.length > 1) {
+    if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart))
     }
   }, [cart]);

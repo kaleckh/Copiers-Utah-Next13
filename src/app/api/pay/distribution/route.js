@@ -7,6 +7,18 @@ export async function POST(req, res) {
     console.log(newData)
     const url = 'https://uat.portal.suppliesnet.net/PurchaseOrders/PurchaseOrder.asmx';
 
+    const items = newData.cart.map((item, index) => {
+        return ` 
+        <dmi:PurchaseOrderLine>
+            <dmi:Rank>${index + 1}</dmi:Rank>
+            <dmi:OEMNumber>${item.oem}</dmi:OEMNumber>
+            <dmi:OrderQuantity>${item.quantity}</dmi:OrderQuantity>
+            <dmi:UOM>EA</dmi:UOM>
+            <dmi:UnitPrice>${item.price}</dmi:UnitPrice>
+        </dmi:PurchaseOrderLine>`
+    })
+
+
     const headers = {
         'Content-Type': 'text/xml',
         'SOAPAction': "http://portal.suppliesnet.net/PlaceOrder"
@@ -20,16 +32,16 @@ export async function POST(req, res) {
                     <dmi:PurchaseOrders TestIndicator="T" SenderID="4012025D2D" ReceiverID="DMID" APIKey="0751E703-3D4D-4B37-9156-088F43AECBDB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dmi="http://portal.suppliesnet.net">
                         <dmi:PurchaseOrder>
                             <dmi:OrderType>Dealer DropShip</dmi:OrderType>
-                            <dmi:CustomerPONumber>${newData.id}</dmi:CustomerPONumber>
-                            <dmi:DealerPONumber>${newData.id}</dmi:DealerPONumber>
+                            <dmi:CustomerPONumber>${newData.personInfo.id}</dmi:CustomerPONumber>
+                            <dmi:DealerPONumber>${newData.personInfo.id}</dmi:DealerPONumber>
                             <dmi:ShipTo>
-                                <dmi:Name>${newData.name}</dmi:Name>
-                                <dmi:Attn>${newData.name}</dmi:Attn>
-                                <dmi:Address1>${newData.addy}</dmi:Address1>
+                                <dmi:Name>${newData.personInfo.firstName}</dmi:Name>
+                                <dmi:Attn>${newData.personInfo.firstName}</dmi:Attn>
+                                <dmi:Address1>${newData.personInfo.address}</dmi:Address1>
                                 <dmi:Address2 />
-                                <dmi:City>${newData.city}</dmi:City>
-                                <dmi:State>${newData.state}</dmi:State>
-                                <dmi:ZipCode>${newData.zip}</dmi:ZipCode>
+                                <dmi:City>${newData.personInfo.city}</dmi:City>
+                                <dmi:State>${newData.personInfo.state}</dmi:State>
+                                <dmi:ZipCode>${newData.personInfo.zip}</dmi:ZipCode>
                             </dmi:ShipTo>
                             <dmi:ShippingInformation>
                                 <dmi:ImmediateOrderShipper>Standard Shipping</dmi:ImmediateOrderShipper>
@@ -37,13 +49,7 @@ export async function POST(req, res) {
                             </dmi:ShippingInformation>
                             <dmi:Comment>Test comment</dmi:Comment>
                             <dmi:PurchaseOrderLines>
-                                <dmi:PurchaseOrderLine>
-                                    <dmi:Rank>1</dmi:Rank>
-                                    <dmi:OEMNumber>${newData.oem}</dmi:OEMNumber>
-                                    <dmi:OrderQuantity>${newData.quantity}</dmi:OrderQuantity>
-                                    <dmi:UOM>EA</dmi:UOM>
-                                    <dmi:UnitPrice>${newData.price}</dmi:UnitPrice>
-                                </dmi:PurchaseOrderLine>
+                                ${items}
                             </dmi:PurchaseOrderLines>
                         </dmi:PurchaseOrder>
                     </dmi:PurchaseOrders>
@@ -55,7 +61,7 @@ export async function POST(req, res) {
 
     try {
         const response = await axios.post(url, data, { headers })
-        // console.log(response)
+        console.log(response)
         return NextResponse.json({ "succesful": "something" })
     } catch (error) {
         console.error('Error creating payment link:', error);

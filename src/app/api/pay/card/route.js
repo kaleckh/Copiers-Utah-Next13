@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { NextResponse } from 'next/server'
 import { APIContracts, APIControllers, Constants as SDKConstants } from 'authorizenet'
-
+import { promises } from 'fs';
 export async function POST(req, res) {
     const newData = await req.json()
     console.log(newData, "this is the body")
@@ -22,8 +22,8 @@ export async function POST(req, res) {
     }
     function chargeCreditCard() {
         var merchantAuthenticationType = new APIContracts.MerchantAuthenticationType();
-        merchantAuthenticationType.setName("48Z7dSXmGp");
-        merchantAuthenticationType.setTransactionKey('5r85BHZ6Hf5wt34G');
+        merchantAuthenticationType.setName("844jhN3ZG9");
+        merchantAuthenticationType.setTransactionKey('5v7KjG5pR939YGvg');
 
         var creditCard = new APIContracts.CreditCardType();
         // console.log(newData.cardInfo, "this is the of the charge credit card")
@@ -73,33 +73,21 @@ export async function POST(req, res) {
         shipTo.setZip(newData.personInfo.zip);
         shipTo.setCountry('USA');
 
-        // cart.map((item, index) => {
+        const lineItemList = newData.cart.map((item, index) => {
 
-        //     let`lineItem_${index}` = new APIContracts.LineItemType();
-        //     lineItem_id1.setItemId('1');
-        //     lineItem_id1.setName('vase');
-        //     lineItem_id1.setDescription('cannes logo');
-        //     lineItem_id1.setQuantity('18');
-        //     lineItem_id1.setUnitPrice(45.00);
+            let cartItem = new APIContracts.LineItemType();
+            cartItem.setItemId('1');
+            cartItem.setName('vase');
+            cartItem.setDescription('cannes logo');
+            cartItem.setQuantity('18');
+            cartItem.setUnitPrice(45.00);
 
-        // })
-        var lineItem_id1 = new APIContracts.LineItemType();
-        lineItem_id1.setItemId('1');
-        lineItem_id1.setName('vase');
-        lineItem_id1.setDescription('cannes logo');
-        lineItem_id1.setQuantity('18');
-        lineItem_id1.setUnitPrice(45.00);
+            return cartItem
 
-        var lineItem_id2 = new APIContracts.LineItemType();
-        lineItem_id2.setItemId('2');
-        lineItem_id2.setName('vase2');
-        lineItem_id2.setDescription('cannes logo2');
-        lineItem_id2.setQuantity('28');
-        lineItem_id2.setUnitPrice('25.00');
+        })
 
-        var lineItemList = [];
-        lineItemList.push(lineItem_id1);
-        lineItemList.push(lineItem_id2);
+
+
 
         var lineItems = new APIContracts.ArrayOfLineItem();
         lineItems.setLineItem(lineItemList);
@@ -159,63 +147,71 @@ export async function POST(req, res) {
         //Defaults to sandbox
         //ctrl.setEnvironment(SDKConstants.endpoint.production);
 
-        ctrl.execute(function () {
 
-            var apiResponse = ctrl.getResponse();
+        return new Promise((resolve, reject) => {
+            ctrl.execute(function () {
 
-            var response = new APIContracts.CreateTransactionResponse(apiResponse);
+                var apiResponse = ctrl.getResponse();
 
-            //pretty print response
-            console.log(JSON.stringify(response, null, 2));
-            // if (response.getTransactionResponse().getMessages().getMessage()[0].getCode() === 1) {
+                var response = new APIContracts.CreateTransactionResponse(apiResponse);
+                resolve(response)
+                //pretty print response
+                // console.log(JSON.stringify(response, null, 2));
+                // if (response?.getTransactionResponse().getMessages().getMessage()[0].getCode() === 1) {
 
-            // }
+                // }
 
-            if (response != null) {
-                if (response.getMessages().getResultCode() == APIContracts.MessageTypeEnum.OK) {
-                    if (response.getTransactionResponse().getMessages() != null) {
-                        console.log('Successfully created transaction with Transaction ID: ' + response.getTransactionResponse().getTransId());
-                        console.log('Response Code: ' + response.getTransactionResponse().getResponseCode());
-                        console.log('Message Code: ' + response.getTransactionResponse().getMessages().getMessage()[0].getCode());
-                        console.log('Description: ' + response.getTransactionResponse().getMessages().getMessage()[0].getDescription());
-                    }
-                    else {
-                        console.log('Failed Transaction.');
-                        if (response.getTransactionResponse().getErrors() != null) {
-                            console.log('Error Code: ' + response.getTransactionResponse().getErrors().getError()[0].getErrorCode());
-                            console.log('Error message: ' + response.getTransactionResponse().getErrors().getError()[0].getErrorText());
-                        }
-                    }
-                }
-                else {
-                    console.log('Failed Transaction. ');
-                    if (response.getTransactionResponse() != null && response.getTransactionResponse().getErrors() != null) {
+                // if (response != null) {
+                //     if (response.getMessages().getResultCode() == APIContracts.MessageTypeEnum.OK) {
+                //         if (response.getTransactionResponse().getMessages() != null) {
+                //             console.log('Successfully created transaction with Transaction ID: ' + response.getTransactionResponse().getTransId());
+                //             console.log('Response Code: ' + response.getTransactionResponse().getResponseCode());
+                //             console.log('Message Code: ' + response.getTransactionResponse().getMessages().getMessage()[0].getCode());
+                //             console.log('Description: ' + response.getTransactionResponse().getMessages().getMessage()[0].getDescription());
 
-                        console.log('Error Code: ' + response.getTransactionResponse().getErrors().getError()[0].getErrorCode());
-                        console.log('Error message: ' + response.getTransactionResponse().getErrors().getError()[0].getErrorText());
-                    }
-                    else {
-                        console.log('Error Code: ' + response.getMessages().getMessage()[0].getCode());
-                        console.log('Error message: ' + response.getMessages().getMessage()[0].getText());
-                    }
-                }
-            }
-            else {
-                console.log('Null Response.');
-            }
+                //         }
 
-            // callback(response);
-        });
+                //         else {
+                //             console.log('Failed Transaction.');
+                //             if (response.getTransactionResponse().getErrors() != null) {
+                //                 console.log('Error Code: ' + response.getTransactionResponse().getErrors().getError()[0].getErrorCode());
+                //                 console.log('Error message: ' + response.getTransactionResponse().getErrors().getError()[0].getErrorText());
+                //             }
+                //         }
+                //     }
+                //     else {
+                //         console.log('Failed Transaction. ');
+                //         if (response.getTransactionResponse() != null && response.getTransactionResponse().getErrors() != null) {
+
+                //             console.log('Error Code: ' + response.getTransactionResponse().getErrors().getError()[0].getErrorCode());
+                //             console.log('Error message: ' + response.getTransactionResponse().getErrors().getError()[0].getErrorText());
+                //         }
+                //         else {
+                //             console.log('Error Code: ' + response.getMessages().getMessage()[0].getCode());
+                //             console.log('Error message: ' + response.getMessages().getMessage()[0].getText());
+                //         }
+                //     }
+                //     return response
+
+                // }
+                // else {
+                //     console.log('Null Response.');
+                // }
+
+                // createDistribution(response)
+
+            });
+        })
     }
 
 
     try {
-        const response = chargeCreditCard()
-        // console.log(response, "this is the response to the api call")
+        const response = await chargeCreditCard()
+        console.log(response, "this is the response to the api call")
 
-        return NextResponse.json({ "success": "success" })
+        return NextResponse.json({ "messageeee": response })
     } catch (error) {
-        console.error('Error creating payment link:', error);
+        console.error('the info I need:', error);
     }
     // res.status(200).json(result)
 }

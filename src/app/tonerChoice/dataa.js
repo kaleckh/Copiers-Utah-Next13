@@ -55,7 +55,7 @@ const TonerChoice = (props) => {
     }
   }, [quantity, toner.price]);
 
-  useEffect(() => {});
+  useEffect(() => { });
   const sendSuccessEmail = (e) => {
     e.preventDefault();
     fetch("https://api.smtp2go.com/v3/email/send", {
@@ -277,7 +277,7 @@ const TonerChoice = (props) => {
                       onClick={() => {
                         const updatedCart = [
                           ...cart,
-                            {
+                          {
                             name: toner.name,
                             oem: toner.oem,
                             price: toner.price,
@@ -286,13 +286,15 @@ const TonerChoice = (props) => {
                           },
                         ];
                         setCart(updatedCart);
+                        // JSON.stringify(localStorage.setItem("cart", updatedCart))
+
                       }}
                     >
                       Add To Cart
                     </div>
                   ) : (
-                    <div>Already Added</div>
-                  )}
+                      <div>Already Added</div>
+                    )}
                 </button>
               </Link>
             </div>
