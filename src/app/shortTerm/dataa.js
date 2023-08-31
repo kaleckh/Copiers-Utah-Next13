@@ -104,51 +104,6 @@ const ShortTerm = () => {
   return (
     <div className={styles.main}>
       <Sliver />
-      <Head>
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/ShortTerm/" />
-        <title>Short-Term Copier Rentals | Copiers Utah</title>
-        <meta
-          name="description"
-          content="Need a copier for a short-term project or event? Copiers Utah offers flexible short-term copier rentals with advanced features and affordable prices. Contact us today to learn more."
-        />
-        <meta
-          name="keywords"
-          content="short-term copier rentals, copier rental, short-term rental, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              name: "Short-Term Copier Rentals",
-              description:
-                "Flexible short-term copier rentals with advanced features and affordable prices.",
-              provider: {
-                "@type": "Corporation",
-                name: "Copiers Utah",
-                telephone: "(801) 261-0510",
-                email: "info@copiersutah.com",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: "554 W 8360 S",
-                  addressLocality: "Sandy",
-                  addressRegion: "Utah",
-                  postalCode: "84070",
-                  addressCountry: "USA",
-                },
-              },
-              areaServed: {
-                "@type": "AdministrativeArea",
-                name: "Utah",
-              },
-              serviceType: "Copier Rental",
-              url: "https://copiersutah.com/short-term-rental",
-            }),
-          }}
-        />
-      </Head>
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -156,24 +111,6 @@ const ShortTerm = () => {
           widgetId="default"
           useRef={tawkMessengerRef}
         />
-      </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp"
-            alt="our copiers utah logo"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-            </div>
-          </div>
-        </div>
       </div>
       <Header />
       <div className={styles.secondSection}>
@@ -291,7 +228,7 @@ const ShortTerm = () => {
           We Rent Copiers For All Types Of Events!
         </h3>
         <div
-          style={{ display: "flex", justifyContent: "center", height: "fit-content", flexDirection:"column", alignItems:"center" }}
+          style={{ display: "flex", justifyContent: "center", height: "fit-content", flexDirection: "column", alignItems: "center" }}
         >
           <div className={styles.row}>
             <div className={styles.Realcolumn}>

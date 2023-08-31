@@ -86,59 +86,8 @@ const Buy = (props) => {
   console.log(SECRET_KEY, "this is secret key")
   return (
     <div className={styles.main}>
-      <Sliver/>
-      <Head>
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/buy/" />
-        <title>
-          Get a Quote for High-Quality New and Refurbished Copiers | Copiers Utah
-        </title>
-        <meta
-          name="description"
-          content="Looking for a high-quality copier for your office? Copiers Utah offers a range of advanced copy machines for sale, including new and refurbished options. Fill out our easy form to get a personalized quote today."
-        />
-        <meta
-          name="keywords"
-          content="office copiers, copiers for sale, refurbished copiers, get a quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Product",
-              name: "New and Refurbished Copiers",
-              description:
-                "High-quality copiers for your office, including new and refurbished options.",
-              brand: "Copiers Utah",
-              url: "https://copiersutah.com/home",
-              image: "https://copiersutah.com/static/logo.webp",
-              offers: {
-                "@type": "AggregateOffer",
-                priceCurrency: "USD",
-                availability: "https://schema.org/InStock",
-                lowPrice: "Your Lowest Price",
-                highPrice: "Your Highest Price",
-                offerCount: "Number of Copiers Available",
-                seller: {
-                  "@type": "LocalBusiness",
-                  name: "Copiers Utah",
-                  telephone: "(801) 261-0510",
-                  email: "info@copiersutah.com",
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "554 W 8360 S",
-                    addressLocality: "Sandy",
-                    addressRegion: "Utah",
-                    postalCode: "84070",
-                    addressCountry: "USA",
-                  },
-                },
-              },
-            }),
-          }}
-        />
-      </Head>
+      <Sliver />
+
 
       <div>
         <TawkMessengerReact
@@ -147,24 +96,6 @@ const Buy = (props) => {
           widgetId="default"
           useRef={tawkMessengerRef}
         />
-      </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp"
-            alt="buy a used or new business copier"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-            </div>
-          </div>
-        </div>
       </div>
       <Header />
       <div className={styles.main}>

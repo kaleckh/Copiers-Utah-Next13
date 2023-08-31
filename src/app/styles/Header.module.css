@@ -6,10 +6,41 @@
     overflow: hidden;
     justify-content: flex-end;
     align-items: center;
-    height: 7.5vh;
+    height: fit-content;
+    flex-direction: column;
     object-fit: cover;
   }
-  
+    
+  .logoSpace {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .logoSpaceContainer {
+    height: 15vh;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+  }
+  .columnContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    height: 30vh;
+  }
+    
+  .infoBig {
+    color: black;
+    font-weight: 700;
+    font-size: 30px;
+  }
+  .logoSpace {
+    width: 95%;
+    justify-content: space-around;
+  }
   .pieceContainer {
     height: 100%;
     color: white;

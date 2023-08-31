@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
+import Sliver from '../components/sliverr'
 import Head from "next/head";
 import { Metadata } from 'next'
 // import Form from "./Form";
@@ -10,6 +11,7 @@ import styles from "../styles/Finance.module.css";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import ReCAPTCHA from "react-google-recaptcha";
+
 
 const Finance = () => {
   const [toggle, setToggle] = useState(false);
@@ -69,58 +71,11 @@ const Finance = () => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
- 
+
   console.log(number, "this is number");
   return (
     <div className={styles.main}>
-      <Head>
-        <link rel="canonical" href="https://copiersutah.com/Finance/" />
-        <title>
-          Financing and Buying Copiers | Get a Quote Today | Copiers Utah
-        </title>
-        <meta
-          name="description"
-          content="Copiers Utah offers a range of financing options for buying copiers. Fill out our easy form to get a personalized quote and learn more about our financing options."
-        />
-        <meta
-          name="keywords"
-          content="copier financing, copier buying, office copiers, copier quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Product",
-              name: "Financing and Buying Copiers",
-              description:
-                "Copiers Utah offers a range of financing options for buying copiers.",
-              brand: "Copiers Utah",
-              url: "https://copiersutah.com/finance",
-              image: "https://copiersutah.com/static/logo.webp",
-              offers: {
-                "@type": "Offer",
-                priceCurrency: "USD",
-                availability: "https://schema.org/InStock",
-                seller: {
-                  "@type": "LocalBusiness",
-                  name: "Copiers Utah",
-                  telephone: "(801) 261-0510",
-                  email: "info@copiersutah.com",
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "554 W 8360 S",
-                    addressLocality: "Sandy",
-                    addressRegion: "Utah",
-                    postalCode: "84070",
-                    addressCountry: "USA",
-                  },
-                },
-              },
-            }),
-          }}
-        />
-      </Head>
+      <Sliver />
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -129,24 +84,7 @@ const Finance = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp"
-            alt="copier leasing"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <Header />
       <div id="quote" className={styles.secondSection}>
         <div className={styles.eighty}>

@@ -269,10 +269,11 @@
   }
   
   .sliver{
-    height: 20px; 
+    height: 30px; 
     background-color: rgb(34, 48, 62);
     display: flex; 
     justify-content: flex-end; 
+    align-items: center;
     letter-spacing:1px; 
     padding-right:20px;
     width:100%

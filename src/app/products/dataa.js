@@ -80,24 +80,7 @@ const Products = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp	"
-            alt="Our copiers utah logo"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div></div>
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       <Header />
       <div className={styles.mainContainer}>

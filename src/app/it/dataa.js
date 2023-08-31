@@ -99,59 +99,11 @@ const It = (props) => {
             }
         });
     };
- 
+
     return (
         <div className={styles.main}>
             <Sliver />
-            <Head>
-                <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://copiersutah.com/It/" />
-                <title>
-                    IT Services and Support | Get a Quote Today | Copiers Utah
-        </title>
-                <meta
-                    name="description"
-                    content="Copiers Utah provides comprehensive IT services and support. Fill out our easy form to get a personalized quote and get the IT help you need."
-                />
-                <meta
-                    name="keywords"
-                    content="IT services, IT support, IT help, IT quote, copiers Utah"
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "ProfessionalService",
-                            name: "Copiers Utah",
-                            description:
-                                "Copiers Utah provides comprehensive IT services and support.",
-                            telephone: "(801) 261-0510",
-                            email: "info@copiersutah.com",
-                            address: {
-                                "@type": "PostalAddress",
-                                streetAddress: "554 W 8360 S",
-                                addressLocality: "Sandy",
-                                addressRegion: "Utah",
-                                postalCode: "84070",
-                                addressCountry: "USA",
-                            },
-                            image: "https://copiersutah.com/static/logo.webp",
-                            url: "https://copiersutah.com",
-                            areaServed: "Utah",
-                            priceRange: "$$",
-                            founder: {
-                                "@type": "Person",
-                                name: "Paul Mooney",
-                            },
-                            sameAs: [
-                                "https://www.facebook.com/your-facebook-page",
-                                "https://www.linkedin.com/company/your-linkedin-page",
-                            ],
-                        }),
-                    }}
-                />
-            </Head>
+
             <div>
                 <TawkMessengerReact
                     onLoad={onLoad}
@@ -160,24 +112,7 @@ const It = (props) => {
                     useRef={tawkMessengerRef}
                 />
             </div>
-            <div className={styles.logoSpaceContainer}>
-                <div className={styles.logoSpace}>
-                    <Image
-                        src="/static/logo.webp"
-                        alt="IT services provided by Copiers Utah"
-                        width={150}
-                        height={100}
-                    />
-                    <div className={styles.columnContainer}>
-                        <div />
-                        <div className={styles.infoBig}>Copiers Utah</div>
-                        <div className={styles.mediumColumn}>
-                            <div className={styles.infoSmall}>info@copiersutah.com</div>
-                            <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <Header />
             <div className={styles.secondSection}>
                 <div className={styles.smallScreen}>

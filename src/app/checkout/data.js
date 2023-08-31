@@ -17,6 +17,7 @@ const checkout = (props) => {
     const [orderId, setOrderId] = useState("");
     const [city, setCity] = useState();
     const [hidden, setHidden] = useState(false);
+    const [hiddenBottom, setHiddenBottom] = useState(false);
     const [preShip, setPreShip] = useState();
     const [exp, setExp] = useState();
     const [billing, setBilling] = useState(false);
@@ -45,6 +46,7 @@ const checkout = (props) => {
     const tawkMessengerRef = useRef();
 
     useEffect(() => {
+        setTotal(JSON.parse(localStorage.getItem("total")))
 
         setPersonInfo({
             "firstName": firstName,
@@ -146,7 +148,7 @@ const checkout = (props) => {
             <div className={styles.bottomMain}>
                 <div className={styles.container}>
                     <div className={styles.title}>Toner Order</div>
-                    <div className={styles.titleSmall}>${realPriceLocal}</div>
+                    <div className={styles.titleSmall}>${total}</div>
                     <div className={styles.line}></div>
                     <div style={{ width: "80%" }}>
                         <div className={styles.beginning}>
@@ -169,7 +171,7 @@ const checkout = (props) => {
                                         <div style={{ paddingRight: "5px" }}>({item.quantity})</div>
                                         <div style={{ fontSize: "12px" }}>{item.name}</div>
                                     </div>
-                                    <div>${item.price}</div>
+                                    <div style={{ paddingBottom: "10px" }}>${item.price}</div>
                                 </div>
                             })}
                         </div>
@@ -179,7 +181,7 @@ const checkout = (props) => {
                     <div className={styles.center}>
                         <div className={styles.rowTop}>
                             <div style={{ textAlign: "start" }}>Sub Total:</div>
-                            <div>${preShip}</div>
+                            <div>${total - 2.99}</div>
                         </div>
                         <div className={styles.rowTop}>
                             <div style={{ textAlign: "start" }}>Shipping:</div>
@@ -187,7 +189,7 @@ const checkout = (props) => {
                         </div>
                         <div className={styles.rowTop}>
                             <div style={{ textAlign: "start" }}>Order Total:</div>
-                            <div>${realPriceLocal}</div>
+                            <div>${total}</div>
                         </div>
                     </div>
 
@@ -234,12 +236,13 @@ const checkout = (props) => {
                                 setMaybe(!maybe)
                             }}>+Add Apt</div></>}
                             <div className={styles.center}>
-                                <div style={{ paddingBottom: "10px" }}>Is your billing address the same as shipping?</div>
+                                <div style={{ paddingBottom: "10px", width: "113%", textAlign: "center" }}>Is your billing address the same as shipping?</div>
                                 <div className={styles.rowSmall}>
                                     <div>
                                         <div >No</div>
                                         <input onClick={() => {
                                             setBilling(!billing)
+                                            setHiddenBottom(!hiddenBottom)
                                         }} type="checkbox" />
                                     </div>
                                     <div>
@@ -247,10 +250,12 @@ const checkout = (props) => {
                                         <input type="checkbox" />
                                     </div>
                                 </div>
-                                {billing ? <div style={{
+                                <div style={{
                                     paddingBottom: "20px"
-                                }} className={styles.column}>
-                                    <div style={{ width: "113%" }} className={styles.row}>
+                                }} className={`${styles.columnHidden} ${hiddenBottom ? styles.showing : styles.hidden}`}>
+                                    <div style={{ margin: "5px", width: "126%" }} className={styles.line}></div>
+                                    <div style={{ width: "113%" }}>Billing Address</div>
+                                    <div style={{ width: "113%", paddingTop: "10px" }} className={styles.row}>
                                         <input onChange={(event) => {
                                             setState(event.target.value)
                                         }} style={{ marginBottom: "20px" }} className={styles.input} type="text" placeholder={"State"} />
@@ -264,13 +269,15 @@ const checkout = (props) => {
                                             setLastName(event.target.value)
                                         }} className={styles.input} type="text" placeholder={"Zip Code"} />
                                     </div>
-                                </div> : <></>}
+                                    <input onChange={() => { setAddress(event.target.value) }} style={{ width: "113%", marginTop: "15px" }} className={styles.inputB} type="text" placeholder={"Enter your address here"} />
+                                </div>
                             </div>
                         </div>
 
                     </div>
                     <div className={styles.line}></div>
                     <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                        <div style={{ paddingBottom: "10px" }}>Card Information</div>
                         <input onChange={(event) => {
                             setCard(event.target.value)
                         }} style={{ marginBottom: "15px" }} className={styles.inputB} type="text" placeholder={"Put card number here"} />

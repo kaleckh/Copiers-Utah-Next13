@@ -136,24 +136,6 @@ export default function Data() {
 
       </Head>
 
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp"
-            alt="used copiers"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <h1 className={styles.infoBig}>Copiers Utah</h1>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-            </div>
-          </div>
-        </div>
-      </div>
       <Header />
       <div className={styles.secondSection}>
         <div className={styles.flex}>
