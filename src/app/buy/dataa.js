@@ -83,7 +83,7 @@ const Buy = (props) => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  console.log(SECRET_KEY, "this is secret key")
+
   return (
     <div className={styles.main}>
       <Sliver />

@@ -51,7 +51,7 @@ const Finance = () => {
         },
       }),
     }).then((res) => {
-      console.log(res);
+
       if (res.status === 200) {
         console.log("Response succeeded!");
         // setSubmitted(true);
@@ -72,7 +72,7 @@ const Finance = () => {
     console.log("onLoad works!");
   };
 
-  console.log(number, "this is number");
+
   return (
     <div className={styles.main}>
       <Sliver />

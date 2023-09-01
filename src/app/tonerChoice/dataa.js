@@ -143,7 +143,7 @@ const TonerChoice = (props) => {
   // async function success() {
   //     const response = await fetch("/api/pay/distribution", { method: "POST" })
   //     const data = await response.json();
-  //     console.log(data, "this is the data");
+
   // }
 
   async function createDistribution() {
@@ -168,7 +168,7 @@ const TonerChoice = (props) => {
 
     const response = await fetch("/api/pay/distribution", requestOptions);
     const data1 = await response.json();
-    // console.log(data1, "this is the data");
+
   }
 
   // function successCallback() {
@@ -183,7 +183,7 @@ const TonerChoice = (props) => {
   //         });
   // }
 
-  console.log(cart, "this is the cart");
+
   return (
     <div className={styles.main}>
       <Sliver />
@@ -241,7 +241,7 @@ const TonerChoice = (props) => {
                 className={styles.button3}
                 onClick={(e) => {
                   getOrderData().then(() => {
-                    console.log(name, "this is my name");
+
                     setOrderData().then(() => {
                       sendSuccessEmail(e);
                       createDistribution();

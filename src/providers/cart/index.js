@@ -9,13 +9,27 @@ export const CartProvider = ({ children }) => {
   let [cart, setCart] = useState([]);
   let [cartLook, setCartLook] = useState([]);
   let [cardInfo, setCardInfo] = useState({});
+  let [billingInfo, setBillingInfo] = useState({});
   let [personInfo, setPersonInfo] = useState({});
+  let [totalAmount, setTotalAmount] = useState();
+
+
 
   useEffect(() => {
     if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart))
     }
+
   }, [cart]);
+
+  useEffect(() => {
+    var price = 0
+    cart.map((item) => {
+      price = price + item.price * item.quantity
+    })
+    price = price + 2.99
+    setTotalAmount(price.toFixed(2))
+  }, [cart])
 
   useEffect(() => {
     if (realPrice !== undefined) {
@@ -27,8 +41,10 @@ export const CartProvider = ({ children }) => {
     setCart(JSON.parse(localStorage.getItem("cart")) ?? [])
   }, [])
 
+
+
   return (
-    <CartContext.Provider value={{ cart, setCart, setRealPrice, cardInfo, setCardInfo, personInfo, setPersonInfo }}>
+    <CartContext.Provider value={{ cart, setCart, setRealPrice, cardInfo, setCardInfo, personInfo, setPersonInfo, totalAmount, billingInfo, setBillingInfo }}>
       {children}
     </CartContext.Provider>
   );

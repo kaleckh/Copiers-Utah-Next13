@@ -6,7 +6,7 @@ import { ApiContracts, ApiControllers, Constants as SDKConstants } from 'authori
 // var constants = require('../constants.js');
 export function chargeCreditCard(callback) {
 
-    const { cardInfo, personInfo } = useContext(CartContext);
+    const { cardInfo, personInfo, billingInfo } = useContext(CartContext);
 
     var merchantAuthenticationType = new ApiContracts.MerchantAuthenticationType();
     merchantAuthenticationType.setName("48Z7dSXmGp");

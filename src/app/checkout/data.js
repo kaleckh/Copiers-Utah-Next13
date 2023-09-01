@@ -31,7 +31,7 @@ const checkout = (props) => {
     const [phone, setPhone] = useState();
     const [noChange, setFalse] = useState(false);
     const [realPriceLocal, setRealPriceLocal] = useState();
-    const { realPrice, setPersonInfo, setCardInfo, personInfo, cardInfo, cart } = useContext(CartContext);
+    const { realPrice, setPersonInfo, setCardInfo, personInfo, cardInfo, cart, totalAmount } = useContext(CartContext);
     const [something, setSomething] = useState(false);
     const [price, setPrice] = useState("");
     const [total, setTotal] = useState(0);
@@ -39,7 +39,12 @@ const checkout = (props) => {
     const [number, setNumber] = useState("");
     const [maybe, setMaybe] = useState(false);
     const [address, setAddress] = useState("");
+    const [billingInfo, setBillingInfo] = useState("");
+    const [billingAddress, setBillingAddress] = useState("");
+    const [billingState, setBillingState] = useState();
+    const [billingCity, setBillingCity] = useState();
     const [state, setState] = useState();
+    const [billingZip, setBillingZip] = useState();
     const [zip, setZip] = useState();
     const [items, setItems] = useState(false);
     const [message, setMessage] = useState("");
@@ -71,6 +76,26 @@ const checkout = (props) => {
         })
 
     }, [csv, card, exp])
+    useEffect(() => {
+
+        if (hiddenBottom === false) {
+            setBillingInfo({
+                "address": address,
+                "city": city,
+                "state": state,
+                "zip": zip,
+            })
+        } else {
+            setBillingInfo({
+                "address": billingAddress,
+                "city": billingCity,
+                "state": billingState,
+                "zip": billingZip,
+            })
+        }
+
+
+    }, [billingAddress, billingCity, billingZip, billingState])
 
     async function callBack() {
 
@@ -94,16 +119,29 @@ const checkout = (props) => {
 
         const response = await fetch('/api/pay/card', requestOptions);
         const data1 = await response.json();
-        console.log(data1, "this is the data");
+
+        debugger
+        if (data1.messageeee.transactionResponse.responseCode == 1) {
+
+            // createDistribution()
+
+        }
     }
 
 
     useEffect(() => {
         setRealPriceLocal(JSON.parse(localStorage.getItem("realPrice")))
         setPreShip(JSON.parse(localStorage.getItem("realPrice")) - 2)
+
     }, [])
 
+    useEffect(() => {
+        setTotal(totalAmount - 2.99)
+    }, [totalAmount])
+
+
     async function createDistribution() {
+        debugger
         const requestOptions = {
             method: "POST",
             headers: {
@@ -118,37 +156,20 @@ const checkout = (props) => {
 
         const response = await fetch("/api/pay/distribution", requestOptions);
         const data1 = await response.json();
-        console.log(data1, "this is the data");
+
+
     }
 
 
-    console.log(cardInfo.card, "this is the identity of a person")
+
     return (
         <div className={styles.main}>
             <Sliver />
-            <div className={styles.logoSpaceContainer}>
-                <div className={styles.logoSpace}>
-                    <Image
-                        src="/static/logo.webp"
-                        alt="buy a used or new business copier"
-                        width={150}
-                        height={100}
-                    />
-                    <div className={styles.columnContainer}>
-                        <div />
-                        <div className={styles.infoBig}>Copiers Utah</div>
-                        <div className={styles.mediumColumn}>
-                            <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-                            <div className={styles.infoSmall}>info@copiersutah.com</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <Header />
             <div className={styles.bottomMain}>
                 <div className={styles.container}>
                     <div className={styles.title}>Toner Order</div>
-                    <div className={styles.titleSmall}>${total}</div>
+                    <div className={styles.titleSmall}>${totalAmount}</div>
                     <div className={styles.line}></div>
                     <div style={{ width: "80%" }}>
                         <div className={styles.beginning}>
@@ -171,7 +192,7 @@ const checkout = (props) => {
                                         <div style={{ paddingRight: "5px" }}>({item.quantity})</div>
                                         <div style={{ fontSize: "12px" }}>{item.name}</div>
                                     </div>
-                                    <div style={{ paddingBottom: "10px" }}>${item.price}</div>
+                                    <div style={{ paddingBottom: "10px" }}>${item.price * item.quantity}</div>
                                 </div>
                             })}
                         </div>
@@ -181,7 +202,7 @@ const checkout = (props) => {
                     <div className={styles.center}>
                         <div className={styles.rowTop}>
                             <div style={{ textAlign: "start" }}>Sub Total:</div>
-                            <div>${total - 2.99}</div>
+                            <div>${total.toFixed(2)}</div>
                         </div>
                         <div className={styles.rowTop}>
                             <div style={{ textAlign: "start" }}>Shipping:</div>
@@ -189,7 +210,7 @@ const checkout = (props) => {
                         </div>
                         <div className={styles.rowTop}>
                             <div style={{ textAlign: "start" }}>Order Total:</div>
-                            <div>${total}</div>
+                            <div>${totalAmount}</div>
                         </div>
                     </div>
 
@@ -219,15 +240,18 @@ const checkout = (props) => {
                                 <div style={{ width: "113%" }} className={styles.row}>
                                     <input onChange={(event) => {
                                         setState(event.target.value)
+
                                     }} style={{ marginBottom: "20px" }} className={styles.input} type="text" placeholder={"State"} />
 
                                 </div>
                                 <div style={{ width: "113%" }} className={styles.row}>
                                     <input onChange={(event) => {
-                                        setFirstName(event.target.value)
+                                        setCity(event.target.value)
+
                                     }} className={styles.input} type="text" placeholder={"City"} />
                                     <input onChange={(event) => {
-                                        setLastName(event.target.value)
+                                        setZip(event.target.value)
+
                                     }} className={styles.input} type="text" placeholder={"Zip Code"} />
                                 </div>
                             </div>
@@ -257,19 +281,19 @@ const checkout = (props) => {
                                     <div style={{ width: "113%" }}>Billing Address</div>
                                     <div style={{ width: "113%", paddingTop: "10px" }} className={styles.row}>
                                         <input onChange={(event) => {
-                                            setState(event.target.value)
+                                            setBillingState(event.target.value)
                                         }} style={{ marginBottom: "20px" }} className={styles.input} type="text" placeholder={"State"} />
 
                                     </div>
                                     <div style={{ width: "113%" }} className={styles.row}>
                                         <input onChange={(event) => {
-                                            setFirstName(event.target.value)
+                                            setBillingCity(event.target.value)
                                         }} className={styles.input} type="text" placeholder={"City"} />
                                         <input onChange={(event) => {
-                                            setLastName(event.target.value)
+                                            setBillingZip(event.target.value)
                                         }} className={styles.input} type="text" placeholder={"Zip Code"} />
                                     </div>
-                                    <input onChange={() => { setAddress(event.target.value) }} style={{ width: "113%", marginTop: "15px" }} className={styles.inputB} type="text" placeholder={"Enter your address here"} />
+                                    <input onChange={() => { setBillingAddress(event.target.value) }} style={{ width: "113%", marginTop: "15px" }} className={styles.inputB} type="text" placeholder={"Enter your address here"} />
                                 </div>
                             </div>
                         </div>
@@ -277,7 +301,7 @@ const checkout = (props) => {
                     </div>
                     <div className={styles.line}></div>
                     <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                        <div style={{ paddingBottom: "10px" }}>Card Information</div>
+                        <div style={{ paddingBottom: "20px", paddingTop: "40px" }}>Card Information</div>
                         <input onChange={(event) => {
                             setCard(event.target.value)
                         }} style={{ marginBottom: "15px" }} className={styles.inputB} type="text" placeholder={"Put card number here"} />
@@ -292,9 +316,7 @@ const checkout = (props) => {
                     </div>
 
                     <button onClick={() => {
-                        chargeCard().then(() => {
-                            // createDistribution()
-                        })
+                        chargeCard()
                     }} style={{ marginBottom: "15px" }} className={styles.button}>Checkout!</button>
 
 

@@ -59,7 +59,7 @@ export async function POST(req, res) {
 
   try {
     const response = await axios.post(url, data, { headers })
-    // console.log(response, "this is the response to the api call")
+
 
     return NextResponse.json({ "paymentId": response.data.payment_link.id, "orderId": response.data.payment_link.order_id, "redirect": response.data.payment_link.long_url })
   } catch (error) {

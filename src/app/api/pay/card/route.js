@@ -4,7 +4,7 @@ import { APIContracts, APIControllers, Constants as SDKConstants } from 'authori
 import { promises } from 'fs';
 export async function POST(req, res) {
     const newData = await req.json()
-    console.log(newData, "this is the body")
+
     function getRandomString(text) {
         return text + Math.floor((Math.random() * 100000) + 1);
     }
@@ -26,7 +26,7 @@ export async function POST(req, res) {
         merchantAuthenticationType.setTransactionKey('5v7KjG5pR939YGvg');
 
         var creditCard = new APIContracts.CreditCardType();
-        // console.log(newData.cardInfo, "this is the of the charge credit card")
+
         creditCard.setCardNumber(newData.cardInfo.card)
         creditCard.setExpirationDate(newData.cardInfo.exp);
         creditCard.setCardCode(newData.cardInfo.csv);
@@ -66,7 +66,7 @@ export async function POST(req, res) {
         var shipTo = new APIContracts.CustomerAddressType();
         shipTo.setFirstName(newData.personInfo.firstName);
         shipTo.setLastName(newData.personInfo.lastName);
-        shipTo.setCompany('Thyme for Tea');
+        shipTo.setCompany('Not Needed');
         shipTo.setAddress(newData.personInfo.address);
         shipTo.setCity(newData.personInfo.city);
         shipTo.setState(newData.personInfo.state);
@@ -76,11 +76,11 @@ export async function POST(req, res) {
         const lineItemList = newData.cart.map((item, index) => {
 
             let cartItem = new APIContracts.LineItemType();
-            cartItem.setItemId('1');
-            cartItem.setName('vase');
-            cartItem.setDescription('cannes logo');
-            cartItem.setQuantity('18');
-            cartItem.setUnitPrice(45.00);
+            cartItem.setItemId(index + 1);
+            cartItem.setName("item.name");
+            cartItem.setDescription(item.oem);
+            cartItem.setQuantity(item.quantity);
+            cartItem.setUnitPrice(item.price);
 
             return cartItem
 
@@ -207,7 +207,7 @@ export async function POST(req, res) {
 
     try {
         const response = await chargeCreditCard()
-        console.log(response, "this is the response to the api call")
+
 
         return NextResponse.json({ "messageeee": response })
     } catch (error) {

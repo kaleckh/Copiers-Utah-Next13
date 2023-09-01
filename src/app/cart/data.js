@@ -306,9 +306,11 @@ const Cart = (props) => {
                             </div>
                         </div>
                         <div className={styles.buttonContainterB}>
+                            <Link href={'/toner'}>
                         <button onClick={() => { }} className={styles.buttonCheck}>
-                                Add More Items
+                                    Add More Items
             </button>
+            </Link>
                             <Link href={'/checkout'}>
                                 <button onClick={() => {
                                     localStorage.setItem("total", total)

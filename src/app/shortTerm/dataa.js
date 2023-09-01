@@ -59,7 +59,7 @@ const ShortTerm = () => {
         },
       }),
     }).then((res) => {
-      console.log(res);
+
       if (res.status === 200) {
         console.log("Response succeeded!");
         // setSubmitted(true);

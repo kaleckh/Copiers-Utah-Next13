@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 
 export async function POST(req, res) {
     const newData = await req.json()
-    console.log(newData)
+
     const url = 'https://uat.portal.suppliesnet.net/PurchaseOrders/PurchaseOrder.asmx';
 
     const items = newData.cart.map((item, index) => {
@@ -61,7 +61,7 @@ export async function POST(req, res) {
 
     try {
         const response = await axios.post(url, data, { headers })
-        console.log(response)
+
         return NextResponse.json({ "succesful": "something" })
     } catch (error) {
         console.error('Error creating payment link:', error);
