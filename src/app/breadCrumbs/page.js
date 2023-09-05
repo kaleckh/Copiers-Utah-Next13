@@ -1,3 +1,4 @@
+"use client"
 import Data from './dataa'
 import React, { useEffect, useRef, useState, useContext } from "react";
 
