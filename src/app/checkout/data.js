@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 // import { eventDataSchema } from "square/dist/types/models/eventData"
 
-const checkout = (props) => {
+const Checkout = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [identity, setIdentity] = useState({});
     const [orderId, setOrderId] = useState("");
@@ -363,4 +363,4 @@ const checkout = (props) => {
     );
 };
 
-export default checkout;
+export default Checkout;
