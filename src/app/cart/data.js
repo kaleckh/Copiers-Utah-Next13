@@ -158,7 +158,7 @@ const Cart = () => {
                                                 }}
                                             >
                                                 OEM:
-                      </div>
+                                    </div>
                                             <div style={{ color: "black", fontSize: "14px" }}>
                                                 {" "}
                                                 {toner.oem}
@@ -174,7 +174,7 @@ const Cart = () => {
                                                 width:"100px"
                                             }}
                                         >
-                                            <div style={{cursor:"pointer"}}
+                                            <div 
                                                 onClick={() => {
                                                     setTotal(0)
                                                     setCart(
@@ -198,7 +198,7 @@ const Cart = () => {
                                                 }}
                                             >
                                                 -
-                      </div>
+                                </div>
                                             <div style={{ color: "black", padding: "5px" }}>
                                                 {toner.quantity}
                                             </div>
@@ -255,7 +255,7 @@ const Cart = () => {
                             <Link href={'/toner'}>
                                 <button onClick={() => { }} className={styles.buttonCheck}>
                                     Add More Items
-            </button>
+                                </button>
                             </Link>
                             <Link href={'/checkout'}>
                                 <button onClick={() => {
@@ -264,7 +264,7 @@ const Cart = () => {
                                     height: "42px"
                                 }} className={styles.buttonCheckB}>
                                     Checkout
-            </button>
+                                </button>
                             </Link>
                         </div>
                     </div>
