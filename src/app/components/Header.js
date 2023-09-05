@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState, useContext } from "react";
 import Image from "next/image";
 import cart from "../cart/page";
 import { CartContext } from "../../providers/cart";
-export default function Header(props) {
+export default function Header() {
   const router = useRouter();
   const { cart, setCart, cartLook, setRealPrice } = useContext(CartContext);
 

@@ -4,8 +4,10 @@ import { NextRequest } from 'next/server'
 // This function can be marked `async` if using `await` inside
 export function middleware(NextRequest) {
     const path = NextRequest.nextUrl.pathname
-    if (path.indexOf('copiersutah') === -1)
-        return NextResponse.redirect(new URL('/', NextRequest.url));
+    console.log(path.indexOf('copiersutah'), "this is the path")
+    if (path.indexOf('copiersutah') !== -1) {
+        NextResponse.redirect(new URL('/', NextRequest.url));
+    }
 }
 
 // See "Matching Paths" below to learn more

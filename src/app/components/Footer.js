@@ -2,7 +2,7 @@ import styles from "../styles/Footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-export default function Footer(props) {
+export default function Footer() {
   const router = useRouter();
   return (
     <div className={styles.footer}>

@@ -220,9 +220,9 @@ const Checkout = (props) => {
 
 
                         <div>
-                            {cart.map((item) => {
+                            {cart.map((item, index) => {
 
-                                return <div className={`${styles.dataResult} ${hidden ? styles.showing : styles.hidden}`}>
+                                return <div key={index} className={`${styles.dataResult} ${hidden ? styles.showing : styles.hidden}`}>
                                     <div style={{ display: "flex" }}>
                                         <div style={{ paddingRight: "5px" }}>({item.quantity})</div>
                                         <div style={{ fontSize: "12px" }}>{item.name}</div>

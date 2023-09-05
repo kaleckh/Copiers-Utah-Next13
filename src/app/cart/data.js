@@ -10,7 +10,7 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
-const Cart = (props) => {
+const Cart = () => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [name, setName] = useState("");
     const [orderId, setOrderId] = useState("");
@@ -28,8 +28,8 @@ const Cart = (props) => {
         const response = await fetch("/api/pay", { method: "POST" });
         const data = await response.json();
         window.location.replace(data.redirect);
-      }
-    
+    }
+
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -88,7 +88,7 @@ const Cart = (props) => {
 
         })
         let result = arr?.reduce((acc, item) => {
-            return acc + item 
+            return acc + item
         })
         let addedResult = result + 2.99
         setTotal(addedResult.toFixed(2))
@@ -107,60 +107,6 @@ const Cart = (props) => {
     return (
         <div className={styles.main}>
             <Sliver />
-            <Head>
-                <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://copiersutah.com/buy/" />
-                <title>
-                    Get a Quote for High-Quality New and Refurbished Copiers | Copiers
-                    Utah
-        </title>
-                <meta
-                    name="description"
-                    content="Looking for a high-quality copier for your office? Copiers Utah offers a range of advanced copy machines for sale, including new and refurbished options. Fill out our easy form to get a personalized quote today."
-                />
-                <meta
-                    name="keywords"
-                    content="office copiers, copiers for sale, refurbished copiers, get a quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah"
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "Product",
-                            name: "New and Refurbished Copiers",
-                            description:
-                                "High-quality copiers for your office, including new and refurbished options.",
-                            brand: "Copiers Utah",
-                            url: "https://copiersutah.com/home",
-                            image: "https://copiersutah.com/static/logo.webp",
-                            offers: {
-                                "@type": "AggregateOffer",
-                                priceCurrency: "USD",
-                                availability: "https://schema.org/InStock",
-                                lowPrice: "Your Lowest Price",
-                                highPrice: "Your Highest Price",
-                                offerCount: "Number of Copiers Available",
-                                seller: {
-                                    "@type": "LocalBusiness",
-                                    name: "Copiers Utah",
-                                    telephone: "(801) 261-0510",
-                                    email: "info@copiersutah.com",
-                                    address: {
-                                        "@type": "PostalAddress",
-                                        streetAddress: "554 W 8360 S",
-                                        addressLocality: "Sandy",
-                                        addressRegion: "Utah",
-                                        postalCode: "84070",
-                                        addressCountry: "USA",
-                                    },
-                                },
-                            },
-                        }),
-                    }}
-                />
-            </Head>
-
             <div>
                 <TawkMessengerReact
                     onLoad={onLoad}
@@ -171,10 +117,10 @@ const Cart = (props) => {
             </div>
             <Header />
             <div className={styles.bottomMain}>
-                <div style={{width:"65%"}}>
+                <div style={{ width: "65%" }}>
                     <div className={styles.mainTitleBig}>Your Shopping Cart</div>
                     {cart.length === 0 ? (
-                        <div style={{ color: "black", textAlign:"center", paddingTop:"25px" }}>Your cart is empty</div>
+                        <div style={{ color: "black", textAlign: "center", paddingTop: "25px" }}>Your cart is empty</div>
                     ) : (
                             <div style={{ color: "black" }}></div>
                         )}
@@ -192,7 +138,7 @@ const Cart = (props) => {
                       </div>
                                     <div className={styles.buggy}>
                                         <div style={{width:"200px"}}>
-                                            <Image src={toner.image} width={150} height={150}></Image>
+                                            <Image src={toner.image} width={150} height={150}/>
                                             </div>
                                     <div className={styles.priceBox}>
                                         <div className={styles.cartTitle}>{toner.name}</div>
@@ -296,30 +242,31 @@ const Cart = (props) => {
                     <div className={styles.box}>
                         <div className={styles.title}>Total</div>
                         <div>
-                            <div style={{display:"flex", width:"200px", padding:"10px", fontSize:"20px", alignItems:"center"}}>
-                                <div style={{ fontSize:"20px", width:"150px"}}>Delivery:</div>
-                                <div style={{width:"100px", fontSize:"15px"}} >$2.99</div>
+                            <div style={{ display: "flex", width: "200px", padding: "10px", fontSize: "20px", alignItems: "center" }}>
+                                <div style={{ fontSize: "20px", width: "150px" }}>Delivery:</div>
+                                <div style={{ width: "100px", fontSize: "15px" }} >$2.99</div>
                             </div>
-                            <div style={{ display:"flex", padding:"10px",width:"200px", alignItems:"center"}}>
-                                <div style={{paddingRight:"10px", fontSize:"20px", width:"150px"}}>Sub-Total:</div>
-                                <div style={{width:"100px",fontSize:"15px"}}>${total}</div>
+                            <div style={{ display: "flex", padding: "10px", width: "200px", alignItems: "center" }}>
+                                <div style={{ paddingRight: "10px", fontSize: "20px", width: "150px" }}>Sub-Total:</div>
+                                <div style={{ width: "100px", fontSize: "15px" }}>${total}</div>
                             </div>
                         </div>
                         <div className={styles.buttonContainterB}>
                             <Link href={'/toner'}>
-                        <button onClick={() => { }} className={styles.buttonCheck}>
+                                <button onClick={() => { }} className={styles.buttonCheck}>
                                     Add More Items
             </button>
-            </Link>
+                            </Link>
                             <Link href={'/checkout'}>
                                 <button onClick={() => {
                                     localStorage.setItem("total", total)
-                        }} style={{height:"42px"
-                        }}  className={styles.buttonCheckB}>
+                                }} style={{
+                                    height: "42px"
+                                }} className={styles.buttonCheckB}>
                                     Checkout
             </button>
-            </Link>
-            </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
