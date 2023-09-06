@@ -22,8 +22,8 @@ export async function POST(req, res) {
     }
     function chargeCreditCard() {
         var merchantAuthenticationType = new APIContracts.MerchantAuthenticationType();
-        merchantAuthenticationType.setName("844jhN3ZG9");
-        merchantAuthenticationType.setTransactionKey('5v7KjG5pR939YGvg');
+        merchantAuthenticationType.setName(process.env.KEY);
+        merchantAuthenticationType.setTransactionKey(process.env.TRANSACTION_KEY);
 
         var creditCard = new APIContracts.CreditCardType();
 

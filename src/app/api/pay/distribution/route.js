@@ -29,7 +29,7 @@ export async function POST(req, res) {
         <soapenv:Body>
             <dmi:PlaceOrder>
                 <dmi:PurchaseOrders>
-                    <dmi:PurchaseOrders TestIndicator="T" SenderID="4012025D2D" ReceiverID="DMID" APIKey="0751E703-3D4D-4B37-9156-088F43AECBDB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dmi="http://portal.suppliesnet.net">
+                    <dmi:PurchaseOrders TestIndicator="T" SenderID=${process.env.DISTRIBUTION_SENDER_ID} ReceiverID="DMID" APIKey=${process.env.DISTRIBUTION_KEY}>
                         <dmi:PurchaseOrder>
                             <dmi:OrderType>Dealer DropShip</dmi:OrderType>
                             <dmi:CustomerPONumber>${newData.personInfo.id}</dmi:CustomerPONumber>

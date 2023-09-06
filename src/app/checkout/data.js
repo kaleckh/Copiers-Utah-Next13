@@ -9,9 +9,9 @@ import Head from "next/head";
 import styles from "../styles/checkout.module.css";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-// import { eventDataSchema } from "square/dist/types/models/eventData"
-
+import { useRouter } from "next/navigation";
 const Checkout = (props) => {
+    const router = useRouter()
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [identity, setIdentity] = useState({});
     const [orderId, setOrderId] = useState("");
@@ -117,14 +117,17 @@ const Checkout = (props) => {
             }),
         };
 
-        const response = await fetch('/api/pay/card', requestOptions);
-        const data1 = await response.json();
+        try {
+            const response = await fetch('/api/pay/card', requestOptions);
+            const data1 = await response.json();
+            console.log(data1, "this is the response")
+            if (data1?.messageeee.transactionResponse.responseCode == 1) {
 
-        debugger
-        if (data1.messageeee.transactionResponse.responseCode == 1) {
+                createDistribution()
 
-            // createDistribution()
-
+            }
+        } catch (err) {
+            router.push('/')
         }
     }
 
