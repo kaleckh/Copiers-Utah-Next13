@@ -9,8 +9,8 @@ export function chargeCreditCard(callback) {
     // const { cardInfo, personInfo, billingInfo } = useContext(CartContext);
 
     var merchantAuthenticationType = new ApiContracts.MerchantAuthenticationType();
-    merchantAuthenticationType.setName("48Z7dSXmGp");
-    merchantAuthenticationType.setTransactionKey('5r85BHZ6Hf5wt34G');
+    merchantAuthenticationType.setName("844jhN3ZG9");
+    merchantAuthenticationType.setTransactionKey('2x3w329ZN988L4gc');
 
     var creditCard = new ApiContracts.CreditCardType();
     creditCard.setCardNumber(cardInfo.card)

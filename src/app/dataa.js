@@ -116,7 +116,7 @@ export default function Data() {
                   </div>
                 </Link>
               </div>
-              <Link href={'/buy'}>
+              <Link href={'/toner'}>
                 <div
                   className={styles.shade}
                 >

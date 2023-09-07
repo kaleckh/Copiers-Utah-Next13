@@ -16,6 +16,8 @@ const Checkout = (props) => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [identity, setIdentity] = useState({});
     const [orderId, setOrderId] = useState("");
+    const [bottomToggle, setBottomToggle] = useState(false);
+    const [po, setPo] = useState("");
     const [city, setCity] = useState();
     const [hidden, setHidden] = useState(false);
     const [hiddenBottom, setHiddenBottom] = useState(false);
@@ -63,11 +65,12 @@ const Checkout = (props) => {
             "city": city,
             "state": state,
             "zip": zip,
+            "id": po
         })
         // setPersonInfo(identity)
 
 
-    }, [firstName, lastName, email, phone, city, address, state, zip])
+    }, [firstName, lastName, email, phone, city, address, state, zip, po])
     useEffect(() => {
 
         setCardInfo({
@@ -123,12 +126,13 @@ const Checkout = (props) => {
             const data1 = await response.json();
             console.log(data1, "this is the response")
             if (data1?.messageeee.transactionResponse.responseCode == 1) {
-
+                debugger
+                setPo(data1.messageeee.transactionResponse.transId)
                 createDistribution()
 
             }
         } catch (err) {
-            router.push('/')
+            // router.push('/')
         }
     }
 
@@ -160,6 +164,9 @@ const Checkout = (props) => {
 
         const response = await fetch("/api/pay/distribution", requestOptions);
         const data1 = await response.json();
+        console.log(data1, "this is the data")
+
+        setBottomToggle()
 
 
     }

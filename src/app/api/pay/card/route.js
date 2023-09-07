@@ -22,8 +22,8 @@ export async function POST(req, res) {
     }
     function chargeCreditCard() {
         var merchantAuthenticationType = new APIContracts.MerchantAuthenticationType();
-        merchantAuthenticationType.setName(process.env.KEY);
-        merchantAuthenticationType.setTransactionKey(process.env.TRANSACTION_KEY);
+        merchantAuthenticationType.setName("844jhN3ZG9");
+        merchantAuthenticationType.setTransactionKey("2x3w329ZN988L4gc");
 
         var creditCard = new APIContracts.CreditCardType();
 
@@ -207,9 +207,8 @@ export async function POST(req, res) {
 
     try {
         const response = await chargeCreditCard()
-
-
         return NextResponse.json({ "messageeee": response })
+
     } catch (error) {
         console.error('the info I need:', error);
     }
