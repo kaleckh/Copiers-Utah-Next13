@@ -13,7 +13,7 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { TonerContext } from "@/providers/toner";
-import BreadCrumbs from "../components/Breadcrumbs";
+import BreadCrumbs from "../components/BreadCrumbs";
 
 const TonerChoice = (props) => {
   const searchParams = useSearchParams();
