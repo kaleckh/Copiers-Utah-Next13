@@ -5,7 +5,7 @@ import axios from 'axios';
 import Image from "next/image";
 import Sliver from "../components/sliverr";
 import { CartContext } from "../../providers/cart";
-import BreadCrumbs from "../components/Breadcrumbs";
+import BreadCrumbs from "../components/BreadCrumbs";
 import Head from "next/head";
 import styles from "../styles/checkout.module.css";
 import Footer from "../components/Footer";

@@ -77,65 +77,6 @@ export default function Data() {
         widgetId="default"
         useRef={tawkMessengerRef}
       />
-      <Head>
-        <meta name="robots" content="index, follow" />
-
-        <link rel="canonical" href="https://www.copiersutah.com/" />
-        <title>
-          Copiers for Sale and Rent | Office Copy Machines | Copiers Utah
-        </title>
-        <meta
-          name="description"
-          content="Copiers Utah: Quality copiers for sale/rent. Pick from various office machines with advanced features & affordable prices. Contact us now! "
-        />
-        <meta
-          name="keywords"
-          content="copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Copiers Utah",
-              description:
-                "Copiers Utah offers high-quality copiers for sale and rent.",
-              telephone: "(801) 261-0510",
-              email: "info@copiersutah.com",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "554 W 8360 S",
-                addressLocality: "Sandy",
-                addressRegion: "Utah",
-                postalCode: "84070",
-                addressCountry: "USA",
-              },
-              image: "https://copiersutah.com/static/logo.webp",
-              url: "https://copiersutah.com",
-              areaServed: "Utah",
-              priceRange: "$$",
-              founder: {
-                "@type": "Person",
-                name: "Paul Mooney",
-              },
-              sameAs: [
-                "https://www.facebook.com/your-facebook-page",
-                "https://www.linkedin.com/company/your-linkedin-page",
-              ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.5",
-                reviewCount: "50",
-              },
-            }),
-          }}
-        />
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN2KYPVC8G"></script>
-
-      </Head>
-
       <Header />
       <div className={styles.secondSection}>
         <div className={styles.flex}>

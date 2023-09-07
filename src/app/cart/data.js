@@ -7,7 +7,7 @@ import { CartContext } from "../../providers/cart";
 import Head from "next/head";
 import styles from "../styles/cart.module.css";
 import Link from "next/link";
-import BreadCrumbs from "../components/Breadcrumbs";
+import BreadCrumbs from "../components/BreadCrumbs";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 

@@ -17,7 +17,7 @@ import styles from "../styles/filter.module.css";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { TonerContext } from "../../providers/toner";
-import BreadCrumbs from "../components/Breadcrumbs";
+import BreadCrumbs from "../components/BreadCrumbs";
 
 const Buy = (props) => {
   const toners = useContext(TonerContext);
