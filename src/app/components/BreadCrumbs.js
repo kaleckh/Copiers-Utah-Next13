@@ -6,7 +6,7 @@ const BreadCrumbs = ({ breadCrumbs }) => {
     return (
         <div style={{ display: "flex", paddingLeft: "30px" }}>
             {breadCrumbs?.map((breadCrumb, index) => (
-                <div className={styles.breadCrumbs}>
+                <div key={index} className={styles.breadCrumbs}>
                     <Link
                         href={breadCrumb.url}
                         className={styles.black}
