@@ -7,6 +7,7 @@ import { CartContext } from "../../providers/cart";
 import Head from "next/head";
 import styles from "../styles/cart.module.css";
 import Link from "next/link";
+import BreadCrumbs from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
@@ -14,7 +15,7 @@ const Cart = () => {
     const [recaptchaResponse, setRecaptchaResponse] = useState(false);
     const [name, setName] = useState("");
     const [orderId, setOrderId] = useState("");
-    const { cart, setCart, cartLook, setRealPrice } = useContext(CartContext);
+    const { cart, setCart, cartLook, setRealPrice, tonerOem } = useContext(CartContext);
     const [noChange, setFalse] = useState(false);
     const [something, setSomething] = useState(false);
     const [price, setPrice] = useState("");
@@ -103,6 +104,11 @@ const Cart = () => {
         newPriceAction()
     }, [cart])
 
+    const breadCrumbs = [
+        { name: "Home", url: "/" },
+        { name: `Toners`, url: `/toner` },
+        { name: `${tonerOem}`, url: `/tonerChoice?oem=${tonerOem}` }
+      ]
 
     return (
         <div className={styles.main}>
@@ -116,6 +122,7 @@ const Cart = () => {
                 />
             </div>
             <Header />
+            <BreadCrumbs breadCrumbs={breadCrumbs} />
             <div className={styles.bottomMain}>
                 <div style={{ width: "65%" }}>
                     <div className={styles.mainTitleBig}>Your Shopping Cart</div>

@@ -17,6 +17,7 @@ import styles from "../styles/filter.module.css";
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { TonerContext } from "../../providers/toner";
+import BreadCrumbs from "../components/Breadcrumbs";
 
 const Buy = (props) => {
   const toners = useContext(TonerContext);
@@ -25,7 +26,7 @@ const Buy = (props) => {
 
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [name, setName] = useState("");
-  const { setCartLook } = useContext(CartContext);
+  const { setCartLook, setTonerOem } = useContext(CartContext);
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
   const tawkMessengerRef = useRef();
@@ -83,6 +84,10 @@ const Buy = (props) => {
     console.log("onLoad works!");
   };
 
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+  ]
+
   return (
     <div className={styles.main}>
       <Sliver />
@@ -97,6 +102,7 @@ const Buy = (props) => {
       </div>
 
       <Header />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.mainContent}>
         <div className={styles.filter}>
           <div className={styles.centerNormal}>
@@ -164,6 +170,11 @@ const Buy = (props) => {
                 >
                   <div className={styles.titleSmallBlack}>{toner.name}</div>
                   <Link
+                    onClick={() => {
+                      setTonerOem(toner.oem)
+                      localStorage.setItem("tonerOem", toner.oem)
+
+                    }}
                     className={styles.somethingElse}
                     href={`/tonerChoice?oem=${toner.oem}`}
                   >

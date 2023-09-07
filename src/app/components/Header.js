@@ -27,7 +27,7 @@ export default function Header() {
               <div className={styles.infoSmall}>info@copiersutah.com</div>
             </div>
           </div>
-          <Link href={'/checkout'}>
+          <Link href={'/cart'}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <Image
                 src="/static/cart.webp"
@@ -72,6 +72,7 @@ export default function Header() {
           </Link>
         </div>
       </div>
+
     </header >
   );
 }

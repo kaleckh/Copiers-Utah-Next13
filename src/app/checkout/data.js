@@ -5,6 +5,7 @@ import axios from 'axios';
 import Image from "next/image";
 import Sliver from "../components/sliverr";
 import { CartContext } from "../../providers/cart";
+import BreadCrumbs from "../components/Breadcrumbs";
 import Head from "next/head";
 import styles from "../styles/checkout.module.css";
 import Footer from "../components/Footer";
@@ -31,7 +32,7 @@ const Checkout = (props) => {
     const [phone, setPhone] = useState();
     const [noChange, setFalse] = useState(false);
     const [realPriceLocal, setRealPriceLocal] = useState();
-    const { realPrice, setPersonInfo, setCardInfo, personInfo, cardInfo, cart, totalAmount } = useContext(CartContext);
+    const { realPrice, setPersonInfo, setCardInfo, personInfo, cardInfo, cart, totalAmount, tonerOem } = useContext(CartContext);
     const [something, setSomething] = useState(false);
     const [price, setPrice] = useState("");
     const [total, setTotal] = useState(0);
@@ -198,12 +199,18 @@ const Checkout = (props) => {
         });
     };
 
-
+    const breadCrumbs = [
+        { name: "Home", url: "/" },
+        { name: `Toners`, url: `/toner` },
+        { name: `${tonerOem}`, url: `/tonerChoice?oem=${tonerOem}` },
+        { name: `Your Cart`, url: `/cart` },
+    ]
 
     return (
         <div className={styles.main}>
             <Sliver />
             <Header />
+            <BreadCrumbs breadCrumbs={breadCrumbs} />
             <div className={styles.bottomMain}>
                 <div className={styles.container}>
                     <div className={styles.title}>Toner Order</div>

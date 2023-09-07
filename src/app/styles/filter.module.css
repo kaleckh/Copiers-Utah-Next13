@@ -41,10 +41,29 @@
         flex-direction: column;
         align-items: center;
       }
+  .black{
+    color: black;
+  }
+
+  .arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+
+  }
+  .breadCrumbs{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    min-width: 60px;
+    justify-content: center;
+    width: fit-content;
+  }
   .mainContent {
     width: 100%;
     height: fit-content;
-    
+    padding-top: 20px;
     background-color: white;
     display: flex;
       }

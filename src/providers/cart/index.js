@@ -7,6 +7,7 @@ export const CartContext = createContext(undefined);
 export const CartProvider = ({ children }) => {
   let [realPrice, setRealPrice] = useState();
   let [cart, setCart] = useState([]);
+  let [tonerOem, setTonerOem] = useState();
   let [cartLook, setCartLook] = useState([]);
   let [cardInfo, setCardInfo] = useState({});
   let [billingInfo, setBillingInfo] = useState({});
@@ -39,12 +40,14 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart")) ?? [])
+    setTonerOem((localStorage.getItem("tonerOem")))
+
   }, [])
 
 
 
   return (
-    <CartContext.Provider value={{ cart, setCart, setRealPrice, cardInfo, setCardInfo, personInfo, setPersonInfo, totalAmount, billingInfo, setBillingInfo }}>
+    <CartContext.Provider value={{ cart, setCart, setRealPrice, cardInfo, setCardInfo, personInfo, setPersonInfo, totalAmount, billingInfo, setBillingInfo, tonerOem, setTonerOem }}>
       {children}
     </CartContext.Provider>
   );

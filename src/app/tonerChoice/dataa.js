@@ -13,6 +13,7 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { TonerContext } from "@/providers/toner";
+import BreadCrumbs from "../components/Breadcrumbs";
 
 const TonerChoice = (props) => {
   const searchParams = useSearchParams();
@@ -21,7 +22,7 @@ const TonerChoice = (props) => {
   const toner = toners.find((toner) => toner.oem === oem);
 
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const { cart, setCart, cartLook } = useContext(CartContext);
+  const { cart, setCart, cartLook, tonerOem } = useContext(CartContext);
   const [aboveOne, setAboveOne] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [data, setData] = useState("");
@@ -183,7 +184,10 @@ const TonerChoice = (props) => {
   //         });
   // }
 
-
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+    { name: `Toners`, url: `/toner` },
+  ]
   return (
     <div className={styles.main}>
       <Sliver />
@@ -197,6 +201,7 @@ const TonerChoice = (props) => {
         />
       </div>
       <Header />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.mainContent}>
         <div className={styles.center}>
           <div className={styles.column}>
