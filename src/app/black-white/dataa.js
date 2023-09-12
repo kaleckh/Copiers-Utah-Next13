@@ -126,22 +126,6 @@ const BlackWhite = () => {
   return (
     <div className={styles.main}>
       <Sliver />
-      <Head>
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.copiersutah.com/BlackWhite/" />
-        <title>
-          Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers
-          Utah
-        </title>
-        <meta
-          name="description"
-          content="Copiers Utah offers a range of high-quality copiers for sale, including Konica Minolta, Epson, and Lexmark models. Explore our selection and find the perfect copier for your office."
-        />
-        <meta
-          name="keywords"
-          content="copiers for sale, office copiers, Konica Minolta copiers, Epson copiers, Lexmark copiers, copiers Utah"
-        />
-      </Head>
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -150,25 +134,6 @@ const BlackWhite = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp	"
-            alt="Our copiers utah logo"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div></div>
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <Header />
       <div className={styles.section}>
         <div className={styles.center}>

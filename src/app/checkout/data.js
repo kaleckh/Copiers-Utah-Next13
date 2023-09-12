@@ -174,50 +174,7 @@ const Checkout = (props) => {
         }
 
     }
-    // const sendEmail = (e) => {
-    //     e.preventDefault();
-    //     console.log("Sending");
 
-    //     fetch("https://api.smtp2go.com/v3/email/send", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             api_key: "api-A4D77AA0362911EEA716F23C91C88F4E",
-    //             to: [{ email }],
-    //             sender: "<info@copiersutah.com>",
-    //             subject: `This is${name}'s quote form. Her number is ${number}`,
-    //             text_body: `${message}`,
-    //             html_body: `<h1>${message}</h1>`,
-    //             template_id: "0107239",
-    //             template_data: {
-    //                 stuff: cart.map((item) => {
-    //                     return {
-    //                         name: item.name,
-    //                         qty: item.quantity,
-    //                         price: item.price
-    //                     }
-    //                 }),
-    //                 total: total,
-    //                 orderId: po,
-    //                 addressLineState: state,
-    //                 addressLineStreet: address,
-    //                 addressLineCity: city,
-    //                 email: email,
-    //             },
-    //         }),
-    //     }).then((res) => {
-    //         console.log(res);
-    //         if (res.status === 200) {
-    //             console.log("Response succeeded!");
-    //             // setSubmitted(true);
-    //             // setName("");
-    //             // setEmail("");
-    //             // setBody("");
-    //         }
-    //     });
-    // };
     async function sendEmailBoss() {
         const requestOptions =
         {
@@ -241,8 +198,6 @@ const Checkout = (props) => {
 
             }),
         }
-
-        console.log(requestOptions.body, "this is the body")
         try {
             const response = await fetch('/api/pay/email', requestOptions);
             const data1 = await response.json();
@@ -250,6 +205,37 @@ const Checkout = (props) => {
         } catch (err) {
         }
     }
+
+
+    async function sendEmail() {
+        const requestOptions =
+        {
+            method: "POST",
+            body: JSON.stringify({
+
+
+                name: firstName,
+                orderId: po,
+                number: phone,
+                email: email,
+                toner: cart.map((item) => {
+                    return {
+                        name: item.name,
+                    }
+                }),
+
+
+            }),
+        }
+        try {
+
+            const response = await fetch('/api/pay/emailBoss', requestOptions);
+            const data1 = await response.json();
+            console.log(data1, "this is the response")
+        } catch (err) {
+        }
+    }
+
 
     const breadCrumbs = [
         { name: "Home", url: "/" },
@@ -417,9 +403,14 @@ const Checkout = (props) => {
                         </div>
 
                         <button onClick={() => {
-                            // chargeCard()
-                            // createDistribution()
-                            sendEmailBoss()
+                            chargeCard().then(() => {
+                                createDistribution().then(() => {
+                                    sendEmailBoss()
+                                    sendEmail()
+                                })
+                            })
+
+
                         }} style={{ marginBottom: "15px" }} className={styles.button}>Checkout!</button>
 
 

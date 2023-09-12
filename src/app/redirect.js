@@ -6,7 +6,7 @@ export function Redirect() {
             isHttp()
         }
         if (!(window.location.href.indexOf("www") > -1)) {
-            debugger
+
             window.location.href = window.location.href.replace("//", "//www.")
         }
     }

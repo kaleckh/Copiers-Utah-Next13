@@ -43,10 +43,10 @@ export async function POST(req, res) {
         tax.setName('level2 tax name');
         tax.setDescription('level2 tax');
 
-        var duty = new APIContracts.ExtendedAmountType();
-        duty.setAmount('8.55');
-        duty.setName('duty name');
-        duty.setDescription('duty description');
+        // var duty = new APIContracts.ExtendedAmountType();
+        // duty.setAmount('8.55');
+        // duty.setName('duty name');
+        // duty.setDescription('duty description');
 
         var shipping = new APIContracts.ExtendedAmountType();
         shipping.setAmount('2.99');

@@ -13,21 +13,53 @@ export default function Header() {
     <header className={styles.contactHeader}>
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp"
-            alt="buy a used or new business copier"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-            </div>
+          <Link href={'/'}>
+            <Image
+              src="/static/logo.webp"
+              alt="buy a used or new business copier"
+              width={100}
+              height={75}
+            />
+          </Link>
+          <div className={styles.pieceContainer}>
+            <Link href="/">
+              <div className={styles.headerPieces}>Home</div>
+              <div className={styles.lineSmall}></div>
+            </Link>
           </div>
-          <Link href={'/cart'}>
+          <div className={styles.pieceContainer}>
+            <Link href="/products">
+              <div className={styles.headerPieces}>Product Line</div>
+              <div className={styles.lineSmall}></div>
+            </Link>
+          </div>
+          <div className={styles.pieceContainer}>
+            <Link href="/refurbished">
+              <div className={styles.headerPieces}>Refurbished Machines</div>
+              <div className={styles.lineSmall}></div>
+            </Link>
+          </div>
+          <div className={styles.pieceContainer}>
+            <Link href="/finance">
+              <div className={styles.headerPieces}>Financing</div>
+              <div className={styles.lineSmall}></div>
+            </Link>
+          </div>
+          <div className={styles.pieceContainer}>
+            <Link href="/toner">
+              <div className={styles.headerPieces}>Toner</div>
+              <div className={styles.lineSmall}></div>
+            </Link>
+          </div>
+
+          <div className={styles.pieceContainer}>
+            <Link href="/buy">
+              <div className={styles.headerPieces}>Contact Us</div>
+              <div className={styles.lineSmall}></div>
+            </Link>
+          </div>
+
+          <Link href={'/cart-='}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <Image
                 src="/static/cart.webp"
@@ -40,39 +72,9 @@ export default function Header() {
           </Link>
         </div>
       </div >
+      <div className={styles.line}></div>
       <div className={styles.headerContainer}>
-        <div className={styles.pieceContainer}>
-          <Link href="/">
-            <div className={styles.headerPieces}>Home</div>
-          </Link>
-        </div>
-        <div className={styles.pieceContainer}>
-          <Link href="/products">
-            <div className={styles.headerPieces}>Product Line</div>
-          </Link>
-        </div>
-        <div className={styles.pieceContainer}>
-          <Link href="/refurbished">
-            <div className={styles.headerPieces}>Refurbished Machines</div>
-          </Link>
-        </div>
-        <div className={styles.pieceContainer}>
-          <Link href="/finance">
-            <div className={styles.headerPieces}>Financing</div>
-          </Link>
-        </div>
-        <div className={styles.pieceContainer}>
-          <Link href="/toner">
-            <div className={styles.headerPieces}>Toner</div>
-          </Link>
-        </div>
-        <div className={styles.pieceContainer}>
-          <Link href="/buy">
-            <div className={styles.headerPieces}>Contact Us</div>
-          </Link>
-        </div>
       </div>
-
     </header >
   );
 }
