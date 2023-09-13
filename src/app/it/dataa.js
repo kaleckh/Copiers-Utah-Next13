@@ -1,6 +1,7 @@
 "use client"
 import { useState, useRef } from "react";
 import Header from "../components/Header";
+import Section from "../components/Section";
 import Head from "next/head";
 import Image from "next/image";
 // import Form from "./Form";
@@ -372,6 +373,7 @@ const It = (props) => {
                     </div>
                 </div>
             </div>
+            <Section />
 
             <Footer />
         </div>

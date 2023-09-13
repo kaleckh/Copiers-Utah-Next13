@@ -3,6 +3,26 @@
     height: fit-content;
     background-color: white;
   }
+  .overlay {
+    position: absolute;
+    bottom: 5;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 689px;
+    width: 100%;
+    height: 73%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.pic {
+  background-image: url("/static/office.webp");
+  width: 100vw;
+  height: 73vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
   
   .logoSpace {
     height: 30%;
@@ -13,7 +33,12 @@
   }
   .fifty{
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 80px;
+    color: white;
   }
   
   .button {
@@ -105,8 +130,9 @@
   }
   
   .paragraph {
-    color: rgb(109, 113, 132);
-    font-size: 25px;
+    color: white;
+    font-size: 20px;
+    line-height: 35px;
     padding: 10px;
     font-weight: 200;
     text-align: center;
