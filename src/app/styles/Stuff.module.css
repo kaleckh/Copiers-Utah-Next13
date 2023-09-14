@@ -44,6 +44,30 @@
     align-items: center;
     justify-content: space-evenly;
   }
+  .buttonBlue {
+    appearance: none;
+    border: none;
+    background-color: rgb(1,51,93);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+    border: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    width: 75%;
+    will-change: transform;
+  }
+
   
   .button {
     appearance: none;
@@ -108,6 +132,26 @@
     font-size: 30px;
     font-weight: 300;
     padding: 40px;
+    text-align: center;
+  }
+  .titleBig {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px;
+    
+    text-align: center;
+  }
+  .flex{
+    display: flex;
+    padding-top: 20px;
+    align-items: center;
+  }
+  .titleBigBlue {
+    color: rgb(1,51,93);
+    font-size: 30px;
+    font-weight: 600;
+    
     text-align: center;
   }
   .titleSmall {
@@ -328,14 +372,16 @@
     text-align: center;
   }
   .box{
-    width: 300px;
+    width: 265px;
     border-radius: 10px;
     height: fit-content;
-    padding: 5px;
     flex-direction: column;
     display: flex;
     align-items: center;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid rgb(214,215,227);
+  }
+  .box div{
+    color: black;
   }
   .rowBottom {
     display: flex;
@@ -344,9 +390,7 @@
     height: 30%;
     width: 77%;
   }
-  .section div {
-    color: rgb(85, 85, 85);
-  }
+  
   
   .aboutRow {
     display: flex;
@@ -383,6 +427,7 @@
   .section {
     height: fit-content;
     flex-direction: column;
+    padding: 30px;
     display: flex;
     justify-content: flex-end;
     background-color: white;

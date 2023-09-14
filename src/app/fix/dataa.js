@@ -171,7 +171,7 @@ const Fix = () => {
       </div>
       <Header />
       <div style={{ display: "flex" }} className={styles.column}>
-        <div style={{ display: "flex", height: "fit-content" }} className={styles.row}>
+        <div style={{ display: "flex", height: "fit-content", padding: "15px" }} className={styles.row}>
           <div className={styles.mainSpace}>
             <div>
               <div

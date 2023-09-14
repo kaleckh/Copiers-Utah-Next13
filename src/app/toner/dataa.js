@@ -168,7 +168,7 @@ const Buy = (props) => {
                   // }}
                   className={styles.box}
                 >
-                  <div className={styles.titleSmallBlack}>{toner.name}</div>
+
                   <Link
                     onClick={() => {
                       setTonerOem(toner.oem)
@@ -184,6 +184,7 @@ const Buy = (props) => {
                       width={180}
                       height={180}
                     ></Image>
+                    <div className={styles.titleSmallBlack}>{toner.name}</div>
                     <div style={{ width: "100%" }}>
                       <div className={styles.row}>
                         <div className={styles.row}>
@@ -195,12 +196,13 @@ const Buy = (props) => {
                             }}
                           >
                             <div
-                              style={{ paddingRight: "5px" }}
+
+                              style={{ paddingRight: "5px", color: "rgb(2,50,92)" }}
                               className={styles.price}
                             >
                               $
                             </div>
-                            <div className={styles.modelSmallish}>
+                            <div style={{ color: "rgb(2,50,92)" }} className={styles.modelSmallish}>
                               {toner.price}
                             </div>
                           </div>

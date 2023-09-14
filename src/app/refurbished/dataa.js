@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Sliver from '../components/sliverr'
+import Section from "../components/Section";
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Footer from '../components/Footer'
@@ -254,8 +255,10 @@ const Refurbished = () => {
       <Header />
       <div className={styles.section}>
         <div className={styles.center}>
-          <h1 className={styles.title}>Our Top Multicolor Machines</h1>
-          <div className={styles.line}></div>
+          <div className={styles.flex}>
+            <div className={styles.titleBig}>Our Top</div>
+            <div className={styles.titleBigBlue}>Multicolor Machines</div>
+          </div>
         </div>
         <div className={styles.grid}>
           {copiers.map((copier) => {
@@ -296,7 +299,7 @@ const Refurbished = () => {
                             `${copier.description}`,
                           )
                         }}
-                        className={styles.button}
+                        className={styles.buttonBlue}
                       >
                         See Details
                     </button>
@@ -317,6 +320,7 @@ const Refurbished = () => {
           })}
         </div>
       </div>
+      <Section></Section>
       <Footer />
     </div>
   )

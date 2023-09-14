@@ -84,9 +84,9 @@ const Products = () => {
 
       <Header />
       <div className={styles.mainContainer}>
-        <h1 className={styles.color}>Our Top Products</h1>
-        <div className={styles.centerLine}>
-          <div className={styles.line} />
+        <div style={{ padding: "25px" }} className={styles.flex}>
+          <div className={styles.color}>Our Top</div>
+          <div className={styles.blue}>Products</div>
         </div>
         <div className={styles.copierRow}>
           <div
@@ -99,17 +99,20 @@ const Products = () => {
                 <Image alt={"A Lexmark Copier For Sale"} src={'/static/Lexmark.webp'} fill={true} />
               </Link>
             </div>
+            <button className={styles.buttonBlue}>See Details</button>
           </div>
           <div
+            style={{ padding: "12px" }}
             className={styles.copierContainer}
 
           >
-            <h2 className={styles.title}>Konica Minolta</h2>
+            <h2 style={{ padding: "5px" }} className={styles.title}>Konica Minolta</h2>
             <div className={styles.imageContainer}>
               <Link href={'/konika'}>
                 <Image alt={"A Konika Copier for Lease"} src={'/static/Konika.webp'} fill={true} />
               </Link>
             </div>
+            <button className={styles.buttonBlue}>See Details</button>
           </div>
           <div
             className={styles.copierContainer}
@@ -121,7 +124,7 @@ const Products = () => {
                 <Image alt={"A Epson Copiers for Lease  "} src={'/static/epsonL.webp'} fill={true} />
               </Link>
             </div>
-
+            <button style={{ margin: "30px" }} className={styles.buttonBlue}>See Details</button>
           </div>
         </div>
         <div className={styles.smallSection}>
