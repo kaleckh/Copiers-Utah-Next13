@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
+import Section from "../components/Section";
 import { CartContext } from "../../providers/cart";
 import { Client } from "square";
 import Sliver from "../components/sliverr";
@@ -205,45 +206,66 @@ const TonerChoice = (props) => {
       <div className={styles.mainContent}>
         <div className={styles.center}>
           <div className={styles.column}>
-            <div className={styles.titleLarge}>{toner.name}</div>
-            <div className={styles.titleSmall}> OEM #: {toner.oem}</div>
-            <Image src={toner.image} width={300} height={250} />
+
+            {/* <div className={styles.titleSmall}> OEM #: {toner.oem}</div> */}
+            <div className={styles.imageContainer}>
+              <Image src={toner.image} width={300} height={250} />
+            </div>
           </div>
           <div className={styles.centerFeature}>
             <div className={styles.aContainer}>
-              <div className={styles.titleLargeBlack}>Features</div>
+
+              <div className={styles.titleLarge}>{toner.name}</div>
               <div className={styles.something}>
                 <div className={styles.titleSmall}>
-                  Model: <div className={styles.small}>{oem}</div>{" "}
-                </div>
-                <div className={styles.titleSmall}>
-                  Yield: <div className={styles.small}>{toner.yield}</div>{" "}
-                </div>
-                <div className={styles.titleSmall}>
-                  Quantity:{" "}
-                  <input
-                    onChange={(event) => {
-                      setQuantity(event.target.value);
-                    }}
-                    className={styles.number}
-                    placeholder={quantity}
-                    type="number"
-                  />
-                </div>
-                <div className={styles.titleSmall}>
-                  Retail Price:{" "}
+
                   <div className={styles.small}>
                     ${aboveOne ? newPrice : toner.price}
                   </div>
                 </div>
-                <div className={styles.titleSmall}>
-                  Condition: <div className={styles.small}>New</div>
+                <div className={styles.line}></div>
+                <div style={{ color: "black" }}>Features:</div>
+                <div className={styles.flex}>
+                  <div className={styles.detailColumn}>
+                    <div className={styles.titleSmall}>
+                      Model: <div className={styles.small}>{oem}</div>{" "}
+                    </div>
+                    <div className={styles.titleSmall}>
+                      Yield: <div className={styles.small}>{toner.yield}</div>{" "}
+                    </div>
+                  </div>
+                  <div className={styles.detailColumn}>
+                    <div className={styles.titleSmall}>
+                      Shipping Weight:
+                    </div>
+
+                    <div className={styles.titleSmall}>
+                      Condition: <div className={styles.small}>New</div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div className={styles.line}></div>
+            </div>
+            <div style={{ paddingTop: "10px", marginBottom: "10px", paddingBottom: "20px", display: "flex", flexDirection: "column" }} className={styles.titleSmall}>
+              Qty.
+               <div>
+                <div className={styles.plus}>+</div>
+                <input
+                  onChange={(event) => {
+                    setQuantity(event.target.value);
+                  }}
+                  style={{ marginTop: "10px" }}
+                  className={styles.number}
+                  placeholder={quantity}
+                  type="number"
+                />
+                <div className={styles.minus}>-</div>
               </div>
             </div>
             <div className={styles.buttonRow}>
               <button
-                className={styles.button3}
+                className={styles.buttonBlue}
                 onClick={(e) => {
                   getOrderData().then(() => {
 
@@ -255,7 +277,7 @@ const TonerChoice = (props) => {
                   setOrderData();
                 }}
               >
-                Buy Now!
+                Buy Now
               </button>
               <Link href={"/cart"}>
                 <button className={styles.button3}>
@@ -287,41 +309,8 @@ const TonerChoice = (props) => {
             </div>
           </div>
         </div>
-        <div className={styles.secondSection}>
-          <div style={{ paddingBottom: "50px" }} className={styles.row}>
-            <div className={styles.lineSmall}></div>
-            <div className={styles.big}>Specs and Details</div>
-            <div className={styles.lineSmall}></div>
-          </div>
-          <div style={{ width: "30%" }}>
-            <div className={styles.row}>
-              <div className={styles.titleSmallSpecNB}>Part #</div>
-              <div className={styles.titleSmallSpec}>{oem}</div>
-            </div>
-            <div className={styles.line}></div>
-            <div className={styles.row}>
-              <div className={styles.titleSmallSpecNB}>Page Yield:</div>
-              <div className={styles.titleSmallSpec}>{toner.yield}</div>
-            </div>
-            <div className={styles.line}></div>
-            <div className={styles.row}>
-              <div className={styles.titleSmallSpecNB}>Color:</div>
-              <div className={styles.titleSmallSpec}>{toner.color}</div>
-            </div>
-            <div className={styles.line}></div>
-            <div className={styles.row}>
-              <div className={styles.titleSmallSpecNB}>Shipping Weight:</div>
-              <div className={styles.titleSmallSpec}>12345</div>
-            </div>
-            <div className={styles.line}></div>
-            <div className={styles.row}>
-              <div className={styles.titleSmallSpecNB}>Price:</div>
-              <div className={styles.titleSmallSpec}>${toner.price}</div>
-            </div>
-          </div>
-        </div>
       </div>
-
+      <Section></Section>
       <Footer />
     </div>
   );

@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
+import Section from "../components/Section";
 import Sliver from '../components/sliverr'
 import Head from "next/head";
 import { Metadata } from 'next'
@@ -212,45 +213,7 @@ const Finance = () => {
       <div className={styles.centerLine}>
         <div className={styles.line} />
       </div>
-
-      <div className={styles.thirdSection}>
-        <h2 className={styles.title} style={{ fontWeight: "600" }}>
-          Why Choose Copiers Utah?
-        </h2>
-        <div className={styles.optionContainer}>
-          <div className={styles.optionsContainer}>
-            <h3 className={styles.smallTitle}>Rent To Own</h3>
-            <div className={styles.info}>
-              As you make your rental payments, you"ll be one step closer to
-              owning your copier outright.
-            </div>
-          </div>
-          <div className={styles.optionsContainer}>
-            <h3 className={styles.smallTitle}>Easy Leases</h3>
-            <div className={styles.info}>
-              Our leases are designed to fit your budget and your business
-              needs, with fliexible terms and no hidden fees!
-            </div>
-          </div>
-          <div className={styles.optionsContainer}>
-            <h3 className={styles.smallTitle}>Hastle Free</h3>
-            <div className={styles.info}>
-              We handle everything! You can focus on your business while we
-              handle the printer needs
-            </div>
-          </div>
-        </div>
-        <a href="#quote" title="finance a copier quote">
-          <button
-            onClick={() => {
-              setToggle(!toggle);
-            }}
-            className={styles.button}
-          >
-            Get your terms
-          </button>
-        </a>
-      </div>
+      <Section />
 
       <Footer />
     </div>

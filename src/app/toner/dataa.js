@@ -115,41 +115,41 @@ const Buy = (props) => {
               </div>
               <div className={styles.row}>
                 <div className={styles.width}>
-                  <input type="checkbox" />
+                  <input className={styles.space} type="checkbox" />
                 </div>
                 <div>
                   <div>Epson</div>
                 </div>
               </div>
               <div className={styles.row}>
-                <input type="checkbox" />
+                <input className={styles.space} type="checkbox" />
                 <div>Konika Minolta</div>
               </div>
               <div className={styles.row}>
-                <input type="checkbox" />
+                <input className={styles.space} type="checkbox" />
                 <div>HP</div>
               </div>
               <div className={styles.row}>
-                <input type="checkbox" />
+                <input className={styles.space} type="checkbox" />
                 <div>Xenox</div>
               </div>
             </div>
             <div className={styles.columnCenter}>
-              <div className={styles.titleBig}>color</div>
+              <div style={{ fontSize: "16px" }} className={styles.titleBig}>color</div>
               <div className={styles.row}>
-                <input type="checkbox" />
+                <input className={styles.space} type="checkbox" />
                 <div>Black</div>
               </div>
               <div className={styles.row}>
-                <input type="checkbox" />
+                <input className={styles.space} type="checkbox" />
                 <div>Blue</div>
               </div>
               <div className={styles.row}>
-                <input type="checkbox" />
+                <input className={styles.space} type="checkbox" />
                 <div>Red</div>
               </div>
               <div className={styles.row}>
-                <input type="checkbox" />
+                <input className={styles.space} type="checkbox" />
                 <div>Yellow</div>
               </div>
             </div>
