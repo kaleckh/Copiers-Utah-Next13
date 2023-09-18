@@ -158,6 +158,18 @@
     font-size: 25px;
     font-weight: 200;
   }
+  .paragraphReview {
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 200;
+  }
+  .starRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
   
   .logo {
     width: 170px;
@@ -333,6 +345,20 @@
     border-radius: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
+  .boxReview{
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px rgb(196, 196, 196) solid;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    border-radius: 15px;
+  }
+  .boxReview div{
+    color: black;
+    padding: 5px
+  }
 
   .box div{
     color: black;
@@ -373,7 +399,7 @@
   
   .titleSmall {
     color: black;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 1px;
     text-align: center;
     line-height: 35px;
@@ -393,6 +419,12 @@
   
   
   .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  .rowSpaced {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -449,6 +481,11 @@
     justify-content: center;
     width: 100%;
   }
+  .background{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
   .side{
     display: flex;
     justify-content: center;
@@ -457,7 +494,7 @@
     background-image: url("/static/side.webp");
     background-size: cover;
     height: 42vh;
-    width: 59vw;
+    width: 69vw;
     background-repeat: no-repeat;
     background-position: center center;
   }
@@ -640,15 +677,28 @@
     display: flex;
     justify-content: center;
   }
-  .fourthSection {
+  .whoBox{
+    height: 250px;
+    width: 400px;
+    border-radius: 15px;
+    border: 1px solid black;
+  }
+  .sectionMedium{
     height: 500px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .fourthSection {
+    height: 550px;
     background-color: white;
     flex-direction: column;
     align-items: center;
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
-  }
+
+}
+  
   
   .thirdParagraph {
     font-size: 20px;
@@ -656,8 +706,17 @@
     text-align: center;
     color: rgb(119, 119, 119);
   }
+
+  .reviewSection{
+    height: 500px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
   .contactHeader {
-    background-color: transparent;
+    background-color: white;
     width: 100%;
     display: flex;
     color: black;

@@ -1,6 +1,7 @@
 import styles from "../styles/Header.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Sliver from '../components/sliverr'
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Image from "next/image";
 import cart from "../cart/page";
@@ -10,83 +11,86 @@ export default function Header() {
   const { cart, setCart, cartLook, setRealPrice } = useContext(CartContext);
 
   return (
-    <header className={styles.contactHeader}>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Link href={'/'}>
-            <Image
-              src="/static/logo.webp"
-              alt="buy a used or new business copier"
-              width={100}
-              height={75}
-            />
-          </Link>
-          <div className={styles.pieceContainer}>
-            <Link href="/">
-              <div className={styles.headerPieces}>Home</div>
-              <div className={styles.lineSmall}></div>
-            </Link>
-          </div>
-          <div className={styles.pieceContainer}>
-            <Link href="/products">
-              <div className={styles.headerPieces}>Rentals</div>
-              <div className={styles.lineSmall}></div>
-            </Link>
-          </div>
-          <div className={styles.pieceContainer}>
-            <Link href="/products">
-              <div className={styles.headerPieces}>Copier Repair</div>
-              <div className={styles.lineSmall}></div>
-            </Link>
-          </div>
-          <div className={styles.pieceContainer}>
-            <Link href="/toner">
-              <div className={styles.headerPieces}>Toner</div>
-              <div className={styles.lineSmall}></div>
-            </Link>
-          </div>
-          <div className={styles.pieceContainer}>
-            <Link href="/products">
-              <div className={styles.headerPieces}>Product Line</div>
-              <div className={styles.lineSmall}></div>
-            </Link>
-          </div>
-          <div className={styles.pieceContainer}>
-            <Link href="/refurbished">
-              <div className={styles.headerPieces}>Refurbished Machines</div>
-              <div className={styles.lineSmall}></div>
-            </Link>
-          </div>
-          <div className={styles.pieceContainer}>
-            <Link href="/finance">
-              <div className={styles.headerPieces}>Financing</div>
-              <div className={styles.lineSmall}></div>
-            </Link>
-          </div>
-
-          <div className={styles.pieceContainer}>
-            <Link href="/buy">
-              <div className={styles.headerPieces}>Contact Us</div>
-              <div className={styles.lineSmall}></div>
-            </Link>
-          </div>
-
-          <Link href={'/cart-='}>
-            <div style={{ display: "flex", alignItems: "center" }}>
+    <div>
+      <Sliver />
+      <header className={styles.contactHeader}>
+        <div className={styles.logoSpaceContainer}>
+          <div className={styles.logoSpace}>
+            <Link href={'/'}>
               <Image
-                src="/static/cart.webp"
+                src="/static/logo.webp"
                 alt="buy a used or new business copier"
-                width={25}
-                height={25}
+                width={100}
+                height={75}
               />
-              <div style={{ color: "rgb(240,136,6)", fontSize: "20px" }}>{cart.length}</div>
+            </Link>
+            <div className={styles.pieceContainer}>
+              <Link href="/">
+                <div className={styles.headerPieces}>Home</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
             </div>
-          </Link>
+            <div className={styles.pieceContainer}>
+              <Link href="/products">
+                <div className={styles.headerPieces}>Rentals</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
+            </div>
+            <div className={styles.pieceContainer}>
+              <Link href="/products">
+                <div className={styles.headerPieces}>Copier Repair</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
+            </div>
+            <div className={styles.pieceContainer}>
+              <Link href="/toner">
+                <div className={styles.headerPieces}>Toner</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
+            </div>
+            <div className={styles.pieceContainer}>
+              <Link href="/products">
+                <div className={styles.headerPieces}>Product Line</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
+            </div>
+            <div className={styles.pieceContainer}>
+              <Link href="/refurbished">
+                <div className={styles.headerPieces}>Refurbished Machines</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
+            </div>
+            <div className={styles.pieceContainer}>
+              <Link href="/finance">
+                <div className={styles.headerPieces}>Financing</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
+            </div>
+
+            <div className={styles.pieceContainer}>
+              <Link href="/buy">
+                <div className={styles.headerPieces}>Contact Us</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
+            </div>
+
+            <Link href={'/cart-='}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Image
+                  src="/static/cart.webp"
+                  alt="buy a used or new business copier"
+                  width={25}
+                  height={25}
+                />
+                <div style={{ color: "rgb(240,136,6)", fontSize: "20px" }}>{cart.length}</div>
+              </div>
+            </Link>
+          </div>
+        </div >
+        <div className={styles.line}></div>
+        <div className={styles.headerContainer}>
         </div>
-      </div >
-      <div className={styles.line}></div>
-      <div className={styles.headerContainer}>
-      </div>
-    </header >
+      </header >
+    </div>
   );
 }
