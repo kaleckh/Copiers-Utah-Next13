@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Section from "../app/components/Section";
 import Header from "./components/Header";
 import Sliver from './components/sliverr'
 import { PatternFormat } from "react-number-format";
@@ -79,130 +80,81 @@ export default function Data() {
       />
       <Header />
       <div className={styles.secondSection}>
-        <div className={styles.flex}>
-          <div
-            className={styles.shadeBig}
-            style={{ height: "75%", marginTop: "24px" }}
-          >
-            <Link
-              href="/buy"
-              title="buy new and used copiers"
-            >
-              <div className={styles.parent}>
-                <div className={styles.woman} />
-                <div className={styles.overlay}>
-                  <div className={styles.centerLarge}>
-                    Buy Or Lease A Copier
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className={styles.somethingContainer}>
-            <div className={styles.row}>
-              <div
-
-                className={styles.shade}
-              >
-                <Link
-                  href="/fix"
-                  title="copier maintenance"
-                >
-                  <div className={styles.parent}>
-                    <div className={styles.repair} />
-                    <div className={styles.overlay} />
-                    <div className={styles.center}>Copier Repair</div>
-                  </div>
-                </Link>
-              </div>
-              <Link href={'/toner'}>
-                <div
-                  className={styles.shade}
-                >
-                  <div className={styles.parent}>
-                    <div className={styles.toner} />
-                    <div className={styles.overlay} />
-                    <div className={styles.center}>Buy Toner</div>
-                  </div>
-                </div>
+        <div className={styles.flexSomething}>
+          <div className={styles.flex}>
+            <div className={styles.mainContainer}>
+              <div className={styles.bubble}>
+                Copiers Utah Welcomes You
+            </div>
+              <div className={styles.homepageTitle}>
+                Explore Our Copier Buying And Leasing Solutions
+            </div>
+              <div className={styles.paragraphSmall}>
+                We provide a variety of high-quality copiers for your business needs. Whether you buy or lease, our cutting-edge solutions will boost your office efficiency to new heights.
+            </div>
+              <Link href={'/buy'}>
+                <button className={styles.buttonBlue}>Get A Quote Now</button>
               </Link>
             </div>
-            <div className={styles.row}>
-              <div className={styles.shade}>
-                <Link href="/it" title="it services">
-                  <div className={styles.parent}>
-                    <div className={styles.itWork} />
-                    <div className={styles.overlay} />
-                    <div className={styles.center}>IT Work</div>
-                  </div>
-                </Link>
-              </div>
-              <div className={styles.shade}>
-                <Link
-                  href="/shortTerm"
-                  title="leasing and rental services"
-                >
-                  <div className={styles.parent}>
-                    <div className={styles.construction} />
-                    <div className={styles.overlay} />
-                    <div className={styles.center}>Short Term Rental</div>
-                  </div>
-                </Link>
-              </div>
+
+            <div>
+              <Image
+                src="/static/Group.webp"
+                alt="buy a used or new business copier"
+                width={500}
+                height={300}
+              />
             </div>
           </div>
-        </div>
-        <div className={styles.lineContainer}>
-          <div style={{ marginTop: "30px" }} className={styles.line}></div>
         </div>
         <div className={styles.needSpace}>
-          <div className={styles.middle}>
-            <h3 className={styles.reviewBig}>Recent Google Reviews...</h3>
+          <div style={{ display: "flex", justifyContent: "center" }} className={styles.titleBig}>Our
+            <div style={{ color: "rgb(2,50,92)", paddingLeft: "15px" }}>Services</div>
           </div>
-          <div className={styles.reviewRow}>
-            <div className={styles.paragraphContainer}>
-              <div className={styles.smallRow}>
-                <Quote />
-                <div className={styles.titleSmall}>
-                  People there are always fantastic to work with. I recommend
-                  them to everyone
-                </div>
+          <div className={styles.row}>
+            <div className={styles.box}>
+              <div>
+                <Image
+                  src="/static/repairs.webp"
+                  alt="buy a used or new business copier"
+                  width={65}
+                  height={65}
+                />
+
               </div>
-              <div className={styles.smallParagraph}>copiers near me</div>
-              <div className={styles.title}>Tara Bennets</div>
-            </div>
-            <div className={styles.paragraphContainer}>
-              <div className={styles.smallRow}>
-                <Quote />
-                <div className={styles.titleSmall}>
-                  Great company to work with. They have friendly staff and were
-                  able to get me up and running within a few days.
-                </div>
+              <div style={{ textAlign: "center" }}>
+                <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Copier Repair</div>
+                <div className={styles.serviceParagraph}>Copier repairs offer businesses a budget-friendly way to keep their office equipment in top shape, ensuring smooth operations without breaking the bank.</div>
               </div>
-              <div className={styles.smallParagraph}>copiers near me</div>
-              <div className={styles.title}>Kyle Francis</div>
             </div>
-            <div className={styles.paragraphContainer}>
-              <div className={styles.smallRow}>
-                <Quote />
-                <div className={styles.titleSmall}>
-                  This company is the best to do work with. They are very
-                  friendly and very helpful.
-                </div>
+            <div className={styles.box}>
+              <div>
+                <Image
+                  src="/static/it.webp"
+                  alt="buy a used or new business copier"
+                  width={85}
+                  height={60}
+                />
               </div>
-              <div className={styles.smallParagraph}>copiers near me</div>
-              <div className={styles.title}>Carley Ward</div>
+              <div style={{ textAlign: "center" }}>
+                <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>It Services</div>
+                <div className={styles.serviceParagraph}>IT services are a cost-effective solution for businesses, providing essential tech expertise and support without a big upfront investment.</div>
+              </div>
             </div>
-          </div>
-          <div className={styles.centerReview}>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.google.com/maps/place/Copiers+for+Less/@40.599545,-111.9827469,13z/data=!4m12!1m2!2m1!1scopiers+utah!3m8!1s0x87528bb3da9348f5:0x52af9011e571a1bf!8m2!3d40.599545!4d-111.9065292!9m1!1b1!15sCgxjb3BpZXJzIHV0YWhaDiIMY29waWVycyB1dGFokgEVY29waWVyX3JlcGFpcl9zZXJ2aWNlmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU4xTjJaeE0xTjNFQUXgAQA!16s%2Fg%2F1hc90lr04"
-            >
-              <button className={styles.button}>See All Google Reviews</button>
-            </a>
+            <div className={styles.box}>
+              <div>
+                <Image
+                  src="/static/rental.webp"
+                  alt="buy a used or new business copier"
+                  width={65}
+                  height={70}
+                />
+              </div>
+              <div style={{ textAlign: "center" }}>
+                <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Short Term Rentals</div>
+                <div className={styles.serviceParagraph}>Copier rentals are a cost-effective way for businesses to access the latest copier technology without making a large upfront investment</div>
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.lineContainer}>
@@ -210,140 +162,87 @@ export default function Data() {
         </div>
         <div id="quote" className={styles.section}>
           <div className={styles.thirdSectionRow}>
-            <div className={styles.front}>
-              <h2 style={{ fontSize: "30px" }} className={styles.title}>
-                We Sell New And Used Copiers
-              </h2>
-              <h3 style={{ fontSize: "20px" }} className={styles.h3}>
-                Lets Get You A Quote!
-              </h3>
-              <div className={styles.cartoon}></div>
+            <div className={styles.side}>
+              <div style={{ fontSize: "35px", fontWeight: "600", width: "55%" }}>Toner Cartridges of Superior Quality For Sale</div>
+              <div style={{ width: "55%" }}>
+                <button className={styles.button}>Browse Toner</button>
+              </div>
             </div>
-            <div className={styles.container}>
-              <div className={styles.black}>Get Your free Quote!</div>
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-evenly",
-                  height: "80%",
-                  alignItems: "center",
-                }}
-              >
-                <div className={styles.space}>
-                  <div className={styles.number}>1</div>
-                  <input
-                    className={styles.inputSingle}
-                    placeholder="Name"
-                    type="text"
-                    name=""
-                    id=""
-                    required={true}
-                    onChange={() => {
-                      setName(event.target.value);
-                    }}
-                  />
-                </div>
-                <div className={styles.space}>
-                  <div className={styles.number}>2</div>
-                  <PatternFormat
-                    format="+1 (###) ### ####"
-                    allowEmptyFormatting
-                    mask="_"
-                    className={styles.phoneNumber}
-                    onChange={(event) => {
-                      setNumber(event.target.value);
-                    }}
-                  />
-                  ;
-                </div>
+            <div>
+              <Image
+                src="/static/yellowLexmark.webp"
+                alt="buy a used or new business copier"
+                width={300}
+                height={250}
+              />
+            </div>
+          </div>
+        </div>
 
-                <div className={styles.space}>
-                  <div className={styles.number}>3</div>
-                  <input
-                    onChange={() => {
-                      setMessage(event.target.value);
-                    }}
-                    className={styles.inputSingle}
-                    placeholder="Comments"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div
-                style={{ height: "25%", display: "flex" }}
-                className={styles.padding}
-              >
-                <ReCAPTCHA
-                  style={{
-                    marginBottom: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                  className="recaptcha"
-                  sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-                  ref={captchaRef}
-                  onChange={verifyCallback}
-                />
-              </div>
-              <button
-                onClick={(e) => {
-                  setQuoteToggle(!quoteToggle);
-                  sendEmail(e);
-                }}
-                className={styles.button}
-                disabled={!recaptchaResponse}
-              >
-                Get My Quote
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            width: "100%",
-            justifyContent: "center",
-          }}
-        >
-          <div className={styles.copiersLine}></div>
-          <div className={styles.copiersTitle}>Copiers Utah</div>
-          <div className={styles.copiersLine}></div>
-        </div>
         <div className={styles.fourthSection}>
-          <div className={styles.bottomRow}>
-            <div className={styles.titleMed}>WHO WE ARE</div>
-            <div className={styles.thirdParagraph}>
-              inventory includes top-quality copiers from trusted brands,
-              providing efficient printing solutions for businesses of all
-              sizes. Our knowledgeable team is dedicated to helping you find the
-              right equipment to fit your needs and budget.
+          <div style={{ color: "black", display: "flex", fontSize: "35px", fontWeight: "400" }}>Our Top <div style={{ color: "rgb(2,50,92)", paddingLeft: "8px" }}>Products</div></div>
+          <div className={styles.copierRow}>
+
+            <div
+
+              className={styles.copierContainer}
+            >
+              <h2 className={styles.title}>Lexmark</h2>
+              <div className={styles.imageContainerSmall}>
+                <Link href={'/lexmark'}>
+                  <Image alt={"A Lexmark Copier For Sale"} src={'/static/Lexmark.webp'} fill={true} />
+                </Link>
+              </div>
+              <button className={styles.buttonBlue}>See Details</button>
+            </div>
+            <div
+              style={{ padding: "12px" }}
+              className={styles.copierContainer}
+
+            >
+              <h2 style={{ padding: "5px" }} className={styles.title}>Konica Minolta</h2>
+              <div className={styles.imageContainer}>
+                <Link href={'/konika'}>
+                  <Image
+                    src="/static/Konika.webp"
+                    alt="buy a used or new business copier"
+                    width={200}
+                    height={175}
+                  />
+                </Link>
+              </div>
+              <button className={styles.buttonBlue}>See Details</button>
+            </div>
+            <div
+              className={styles.copierContainer}
+
+            >
+              <h2 className={styles.title}>Epson</h2>
+              <div className={styles.imageContainer}>
+                <Link href={'/epson'}>
+                  <Image
+                    src="/static/Konika.webp"
+                    alt="buy a used or new business copier"
+                    width={200}
+                    height={200}
+                  />
+                </Link>
+              </div>
+              <button style={{ margin: "30px" }} className={styles.buttonBlue}>See Details</button>
             </div>
           </div>
-          <div className={styles.bottomRow}>
-            <div className={styles.titleMed}>OUR PROMISE</div>
-            <div className={styles.thirdParagraph}>
-              At copiers utah, we promise transparent pricing, high-quality
-              equipment, and exceptional service. With competitive pricing on
-              new and used copiers and a team dedicated to helping you find the
-              right equipment, you can trust us for all your copier needs in
-              Utah.
-            </div>
+
+        </div>
+        <div>
+          <div>
+            <div>Who We Are</div>
           </div>
-          <div className={styles.bottomRow}>
-            <div className={styles.titleMed}>OUR PRODUCTS</div>
-            <div className={styles.thirdParagraph}>
-              We offer a variety of new and used copiers, including top-quality
-              models from trusted brands like Konica Minolta, Epson, and
-              Lexmark. Additionally, we also offer reliable copier repair
-              services for a wide range of brands beyond the ones we sell.
-            </div>
+          <div>
+            <div>What We DO</div>
           </div>
         </div>
       </div>
-
+      <Section />
       <Footer />
     </div>
   );
