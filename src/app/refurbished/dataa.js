@@ -240,7 +240,7 @@ const Refurbished = () => {
 
   return (
     <div className={styles.main}>
-      <Sliver />
+
 
       <div>
         <TawkMessengerReact

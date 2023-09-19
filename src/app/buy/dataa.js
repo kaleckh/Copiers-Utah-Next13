@@ -107,7 +107,7 @@ const Buy = (props) => {
           {quoteToggle ? (
             <div>
               <div className={styles.container}>
-                <h2 className={styles.black}>Get Your free Quote!</h2>
+                <h2 style={{ width: "80%" }} className={styles.black}>Get Your free Quote!</h2>
                 <div
                   style={{
                     width: "100%",
@@ -119,10 +119,10 @@ const Buy = (props) => {
                   }}
                 >
                   <div className={styles.space}>
-                    <div className={styles.number}>1</div>
+
                     <input
                       className={styles.inputSingle}
-                      placeholder="Name"
+                      placeholder="Full name"
                       type="text"
                       name=""
                       id=""
@@ -133,7 +133,7 @@ const Buy = (props) => {
                     />
                   </div>
                   <div className={styles.space}>
-                    <div className={styles.number}>2</div>
+
                     <PatternFormat
                       format="+1 (###) ### ####"
                       allowEmptyFormatting
@@ -147,7 +147,7 @@ const Buy = (props) => {
                   </div>
 
                   <div className={styles.space}>
-                    <div className={styles.number}>3</div>
+
                     <input
                       onChange={() => {
                         setMessage(event.target.value);

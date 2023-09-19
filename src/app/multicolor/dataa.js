@@ -222,10 +222,10 @@ const Multicolor = () => {
       }
     })
   }
- 
+
   return (
     <div className={styles.main}>
-      <Sliver />
+
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/Multicolor/" />
@@ -297,33 +297,33 @@ const Multicolor = () => {
                     }}
                   >
                     <Link href={'/product'}>
-                    <button
-                      onClick={() => {
-                        
-                        localStorage.setItem('Image', `${copier.image}`)
-                        localStorage.setItem('Model', `${copier.model}`)
-                        localStorage.setItem(
-                          'PagesPerMinute',
-                          `${copier.PagesPerMinute}`,
-                        )
-                        localStorage.setItem('paperSize', `${copier.paperSize}`)
-                        localStorage.setItem(
-                          'modelNumber',
-                          `${copier.modelNumber}`,
-                        )
-                        localStorage.setItem('brand', `${copier.brand}`)
-                        localStorage.setItem('timeOut', `${copier.timeOut}`)
-                        localStorage.setItem('type', `${copier.type}`)
-                        localStorage.setItem(
-                          'description',
-                          `${copier.description}`,
-                        )
-                      }}
-                      className={styles.button}
-                    >
+                      <button
+                        onClick={() => {
+
+                          localStorage.setItem('Image', `${copier.image}`)
+                          localStorage.setItem('Model', `${copier.model}`)
+                          localStorage.setItem(
+                            'PagesPerMinute',
+                            `${copier.PagesPerMinute}`,
+                          )
+                          localStorage.setItem('paperSize', `${copier.paperSize}`)
+                          localStorage.setItem(
+                            'modelNumber',
+                            `${copier.modelNumber}`,
+                          )
+                          localStorage.setItem('brand', `${copier.brand}`)
+                          localStorage.setItem('timeOut', `${copier.timeOut}`)
+                          localStorage.setItem('type', `${copier.type}`)
+                          localStorage.setItem(
+                            'description',
+                            `${copier.description}`,
+                          )
+                        }}
+                        className={styles.button}
+                      >
                         See Details
                     </button>
-                      </Link>
+                    </Link>
                   </div>
                   <div className={styles.fifty}>
                     <div className={styles.rowNumber}>

@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
+import Section from "../components/Section";
 import Head from 'next/head'
 import Sliver from '../components/sliverr'
 import Link from "next/link";
@@ -55,7 +56,7 @@ const Products = () => {
 
   return (
     <div className={styles.main}>
-      <Sliver />
+
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/Products/" />
@@ -127,13 +128,17 @@ const Products = () => {
             <button style={{ margin: "30px" }} className={styles.buttonBlue}>See Details</button>
           </div>
         </div>
-        <div className={styles.smallSection}>
-          <div className={styles.title}>Why These Brands</div>
-          <div className={styles.fifty}>
-            <div className={styles.paragraph}>We take pride in offering only the most reliable copiers in the market, which is why we exclusively sell Konica Minolta, Lexmark, and Epson copiers. These brands have established themselves as industry leaders, renowned for their exceptional performance, durability, and advanced features. Konica Minolta copiers provide cutting-edge technology and unmatched print quality, ensuring that your documents are reproduced with precision. Lexmark copiers are known for their robust build, high-speed functionality, and extensive paper handling capabilities, making them a reliable choice for demanding office environments. Epson copiers offer outstanding color accuracy, energy efficiency, and user-friendly interfaces, making them an excellent option for businesses seeking top-notch printing solutions. Rest assured, with our selection of Konica Minolta, Lexmark, and Epson copiers, you'll have access to the most reliable and efficient printing equipment available.</div>
+        <div className={`${styles.fifty} ${styles.pic}`}>
+          <div className={styles.overlay}>
+            <div style={{ width: "90%" }}>
+              <div className={styles.titleWhite}>Why these <div className={styles.wordBox}>brands</div><div />
+                <div className={styles.paragraph}>We take pride in offering only the most reliable copiers in the market, which is why we exclusively sell Konica Minolta, Lexmark, and Epson copiers. These brands have established themselves as industry leaders, renowned for their exceptional performance, durability, and advanced features. Konica Minolta copiers provide cutting-edge technology and unmatched print quality, ensuring that your documents are reproduced with precision. Lexmark copiers are known for their robust build, high-speed functionality, and extensive paper handling capabilities, making them a reliable choice for demanding office environments. Epson copiers offer outstanding color accuracy, energy efficiency, and user-friendly interfaces, making them an excellent option for businesses seeking top-notch printing solutions. Rest assured, with our selection of Konica Minolta, Lexmark, and Epson copiers, you'll have access to the most reliable and efficient printing equipment available.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <Section />
       <Footer />
     </div>
   )

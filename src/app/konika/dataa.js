@@ -30,10 +30,10 @@ const Konica = () => {
     setRecaptchaResponse(response)
   }
   const captchaRef = useRef(null)
-  
+
   return (
     <div className={styles.main}>
-      <Sliver />
+
       <Head>
         <title>
           New and Used Lexmark Copiers | High-Quality and Affordable | Copiers
@@ -87,7 +87,7 @@ const Konica = () => {
         }}
       >
         <div className={styles.backContainer}>
-        <Link href={'/products'}>
+          <Link href={'/products'}>
             <div
 
               style={{
@@ -202,7 +202,7 @@ const Konica = () => {
 
             <div className={styles.row}>
               <div className={styles.box}>
-                <Image              
+                <Image
                   src={'/static/desktop.webp'}
                   height={100}
                   alt={'Konika Minolta Desktop copiers'}

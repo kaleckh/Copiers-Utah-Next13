@@ -191,8 +191,6 @@ const TonerChoice = (props) => {
   ]
   return (
     <div className={styles.main}>
-      <Sliver />
-
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -214,11 +212,9 @@ const TonerChoice = (props) => {
           </div>
           <div className={styles.centerFeature}>
             <div className={styles.aContainer}>
-
               <div className={styles.titleLarge}>{toner.name}</div>
               <div className={styles.something}>
                 <div className={styles.titleSmall}>
-
                   <div className={styles.small}>
                     ${aboveOne ? newPrice : toner.price}
                   </div>

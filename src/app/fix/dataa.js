@@ -116,7 +116,7 @@ const Fix = () => {
 
   return (
     <div className={styles.main}>
-      <Sliver />
+
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/Fix/" />

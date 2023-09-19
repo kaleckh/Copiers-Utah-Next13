@@ -391,8 +391,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(245, 247, 248);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    ;
     height: 55vh;
     width: 30vw;
     border-radius: 10px;
@@ -428,8 +427,9 @@
     text-align: center;
   }
   .black {
-    font-size: 30px;
+    font-size: 28px;
     color: black;
+    font-weight: 400;
   }
   .sliver a{
     padding-right: 5px;
@@ -518,10 +518,11 @@
   .inputSingle {
     width: 100%;
     outline: none;
+    padding: 15px;
+    border-radius: 5px;
     background-color: transparent;
-    border: none;
+    border: 1px solid rgb(210,210,210);
     color: black;
-    border-bottom: 1px black solid;
   }
   
   .button:disabled {
@@ -533,7 +534,9 @@
     outline: none;
     color: rgb(117, 117, 117);
     border: none;
-    border-bottom: 1px black solid;
+    border: 1px solid rgb(210,210,210);
+    padding: 10px;
+    border-radius: 5px;
     width: 100%;
     font-size: 20px;
   }

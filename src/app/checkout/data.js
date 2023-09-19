@@ -246,7 +246,7 @@ const Checkout = (props) => {
 
     return (
         <div className={styles.main}>
-            <Sliver />
+
             <Header />
             <BreadCrumbs breadCrumbs={breadCrumbs} />
             <div className={styles.bottomMain}>

@@ -103,7 +103,7 @@ const It = (props) => {
 
     return (
         <div className={styles.main}>
-            <Sliver />
+
 
             <div>
                 <TawkMessengerReact

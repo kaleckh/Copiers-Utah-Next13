@@ -31,10 +31,10 @@ const Lexmark = () => {
     setRecaptchaResponse(response)
   }
   const captchaRef = useRef(null)
-  
+
   return (
     <div className={styles.main}>
-      <Sliver />
+
       <Head>
         <title>
           New and Used Lexmark Copiers | High-Quality and Affordable | Copiers

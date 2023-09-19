@@ -31,8 +31,8 @@ const Product = () => {
   const [paperSize, setpaperSize] = useState()
   const [modelNumber, setModelNumber] = useState()
   const [lastBullet, setLastBullet] = useState()
-  const[defaultType, setDefaultType] = useState("products")
-  const[defaultImage, setDefaultImage] = useState("epson.jpg")
+  const [defaultType, setDefaultType] = useState("products")
+  const [defaultImage, setDefaultImage] = useState("epson.jpg")
   const [almostLastBullet, setAlmostLastBullet] = useState()
   const handleMinimize = () => {
     tawkMessengerRef.current.minimize()
@@ -84,7 +84,7 @@ const Product = () => {
 
   return (
     <div className={styles.main}>
-      <Sliver />
+
       <Head>
         <title>
           New and Used Lexmark Copiers | High-Quality and Affordable | Copiers

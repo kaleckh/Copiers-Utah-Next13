@@ -138,12 +138,27 @@
     justify-content: center;
     width: 100%;
   }
-  
+  .wordBox{
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+  }
   .title {
     color: black;
     font-size: 30px;
     font-weight: 300;
     padding: 10px;
+    text-align: center;
+  }
+  .titleWhite {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 500;
+    
     text-align: center;
   }
   .titleSmall {
@@ -164,7 +179,12 @@
     text-align: center;
   }
   .fifty{
-    width: 85%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+    color: white;
   }
   .flex{
     display: flex;
@@ -233,6 +253,14 @@
   .paragraphContainer {
     width: 50%;
   }
+  .pic {
+    background-image: url("/static/office.webp");
+    width: 100vw;
+    height: 73vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
   
   .smaller {
     display: flex;
@@ -242,13 +270,14 @@
   }
   
   .paragraph {
-    color: black;
-    font-size: 25px;
-    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 35px;
+    padding: 10px;
     font-weight: 200;
-    padding: 5px;
-    font-weight: 200; 
+    text-align: center;
   }
+  
   .Overview {
     color: black;
     font-size: 20px;
@@ -336,6 +365,7 @@
   .copierRow{
     display: flex;
     width: 80%;
+    height: 60vh;
       justify-content: space-evenly;
   }
   
@@ -546,12 +576,16 @@
   
   .overlay {
     position: absolute;
-    top: 0;
+    bottom: 5;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 719px;
     width: 100%;
-    height: 100%;
+    height: 73%;
     background-color: rgba(0, 0, 0, 0.3);
-  }
+}
   .bottomProductContainer{
     display: flex;
     flex-direction: column;

@@ -111,35 +111,39 @@ export default function Data() {
             <div style={{ color: "rgb(2,50,92)", paddingLeft: "15px" }}>Services</div>
           </div>
           <div className={styles.row}>
-            <div className={styles.box}>
-              <div>
-                <Image
-                  src="/static/repairs.webp"
-                  alt="buy a used or new business copier"
-                  width={65}
-                  height={65}
-                />
+            <Link href={'/shortTerm'}>
+              <div className={styles.box}>
+                <div>
+                  <Image
+                    src="/static/repairs.webp"
+                    alt="buy a used or new business copier"
+                    width={65}
+                    height={65}
+                  />
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Copier Repair</div>
+                  <div className={styles.serviceParagraph}>Copier repairs offer businesses a budget-friendly way to keep their office equipment in top shape, ensuring smooth operations without breaking the bank.</div>
+                </div>
+              </div>
+            </Link>
+            <Link href={'/it'}>
+              <div className={styles.box}>
+                <div>
+                  <Image
+                    src="/static/it.webp"
+                    alt="buy a used or new business copier"
+                    width={85}
+                    height={60}
+                  />
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>It Services</div>
+                  <div className={styles.serviceParagraph}>IT services are a cost-effective solution for businesses, providing essential tech expertise and support without a big upfront investment.</div>
+                </div>
+              </div>
+            </Link>
 
-              </div>
-              <div style={{ textAlign: "center" }}>
-                <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Copier Repair</div>
-                <div className={styles.serviceParagraph}>Copier repairs offer businesses a budget-friendly way to keep their office equipment in top shape, ensuring smooth operations without breaking the bank.</div>
-              </div>
-            </div>
-            <div className={styles.box}>
-              <div>
-                <Image
-                  src="/static/it.webp"
-                  alt="buy a used or new business copier"
-                  width={85}
-                  height={60}
-                />
-              </div>
-              <div style={{ textAlign: "center" }}>
-                <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>It Services</div>
-                <div className={styles.serviceParagraph}>IT services are a cost-effective solution for businesses, providing essential tech expertise and support without a big upfront investment.</div>
-              </div>
-            </div>
             <div className={styles.box}>
               <div>
                 <Image
