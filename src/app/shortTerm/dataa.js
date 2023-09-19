@@ -217,14 +217,10 @@ const ShortTerm = () => {
         </div>
       </div>
       <div className={styles.section}>
-        <div className={styles.lineRow}>
-          <div className={styles.line}></div>
-          <h2 className={styles.copiersTitle}>
-            Copiers Utah Rental Services
-          </h2>
-          <div className={styles.line}></div>
+        <div className={styles.copiersTitle}>
+          Copiers Utah <div style={{ color: "rgb(1,51,93)", paddingLeft: "10px", fontSize: "28px" }}>Rental Services</div>
         </div>
-        <h3 style={{ padding: "20px" }} className={styles.title}>
+        <h3 style={{ padding: "10px", fontSize: "15px", color: "rgb(101,101,101)" }} className={styles.title}>
           We Rent Copiers For All Types Of Events!
         </h3>
         <div

@@ -31,13 +31,13 @@ export default function Header() {
               </Link>
             </div>
             <div className={styles.pieceContainer}>
-              <Link href="/products">
+              <Link href="/shortTerm">
                 <div className={styles.headerPieces}>Rentals</div>
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>
             <div className={styles.pieceContainer}>
-              <Link href="/products">
+              <Link href="/fix">
                 <div className={styles.headerPieces}>Copier Repair</div>
                 <div className={styles.lineSmall}></div>
               </Link>

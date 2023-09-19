@@ -178,11 +178,13 @@
   }
   .copiersTitle {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
     color: black;
-    font-size: 25px;
+    font-size: 30px;
     padding: 10px;
-    text-align: center;
-    border: 1px rgb(229, 229, 229) solid;
+    text-align: center; 
   }
   
   .woman {
