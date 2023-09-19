@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Form from '../components/Form'
+import Section from "../components/Section";
 import Footer from '../components/Footer'
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -105,79 +106,90 @@ const Konica = () => {
         </div>
         <div className={styles.lineColumn}>
           <h1 className={styles.color}>Konica Minolta</h1>
-          <div style={{ width: '150%' }} className={styles.line} />
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <div className={styles.konika} />
-            <Link href={'/buy'}>
-              <button
+            <div className={styles.center}>
+              <Image
+                src="/static/Konika.webp"
+                width={300}
+                height={400}
+                alt={"a checkmark"}
+              />
+            </div>
 
-                className={styles.button}
-              >
-                Request a quote
-            </button>
-            </Link>
+
           </div>
-          {quote ? (
-            <Form />
-          ) : (
-              <div className={styles.column}>
-                <div className={styles.aboutRow}>
-                  <div
-                    onClick={() => {
-                      setGray(true)
-                    }}
-                    className={
-                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                    }
-                  >
-                    About
+          <div className={styles.column}>
+            <div>
+              <div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Konica Minolta copiers have multifunction capabilities,
+                    allowing them to print, scan, copy, and fax documents.
+                    </div>
                 </div>
-                  <div className={styles.line}></div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Customizable workflows are available to improve
+                    productivity with Konica Minolta copiers.
+                    </div>
                 </div>
-                <div style={{ width: '100%' }} className={styles.line}></div>
-                <div>
-                  <div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Konica Minolta copiers have multifunction capabilities,
-                        allowing them to print, scan, copy, and fax documents.
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Konica Minolta is committed to sustainability and offers
+                    eco-friendly features.
                     </div>
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Advanced security features are included to protect
+                    sensitive data on Konica Minolta copiers.
                     </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Customizable workflows are available to improve
-                        productivity with Konica Minolta copiers.
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Konica Minolta copiers produce high-quality color or
+                    black-and-white documents.
                     </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Konica Minolta is committed to sustainability and offers
-                        eco-friendly features.
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Advanced security features are included to protect
-                        sensitive data on Konica Minolta copiers.
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Konica Minolta copiers produce high-quality color or
-                        black-and-white documents.
-                    </div>
-                    </div>
-                  </div>
+                </div>
+                <div className={styles.buttonContainer}>
+                  <button className={styles.button}>Request a quote</button>
                 </div>
               </div>
-            )}
+            </div>
+          </div>
+
         </div>
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -248,6 +260,7 @@ const Konica = () => {
           </div>
         </div>
       </div>
+      <Section />
       <Footer />
     </div>
   )

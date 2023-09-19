@@ -111,7 +111,7 @@ export default function Data() {
             <div style={{ color: "rgb(2,50,92)", paddingLeft: "15px" }}>Services</div>
           </div>
           <div className={styles.row}>
-            <Link href={'/shortTerm'}>
+            <Link href={'/fix'}>
               <div className={styles.box}>
                 <div>
                   <Image
@@ -154,8 +154,10 @@ export default function Data() {
                 />
               </div>
               <div style={{ textAlign: "center" }}>
-                <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Short Term Rentals</div>
-                <div className={styles.serviceParagraph}>Copier rentals are a cost-effective way for businesses to access the latest copier technology without making a large upfront investment</div>
+                <Link href={'/shortTerm'}>
+                  <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Short Term Rentals</div>
+                  <div className={styles.serviceParagraph}>Copier rentals are a cost-effective way for businesses to access the latest copier technology without making a large upfront investment</div>
+                </Link>
               </div>
             </div>
           </div>
@@ -188,53 +190,53 @@ export default function Data() {
           <div style={{ color: "black", display: "flex", fontSize: "35px", fontWeight: "400", paddingBottom: "40px" }}>Our Top <div style={{ color: "rgb(2,50,92)", paddingLeft: "8px" }}>Products</div></div>
           <div className={styles.copierRow}>
 
-            <div
+            <Link href={'/lexmark'}>
+              <div
 
-              className={styles.copierContainer}
-            >
-              <h2 className={styles.title}>Lexmark</h2>
-              <div className={styles.imageContainerSmall}>
-                <Link href={'/lexmark'}>
+                className={styles.copierContainer}
+              >
+                <h2 className={styles.title}>Lexmark</h2>
+                <div className={styles.imageContainerSmall}>
                   <Image alt={"A Lexmark Copier For Sale"} src={'/static/Lexmark.webp'} fill={true} />
-                </Link>
+                </div>
+                <button className={styles.buttonBlue}>See Details</button>
               </div>
-              <button className={styles.buttonBlue}>See Details</button>
-            </div>
-            <div
-              style={{ padding: "12px" }}
-              className={styles.copierContainer}
+            </Link>
+            <Link href={'/konika'}>
+              <div
+                style={{ padding: "12px" }}
+                className={styles.copierContainer}
 
-            >
-              <h2 style={{ padding: "5px" }} className={styles.title}>Konica Minolta</h2>
-              <div className={styles.imageContainer}>
-                <Link href={'/konika'}>
+              >
+                <h2 style={{ padding: "5px" }} className={styles.title}>Konica Minolta</h2>
+                <div className={styles.imageContainer}>
                   <Image
                     src="/static/Konika.webp"
                     alt="buy a used or new business copier"
                     width={200}
                     height={175}
                   />
-                </Link>
+                </div>
+                <button className={styles.buttonBlue}>See Details</button>
               </div>
-              <button className={styles.buttonBlue}>See Details</button>
-            </div>
-            <div
-              className={styles.copierContainer}
+            </Link>
+            <Link href={'/epson'}>
+              <div
+                className={styles.copierContainer}
 
-            >
-              <h2 style={{ padding: "35px" }} className={styles.title}>Epson</h2>
-              <div className={styles.imageContainer}>
-                <Link href={'/epson'}>
+              >
+                <h2 style={{ padding: "35px" }} className={styles.title}>Epson</h2>
+                <div className={styles.imageContainer}>
                   <Image
                     src="/static/epsonL.webp"
                     alt="buy a used or new business copier"
                     width={175}
                     height={160}
                   />
-                </Link>
+                </div>
+                <button style={{ margin: "30px" }} className={styles.buttonBlue}>See Details</button>
               </div>
-              <button style={{ margin: "30px" }} className={styles.buttonBlue}>See Details</button>
-            </div>
+            </Link>
           </div>
 
         </div>
@@ -303,12 +305,14 @@ export default function Data() {
             </div>
           </div>
           <div>
-            <button style={{ width: "100%" }} className={styles.buttonBlue}>See All Google Reviews</button>
+            <Link href={'https://www.google.com/maps/place/Copiers+for+Less/@40.5978129,-111.9193774,13z/data=!4m10!1m2!2m1!1scopiers+utah!3m6!1s0x87528bb3da9348f5:0x52af9011e571a1bf!8m2!3d40.599545!4d-111.9065292!15sCgxjb3BpZXJzIHV0YWhaDiIMY29waWVycyB1dGFokgEVY29waWVyX3JlcGFpcl9zZXJ2aWNlmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU4xTjJaeE0xTjNFQUXgAQA!16s%2Fg%2F1hc90lr04?entry=ttu'} target={'_blank'}>
+              <button style={{ width: "100%" }} className={styles.buttonBlue}>See All Google Reviews</button>
+            </Link>
           </div>
         </div>
-      </div>
+      </div >
       <Section />
       <Footer />
-    </div>
+    </div >
   );
 }
