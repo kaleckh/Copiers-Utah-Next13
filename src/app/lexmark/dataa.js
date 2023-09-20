@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Link from "next/link";
+import Section from "../components/Section";
 import Sliver from '../components/sliverr'
 import Form from '../components/Form'
 import Footer from '../components/Footer'
@@ -57,27 +58,7 @@ const Lexmark = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp"
-            alt="Lexmark used and new printer"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <Header />
-
       <div
         style={{
           height: 'fit-content',
@@ -88,23 +69,6 @@ const Lexmark = () => {
           justifyContent: 'flex-start',
         }}
       >
-        <div className={styles.backContainer}>
-          <Link href={'/products'}>
-            <div
-
-              style={{
-                padding: '5px',
-                fontSize: '25px',
-                fontWeight: '400',
-                cursor: 'pointer',
-                borderRadius: '100%',
-              }}
-            >
-              {' '}
-              {`X`}
-            </div>
-          </Link>
-        </div>
         <div className={styles.lineColumn}>
           <h1 className={styles.color}>Lexmark</h1>
           <div style={{ width: '150%' }} className={styles.line} />
@@ -121,63 +85,71 @@ const Lexmark = () => {
             </button>
             </Link>
           </div>
-          {quote ? (
-            <Form />
-          ) : (
-              <div className={styles.column}>
-                <div className={styles.aboutRow}>
-                  <div
-                    onClick={() => {
-                      setGray(true)
-                    }}
-                    className={
-                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                    }
-                  >
-                    About
+          <div className={styles.column}>
+            <div>
+              <div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    The most reliable copier in the world!
+                    </div>
                 </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    85% marketshare in HealthCare & Pharmacies because it
+                    always works.
+                    </div>
                 </div>
-                <div className={styles.line}></div>
-                <div>
-                  <div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        The most reliable copier in the world!
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Simple to use color, icon driven touch screen.
                     </div>
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Known for their fast print speeds and efficient
+                    performance.
                     </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        85% marketshare in HealthCare & Pharmacies because it
-                        always works.
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Security is a top priority for Lexmark, and their copiers
+                    come with advanced security features like user
+                    authentication and data encryption
                     </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Simple to use color, icon driven touch screen.
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Known for their fast print speeds and efficient
-                        performance.
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Security is a top priority for Lexmark, and their copiers
-                        come with advanced security features like user
-                        authentication and data encryption
-                    </div>
-                    </div>
-                  </div>
                 </div>
               </div>
-            )}
+            </div>
+          </div>
         </div>
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -230,6 +202,7 @@ const Lexmark = () => {
           </div>
         </div>
       </div>
+      <Section />
       <Footer />
     </div>
   )

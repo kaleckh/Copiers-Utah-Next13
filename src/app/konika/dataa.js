@@ -57,27 +57,7 @@ const Konica = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp"
-            alt="new and used konica printer"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <Header />
-
       <div
         style={{
           height: '185vh',
@@ -87,23 +67,6 @@ const Konica = () => {
           justifyContent: 'flex-start',
         }}
       >
-        <div className={styles.backContainer}>
-          <Link href={'/products'}>
-            <div
-
-              style={{
-                padding: '5px',
-                fontSize: '25px',
-                fontWeight: '400',
-                cursor: 'pointer',
-                borderRadius: '100%',
-              }}
-            >
-              {' '}
-              {`X`}
-            </div>
-          </Link>
-        </div>
         <div className={styles.lineColumn}>
           <h1 className={styles.color}>Konica Minolta</h1>
         </div>

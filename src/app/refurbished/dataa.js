@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
+import BreadCrumbs from "../components/BreadCrumbs";
 import Sliver from '../components/sliverr'
 import Section from "../components/Section";
 import { Metadata } from 'next'
@@ -237,6 +238,9 @@ const Refurbished = () => {
       }
     })
   }
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+  ]
 
   return (
     <div className={styles.main}>
@@ -253,6 +257,7 @@ const Refurbished = () => {
 
 
       <Header />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.center}>
           <div className={styles.flex}>
@@ -308,7 +313,7 @@ const Refurbished = () => {
                   <div className={styles.fifty}>
                     <div className={styles.rowNumber}>
                       <div className={styles.numberContainer}>
-                        Model Number:
+                        Model:
                       </div>
                       <div>{copier.modelNumber}</div>
                     </div>

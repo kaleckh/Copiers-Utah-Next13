@@ -1,12 +1,11 @@
 "use client"
 import React, { useRef, useEffect } from 'react'
 import Header from '../components/Header'
-import Head from 'next/head'
-import Sliver from '../components/sliverr'
+import Section from "../components/Section";
 import Link from "next/link";
 import { Metadata } from 'next'
-import Form from '../components/Form'
 import Footer from '../components/Footer'
+import BreadCrumbs from "../components/BreadCrumbs";
 import Image from 'next/image'
 import { PatternFormat } from 'react-number-format'
 import styles from '../styles/Refurbished.module.css'
@@ -50,7 +49,7 @@ const Product = () => {
     const time = localStorage.getItem('timeOut')
     const back = localStorage.getItem('type')
     const speed = localStorage.getItem('PagesPerMinute')
-    const modelNumber = localStorage.getItem('modelNumber')
+    const modelNumber = localStorage.getItem('Model')
     const paperSize = localStorage.getItem('paperSize')
     const desc = localStorage.getItem('description')
     setModel(storedModel)
@@ -81,24 +80,12 @@ const Product = () => {
     }
   }, [])
 
-
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Refurbished", url: "/refurbished" }
+  ]
   return (
     <div className={styles.main}>
-
-      <Head>
-        <title>
-          New and Used Lexmark Copiers | High-Quality and Affordable | Copiers
-          Utah
-        </title>
-        <meta
-          name="description"
-          content="Copiers Utah offers high-quality and affordable Lexmark copiers, both new and used. Learn more about Lexmark copiers and how they can benefit your office. Fill out our quote form to receive a customized quote."
-        />
-        <meta
-          name="keywords"
-          content="Lexmark copiers, used Lexmark copiers, new Lexmark copiers, office copiers, copiers Utah, affordable copiers"
-        />
-      </Head>
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -107,27 +94,8 @@ const Product = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src={`/static/logo.webp`}
-            alt="Lexmark used and new printer"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <Header />
-
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div
         style={{
           height: 'fit-content',
@@ -137,38 +105,11 @@ const Product = () => {
           justifyContent: 'space-around',
         }}
       >
-        <div className={styles.backContainer}>
-          <Link href={`/${defaultType}`}>
-            <div
 
-              style={{
-                padding: '5px',
-                fontSize: '25px',
-                fontWeight: '400',
-                cursor: 'pointer',
-                borderRadius: '100%',
-              }}
-            >
-              {' '}
-            X
-          </div>
-          </Link>
-        </div>
-        <div className={styles.lineColumn}>
-          <div className={styles.color}>{}</div>
-          <div style={{ width: '150%' }} className={styles.line} />
-        </div>
         <div className={styles.row}>
+
           <div className={styles.copierContainer}>
-            <Image src={`/static/${defaultImage}`} width={200} height={150} alt={'/a copier'} />
-            <Link href={'/buy'}>
-              <button
-                style={{ width: '100%' }}
-                className={styles.button}
-              >
-                Request a quote
-            </button>
-            </Link>
+            <Image src={`/static/${defaultImage}`} width={300} height={250} alt={'/a copier'} />
             <div
               style={{
                 display: 'flex',
@@ -176,66 +117,80 @@ const Product = () => {
                 alignItems: 'center',
               }}
             >
-              <div style={{ padding: '5px' }} className={styles.title}>
-                Model Number:
+              <div style={{ padding: '5px', fontWeight: "500" }} className={styles.title}>
+                Model:
               </div>
-              <div className={styles.title}>{modelNumber}</div>
+              <div style={{ fontSize: "15px" }} className={styles.title}>{modelNumber}</div>
             </div>
           </div>
-          {quote ? (
-            <Form />
-          ) : (
-              <div className={styles.column}>
-                <h1 className={styles.bigTitle}>{model}</h1>
-                <div className={styles.aboutRow}>
-                  <div
-                    onClick={() => {
-                      setGray(true)
-                    }}
-                    className={
-                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                    }
-                  >
-                    About
+
+
+          <div className={styles.column}>
+            <h1 className={styles.bigTitle}>{model}</h1>
+            <div>
+              <div>
+                <div style={{ color: "black", fontSize: "15px", paddingLeft: "10px" }}>About</div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Print speeds at {printSpeed} pages per minute!
+                    </div>
                 </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Largest print size is {paperSize} inches
+                    </div>
                 </div>
-                <div className={styles.line}></div>
-                <div>
-                  <div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Print speeds at {printSpeed} pages per minute!
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    First page out time is {timeOut} seconds
                     </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Largest print size is {paperSize} inches
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        First page out time is {timeOut} seconds
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        {lastBullet}
-                      </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        {almostLastBullet}
-                      </div>
-                    </div>
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    {lastBullet}
                   </div>
                 </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    {almostLastBullet}
+                  </div>
+                </div>
+                <Link href={'/buy'}>
+                  <button style={{ margin: "15px" }} className={styles.button}>Get A Quote</button>
+                </Link>
               </div>
-            )}
+            </div>
+          </div>
         </div>
         <div style={{ height: '40%' }} className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -244,6 +199,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <Section />
       <Footer />
     </div>
   )

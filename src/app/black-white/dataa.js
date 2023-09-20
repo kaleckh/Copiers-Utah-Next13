@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
 import { Metadata } from 'next'
+import BreadCrumbs from "../components/BreadCrumbs";
 import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../components/Footer'
@@ -122,6 +123,10 @@ const BlackWhite = () => {
       }
     })
   }
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+    { name: `Products Sold`, url: `/products` },
+  ]
 
   return (
     <div className={styles.main}>
@@ -135,6 +140,7 @@ const BlackWhite = () => {
         />
       </div>
       <Header />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.center}>
           <h1 className={styles.title}>Our Top Black and White Copiers</h1>
@@ -144,15 +150,15 @@ const BlackWhite = () => {
           {copiers.map((copier) => {
             return (
               <div key={copier.modelNumber} className={styles.box}>
-                <div className={styles.titleBlackSmall}>{copier.model}</div>
                 <div>
                   <Image
                     src={`/static/${copier.image}`}
-                    width={200}
+                    width={150}
                     alt={'copiers utah'}
-                    height={200}
+                    height={150}
                   ></Image>
                 </div>
+                <div className={styles.titleBlackSmall}>{copier.model}</div>
                 <div className={styles.somethingContainer}>
                   <div
                     style={{
@@ -181,7 +187,7 @@ const BlackWhite = () => {
                             `${copier.description}`,
                           )
                         }}
-                        className={styles.button}
+                        className={styles.buttonBlue}
                       >
                         See Details
                     </button>

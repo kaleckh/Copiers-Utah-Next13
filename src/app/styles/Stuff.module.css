@@ -61,10 +61,8 @@
     font-weight: 600;
     line-height: normal;
     padding: 10px;
-    margin: 20px;
     text-align: center;
     text-decoration: none;
-    width: 75%;
     will-change: transform;
   }
 
@@ -131,7 +129,7 @@
     color: black;
     font-size: 30px;
     font-weight: 300;
-    padding: 40px;
+    padding-bottom: 25px;
     text-align: center;
   }
   .titleBig {
@@ -374,10 +372,12 @@
   .box{
     width: 265px;
     border-radius: 10px;
-    height: fit-content;
+    min-height: fit-content;
+    height: 350px;
     flex-direction: column;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     border: 1px solid rgb(214,215,227);
   }
   .box div{
@@ -497,6 +497,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    height: fit-content;
   }
   
   .infoSmall {
@@ -562,7 +563,7 @@
   }
 
   .titleBlackSmall{
-    font-size: 23px;
+    font-size: 18px;
     text-align: center;
     padding: 10px;
     text-align: center;

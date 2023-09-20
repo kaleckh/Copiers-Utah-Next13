@@ -1,10 +1,8 @@
 "use client"
 import React, { useRef } from 'react'
 import Header from '../components/Header'
-import Head from 'next/head'
-import Sliver from '../components/sliverr'
-import Form from '../components/Form'
 import { Metadata } from 'next'
+import Section from "../components/Section";
 import Link from "next/link";
 import Footer from '../components/Footer'
 import Image from 'next/image'
@@ -34,21 +32,6 @@ const Epson = () => {
 
   return (
     <div className={styles.main}>
-
-      <Head>
-        <title>
-          New and Used Lexmark Copiers | High-Quality and Affordable | Copiers
-          Utah
-        </title>
-        <meta
-          name="description"
-          content="Copiers Utah offers high-quality and affordable Lexmark copiers, both new and used. Learn more about Lexmark copiers and how they can benefit your office. Fill out our quote form to receive a customized quote."
-        />
-        <meta
-          name="keywords"
-          content="Lexmark copiers, used Lexmark copiers, new Lexmark copiers, office copiers, copiers Utah, affordable copiers"
-        />
-      </Head>
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -57,27 +40,7 @@ const Epson = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp"
-            alt="Lexmark printer"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div />
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <Header />
-
       <div
         style={{
           height: 'fit-content',
@@ -88,93 +51,94 @@ const Epson = () => {
           justifyContent: 'flex-start',
         }}
       >
-        <div className={styles.backContainer}>
-          <Link href={'/products'}>
-            <div
 
-              style={{
-                padding: '5px',
-                fontSize: '25px',
-                fontWeight: '400',
-                cursor: 'pointer',
-                borderRadius: '100%',
-              }}
-            >
-              {' '}
-              {`X`}
-            </div>
-          </Link>
-        </div>
-        <div className={styles.lineColumn}>
-          <h1 className={styles.color}>Epson</h1>
-          <div style={{ width: '150%' }} className={styles.line} />
-        </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <div className={styles.epson} />
-            <Link href={'/buy'}>
-              <button
-
-                className={styles.button}
-              >
-                Request a quote
-            </button>
-            </Link>
+            <div className={styles.center}>
+              <Image
+                src="/static/epson.jpg"
+                width={300}
+                height={300}
+                alt={"a seen"}
+              />
+            </div>
           </div>
-          {quote ? (
-            <Form />
-          ) : (
-              <div className={styles.column}>
-                <div className={styles.aboutRow}>
-                  <div
-                    onClick={() => {
-                      setGray(true)
-                    }}
-                    className={
-                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                    }
+
+
+
+          <div className={styles.column}>
+            <div className={styles.lineColumn}>
+              <h1 className={styles.color}>Epson</h1>
+            </div>
+            <div>
+              <div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Epson copiers are multifunction devices.
+                    </div>
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    They produce high-quality output.
+                    </div>
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    They have an easy-to-use interface.
+                    </div>
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    They are cost-effective.
+                    </div>
+                </div>
+                <div className={styles.bulletContainer}>
+                  <div>   <Image
+                    src="/static/seen.webp"
+                    width={25}
+                    height={25}
+                    alt={"a seen"}
+                  /></div>
+                  <div className={styles.paragraphSmall}>
+                    Epson copiers utilize advanced printing technologies.
+                    </div>
+                </div>
+                <Link href={'/buy'}>
+                  <button
+
+                    className={styles.button}
                   >
-                    About
-                </div>
-                  <div className={styles.line}></div>
-                </div>
-                <div style={{ width: '100%' }} className={styles.line}></div>
-                <div>
-                  <div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Epson copiers are multifunction devices.
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        They produce high-quality output.
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        They have an easy-to-use interface.
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        They are cost-effective.
-                    </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Epson copiers utilize advanced printing technologies.
-                    </div>
-                    </div>
-                  </div>
-                </div>
+                    Request a quote
+            </button>
+                </Link>
               </div>
-            )}
+            </div>
+          </div>
+
         </div>
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -242,6 +206,7 @@ const Epson = () => {
           </div>
         </div>
       </div>
+      <Section />
       <Footer />
     </div>
   )
