@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
+import BreadCrumbs from "../components/BreadCrumbs";
 import Image from 'next/image'
 import Footer from '../components/Footer'
 import Sliver from '../components/sliverr'
@@ -117,26 +118,14 @@ const Desktop = () => {
       }
     })
   }
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+    { name: `Products Sold`, url: `/products` },
+  ]
 
   return (
     <div className={styles.main}>
 
-      <Head>
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/Desktop/" />
-        <title>
-          Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers
-          Utah
-        </title>
-        <meta
-          name="description"
-          content="Copiers Utah offers a range of high-quality copiers for sale, including Konica Minolta, Epson, and Lexmark models. Explore our selection and find the perfect copier for your office."
-        />
-        <meta
-          name="keywords"
-          content="copiers for sale, office copiers, Konica Minolta copiers, Epson copiers, Lexmark copiers, copiers Utah"
-        />
-      </Head>
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -145,26 +134,9 @@ const Desktop = () => {
           useRef={tawkMessengerRef}
         />
       </div>
-      <div className={styles.logoSpaceContainer}>
-        <div className={styles.logoSpace}>
-          <Image
-            src="/static/logo.webp	"
-            alt="Our copiers utah logo"
-            width={150}
-            height={100}
-          />
-          <div className={styles.columnContainer}>
-            <div></div>
-            <div className={styles.infoBig}>Copiers Utah</div>
-            <div className={styles.mediumColumn}>
-              <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <Header />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.center}>
           <h1 className={styles.title}>Our Top Desktop Copiers</h1>
@@ -174,59 +146,59 @@ const Desktop = () => {
           {copiers.map((copier) => {
             return (
               <div key={copier.modelNumber} className={styles.box}>
-                <div className={styles.titleBlackSmall}>{copier.model}</div>
                 <div>
                   <Image
                     src={`/static/${copier.image}`}
-                    width={200}
-                    height={200}
+                    width={150}
+                    height={150}
                     alt={"copiers utah"}
                   ></Image>
                 </div>
                 <div className={styles.somethingContainer}>
-                  <div
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <Link href={'/product'}>
-                      <button
-                        onClick={() => {
-
-                          localStorage.setItem('Image', `${copier.image}`)
-                          localStorage.setItem('modelNumber', `${copier.modelNumber}`)
-                          localStorage.setItem('Model', `${copier.model}`)
-                          localStorage.setItem(
-                            'PagesPerMinute',
-                            `${copier.PagesPerMinute}`,
-                          )
-                          localStorage.setItem(
-                            'paperSize',
-                            `${copier.paperSize}`,
-                          )
-                          localStorage.setItem(
-                            'timeOut',
-                            `${copier.timeOut}`,
-                          )
-                          localStorage.setItem('type', `${copier.type}`)
-                        }}
-                        className={styles.button}
-                      >
-                        See Details
-                    </button>
-                    </Link>
-                  </div>
+                  <div className={styles.titleBlackSmall}>{copier.model}</div>
                   <div className={styles.fifty}>
                     <div className={styles.rowNumber}>
                       <div className={styles.numberContainer}>
                         Model Number:
-                      </div>
+                          </div>
                       <div>{copier.modelNumber}</div>
                     </div>
                     <div className={styles.rowNumber}></div>
                   </div>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Link href={'/product'}>
+                    <button
+                      onClick={() => {
+
+                        localStorage.setItem('Image', `${copier.image}`)
+                        localStorage.setItem('modelNumber', `${copier.modelNumber}`)
+                        localStorage.setItem('Model', `${copier.model}`)
+                        localStorage.setItem(
+                          'PagesPerMinute',
+                          `${copier.PagesPerMinute}`,
+                        )
+                        localStorage.setItem(
+                          'paperSize',
+                          `${copier.paperSize}`,
+                        )
+                        localStorage.setItem(
+                          'timeOut',
+                          `${copier.timeOut}`,
+                        )
+                        localStorage.setItem('type', `${copier.type}`)
+                      }}
+                      className={styles.buttonBlue}
+                    >
+                      See Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             )

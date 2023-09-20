@@ -147,7 +147,9 @@ const Konica = () => {
                     </div>
                 </div>
                 <div className={styles.buttonContainer}>
-                  <button className={styles.button}>Request a quote</button>
+                  <Link href={'/buy'}>
+                    <button className={styles.button}>Request a quote</button>
+                  </Link>
                 </div>
               </div>
             </div>

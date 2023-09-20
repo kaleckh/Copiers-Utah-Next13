@@ -171,8 +171,9 @@
 
 .copierContainer {
   display: flex;
+  height: 300px;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   padding: 5px;
   border: 1px solid rgb(240, 238, 238);
   border-radius: 10px;

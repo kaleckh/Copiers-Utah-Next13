@@ -22,6 +22,7 @@ const Buy = (props) => {
 
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [quoteToggle, setQuoteToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
@@ -39,40 +40,47 @@ const Buy = (props) => {
   };
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    debugger
+    // e.preventDefault();
     console.log("Sending");
 
-    fetch("https://api.smtp2go.com/v3/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
-        to: [`<info@copiersutah.com>`],
-        sender: "<info@copiersutah.com>",
-        subject: `This is${name}'s quote form. Her number is ${number}`,
-        text_body: `${message}`,
-        html_body: `<h1>${message}</h1>`,
-        template_id: "5120871",
-        template_data: {
-          message: message,
-          from: "buy a copier",
-          number: number,
-          name: name,
-        },
-      }),
-    }).then((res) => {
-      console.log(res);
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        // setSubmitted(true);
-        // setName("");
-        // setEmail("");
-        // setBody("");
-      }
-    });
+    // fetch("https://api.smtp2go.com/v3/email/send", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
+    //     to: [`<info@copiersutah.com>`],
+    //     sender: "<info@copiersutah.com>",
+    //     subject: `This is${name}'s quote form. Her number is ${number}`,
+    //     text_body: `${message}`,
+    //     html_body: `<h1>${message}</h1>`,
+    //     template_id: "5120871",
+    //     template_data: {
+    //       message: message,
+    //       from: "buy a copier",
+    //       number: number,
+    //       name: name,
+    //     },
+    //   }),
+    // }).then((res) => {
+    //   console.log(res);
+    //   if (res.status === 200) {
+    //     console.log("Response succeeded!");
+    //     // setSubmitted(true);
+    //     // setName("");
+    //     // setEmail("");
+    //     // setBody("");
+    //   }
+    // });
   };
+  useEffect(() => {
+    if (message.length > 1 && number.length > 1 && name.length > 1 && email.length > 1 && recaptchaResponse !== false) {
+      setToggle(true)
+    }
+
+  }, [message, number, name, email, verifyCallback])
 
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
@@ -121,8 +129,20 @@ const Buy = (props) => {
                   <div className={styles.space}>
 
                     <input
+                      style={{ marginRight: "10px" }}
                       className={styles.inputSingle}
                       placeholder="Full name"
+                      type="text"
+                      name=""
+                      id=""
+                      required={true}
+                      onChange={() => {
+                        setName(event.target.value);
+                      }}
+                    />
+                    <input
+                      className={styles.inputSingle}
+                      placeholder="Email"
                       type="text"
                       name=""
                       id=""
@@ -179,8 +199,8 @@ const Buy = (props) => {
                     setQuoteToggle(!quoteToggle);
                     sendEmail(e);
                   }}
-                  className={styles.button}
-                  disabled={!recaptchaResponse}
+                  className={styles.buttonBlue}
+                  disabled={!toggle}
                 >
                   Get My Quote
                 </button>
@@ -200,10 +220,8 @@ const Buy = (props) => {
             padding: "10px",
           }}
         >
-          <div style={{ width: "80%", display: "flex", alignItems: "center" }}>
-            <div className={styles.line}></div>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <div className={styles.paddedBox}>Copiers Utah Payment Options</div>
-            <div className={styles.line}></div>
           </div>
         </div>
         <div className={styles.thirdSection}>
@@ -244,7 +262,7 @@ const Buy = (props) => {
           </div>
           {cash ? (
             <div className={styles.eighty}>
-              <div className={styles.title}>Leasing With Copiers Utah?</div>
+
               <div className={styles.paragraph}>
                 Copier leasing is a cost-effective way for businesses to access
                 the latest copier technology without making a large upfront
@@ -275,27 +293,31 @@ const Buy = (props) => {
               <div
                 style={{
                   justifyContent: "space-evenly",
-                  width: "100%",
-                  height: "30vh",
+                  width: "100%"
+
                 }}
                 className={styles.column}
               >
-                <div className={styles.green}>Key Information</div>
+                <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
                 <div className={styles.row}>
                   <div className={styles.bulletPoints}>
-                    <li>
+                    <div className={styles.bulletBox}>
                       Low initial investment and predictable monthly payment
-                    </li>
-                    <li>Potential tax benefits for businesses</li>
-                    <li>Customizable lease terms and payment plans</li>
+                    </div>
+                    <div className={styles.bulletBox}>Potential tax benefits for businesses</div>
+
                   </div>
                   <div className={styles.bulletPoints}>
-                    <li>Fixed monthly payments help businesses budget</li>
-                    <li>
+                    <div className={styles.bulletBox}>Customizable lease terms and payment plans</div>
+                    <div className={styles.bulletBox}>Fixed monthly payments help businesses budget</div>
+                  </div>
+                  <div className={styles.bulletPoints}>
+
+                    <div className={styles.bulletBox}>
                       Option to purchase the equipment at the end of the lease
                       term
-                    </li>
-                    <li>Access to the latest copier technology</li>
+                    </div>
+                    <div className={styles.bulletBox}>Access to the latest copier technology</div>
                   </div>
                 </div>
               </div>
@@ -306,7 +328,7 @@ const Buy = (props) => {
 
           {rent ? (
             <div className={styles.eighty}>
-              <div className={styles.title}>Renting With Copiers Utah?</div>
+
               <div className={styles.paragraph}>
                 Are you looking for copiers for sale or rent in Utah? Copier
                 rental is a cost-effective solution for businesses in need of
@@ -332,19 +354,23 @@ const Buy = (props) => {
                 style={{ justifyContent: "space-evenly", width: "100%" }}
                 className={styles.column}
               >
-                <div className={styles.green}>Key Information</div>
+                <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
                 <div className={styles.row}>
                   <div className={styles.bulletPoints}>
-                    <li>No large upfront investment required</li>
-                    <li>Low-risk option to test out new copier equipment</li>
-                    <li>Customizable rental terms and payment plans</li>
+                    <div className={styles.bulletBox}>No large upfront investment required</div>
+                    <div className={styles.bulletBox}>Low-risk option to test out new copier equipment</div>
+
                   </div>
                   <div className={styles.bulletPoints}>
-                    <li>No large upfront investment required</li>
-                    <li>Low-risk option to test out new copier equipment</li>
-                    <li>
+                    <div className={styles.bulletBox}>No large upfront investment required</div>
+                    <div className={styles.bulletBox}>Customizable rental terms and payment plans</div>
+                  </div>
+                  <div className={styles.bulletPoints}>
+
+                    <div className={styles.bulletBox}>Low-risk option to test out new copier equipment</div>
+                    <div className={styles.bulletBox}>
                       Ability to own the equipment at the end of the rental term
-                    </li>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -354,7 +380,6 @@ const Buy = (props) => {
             )}
           {finance ? (
             <div className={styles.eighty}>
-              <div className={styles.title}>Financing With Copiers Utah?</div>
               <div className={styles.paragraph}>
                 Looking for copiers for sale or lease, but concerned about the
                 upfront cost? At Copiers Utah, we offer copier financing options
@@ -377,29 +402,33 @@ const Buy = (props) => {
                 style={{ justifyContent: "space-evenly", width: "100%" }}
                 className={styles.column}
               >
-                <div className={styles.green}>Key Information</div>
+                <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
                 <div className={styles.row}>
                   <div className={styles.bulletPoints}>
-                    <li>
+                    <div className={styles.bulletBox}>
                       Spread the cost of the equipment over a set period of time
-                    </li>
-                    <li>
+                    </div>
+                    <div className={styles.bulletBox}>
                       Enjoy flexible terms and payments tailored to your
                       business needs
-                    </li>
-                    <li>
-                      Reduced financial risk compared to purchasing equipment
-                      outright
-                    </li>
+                    </div>
+
                   </div>
                   <div className={styles.bulletPoints}>
-                    <li>
+                    <div className={styles.bulletBox}>
+                      Reduced financial risk compared to purchasing equipment
+                      outright
+                    </div>
+                    <div className={styles.bulletBox}>
                       Personalized support and guidance from financing experts
-                    </li>
-                    <li>No large upfront investment required</li>
-                    <li>
+                    </div>
+                  </div>
+                  <div className={styles.bulletPoints}>
+
+                    <div className={styles.bulletBox}>No large upfront investment required</div>
+                    <div className={styles.bulletBox}>
                       Ability to preserve credit lines for other business needs
-                    </li>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -109,7 +109,7 @@ const Product = () => {
         <div className={styles.row}>
 
           <div className={styles.copierContainer}>
-            <Image src={`/static/${defaultImage}`} width={300} height={250} alt={'/a copier'} />
+            <Image src={`/static/${defaultImage}`} width={200} height={150} alt={'/a copier'} />
             <div
               style={{
                 display: 'flex',
@@ -129,7 +129,7 @@ const Product = () => {
             <h1 className={styles.bigTitle}>{model}</h1>
             <div>
               <div>
-                <div style={{ color: "black", fontSize: "15px", paddingLeft: "10px" }}>About</div>
+                <div style={{ color: "black", fontSize: "18px", paddingLeft: "10px" }}>About</div>
                 <div className={styles.bulletContainer}>
                   <div>   <Image
                     src="/static/seen.webp"

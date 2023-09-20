@@ -206,7 +206,7 @@ const ShortTerm = () => {
                           handleSubmit(e);
                         }}
                         disabled={!recaptchaResponse && !messageRes}
-                        className={styles.button}
+                        className={styles.buttonBlue}
                       >
                         Get My Quote
                     </button>
