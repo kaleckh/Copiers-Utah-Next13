@@ -14,7 +14,7 @@ import styles from '../styles/buy.module.css'
 const Sliver = () => {
   return (
     <div className={styles.sliver}>
-      <div style={{ paddingRight: "40px" }}>
+      <div className={styles.padding}>
         <a href="https://www.facebook.com/copiersforlessutah/">
           <Image src={'/static/facebook.webp'} width={20} height={20} />
         </a>

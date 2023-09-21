@@ -130,6 +130,9 @@
     .exploreContainer2{
       display: none;
     }
+    .row div{
+      font-size: 12px;
+    }
    
   }
   

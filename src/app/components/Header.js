@@ -48,19 +48,19 @@ export default function Header() {
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>
-            <div className={styles.pieceContainer}>
+            <div className={`${styles.pieceContainer} ${styles.hidden}`}>
               <Link href="/products">
                 <div className={styles.headerPieces}>Product Line</div>
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>
-            <div className={styles.pieceContainer}>
+            <div className={`${styles.pieceContainer} ${styles.hidden}`}>
               <Link href="/refurbished">
                 <div className={styles.headerPieces}>Refurbished Machines</div>
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>
-            <div className={styles.pieceContainer}>
+            <div className={`${styles.pieceContainer} ${styles.hidden}`}>
               <Link href="/finance">
                 <div className={styles.headerPieces}>Financing</div>
                 <div className={styles.lineSmall}></div>

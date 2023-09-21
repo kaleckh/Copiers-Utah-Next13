@@ -82,21 +82,25 @@ export default function Data() {
         <div className={styles.flexSomething}>
           <div className={styles.flex}>
             <div className={styles.mainContainer}>
-              <div className={styles.bubble}>
-                Copiers Utah Welcomes You
-            </div>
+              <div className={styles.buttonCenter}>
+                <div className={styles.bubble}>
+                  Copiers Utah Welcomes You
+                </div>
+              </div>
               <div className={styles.homepageTitle}>
                 Explore Our Copier Buying And Leasing Solutions
-            </div>
+              </div>
               <div className={styles.paragraphSmall}>
                 We provide a variety of high-quality copiers for your business needs. Whether you buy or lease, our cutting-edge solutions will boost your office efficiency to new heights.
-            </div>
-              <Link href={'/buy'}>
-                <button className={styles.buttonBlue}>Get A Quote Now</button>
-              </Link>
+              </div>
+              <div className={styles.buttonCenter}>
+                <Link href={'/buy'}>
+                  <button className={styles.buttonBlue}>Get A Quote Now</button>
+                </Link>
+              </div>
             </div>
 
-            <div>
+            <div className={styles.displayNone}>
               <Image
                 src="/static/Group.webp"
                 alt="buy a used or new business copier"
@@ -107,58 +111,61 @@ export default function Data() {
           </div>
         </div>
         <div className={styles.needSpace}>
-          <div style={{ display: "flex", justifyContent: "center" }} className={styles.titleBig}>Our
+          <div style={{ display: "flex", justifyContent: "center", padding: "30px" }} className={styles.titleBig}>Our
             <div style={{ color: "rgb(2,50,92)", paddingLeft: "15px" }}>Services</div>
           </div>
           <div className={styles.row}>
-            <Link href={'/fix'}>
-              <div className={styles.box}>
-                <div>
-                  <Image
-                    src="/static/repairs.webp"
-                    alt="buy a used or new business copier"
-                    width={65}
-                    height={65}
-                  />
+            <div className={styles.boxContainer}>
+              <Link href={'/fix'}>
+                <div className={styles.box}>
+                  <div>
+                    <Image
+                      src="/static/repairs.webp"
+                      alt="buy a used or new business copier"
+                      width={65}
+                      height={65}
+                    />
+                  </div>
+                  <div style={{ textAlign: "center" }}>
+                    <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Copier Repair</div>
+                    <div className={styles.serviceParagraph}>Copier repairs offer businesses a budget-friendly way to keep their office equipment in top shape, ensuring smooth operations without breaking the bank.</div>
+                  </div>
                 </div>
-                <div style={{ textAlign: "center" }}>
-                  <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Copier Repair</div>
-                  <div className={styles.serviceParagraph}>Copier repairs offer businesses a budget-friendly way to keep their office equipment in top shape, ensuring smooth operations without breaking the bank.</div>
+              </Link>
+              <Link href={'/it'}>
+                <div className={styles.box}>
+                  <div>
+                    <Image
+                      src="/static/it.webp"
+                      alt="buy a used or new business copier"
+                      width={85}
+                      height={60}
+                    />
+                  </div>
+                  <div style={{ textAlign: "center" }}>
+                    <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>It Services</div>
+                    <div className={styles.serviceParagraph}>IT services are a cost-effective solution for businesses, providing essential tech expertise and support without a big upfront investment.</div>
+                  </div>
                 </div>
-              </div>
-            </Link>
-            <Link href={'/it'}>
-              <div className={styles.box}>
-                <div>
-                  <Image
-                    src="/static/it.webp"
-                    alt="buy a used or new business copier"
-                    width={85}
-                    height={60}
-                  />
+              </Link>
+            </div>
+            <div>
+              <Link href={'/shortTerm'}>
+                <div className={styles.box}>
+                  <div>
+                    <Image
+                      src="/static/rental.webp"
+                      alt="buy a used or new business copier"
+                      width={65}
+                      height={70}
+                    />
+                  </div>
+                  <div style={{ textAlign: "center" }}>
+                    <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Short Term Rentals</div>
+                    <div className={styles.serviceParagraph}>Copier rentals are a cost-effective way for businesses to access the latest copier technology without making a large upfront investment</div>
+                  </div>
                 </div>
-                <div style={{ textAlign: "center" }}>
-                  <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>It Services</div>
-                  <div className={styles.serviceParagraph}>IT services are a cost-effective solution for businesses, providing essential tech expertise and support without a big upfront investment.</div>
-                </div>
-              </div>
-            </Link>
-
-            <div className={styles.box}>
-              <div>
-                <Image
-                  src="/static/rental.webp"
-                  alt="buy a used or new business copier"
-                  width={65}
-                  height={70}
-                />
-              </div>
-              <div style={{ textAlign: "center" }}>
-                <Link href={'/shortTerm'}>
-                  <div className={styles.serviceTitle} style={{ paddingBottom: "20px" }}>Short Term Rentals</div>
-                  <div className={styles.serviceParagraph}>Copier rentals are a cost-effective way for businesses to access the latest copier technology without making a large upfront investment</div>
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -175,7 +182,7 @@ export default function Data() {
                 </Link>
               </div>
             </div>
-            <div className={styles.background}>
+            <div className={`${styles.background} ${styles.displayNoneSmall}`}>
               <Image
                 src="/static/yellowLexmark.webp"
                 alt="buy a used or new business copier"
@@ -240,7 +247,7 @@ export default function Data() {
           </div>
 
         </div>
-        <div className={styles.sectionMedium}>
+        <div className={`${styles.sectionMedium} ${styles.hideBox} `}>
           <Image
             src="/static/why.webp"
             alt="buy a used or new business copier"
@@ -255,7 +262,7 @@ export default function Data() {
           />
         </div>
         <div className={styles.reviewSection}>
-          <div style={{ color: "black", display: "flex", fontSize: "35px", fontWeight: "400", paddingBottom: "40px" }} >Trusted by hundreds of <div style={{ color: "rgb(2,50,92)", paddingLeft: "8px" }}>happy customers</div></div>
+          <div className={styles.customerTitle} >Trusted by hundreds of <div style={{ color: "rgb(2,50,92)", paddingLeft: "8px" }}>happy customers</div></div>
           <div className={styles.rowSpaced}>
             <div className={styles.boxReview}>
               <div className={styles.starRow}>
@@ -272,7 +279,7 @@ export default function Data() {
               </div>
               <div className={styles.paragraphReview}>These guys do not disappoint! I have done business with them for a few years now. They have great customer service and amazing pricing on copy machines!</div>
             </div>
-            <div className={styles.boxReview}>
+            <div className={`${styles.boxReview} ${styles.hideBox}`}>
               <div className={styles.starRow}>
                 <div className={styles.titleSmall}>Kyle Francis</div>
                 <div style={{ display: "flex", alignItems: "center" }}>

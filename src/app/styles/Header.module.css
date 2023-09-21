@@ -119,5 +119,11 @@
     .headerPieces {
       font-size: 10px;
     }
+    .hidden{
+      display: none;
+    }
+    .logoSpaceContainer{
+      width: 95%;
+    }
   }
   

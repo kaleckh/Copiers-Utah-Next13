@@ -115,7 +115,9 @@
     text-decoration: none;
     will-change: transform;
   }
-  
+  .padding{
+    padding: 40px;
+  }
   .smaller {
     display: flex;
     justify-content: space-around;
@@ -703,11 +705,18 @@
   }
   
   @media (max-width: 640px) {
+    .padding{
+      padding: 10px;
+    }
+    .sliver{
+      padding: 0px;
+      font-size: 10px;
+    }
     .woman {
       display: none;
     }
     .sliver{
-      font-size: 12px;
+      font-size: 10px;
       width: 100%;
     }
     

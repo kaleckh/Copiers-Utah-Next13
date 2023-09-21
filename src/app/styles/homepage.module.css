@@ -4,7 +4,11 @@
     color: white;
     background-color: white;
   }
-  
+  .boxContainer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
   .logoSpace {  
     height: 30%;
     width: 90%;
@@ -650,26 +654,6 @@
     background-position: center center;
   }
   
-  @media (max-width: 1000px) {
-    .container {
-      width: 50vw;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .container {
-      width: 45vw;
-      font-size: 27px;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .container {
-      width: 80vw;
-      font-size: 27px;
-    }
-  }
-  
   .section {
     height: 500px;
     background-color: white;
@@ -832,6 +816,13 @@
     font-weight: 700;
     font-size: 30px;
   }
+  .customerTitle{
+    color: black;
+    display: flex;
+    font-size: 35px;
+    font-weight: 400;
+    padding-bottom: 40px;
+  }
   
   .columnContainer {
     display: flex;
@@ -899,6 +890,22 @@
     align-items: center;
     justify-content: flex-start;
   }
+
+  @media(max-width: 1200px) {
+    .paragraphSmall{
+      width: 100%;
+    }
+    .homepageTitle{
+      font-size: 27px;
+    }
+    .serviceTitle{
+      font-size: 20px;
+    }
+    .box{
+      height: 300px;
+      width: 250px;
+    }
+  }
   
   @media (max-width: 1100px) {
     .mediumColumn {
@@ -909,15 +916,20 @@
       align-items: center;
     }
   }
-  
   @media (max-width: 1000px) {
+    .container {
+      width: 50vw;
+    }
+    .sectionMedium{
+      align-items: center;
+      height: 800px;
+    }
     .main {
       height: fit-content;
     }
     .flex {
-      flex-direction: column;
       align-items: center;
-      height: 140vh;
+      height: 600px;
     }
     .secondSection {
       align-items: center;
@@ -958,9 +970,24 @@
   }
   
   @media (max-width: 950px) {
+    .displayNoneSmall{
+      display: none;
+    }
+    .side{
+      width: 100%;
+    }
     .cartoon {
       height: 46vh;
       width: 41vw;
+    }
+    .serviceParagraph{
+      font-size: 15px;
+    }
+    .needSpace{
+      width: 98%;
+    }
+    .customerTitle{
+      font-size: 25px;
     }
     .front {
       height: 63%;
@@ -969,13 +996,70 @@
       margin: 10px;
       width: 50vw;
     }
+    .displayNone{
+      display: none;
+    }
+   
+    .homepageTitle{
+      width: 100%;
+      text-align: center
+    }
+    .mainContainer{
+      width: 75%;
+    }
+    .paragraphSmall{
+      width: 100% ;
+      text-align: center;
+    }
+    .buttonCenter{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media(max-width: 800px){
+    .box{
+      height: 250px;
+      width: 200px;
+    }
+  }
+  @media (max-width: 700px) {
+    .container {
+      width: 45vw;
+      font-size: 27px;
+    }
+    .row{
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 700px;
+    }
+    .needSpace{
+      height: 750px;
+      justify-content: space;
+    }
   }
   
+ 
+  
   @media (max-width: 600px) {
+    .container {
+      width: 80vw;
+      font-size: 27px;
+    }
+    .needSpace{
+      height: fit-content;
+    }
     .columnContainer {
       flex-direction: column;
       align-items: flex-end;
       text-align: end;
+    }
+    .customerTitle{
+      font-size: 20px;
+    }
+    .boxReview{
+      margin: 20px;
     }
   
     .logoSpace {
@@ -991,6 +1075,7 @@
     .woman {
       width: 100%;
     }
+
     .toner {
       width: 45vw;
     }
@@ -1012,11 +1097,29 @@
   }
   
   @media (max-width: 600px) {
+    .hideBox{
+      display: none;
+    }
+    .row div{
+      font-size: 10px;
+    }
+    .reviewSection{
+      height: 450px;
+    }
+    .paragraphReview{
+      font-size: 12px;
+    }
     .infoMedium {
       font-size: 17px;
     }
+    .copierRow{
+      flex-direction: column;
+      align-items: center;
+      height: fit-content;
+    }
     .fourthSection{
-      height: 1000px;
+      height: 1300px;
+      justify-content: space-evenly;
     }
     .centerReview{
       align-items: flex-end;
@@ -1031,6 +1134,9 @@
     .titleSmall {
       line-height: 21px;
       font-size: 13px;
+    }
+    .copierRow{
+      height: 1250px;
     }
     .middle {
       height: 55%;
@@ -1047,9 +1153,9 @@
     }
     .secondSection {
       height: fit-content;
-    }
-    .section {
-      height: 125vh;
+    } 
+    .section{
+      height: 350px;
     }
     .middle {
       height: 15%;
@@ -1063,9 +1169,7 @@
     .woman{
       margin-left: 0px;
     }
-    .needSpace{
-      height: 70vh;
-    }
+  
   }
   
   @media (max-width: 510px) {
