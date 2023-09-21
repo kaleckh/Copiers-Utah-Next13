@@ -1100,6 +1100,9 @@
     .hideBox{
       display: none;
     }
+    .mainContainer{
+      width: 100%;
+    }
     .row div{
       font-size: 10px;
     }
