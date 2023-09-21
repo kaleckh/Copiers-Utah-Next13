@@ -30,9 +30,12 @@
     padding:30px;
     height: 400px;
   }
+  .number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
   .number{
     width: 40px;
-    margin-left: 10px;
     color: black;
     font-size: 12px;
     background-color: white;
@@ -115,14 +118,13 @@
     height: 55%;
   }
   .minus, .plus{
-    width:20px;
-    height:20px;
+    width:25px;
+    height:25px;
+    cursor: pointer;
     background:#f2f2f2;
     border-radius:4px;
-    padding:8px 5px 8px 5px;
     border:1px solid #ddd;
     display: inline-block;
-    vertical-align: middle;
     text-align: center;
   }
   .flex{
@@ -303,6 +305,8 @@
     font-size: 20px;
     font-weight: 300;
     display: flex;
+    justify-content: space-evenly;
+    
     line-height: 25px;
     color: rgb(138, 138, 138);
     padding-bottom: 5px;
@@ -347,6 +351,12 @@
       justify-items: center;
       gap: 15px;
       
+  }
+  .centerBottom{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: space-evenly;
   }
   .center{
     display: flex;

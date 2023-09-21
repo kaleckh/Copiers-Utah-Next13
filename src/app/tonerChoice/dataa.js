@@ -243,20 +243,30 @@ const TonerChoice = (props) => {
               </div>
               <div className={styles.line}></div>
             </div>
-            <div style={{ paddingTop: "10px", marginBottom: "10px", paddingBottom: "20px", display: "flex", flexDirection: "column" }} className={styles.titleSmall}>
-              Qty.
-               <div>
-                <div className={styles.plus}>+</div>
-                <input
+            <div style={{ paddingTop: "10px", marginBottom: "10px", paddingBottom: "20px", display: "flex", width: "35%", paddingRight: "10px" }} className={styles.titleSmall}>
+              Qty
+              <div className={styles.centerBottom}>
+                <div className={styles.centerPlus}>
+                  <div onClick={() => {
+                    setQuantity(quantity + 1)
+                  }} className={styles.plus}>+</div>
+                </div>
+                <input style={{ textAlign: "center" }}
                   onChange={(event) => {
                     setQuantity(event.target.value);
                   }}
-                  style={{ marginTop: "10px" }}
                   className={styles.number}
                   placeholder={quantity}
                   type="number"
                 />
-                <div className={styles.minus}>-</div>
+                <div className={styles.centerPlus}>
+                  <div onClick={() => {
+                    if (quantity > 1) {
+                      setQuantity(quantity - 1)
+                    }
+
+                  }} className={styles.minus}>-</div>
+                </div>
               </div>
             </div>
             <div className={styles.buttonRow}>
