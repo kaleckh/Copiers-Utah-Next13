@@ -175,8 +175,8 @@ export default function Data() {
         <div id="quote" className={styles.section}>
           <div className={styles.thirdSectionRow}>
             <div className={styles.side}>
-              <div style={{ fontSize: "35px", fontWeight: "600", width: "55%" }}>Toner Cartridges of Superior Quality For Sale</div>
-              <div style={{ width: "55%" }}>
+              <div className={styles.tonerTitle}>Toner Cartridges of Superior Quality For Sale</div>
+              <div className={styles.buttonContainer}>
                 <Link href={'/toner'}>
                   <button className={styles.button}>Browse Toner</button>
                 </Link>

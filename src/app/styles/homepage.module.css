@@ -127,7 +127,7 @@
   }
   
   .buttonContainer {
-    width: 200px;
+    width: 55%;
   }
   
   .thirdSection {
@@ -710,6 +710,11 @@
     height: 7.5vh;
     object-fit: cover;
   }
+  .tonerTitle{
+  font-size: 35px;
+   font-weight: 600; 
+   width: 55%
+  }
   
   .pieceContainer {
     height: 100%;
@@ -1059,7 +1064,7 @@
       font-size: 20px;
     }
     .boxReview{
-      margin: 20px;
+      margin: 10px;
     }
   
     .logoSpace {
@@ -1075,7 +1080,10 @@
     .woman {
       width: 100%;
     }
-
+    .customerTitle{
+      font-size: 13px;
+      padding-bottom: 10px;
+    }
     .toner {
       width: 45vw;
     }
@@ -1100,6 +1108,14 @@
     .hideBox{
       display: none;
     }
+    .buttonContainer{
+      width: 45%;
+    }
+    .tonerTitle{
+      font-size: 35px;
+      font-weight: 600; 
+       width: 95%
+      }
     .mainContainer{
       width: 100%;
     }
@@ -1111,7 +1127,7 @@
     }
     .paragraphReview{
       font-size: 12px;
-      line-height: 20px;
+      line-height: 17px;
     }
     .infoMedium {
       font-size: 17px;

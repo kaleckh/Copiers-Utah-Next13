@@ -8,9 +8,9 @@ export default function Section() {
         <div className={styles.section}>
             <div style={{ width: "80%", display: "flex", flexDirection: "column" }}>
 
-                <div style={{ height: "100px", alignItems: "center" }} className={styles.flex}>
-                    <div style={{ paddingRight: "8px", fontSize: "30px" }}>Why choose</div>
-                    <div style={{ color: "rgb(2,50,92)", fontWeight: "600", fontSize: "30px" }}>Copiers Utah</div>
+                <div style={{ height: "100px", alignItems: "center", justifyContent: "center" }} className={styles.flex}>
+                    <div className={styles.titleWhy}>Why choose</div>
+                    <div className={styles.titleWhyBlue}>Copiers Utah</div>
                 </div>
                 <div style={{ height: "200px", justifyContent: "space-between" }} className={styles.flex}>
                     <div className={styles.space}>
