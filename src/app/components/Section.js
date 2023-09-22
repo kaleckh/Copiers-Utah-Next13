@@ -14,16 +14,7 @@ export default function Section() {
                 </div>
                 <div style={{ height: "200px", justifyContent: "space-between" }} className={styles.flex}>
                     <div className={styles.space}>
-                        <div className={styles.row}>
-                            <Image
-                                src="/static/seen.webp"
-                                alt="buy a used or new business copier"
-                                width={35}
-                                height={25}
-                                style={{ paddingRight: "10px" }}
-                            />
-                            <div>Wide Range Of New And Used Copiers For Sale In Utah</div>
-                        </div>
+
                         <div className={styles.row}>
                             <Image
                                 src="/static/seen.webp"

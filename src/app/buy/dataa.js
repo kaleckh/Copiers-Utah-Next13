@@ -106,7 +106,7 @@ const Buy = (props) => {
       <Header />
       <div className={styles.main}>
         <div className={styles.centerContainer}>
-          <h1 className={styles.title}>
+          <h1 className={`${styles.title} ${styles.hidden}`}>
             Want a copier? Fill out our quote form!
           </h1>
         </div>
@@ -115,7 +115,7 @@ const Buy = (props) => {
           {quoteToggle ? (
             <div>
               <div className={styles.container}>
-                <h2 style={{ width: "80%" }} className={styles.black}>Get Your free Quote!</h2>
+                <h2 className={styles.black}>Get Your free Quote!</h2>
                 <div
                   style={{
                     width: "100%",
@@ -163,7 +163,6 @@ const Buy = (props) => {
                         setNumber(event.target.value);
                       }}
                     />
-                    ;
                   </div>
 
                   <div className={styles.space}>
@@ -296,7 +295,7 @@ const Buy = (props) => {
                   width: "100%"
 
                 }}
-                className={styles.column}
+                className={`${styles.column} ${styles.hidden}`}
               >
                 <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
                 <div className={styles.row}>

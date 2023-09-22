@@ -546,6 +546,8 @@
   .inputSingle {
     width: 100%;
     outline: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding: 15px;
     border-radius: 5px;
     background-color: transparent;
@@ -708,6 +710,13 @@
     .padding{
       padding: 10px;
     }
+    .black{
+      font-size: 20px;
+      padding-bottom: 20px;
+    }
+    .hidden{
+      display: none;
+    }
     .sliver{
       padding: 0px;
       font-size: 10px;
@@ -721,6 +730,9 @@
     
     .woman {
       display: none;
+    }
+    .buttonBlue{
+      
     }
    
     
@@ -742,6 +754,9 @@
     }
     .paragraph{
       width: 95%;
+    }
+    .container{
+      height: fit-content;
     }
   }
   
