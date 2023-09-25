@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import Header from '../components/Header'
 import Head from 'next/head'
 import Form from '../components/Form'
+import BreadCrumbs from "../components/BreadCrumbs";
 import Section from "../components/Section";
 import Footer from '../components/Footer'
 import { Metadata } from 'next'
@@ -32,6 +33,10 @@ const Konica = () => {
   }
   const captchaRef = useRef(null)
 
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+  ]
+
   return (
     <div className={styles.main}>
 
@@ -58,9 +63,10 @@ const Konica = () => {
         />
       </div>
       <Header />
-      <div
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
+      <div className={styles.height}
         style={{
-          height: '185vh',
+
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
@@ -147,9 +153,15 @@ const Konica = () => {
                     </div>
                 </div>
                 <div className={styles.buttonContainer}>
-                  <Link href={'/buy'}>
-                    <button className={styles.button}>Request a quote</button>
-                  </Link>
+                  <div className={styles.buttonCenter}>
+                    <Link href={'/buy'}>
+                      <button
+                        className={styles.button}
+                      >
+                        Request a quote
+                    </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -167,7 +179,7 @@ const Konica = () => {
               can handle high volumes of printing and copying without
               compromising on performance.
             </div>
-            <div className={styles.paragraph}>
+            <div className={`${styles.paragraph} ${styles.hidden}`}>
               One of the key factors that contribute to the reliability of
               Konica Minolta copiers is their robust construction. These
               machines are built using high-quality components and materials,
@@ -177,7 +189,7 @@ const Konica = () => {
               productivity.
             </div>
 
-            <div className={styles.row}>
+            <div className={`${styles.row} ${styles.hidden}`}>
               <div className={styles.box}>
                 <Image
                   src={'/static/desktop.webp'}
@@ -188,6 +200,7 @@ const Konica = () => {
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
+
                 <Link href={"/desktop"}>
                   <button className={styles.button}>See Options</button>
                 </Link>

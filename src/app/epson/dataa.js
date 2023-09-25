@@ -2,6 +2,7 @@
 import React, { useRef } from 'react'
 import Header from '../components/Header'
 import { Metadata } from 'next'
+import BreadCrumbs from "../components/BreadCrumbs";
 import Section from "../components/Section";
 import Link from "next/link";
 import Footer from '../components/Footer'
@@ -30,6 +31,10 @@ const Epson = () => {
   }
   const captchaRef = useRef(null)
 
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+  ]
+
   return (
     <div className={styles.main}>
       <div>
@@ -41,6 +46,7 @@ const Epson = () => {
         />
       </div>
       <Header />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div
         style={{
           height: 'fit-content',
@@ -52,7 +58,7 @@ const Epson = () => {
         }}
       >
 
-        <div className={styles.row}>
+        <div className={`${styles.row}`}>
           <div className={styles.copierContainer}>
             <div className={styles.center}>
               <Image
@@ -127,14 +133,16 @@ const Epson = () => {
                     Epson copiers utilize advanced printing technologies.
                     </div>
                 </div>
-                <Link href={'/buy'}>
-                  <button
+                <div className={styles.buttonCenter}>
+                  <Link href={'/buy'}>
+                    <button
 
-                    className={styles.button}
-                  >
-                    Request a quote
-            </button>
-                </Link>
+                      className={styles.button}
+                    >
+                      Request a quote
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -152,7 +160,7 @@ const Epson = () => {
               reports. With Epson copiers, you can expect vivid and accurate
               prints that make a lasting impression.
             </div>
-            <div className={styles.paragraph}>
+            <div className={`${styles.paragraph} ${styles.hidden}`}>
               Epson copiers are also renowned for their reliability and
               durability. Epson is a trusted brand known for manufacturing
               high-quality products, and their copiers are no exception. These
@@ -166,7 +174,7 @@ const Epson = () => {
               met efficiently and reliably.
             </div>
 
-            <div className={styles.row}>
+            <div className={`${styles.row} ${styles.hidden}`}>
               <div className={styles.box}>
                 <Image src={'/static/desktop.webp'} height={100} width={100} alt={'Desktop printers for sale'} />
                 <div className={styles.titleMid}>

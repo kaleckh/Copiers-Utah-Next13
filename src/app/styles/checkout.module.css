@@ -29,7 +29,10 @@
     align-items: center;
     justify-content: space-evenly;
   }
-  
+  .checkoutSmallTitle{
+    text-align: center;
+    padding:10px
+  }
   .button {
     appearance: none;
     background-color: rgb(254, 190, 104);
@@ -62,6 +65,7 @@
   
   .center {
     display: flex;
+    width: 90%;
    justify-content: center;
    align-items: center;
    padding-bottom: 10px;
@@ -127,7 +131,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: column;
     width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px
   }
   .eighty{
     display: flex;
@@ -278,12 +285,7 @@
     background-color: red;
   }
   
-  .column {
-    display: flex;
-    flex-direction: column;
-
-    
-  }
+ 
   
   .text {
     text-align: center;
@@ -359,7 +361,7 @@
     padding: 5px;
     justify-content: space-between;
     align-items: end;
-    width: 102%;    
+    width: 90%;    
   }
   .beginning{
       display: flex;
@@ -389,7 +391,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    width: 90%;
+    width: 102%;
     opacity: 0;
     max-height: 0;
     transition: all .5s ease-in-out
@@ -415,7 +417,7 @@
   .column {
     display: flex;
     justify-content: space-between;
-    align-items: initial;
+    align-items: normal;
     flex-direction: column;
     width: 90%;
 
@@ -446,6 +448,7 @@
   }
   .billing{
     width: 113%;
+    text-align: center;
   }
   
   .priceRight{
@@ -725,6 +728,7 @@
     font-size: 17px;
   }
   .inputB {
+    margin-bottom: 15px;
     border: 1px solid rgb(230, 230, 230);
     outline: none;
     border-radius: 4px;
@@ -975,6 +979,7 @@
       min-height: fit-content;
       padding-bottom: 20px;
       height: 17vh;
+      align-items: center;
     }
     .paragraph{
       width: 95%;
@@ -1022,6 +1027,9 @@
     }
     .checkoutParagraph{
       text-align: center;
+    }
+    .columnHidden{
+      width: 116%;
     }
     
   }

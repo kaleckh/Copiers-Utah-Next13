@@ -4,8 +4,7 @@ import Header from '../components/Header'
 import Head from 'next/head'
 import Link from "next/link";
 import Section from "../components/Section";
-import Sliver from '../components/sliverr'
-import Form from '../components/Form'
+import BreadCrumbs from "../components/BreadCrumbs";
 import Footer from '../components/Footer'
 import Image from 'next/image'
 import { Metadata } from 'next'
@@ -32,24 +31,12 @@ const Lexmark = () => {
     setRecaptchaResponse(response)
   }
   const captchaRef = useRef(null)
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+  ]
 
   return (
     <div className={styles.main}>
-
-      <Head>
-        <title>
-          New and Used Lexmark Copiers | High-Quality and Affordable | Copiers
-          Utah
-        </title>
-        <meta
-          name="description"
-          content="Copiers Utah offers high-quality and affordable Lexmark copiers, both new and used. Learn more about Lexmark copiers and how they can benefit your office. Fill out our quote form to receive a customized quote."
-        />
-        <meta
-          name="keywords"
-          content="Lexmark copiers, used Lexmark copiers, new Lexmark copiers, office copiers, copiers Utah, affordable copiers"
-        />
-      </Head>
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -59,6 +46,7 @@ const Lexmark = () => {
         />
       </div>
       <Header />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div
         style={{
           height: 'fit-content',
@@ -71,19 +59,12 @@ const Lexmark = () => {
       >
         <div className={styles.lineColumn}>
           <h1 className={styles.color}>Lexmark</h1>
-          <div style={{ width: '150%' }} className={styles.line} />
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <Image src={'/static/Lexmark.webp'} height={150} width={100} alt={"Lexmark Copiers For Sale"} />
-            <Link href={'/buy'}>
-              <button
-
-                className={styles.button}
-              >
-                Request a quote
-            </button>
-            </Link>
+            <div className={styles.center}>
+              <Image src={'/static/Lexmark.webp'} height={250} width={150} alt={"Lexmark Copiers For Sale"} />
+            </div>
           </div>
           <div className={styles.column}>
             <div>
@@ -147,6 +128,16 @@ const Lexmark = () => {
                     authentication and data encryption
                     </div>
                 </div>
+                <div className={styles.buttonContainer}>
+                  <Link href={'/buy'}>
+                    <button
+
+                      className={styles.button}
+                    >
+                      Request a quote
+                  </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -172,7 +163,7 @@ const Lexmark = () => {
               productivity.
             </div>
 
-            <div className={styles.row}>
+            <div className={`${styles.row} ${styles.hidden}`}>
               <div className={styles.box}>
                 <Image src={'/static/desktop.webp'} height={100} width={100} alt={"Desktop Lexmark Copiers"} />
                 <div className={styles.titleMid}>

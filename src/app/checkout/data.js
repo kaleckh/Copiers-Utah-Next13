@@ -387,11 +387,11 @@ const Checkout = (props) => {
 
                         </div>
                         <div className={styles.line}></div>
-                        <div className={styles.smaller} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                            <div style={{ paddingBottom: "20px", paddingTop: "40px" }}>Card Information</div>
+                        <div className={styles.smaller}>
+                            <div>Card Information</div>
                             <input onChange={(event) => {
                                 setCard(event.target.value)
-                            }} style={{ marginBottom: "15px" }} className={styles.inputB} type="text" placeholder={"Put card number here"} />
+                            }} className={styles.inputB} type="text" placeholder={"Put card number here"} />
                             <div className={styles.row}>
                                 <input onChange={(event) => {
                                     setExp(event.target.value)

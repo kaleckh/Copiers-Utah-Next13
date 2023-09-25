@@ -605,4 +605,27 @@
     font-size: 13px;
     width: 80%;
   }
+  .row{
+    flex-direction: column;
+  }
+  .hidden{
+    display: none;
+  }
+  .konikaBottom{
+    width: 111%;
+  }
+  .column{
+    width: 90%;
+  }
+  .color{
+    justify-content: center;
+  }
+  .button{
+    width: 100%;
+  }
+  .buttonCenter{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+  }
 }
