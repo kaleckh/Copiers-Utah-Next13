@@ -116,51 +116,6 @@ const Fix = () => {
 
   return (
     <div className={styles.main}>
-
-      <Head>
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://copiersutah.com/Fix/" />
-        <title>
-          Copier Machine Repair Services | Get a Quote Today | Copiers Utah
-        </title>
-        <meta
-          name="description"
-          content="Copiers Utah provides reliable and affordable copier machine repair services. Fill out our easy form to get a personalized quote and get your copier back up and running in no time."
-        />
-        <meta
-          name="keywords"
-          content="copier repair, copier service, copier maintenance, copier technician, get a quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: `
-      {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Copiers Utah",
-      "image": "https://www.example.com/static/logo.webp",
-      "telephone": "(801) 261-0510",
-      "email": "info@copiersutah.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1234 Main St.",
-        "addressLocality": "Salt Lake City",
-        "addressRegion": "UT",
-        "postalCode": "84101",
-        "addressCountry": "US"
-      },
-      "url": "https://www.copiersutah.com/",
-      "sameAs": [
-        "https://www.facebook.com/copiersutah",
-        "https://twitter.com/copiersutah",
-        "https://www.linkedin.com/company/copiers-utah"
-      ]
-      }
-      `
-          }}
-        />
-      </Head>
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -307,7 +262,7 @@ const Fix = () => {
             )}
         </div>
         <div>
-          <div className={`${styles.fifty} ${styles.pic}`}>
+          <div className={`${styles.fifty} ${styles.pic} ${styles.hidden}`}>
             <div className={styles.overlay}>
               <div style={{ width: "90%" }}>
                 <div className={styles.paragraph}>At Copiers Utah, our commitment to exceptional service extends beyond just offering reliable copiers. We take immense pride in providing top-notch maintenance services that go the extra mile to keep your office running smoothly and efficiently. Our dedicated team of friendly and skilled technicians is here to ensure that your copiers are always in optimal condition, delivering consistent performance and minimizing any disruptions to your workflow.<div />

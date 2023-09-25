@@ -74,7 +74,7 @@ export default function Header() {
               </Link>
             </div>
 
-            <Link href={'/cart-='}>
+            <Link href={'/cart'}>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Image
                   src="/static/cart.webp"

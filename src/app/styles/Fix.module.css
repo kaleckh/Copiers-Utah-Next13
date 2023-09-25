@@ -259,6 +259,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
   }
   
   .text {
@@ -698,6 +699,10 @@
     .container {
       width: 80vw;
     }
+    .hidden{
+      display: none;
+    }
+    
   }
   
   @media (max-width: 600px) {

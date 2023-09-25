@@ -20,6 +20,13 @@
     align-items: center;
     justify-content: space-evenly;
   }
+  .oemContainer{
+    color: black;
+    font-size: 15px;
+    display: flex;
+    font-weight: 600;
+    
+  }
   
   .button {
     appearance: none;
@@ -535,6 +542,9 @@
   .bottomRow{
     display: flex;
   }
+  .hundred{
+    width: 65%;
+  }
   .number {
     background-color: #5fcf80;
     color: #fff;
@@ -799,7 +809,21 @@
     .black {
       font-size: 27px;
     }
-  
+    .bottomMain{
+      flex-direction: column;
+    }
+    .priceBox{
+      width: 100%;
+    }
+    .thirdSection{
+      padding-left: 0px;
+    }
+    .buggy{
+      flex-direction: column;
+    }
+    .priceBox{
+      padding-left: 0px;
+    }
     .paragraph{
       width: 90%;
     }
@@ -818,6 +842,12 @@
   @media (max-width: 640px) {
     .woman {
       display: none;
+    }
+    .boxContainer{
+      height: 350px;
+    }
+    .oemContainer{
+      justify-content: center;
     }
     .sliver{
       font-size: 12px;
@@ -842,6 +872,12 @@
     }
     .paragraph{
       width: 95%;
+    }
+    .hundred{
+      width: 100%;
+    }
+    .cartTitle{
+      text-align: center;
     }
   }
   

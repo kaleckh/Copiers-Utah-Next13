@@ -262,4 +262,14 @@
     
   }
 
+  @media(max-width: 700px ) {
+    .boxContainer{
+      grid-template-columns: 1fr;
+    }
+    .filter{
+      display: none;
+    }
+ 
+  }
+
   

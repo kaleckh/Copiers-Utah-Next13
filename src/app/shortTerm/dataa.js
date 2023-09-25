@@ -219,9 +219,9 @@ const ShortTerm = () => {
       </div>
       <div className={styles.section}>
         <div className={styles.copiersTitle}>
-          Copiers Utah <div style={{ color: "rgb(1,51,93)", paddingLeft: "10px", fontSize: "28px" }}>Rental Services</div>
+          Copiers Utah <div className={styles.copiersTitleBlue}>Rental Services</div>
         </div>
-        <h3 style={{ padding: "10px", fontSize: "15px", color: "rgb(101,101,101)" }} className={styles.title}>
+        <h3 className={styles.titleSmall}>
           We Rent Copiers For All Types Of Events!
         </h3>
         <div
@@ -278,7 +278,7 @@ const ShortTerm = () => {
             </div>
           </div>
           <div className={styles.paragraph}>At our company, we understand the diverse needs of different events and projects, which is why we offer copier rental services for a wide range of occasions. Whether it's a construction trailer where blueprints need to be printed and shared, or a temporary office where important documents need to be copied and scanned, we've got you covered. Our reliable copiers ensure that construction projects can run smoothly with efficient documentation and communication. We provide the necessary printing resources for professionals working in temporary offices, ensuring they have access to high-quality printing, copying, and scanning capabilities during their short-term assignments.</div>
-          <div style={{ paddingBottom: "20px" }} className={styles.paragraph}>Moreover, our copier rentals are ideal for seasonal work arrangements, where businesses experience increased demands during peak periods. We understand the importance of keeping up with the workload and offer reliable printing solutions to support your seasonal workforce. Additionally, our copiers are perfectly suited for short-term business projects, enabling efficient data processing, documentation, and collaboration. We pride ourselves on delivering top-quality copiers that meet the unique printing needs of our clients, ensuring that you have the necessary tools to get the job done right, no matter the event or project.</div>
+          <div style={{ paddingBottom: "20px" }} className={`${styles.paragraph} ${styles.hidden}`}>Moreover, our copier rentals are ideal for seasonal work arrangements, where businesses experience increased demands during peak periods. We understand the importance of keeping up with the workload and offer reliable printing solutions to support your seasonal workforce. Additionally, our copiers are perfectly suited for short-term business projects, enabling efficient data processing, documentation, and collaboration. We pride ourselves on delivering top-quality copiers that meet the unique printing needs of our clients, ensuring that you have the necessary tools to get the job done right, no matter the event or project.</div>
         </div>
       </div>
       <Section />

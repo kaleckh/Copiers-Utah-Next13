@@ -124,10 +124,10 @@ const Cart = () => {
             <Header />
             <BreadCrumbs breadCrumbs={breadCrumbs} />
             <div className={styles.bottomMain}>
-                <div style={{ width: "65%" }}>
+                <div className={styles.hundred}>
                     <div className={styles.mainTitleBig}>Your Shopping Cart</div>
                     {cart.length === 0 ? (
-                        <div style={{ color: "black", textAlign: "center", paddingTop: "25px" }}>Your cart is empty</div>
+                        <div style={{ color: "black", textAlign: "center", paddingTop: "25px"}}>Your cart is empty</div>
                     ) : (
                             <div style={{ color: "black" }}></div>
                         )}
@@ -150,11 +150,7 @@ const Cart = () => {
                                     <div className={styles.priceBox}>
                                         <div className={styles.cartTitle}>{toner.name}</div>
                                         <div
-                                            style={{
-                                                display: "flex",
-                                                paddingTop: "10px",
-                                                alignItems: "center",
-                                            }}
+                                            className={styles.oemContainer}
                                         >
                                             <div
                                                 style={{

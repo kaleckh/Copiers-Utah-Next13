@@ -4,6 +4,9 @@
     height: fit-content;
     background-color: white;
   }
+.checkoutEighty{
+  width: 80%;
+}
 .bottomMain {
     width: 100%;
     color: black;
@@ -99,6 +102,10 @@
   .buttonContainer {
     width: 200px;
   }
+  .checkoutParagraph{
+    font-size: 25px;
+    text-align: center;
+  }
   
   .thirdSection {
     display: flex;
@@ -109,7 +116,9 @@
     padding-top: 20px;
     padding-bottom: 30px;
   }
-  
+  .center{
+    width: 100%;
+  }
   .paragraphContainer {
     width: 50%;
   }
@@ -180,6 +189,11 @@
     background-size: cover;
     border-radius: 15px;
     background-repeat: no-repeat;
+  }
+  .middleCenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .itWork {
@@ -252,6 +266,10 @@
   
   .smallRow {
     display: flex;
+  }
+  .noContainer{
+    display: flex;
+    flex-direction: column;
   }
   
   .square {
@@ -350,6 +368,9 @@
   .hidden{
     display: none;
   }
+  .bottomPieceContainer{
+    width: 80%;
+  }
   .dataResult{
     display: flex;
     padding-bottom: 10px;
@@ -394,7 +415,7 @@
   .column {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: initial;
     flex-direction: column;
     width: 90%;
 
@@ -422,6 +443,9 @@
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
+  }
+  .billing{
+    width: 113%;
   }
   
   .priceRight{
@@ -514,6 +538,9 @@
   }
   .buttonContainterB{
     display: flex;
+  }
+  .smaller{
+    width: 80%;
   }
   .box{
     width: 350px;
@@ -904,6 +931,13 @@
     .woman {
       display: none;
     }
+    .rowTop{
+      width: 60%;
+      font-size: 18px;
+    }
+    .input{
+      width: 120px;
+    }
     .sliver{
       font-size: 12px;
       width: 100%;
@@ -917,7 +951,10 @@
       height:fit-content
     }
     .row{
-      width: 100%;
+      width: 105%;
+    }
+    .titleSmall{
+      text-align: center;
     }
     .centerContainer{
       height: 5%;
@@ -925,8 +962,67 @@
     .container{
       width: 98%;
     }
+    .checkoutSmallTitle{
+      font-size: 18px;
+      text-align: center;
+      padding: 10px;
+    }
+    .checkoutParagraph{
+      font-size: 18px;
+      text-align: center;
+    }
+    .column{
+      min-height: fit-content;
+      padding-bottom: 20px;
+      height: 17vh;
+    }
     .paragraph{
       width: 95%;
     }
+    .bottomMain{
+      font-size: 16px;
+    }
+    .quantityText{
+      font-size: 16px;
+    }
+    .priceText{
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .checkoutEighty{
+      width: 100%;
+    }
+    .no{
+      font-size: 16px;
+    }
+    .rowSmall{
+      padding-top: 15px;
+    }
+    .billing{
+      font-size: 16px;
+      text-align: center;
+    }
+    .rowTop{
+      width: 100%;
+    }
+    .center{
+      width: 90%;
+    }
+    .container{
+      width: 110%;
+    }
+    .bottomPieceContainer{
+      display: flex; 
+      justify-content: center; 
+      flex-direction: column; 
+      align-items: center
+    }
+    .checkoutSmallTitle{
+      text-align: center;
+    }
+    .checkoutParagraph{
+      text-align: center;
+    }
+    
   }
   

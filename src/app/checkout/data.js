@@ -258,7 +258,7 @@ const Checkout = (props) => {
                         <div className={styles.title}>Toner Order</div>
                         <div className={styles.titleSmall}>${totalAmount}</div>
                         <div className={styles.line}></div>
-                        <div style={{ width: "80%" }}>
+                        <div className={styles.checkoutEighty}>
                             <div className={styles.beginning}>
                                 <div style={{ display: "flex" }}>
                                     <div style={{ paddingRight: "5px", paddingBottom: "10px", paddingTop: "10px" }} >ORDER SUMMARY</div>
@@ -276,10 +276,10 @@ const Checkout = (props) => {
 
                                     return <div key={index} className={`${styles.dataResult} ${hidden ? styles.showing : styles.hidden}`}>
                                         <div style={{ display: "flex" }}>
-                                            <div style={{ paddingRight: "5px" }}>({item.quantity})</div>
+                                            <div className={styles.quantityText}>({item.quantity})</div>
                                             <div style={{ fontSize: "12px" }}>{item.name}</div>
                                         </div>
-                                        <div style={{ paddingBottom: "10px" }}>${item.price * item.quantity}</div>
+                                        <div className={styles.priceText}>${item.price * item.quantity}</div>
                                     </div>
                                 })}
                             </div>
@@ -314,13 +314,13 @@ const Checkout = (props) => {
                             </div>
                             <div className={styles.row}>
                                 <input onChange={() => { setPhone(event.target.value) }} className={styles.input} type="text" placeholder={"Phone number"} />
-                                <input onChange={() => { setEmail(event.target.value) }} className={styles.input} type="text" placeholder={"Email address for receipt"} />
+                                <input onChange={() => { setEmail(event.target.value) }} className={styles.input} type="text" placeholder={"Email Address"} />
                             </div>
                         </div>
                         <div className={styles.line}></div>
-                        <div>
+                        <div className={styles.middleCenter}>
                             <div className={styles.titleSmall} style={{ paddingBottom: "10px", fontSize: '17px', paddingTop: "10px" }}>Shipping Address</div>
-                            <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
+                            <div className={styles.bottomPieceContainer}>
                                 <div style={{
                                     paddingBottom: "20px"
                                 }} className={styles.column}>
@@ -343,21 +343,21 @@ const Checkout = (props) => {
                                     </div>
                                 </div>
                                 <input onChange={(event) => { setAddress(event.target.value) }} className={styles.inputB} type="text" placeholder={"Enter your address here"} />
-                                {maybe ? <><input className={styles.input} type="text" placeholder={"Apt, Suite, Floor"} /></> : <><div style={{ padding: "10px" }} onClick={() => {
+                                {maybe ? <><input className={styles.input} type="text" placeholder={"Apt, Suite, Floor"} /></> : <><div className={styles.checkoutSmallTitle} onClick={() => {
                                     setMaybe(!maybe)
                                 }}>+Add Apt</div></>}
                                 <div className={styles.center}>
-                                    <div style={{ paddingBottom: "10px", width: "113%", textAlign: "center" }}>Is your billing address the same as shipping?</div>
+                                    <div className={styles.checkoutParagraph}>Is your billing address the same as shipping?</div>
                                     <div className={styles.rowSmall}>
-                                        <div>
-                                            <div >No</div>
+                                        <div className={styles.noContainer}>
+                                            <div className={styles.no} >No</div>
                                             <input onClick={() => {
                                                 setBilling(!billing)
                                                 setHiddenBottom(!hiddenBottom)
                                             }} type="checkbox" />
                                         </div>
-                                        <div>
-                                            <div>Yes</div>
+                                        <div className={styles.noContainer}>
+                                            <div className={styles.no}>Yes</div>
                                             <input type="checkbox" />
                                         </div>
                                     </div>
@@ -365,7 +365,7 @@ const Checkout = (props) => {
                                         paddingBottom: "20px"
                                     }} className={`${styles.columnHidden} ${hiddenBottom ? styles.showing : styles.hidden}`}>
                                         <div style={{ margin: "5px", width: "126%" }} className={styles.line}></div>
-                                        <div style={{ width: "113%" }}>Billing Address</div>
+                                        <div className={styles.billing}>Billing Address</div>
                                         <div style={{ width: "113%", paddingTop: "10px" }} className={styles.row}>
                                             <input onChange={(event) => {
                                                 setBillingState(event.target.value)
@@ -387,7 +387,7 @@ const Checkout = (props) => {
 
                         </div>
                         <div className={styles.line}></div>
-                        <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                        <div className={styles.smaller} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
                             <div style={{ paddingBottom: "20px", paddingTop: "40px" }}>Card Information</div>
                             <input onChange={(event) => {
                                 setCard(event.target.value)

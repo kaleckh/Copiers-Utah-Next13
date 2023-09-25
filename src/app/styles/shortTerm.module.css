@@ -267,6 +267,12 @@
     color: black;
     text-align: center;
   }
+  .titleSmall {
+    font-size: 28px;
+    font-weight: 400;
+    color: black;
+    text-align: center;
+  }
   
   
   .titleBig {
@@ -541,6 +547,32 @@
   }
   
   @media (max-width: 800px) {
+    .copiersTitle{
+      font-size: 20px;
+    }
+    .Realcolumn{
+      height: 450px;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 0px;
+
+    }
+    .title{
+      font-size: 20px;
+    }
+    .black{
+      font-size: 18px;
+    }
+    .titleSmall{
+       padding:5px; 
+       font-size: 13px;
+        color: rgb(101,101,101)
+    }
+    .copiersTitleBlue{
+      color: rgb(1,51,93);
+       padding-left: 10px;
+        font-size: 20px 
+    }
     .woman {
       display: none;
     }
@@ -549,6 +581,19 @@
     }
     .container {
       width: 95vw;
+    }
+    .hidden{
+      display: none;
+    }
+    .paragraph{
+      color: black;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      font-weight: 200;
+      width: 95%;
+      line-height: 27px;
+  
     }
   }
   
