@@ -709,6 +709,9 @@
     .padding{
       padding: 10px;
     }
+    .blackButton{
+      font-size:16px;
+    }
     .black{
       font-size: 20px;
       padding-bottom: 20px;
@@ -730,7 +733,9 @@
     .woman {
       display: none;
     }
-   
+   .option{
+     font-size: 17px;
+   }
    
     
     .eighty{
@@ -754,6 +759,9 @@
     }
     .container{
       height: fit-content;
+    }
+    .column{
+      display: none;
     }
   }
   

@@ -337,8 +337,12 @@ const Buy = (props) => {
                 which can be a significant financial burden for many businesses.
               </div>
               <div
-                style={{ justifyContent: "space-evenly", width: "100%" }}
-                className={styles.column}
+                style={{
+                  justifyContent: "space-evenly",
+                  width: "100%"
+
+                }}
+                className={`${styles.column} ${styles.hidden}`}
               >
                 <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
                 <div className={styles.row}>
@@ -385,8 +389,12 @@ const Buy = (props) => {
                 cash flow.
               </div>
               <div
-                style={{ justifyContent: "space-evenly", width: "100%" }}
-                className={styles.column}
+                style={{
+                  justifyContent: "space-evenly",
+                  width: "100%"
+
+                }}
+                className={`${styles.column} ${styles.hidden}`}
               >
                 <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
                 <div className={styles.row}>
