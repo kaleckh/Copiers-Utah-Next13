@@ -1,5 +1,5 @@
 "use client"
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import Section from "../components/Section";
 import Head from "next/head";
@@ -24,47 +24,42 @@ const It = (props) => {
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
     const [message, setMessage] = useState("");
-
+    const [toggle, setToggle] = useState(false);
     const captchaRef = useRef(null);
     const tawkMessengerRef = useRef();
 
     const handleMinimize = () => {
         tawkMessengerRef.current.minimize();
     };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Sending");
-
-        fetch("https://api.smtp2go.com/v3/email/send", {
+    async function sendEmail() {
+        debugger
+        const requestOptions =
+        {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
             body: JSON.stringify({
-                api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
-                to: [`<info@copiersutah.com>`],
-                sender: "<info@copiersutah.com>",
-                subject: `This is${name}'s quote form. Her number is ${number}`,
-                text_body: `${message}`,
-                html_body: `<h1>${message}</h1>`,
-                template_id: "5120871",
-                template_data: {
-                    message: message,
-                    number: number,
-                    name: name,
-                },
+
+                from: "Buy A Copier",
+                name: name,
+                message: message,
+                number: number,
+                email: email,
             }),
-        }).then((res) => {
-            console.log(res);
-            if (res.status === 200) {
-                console.log("Response succeeded!");
-                // setSubmitted(true);
-                // setName("");
-                // setEmail("");
-                // setBody("");
-            }
-        });
-    };
+        }
+        try {
+
+            const response = await fetch('/api/pay/quote', requestOptions);
+            debugger
+            const data1 = await response.json();
+            console.log(data1, "this is the response")
+        } catch (err) {
+        }
+    }
+    useEffect(() => {
+        if (message.length > 1 && number.length > 1 && name.length > 1 && email.length > 1 && recaptchaResponse !== false) {
+            setToggle(true)
+        }
+
+    }, [message, number, name, email, recaptchaResponse])
     const onLoad = () => {
         console.log("onLoad works!");
     };
@@ -72,35 +67,6 @@ const It = (props) => {
     var verifyCallback = function (response) {
         setRecaptchaResponse(response);
     };
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-        console.log("Sending");
-        let data = {
-            name,
-            email,
-            message,
-            number,
-        };
-        fetch("/api/contact", {
-            method: "POST",
-            headers: {
-                Accept: "application/json, text/plain, */*",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        }).then((res) => {
-            console.log("Response received");
-            if (res.status === 200) {
-                console.log("Response succeeded!");
-                // setSubmitted(true);
-                // setName("");
-                // setEmail("");
-                // setBody("");
-            }
-        });
-    };
-
     return (
         <div className={styles.main}>
 
@@ -254,7 +220,7 @@ const It = (props) => {
                                 {buttonToggle ? (
                                     <div>
                                         <div className={styles.container}>
-                                            <div className={styles.black}>Get Your free Quote!</div>
+                                            <h2 className={styles.black}>Get Your free Quote!</h2>
                                             <div
                                                 style={{
                                                     width: "100%",
@@ -266,10 +232,11 @@ const It = (props) => {
                                                 }}
                                             >
                                                 <div className={styles.space}>
-                                                    <div className={styles.number}>1</div>
+
                                                     <input
+                                                        style={{ marginRight: "10px" }}
                                                         className={styles.inputSingle}
-                                                        placeholder="Name"
+                                                        placeholder="Full name"
                                                         type="text"
                                                         name=""
                                                         id=""
@@ -278,9 +245,20 @@ const It = (props) => {
                                                             setName(event.target.value);
                                                         }}
                                                     />
+                                                    <input
+                                                        className={styles.inputSingle}
+                                                        placeholder="Email"
+                                                        type="text"
+                                                        name=""
+                                                        id=""
+                                                        required={true}
+                                                        onChange={() => {
+                                                            setEmail(event.target.value);
+                                                        }}
+                                                    />
                                                 </div>
                                                 <div className={styles.space}>
-                                                    <div className={styles.number}>2</div>
+
                                                     <PatternFormat
                                                         format="+1 (###) ### ####"
                                                         allowEmptyFormatting
@@ -290,11 +268,10 @@ const It = (props) => {
                                                             setNumber(event.target.value);
                                                         }}
                                                     />
-                        ;
-                      </div>
+                                                </div>
 
                                                 <div className={styles.space}>
-                                                    <div className={styles.number}>3</div>
+
                                                     <input
                                                         onChange={() => {
                                                             setMessage(event.target.value);
@@ -324,13 +301,13 @@ const It = (props) => {
                                             <button
                                                 onClick={(e) => {
                                                     setQuoteToggle(!quoteToggle);
-                                                    handleSubmit(e);
+                                                    sendEmail(e);
                                                 }}
-                                                className={styles.button}
-                                                disabled={!recaptchaResponse}
+                                                className={styles.buttonBlue}
+                                                disabled={!toggle}
                                             >
                                                 Get My Quote
-                    </button>
+                </button>
                                         </div>
                                     </div>
                                 ) : (
