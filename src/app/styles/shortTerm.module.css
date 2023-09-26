@@ -34,6 +34,10 @@
     text-decoration: none;
     will-change: transform;
   }
+
+  .buttonBlue:disabled{
+    opacity: .5;
+  }
   
   .center {
     display: flex;
@@ -455,14 +459,28 @@
     justify-content: space-around;
     width: 80%;
   }
+  .phoneNumber {
+    background-color: transparent;
+    outline: none;
+    color: rgb(117, 117, 117);
+    border: none;
+    border: 1px solid rgb(210,210,210);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 20px;
+  }
   
   .inputSingle {
     width: 100%;
     outline: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 15px;
+    border-radius: 5px;
     background-color: transparent;
-    border: none;
+    border: 1px solid rgb(210,210,210);
     color: black;
-    border-bottom: 1px black solid;
   }
   
   .button:disabled {

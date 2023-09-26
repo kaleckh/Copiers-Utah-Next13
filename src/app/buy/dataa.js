@@ -39,48 +39,35 @@ const Buy = (props) => {
     setNumber(number);
   };
 
-  const sendEmail = (e) => {
-    debugger
-    // e.preventDefault();
-    console.log("Sending");
+  async function sendEmail() {
 
-    // fetch("https://api.smtp2go.com/v3/email/send", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
-    //     to: [`<info@copiersutah.com>`],
-    //     sender: "<info@copiersutah.com>",
-    //     subject: `This is${name}'s quote form. Her number is ${number}`,
-    //     text_body: `${message}`,
-    //     html_body: `<h1>${message}</h1>`,
-    //     template_id: "5120871",
-    //     template_data: {
-    //       message: message,
-    //       from: "buy a copier",
-    //       number: number,
-    //       name: name,
-    //     },
-    //   }),
-    // }).then((res) => {
-    //   console.log(res);
-    //   if (res.status === 200) {
-    //     console.log("Response succeeded!");
-    //     // setSubmitted(true);
-    //     // setName("");
-    //     // setEmail("");
-    //     // setBody("");
-    //   }
-    // });
-  };
+    const requestOptions =
+    {
+      method: "POST",
+      body: JSON.stringify({
+
+        from: "Buy A Copier",
+        name: name,
+        message: message,
+        number: number,
+        email: email,
+      }),
+    }
+    try {
+
+      const response = await fetch('/api/pay/quote', requestOptions);
+
+      const data1 = await response.json();
+      console.log(data1, "this is the response")
+    } catch (err) {
+    }
+  }
   useEffect(() => {
     if (message.length > 1 && number.length > 1 && name.length > 1 && email.length > 1 && recaptchaResponse !== false) {
       setToggle(true)
     }
 
-  }, [message, number, name, email, verifyCallback])
+  }, [message, number, name, email, recaptchaResponse])
 
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
@@ -148,7 +135,7 @@ const Buy = (props) => {
                       id=""
                       required={true}
                       onChange={() => {
-                        setName(event.target.value);
+                        setEmail(event.target.value);
                       }}
                     />
                   </div>

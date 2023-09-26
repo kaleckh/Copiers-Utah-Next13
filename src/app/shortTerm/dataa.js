@@ -1,5 +1,5 @@
 "use client"
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Header from "../components/Header";
 // import Form from "./Form";
 import Section from "../components/Section";
@@ -21,6 +21,7 @@ const ShortTerm = () => {
   const tawkMessengerRef = useRef();
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [nameRes, setNameRes] = useState(false);
+  const [toggle, setToggle] = useState(false);
   const [messageRes, setMessageRes] = useState(false);
   const [quote, setQuote] = useState(false);
   const [name, setName] = useState("");
@@ -35,72 +36,39 @@ const ShortTerm = () => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Sending");
-
-    fetch("https://api.smtp2go.com/v3/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
-        to: [`<info@copiersutah.com>`],
-        sender: "<info@copiersutah.com>",
-        subject: `This is${name}'s quote form. Her number is ${number}`,
-        text_body: `${message}`,
-        html_body: `<h1>${message}</h1>`,
-        template_id: "5120871",
-        template_data: {
-          message: message,
-          from: "rentals",
-          number: number,
-          name: name,
-        },
-      }),
-    }).then((res) => {
-
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        // setSubmitted(true);
-        // setName("");
-        // setEmail("");
-        // setBody("");
-      }
-    });
-  };
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
   };
+  useEffect(() => {
+    if (message.length > 1 && number.length > 1 && name.length > 1 && email.length > 1 && recaptchaResponse !== false) {
+      setToggle(true)
+    }
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    console.log("Sending");
-    let data = {
-      name,
-      email,
-      message,
-      number,
-    };
-    fetch("/api/contact", {
+  }, [message, number, name, email, recaptchaResponse])
+
+  async function sendEmail() {
+
+    const requestOptions =
+    {
       method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log("Response received");
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        // setSubmitted(true);
-        // setName("");
-        // setEmail("");
-        // setBody("");
-      }
-    });
-  };
+      body: JSON.stringify({
+
+        from: "Rent A Copier",
+        name: name,
+        message: message,
+        number: number,
+        email: email,
+      }),
+    }
+    try {
+
+      const response = await fetch('/api/pay/quote', requestOptions);
+
+      const data1 = await response.json();
+      console.log(data1, "this is the response")
+    } catch (err) {
+    }
+  }
 
   return (
     <div className={styles.main}>
@@ -133,7 +101,7 @@ const ShortTerm = () => {
               ) : (
                   <div>
                     <div className={styles.container}>
-                      <div className={styles.black}>Get Your free Quote!</div>
+                      <h2 className={styles.black}>Get Your free Quote!</h2>
                       <div
                         style={{
                           width: "100%",
@@ -145,10 +113,11 @@ const ShortTerm = () => {
                         }}
                       >
                         <div className={styles.space}>
-                          <div className={styles.number}>1</div>
+
                           <input
+                            style={{ marginRight: "10px" }}
                             className={styles.inputSingle}
-                            placeholder="Name"
+                            placeholder="Full name"
                             type="text"
                             name=""
                             id=""
@@ -157,11 +126,22 @@ const ShortTerm = () => {
                               setName(event.target.value);
                             }}
                           />
+                          <input
+                            className={styles.inputSingle}
+                            placeholder="Email"
+                            type="text"
+                            name=""
+                            id=""
+                            required={true}
+                            onChange={() => {
+                              setEmail(event.target.value);
+                            }}
+                          />
                         </div>
                         <div className={styles.space}>
-                          <div className={styles.number}>2</div>
+
                           <PatternFormat
-                            format="+1 (###) #### ###"
+                            format="+1 (###) ### ####"
                             allowEmptyFormatting
                             mask="_"
                             className={styles.phoneNumber}
@@ -169,11 +149,10 @@ const ShortTerm = () => {
                               setNumber(event.target.value);
                             }}
                           />
-                        ;
-                      </div>
+                        </div>
 
                         <div className={styles.space}>
-                          <div className={styles.number}>3</div>
+
                           <input
                             onChange={() => {
                               setMessage(event.target.value);
@@ -202,14 +181,14 @@ const ShortTerm = () => {
                       </div>
                       <button
                         onClick={(e) => {
-                          setQuote(!quote);
-                          handleSubmit(e);
+                          setQuoteToggle(!quoteToggle);
+                          sendEmail(e);
                         }}
-                        disabled={!recaptchaResponse && !messageRes}
                         className={styles.buttonBlue}
+                        disabled={!toggle}
                       >
                         Get My Quote
-                    </button>
+                </button>
                     </div>
                   </div>
                 )}

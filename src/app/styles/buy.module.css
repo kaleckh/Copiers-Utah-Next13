@@ -64,10 +64,7 @@
     letter-spacing: 1px;
   }
   
-  .buttonBlue:disabled {
-    pointer-events: none;
-    opacity: .5;
-  }
+ 
   
   .button:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
@@ -115,9 +112,9 @@
     text-decoration: none;
     will-change: transform;
   }
-  .padding{
+  /* .padding{
     padding: 40px;
-  }
+  } */
   .smaller {
     display: flex;
     justify-content: space-around;
@@ -555,7 +552,7 @@
     color: black;
   }
   
-  .button:disabled {
+  .buttonBlue:disabled {
     opacity: 0.5;
     pointer-events: none;
   }
@@ -731,9 +728,7 @@
     .woman {
       display: none;
     }
-    .buttonBlue{
-      
-    }
+   
    
     
     .eighty{
