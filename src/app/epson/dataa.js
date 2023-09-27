@@ -134,14 +134,16 @@ const Epson = () => {
                     </div>
                 </div>
                 <div className={styles.buttonCenter}>
-                  <Link href={'/buy'}>
-                    <button
+                  <h2>
+                    <Link href={'/buy'}>
+                      <button
 
-                      className={styles.button}
-                    >
-                      Request a quote
+                        className={styles.button}
+                      >
+                        Request a quote
                     </button>
-                  </Link>
+                    </Link>
+                  </h2>
                 </div>
               </div>
             </div>
@@ -177,9 +179,11 @@ const Epson = () => {
             <div className={`${styles.row} ${styles.hidden}`}>
               <div className={styles.box}>
                 <Image src={'/static/desktop.webp'} height={100} width={100} alt={'Desktop printers for sale'} />
-                <div className={styles.titleMid}>
-                  Business Class Desktop Printers
+                <h3>
+                  <div className={styles.titleMid}>
+                    Business Class Desktop Printers
                 </div>
+                </h3>
                 <Link href={"/desktop"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
@@ -191,9 +195,11 @@ const Epson = () => {
                   alt={'color copiers for sale'}
                   width={100}
                 />
-                <div className={styles.titleMid}>
-                  Color Multifunction Copiers
-                </div>
+                <h3>
+                  <div className={styles.titleMid}>
+                    Color Multifunction Copiers
+                  </div>
+                </h3>
                 <Link href={"/multicolor"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
@@ -205,7 +211,9 @@ const Epson = () => {
                   width={100}
                   alt={'black and white copiers for sale'}
                 />
-                <div className={styles.titleMid}>Black And White Copiers</div>
+                <h3>
+                  <div className={styles.titleMid}>Black And White Copiers</div>
+                </h3>
                 <Link href={'/black-white'}>
                   <button className={styles.button}>See Options</button>
                 </Link>

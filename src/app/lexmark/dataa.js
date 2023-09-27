@@ -129,14 +129,16 @@ const Lexmark = () => {
                     </div>
                 </div>
                 <div className={styles.buttonContainer}>
-                  <Link href={'/buy'}>
-                    <button
+                  <h2>
+                    <Link href={'/buy'}>
+                      <button
 
-                      className={styles.button}
-                    >
-                      Request a quote
+                        className={styles.button}
+                      >
+                        Request a quote
                   </button>
-                  </Link>
+                    </Link>
+                  </h2>
                 </div>
               </div>
             </div>

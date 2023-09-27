@@ -87,9 +87,11 @@ export default function Data() {
                   Copiers Utah Welcomes You
                 </div>
               </div>
-              <div className={styles.homepageTitle}>
-                Explore Our Copier Buying And Leasing Solutions
+              <h1>
+                <div className={styles.homepageTitle}>
+                  Explore Our Copier Buying And Leasing Solutions
               </div>
+              </h1>
               <div className={styles.paragraphSmall}>
                 We provide a variety of high-quality copiers for your business needs. Whether you buy or lease, our cutting-edge solutions will boost your office efficiency to new heights.
               </div>
@@ -194,7 +196,9 @@ export default function Data() {
         </div>
 
         <div className={styles.fourthSection}>
-          <div style={{ color: "black", display: "flex", fontSize: "35px", fontWeight: "400", paddingBottom: "40px" }}>Our Top <div style={{ color: "rgb(2,50,92)", paddingLeft: "8px" }}>Products</div></div>
+          <h3>
+            <div style={{ color: "black", display: "flex", fontSize: "35px", fontWeight: "400", paddingBottom: "40px" }}>Our Top <div style={{ color: "rgb(2,50,92)", paddingLeft: "8px" }}>Products</div></div>
+          </h3>
           <div className={styles.copierRow}>
 
             <Link href={'/lexmark'}>

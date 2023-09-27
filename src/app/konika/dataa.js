@@ -154,13 +154,15 @@ const Konica = () => {
                 </div>
                 <div className={styles.buttonContainer}>
                   <div className={styles.buttonCenter}>
-                    <Link href={'/buy'}>
-                      <button
-                        className={styles.button}
-                      >
-                        Request a quote
+                    <h2>
+                      <Link href={'/buy'}>
+                        <button
+                          className={styles.button}
+                        >
+                          Request a quote
                     </button>
-                    </Link>
+                      </Link>
+                    </h2>
                   </div>
                 </div>
               </div>

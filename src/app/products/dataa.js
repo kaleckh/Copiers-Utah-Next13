@@ -86,8 +86,10 @@ const Products = () => {
       <Header />
       <div className={styles.mainContainer}>
         <div style={{ padding: "25px" }} className={styles.flex}>
-          <div className={styles.color}>Our Top</div>
-          <div className={styles.blue}>Products</div>
+          <h1>
+            <div className={styles.color}>Our Top</div>
+            <div className={styles.blue}>Products</div>
+          </h1>
         </div>
         <div className={styles.copierRow}>
           <Link href={'/lexmark'}>
