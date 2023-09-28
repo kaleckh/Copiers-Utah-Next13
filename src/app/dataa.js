@@ -296,7 +296,7 @@ export default function Data() {
                 </div>
               </div>
               <div className={styles.paragraphReview}>Great company to work with. They have friendly staff and were able to get me up and running within a few days.
-</div>
+            </div>
             </div>
             <div className={styles.boxReview}>
               <div className={styles.starRow}>
@@ -315,7 +315,7 @@ export default function Data() {
             </div>
           </div>
           <div>
-            <Link href={'https://www.google.com/maps/place/Copiers+for+Less/@40.5978129,-111.9193774,13z/data=!4m10!1m2!2m1!1scopiers+utah!3m6!1s0x87528bb3da9348f5:0x52af9011e571a1bf!8m2!3d40.599545!4d-111.9065292!15sCgxjb3BpZXJzIHV0YWhaDiIMY29waWVycyB1dGFokgEVY29waWVyX3JlcGFpcl9zZXJ2aWNlmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU4xTjJaeE0xTjNFQUXgAQA!16s%2Fg%2F1hc90lr04?entry=ttu'} target={'_blank'}>
+            <Link href={'https://www.google.com/maps/place/Copiers+for+Less/@40.599545,-111.9091041,17z/data=!4m8!3m7!1s0x87528bb3da9348f5:0x52af9011e571a1bf!8m2!3d40.599545!4d-111.9065292!9m1!1b1!16s%2Fg%2F1hc90lr04?entry=ttu'} target={'_blank'}>
               <button className={styles.buttonBlue}>See All Google Reviews</button>
             </Link>
           </div>
