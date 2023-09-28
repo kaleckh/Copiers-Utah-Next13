@@ -5,6 +5,7 @@ import React, {
   useRef,
   useEffect,
 } from 'react'
+import Link from "next/link";
 import Image from 'next/image';
 //   import { MDBInput, MDBTextArea } from 'mdb-react-ui-kit'
 import Axios from 'axios'
@@ -15,21 +16,31 @@ const Sliver = () => {
   return (
     <div className={styles.sliver}>
       <div className={styles.padding}>
-        <a href="https://www.facebook.com/copiersforlessutah/">
-          <Image src={'/static/facebook.webp'} width={20} height={20} />
-        </a>
-        <a href="https://www.linkedin.com/in/copiers-utah-5b2b85148/">
-          <Image src={'/static/linkedin.webp'} width={20} height={20} />
-        </a>
-        <a href="https://twitter.com/CopiersUtahReal">
-          <Image src={'/static/twitter.webp'} width={20} height={20} />
-        </a>
-        <a href="https://www.facebook.com/copiersforlessutah/">
-          <Image src={'/static/facebook.webp'} width={20} height={20} />
-        </a>
-        <a href="https://www.youtube.com/channel/UCnn6gVWPfQc5_q-CozIZAxA">
-          <Image src={'/static/youtube.webp'} width={20} height={20} />
-        </a>
+        <Link href="https://www.facebook.com/copiersforlessutah/">
+          <div className={styles.iconContainer}>
+            <Image src={'/static/facebook.webp'} fill={true} />
+          </div>
+        </Link>
+        <Link href="https://www.linkedin.com/in/copiers-utah-5b2b85148/">
+          <div className={styles.iconContainer}>
+            <Image src={'/static/linkedin.webp'} fill={true} />
+          </div>
+        </Link>
+        <div className={styles.iconContainer}>
+          <Link href="https://twitter.com/CopiersUtahReal">
+            <Image src={'/static/twitter.webp'} fill={true} />
+          </Link>
+        </div>
+        <div className={styles.iconContainer}>
+          <Link href="https://www.facebook.com/copiersforlessutah/">
+            <Image src={'/static/facebook.webp'} fill={true} />
+          </Link>
+        </div>
+        <div className={styles.iconContainer}>
+          <Link href="https://www.youtube.com/channel/UCnn6gVWPfQc5_q-CozIZAxA">
+            <Image src={'/static/youtube.webp'} fill={true} />
+          </Link>
+        </div>
       </div>
       <div>
         Dont Know Where To Start?{' '}

@@ -112,9 +112,11 @@
     text-decoration: none;
     will-change: transform;
   }
-  /* .padding{
-    padding: 40px;
-  } */
+  .padding{
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 20px;
+  }
   .smaller {
     display: flex;
     justify-content: space-around;
@@ -129,6 +131,11 @@
    width: 90%;
    border-radius: 5px;
     align-items: center;
+  }
+  .iconContainer{
+    position: relative;
+    width: 20px;
+    height: 20px;
   }
   .paragraph {
     color: black;
@@ -708,6 +715,10 @@
   @media (max-width: 640px) {
     .padding{
       padding: 10px;
+    }
+    .iconContainer{
+      height: 10px;
+      width: 10px;
     }
     .blackButton{
       font-size:16px;
