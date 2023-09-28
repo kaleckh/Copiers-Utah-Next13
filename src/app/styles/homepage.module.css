@@ -27,7 +27,7 @@
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
     box-sizing: border-box;
     cursor: pointer;
-    width: 150px;
+    width: 100%;
     display: inline-block;
     font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     font-size: 14px;
@@ -203,7 +203,9 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
-  
+  .buttonCenter{
+    width: 50%;
+  }
   .repair {
     background-image: url("/static/tech.webp");
     height: 30vh;
@@ -310,6 +312,7 @@
   .title {
     font-size: 25px;
     font-weight: 500;
+    padding: 10px;
     color: black;
     text-align: center;
     letter-spacing: 1.5px;
@@ -333,6 +336,7 @@
   }
   .serviceTitle{
     font-size: 25px;
+    padding: 20px;
     font-weight: 600;
   }
   .serviceParagraph{
@@ -367,9 +371,23 @@
   .box div{
     color: black;
   }
+  .centerStuff{
+    text-align: center;    
+  }
+  .blue{
+  color: rgb(2,50,92); 
+  padding-left: 15px 
+  }
+  .blueSmall{
+  color: rgb(2,50,92); 
+  padding-left: 8px 
+  }
   .titleBig {
     color: black;
     font-size: 50px;
+    display: flex; 
+    justify-content: center; 
+    padding: 30px;
     text-align: center;
     padding-top: 20px;
     letter-spacing: 1.5px;
@@ -442,6 +460,9 @@
     width: 100%;
     height: 30vh;
   }
+  .paddingSmall{
+    padding: 10px;
+  }
   
   .photoBox {
     width: 800px;
@@ -474,6 +495,10 @@
     width: 80%;
     display: flex;
     justify-content: space-around;
+  }
+  .flexCenter{
+    display: flex;
+    align-items: center;
   }
   .flexSomething {
     display: flex;
@@ -595,9 +620,15 @@
     border-radius: 25px;
     width: 250px;
     height: 350px;
+    padding: 12px;
     cursor: pointer;
     justify-content: space-evenly;
     align-items: center;
+  }
+  .iconContainer{
+    position: relative;
+    height: 50px;
+    width: 50px;
   }
   
   .textarea:focus {
@@ -609,6 +640,8 @@
     justify-content: space-around;
     width: 80%;
   }
+
+
   
   .inputSingle {
     width: 100%;
@@ -1020,6 +1053,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
     }
   }
 
@@ -1084,6 +1118,10 @@
       font-size: 13px;
       padding-bottom: 10px;
     }
+    .customerTitleLarge{
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
     .toner {
       width: 45vw;
     }
@@ -1107,6 +1145,14 @@
   @media (max-width: 600px) {
     .hideBox{
       display: none;
+    }
+    .box{
+      width: 175px;
+      height: 200px;
+    }
+    .iconContainer{
+      width: 45px;
+      height: 45px;
     }
     .buttonContainer{
       width: 45%;
@@ -1188,6 +1234,9 @@
     }
     .woman{
       margin-left: 0px;
+    }
+    .row{
+      height: 500px;
     }
   
   }

@@ -16,14 +16,15 @@ export default function Header() {
       <header className={styles.contactHeader}>
         <div className={styles.logoSpaceContainer}>
           <div className={styles.logoSpace}>
-            <Link href={'/'}>
-              <Image
-                src="/static/logo.webp"
-                alt="buy a used or new business copier"
-                width={100}
-                height={75}
-              />
-            </Link>
+            <div className={styles.logoContainer}>
+              <Link href={'/'}>
+                <Image
+                  src="/static/logo.webp"
+                  alt="buy a used or new business copier"
+                  fill={true}
+                />
+              </Link>
+            </div>
             <div className={styles.pieceContainer}>
               <Link href="/">
                 <div className={styles.headerPieces}>Home</div>
@@ -73,18 +74,14 @@ export default function Header() {
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>
-
-            <Link href={'/cart'}>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Image
-                  src="/static/cart.webp"
-                  alt="buy a used or new business copier"
-                  width={25}
-                  height={25}
-                />
-                <div style={{ color: "rgb(240,136,6)", fontSize: "20px" }}>{cart.length}</div>
-              </div>
-            </Link>
+            <div className={styles.cartContainer}>
+              <Image
+                src="/static/cart.webp"
+                alt="buy a used or new business copier"
+                fill={true}
+              />
+            </div>
+            <div className={styles.cartNumber}>{cart.length}</div>
           </div>
         </div >
         <div className={styles.line}></div>

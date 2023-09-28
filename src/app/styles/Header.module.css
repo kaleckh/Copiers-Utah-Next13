@@ -10,6 +10,15 @@
     flex-direction: column;
     object-fit: cover;
   }
+  .logoContainer{
+    position: relative;
+    width: 100px;
+    height: 75px;
+  }
+  .cartNumber{
+    color: rgb(240,136,6);
+     font-size: 20px
+  }
     
   .logoSpace {
     display: flex;
@@ -17,6 +26,8 @@
     align-items: center;
     justify-content: space-evenly;
   }
+
+  
   .logoSpaceContainer {
     height: 15vh;
     display: flex;
@@ -104,6 +115,11 @@
     opacity: 0;
     
   }
+  .cartContainer{
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
 
   .headerPieces:hover{
     color: black;
@@ -118,12 +134,32 @@
   @media (max-width: 600px) {
     .headerPieces {
       font-size: 10px;
+      padding: 5px;
+    }
+    .logoSpace{
+      width: 100%;
     }
     .hidden{
       display: none;
     }
     .logoSpaceContainer{
       width: 95%;
+    }
+    .logoContainer{
+      position: relative;
+      width: 50px;
+      height: 25px;
+    }
+    .cartContainer{
+      position: relative;
+      width: 15px;
+      height: 15px;
+    }
+    .cartNumber{
+      font-size: 15px;
+    }
+    .cartNumberContainer{
+      display: flex;
     }
   }
   
