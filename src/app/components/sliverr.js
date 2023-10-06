@@ -42,7 +42,7 @@ const Sliver = () => {
           </Link>
         </div>
       </div>
-      <div>
+      <div style={{color:"white"}}>
         Dont Know Where To Start?{' '}
         <a style={{ paddingLeft: '15px', color: "white" }} href="tel:8012610510">
           Call Us At (801)-261 0510

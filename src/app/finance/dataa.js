@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import Section from "../components/Section";
@@ -16,6 +16,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const Finance = () => {
   const [toggle, setToggle] = useState(false);
+  const [buttonToggle, setButtonToggle] = useState(false);
   const [quoteToggle, setQuoteToggle] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,41 +28,29 @@ const Finance = () => {
 
   const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
   const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Sending");
-
-    fetch("https://api.smtp2go.com/v3/email/send", {
+  async function sendEmail() {
+  
+    const requestOptions =
+    {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({
-        api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
-        to: [`<info@copiersutah.com>`],
-        sender: "<info@copiersutah.com>",
-        subject: `This is${name}'s quote form. Her number is ${number}`,
-        text_body: `${message}`,
-        html_body: `<h1>${message}</h1>`,
-        template_id: "5120871",
-        template_data: {
-          message: message,
-          number: number,
-          from: "Financing page",
-          name: name,
-        },
-      }),
-    }).then((res) => {
 
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        // setSubmitted(true);
-        // setName("");
-        // setEmail("");
-        // setBody("");
-      }
-    });
-  };
+        from: "Buy A Copier",
+        name: name,
+        message: message,
+        number: number,
+        email: email,
+      }),
+    }
+    try {
+
+      const response = await fetch('/api/pay/quote', requestOptions);
+
+      const data1 = await response.json();
+      console.log(data1, "this is the response")
+    } catch (err) {
+    }
+  }
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
   };
@@ -72,7 +61,12 @@ const Finance = () => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
+  useEffect(() => {
+    if (message.length > 1 && number.length > 1 && name.length > 1 && email.length > 1 && recaptchaResponse !== false) {
+      setButtonToggle(true)
+    }
 
+  }, [message, number, name, email, recaptchaResponse])
 
   return (
     <div className={styles.main}>
@@ -98,61 +92,77 @@ const Finance = () => {
             </div>
             {toggle ? (
               <div>
-                <div className={styles.container}>
-                  <h2>
-                    <div className={styles.black}>Get Your free Quote!</div>
-                  </h2>
-                  <div
-                    style={{
-                      width: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-evenly",
-                      height: "80%",
-                      alignItems: "center",
-                    }}
-                  >
-                    <div className={styles.space}>
-                      <div className={styles.number}>1</div>
-                      <input
-                        className={styles.inputSingle}
-                        placeholder="Name"
-                        type="text"
-                        name=""
-                        id=""
-                        required={true}
-                        onChange={() => {
-                          setName(event.target.value);
-                        }}
-                      />
-                    </div>
-                    <div className={styles.space}>
-                      <div className={styles.number}>2</div>
-                      <PatternFormat
-                        format="+1 (###) #### ###"
-                        allowEmptyFormatting
-                        mask="_"
-                        className={styles.phoneNumber}
-                        onChange={(event) => {
-                          setNumber(event.target.value);
-                        }}
-                      />
-                      ;
-                    </div>
+                <div className={styles.secondSection}>
+          
+          {quoteToggle ? (
+            <div>
+              <div className={styles.container}>
+                <h2 className={styles.black}>Get Your free Quote!</h2>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-evenly",
+                    height: "80%",
+                    alignItems: "center",
+                  }}
+                >
+                  <div className={styles.space}>
 
-                    <div className={styles.space}>
-                      <div className={styles.number}>3</div>
-                      <input
-                        onChange={() => {
-                          setMessage(event.target.value);
-                        }}
-                        className={styles.inputSingle}
-                        placeholder="Comments"
-                        type="text"
-                      />
-                    </div>
+                    <input
+                      style={{ marginRight: "10px" }}
+                      className={styles.inputSingle}
+                      placeholder="Full name"
+                      type="text"
+                      name=""
+                      id=""
+                      required={true}
+                      onChange={() => {
+                        setName(event.target.value);
+                      }}
+                    />
+                    <input
+                      className={styles.inputSingle}
+                      placeholder="Email"
+                      type="text"
+                      name=""
+                      id=""
+                      required={true}
+                      onChange={() => {
+                        setEmail(event.target.value);
+                      }}
+                    />
+                  </div>
+                  <div className={styles.space}>
+
+                    <PatternFormat
+                      format="+1 (###) ### ####"
+                      allowEmptyFormatting
+                      mask="_"
+                      className={styles.phoneNumber}
+                      onChange={(event) => {
+                        setNumber(event.target.value);
+                      }}
+                    />
                   </div>
 
+                  <div className={styles.space}>
+
+                    <input
+                      onChange={() => {
+                        setMessage(event.target.value);
+                      }}
+                      className={styles.inputSingle}
+                      placeholder="Comments"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  style={{ height: "25%", display: "flex" }}
+                  className={styles.padding}
+                >
                   <ReCAPTCHA
                     style={{
                       marginBottom: "10px",
@@ -164,17 +174,25 @@ const Finance = () => {
                     ref={captchaRef}
                     onChange={verifyCallback}
                   />
-                  <button
-                    onClick={(e) => {
-                      setQuoteToggle(!quoteToggle);
-                      handleSubmit(e);
-                    }}
-                    className={styles.button}
-                    disabled={!recaptchaResponse}
-                  >
-                    Get My Quote
-                  </button>
                 </div>
+                <button
+                  onClick={() => {
+                    setQuoteToggle(!quoteToggle);
+                    sendEmail();
+                  }}
+                  className={styles.buttonBlue}
+                  disabled={!buttonToggle}
+                >
+                  Get My Quote
+                </button>
+              </div>
+            </div>
+          ) : (
+              <h2 className={styles.title}>
+                Awesome, we will be contacting you shortly!
+              </h2>
+            )}
+        </div>
               </div>
             ) : (
                 <div className={styles.center}>

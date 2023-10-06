@@ -40,7 +40,7 @@ const Buy = (props) => {
   };
 
   async function sendEmail() {
-
+  
     const requestOptions =
     {
       method: "POST",
