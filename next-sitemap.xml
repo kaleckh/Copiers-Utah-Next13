@@ -1,5 +1,0 @@
-    module.exports = {
-  siteUrl: 'https://yourwebsite.com', 
-  generateRobotsTxt: true, 
-  exclude: ['/path-to-exclude'], 
-};
