@@ -301,7 +301,7 @@ const TonerChoice = (props) => {
                           },
                         ];
                         setCart(updatedCart);
-                        // JSON.stringify(localStorage.setItem("cart", updatedCart))
+                        // JSON.stringify(`localStorage`.setItem("cart", updatedCart))
 
                       }}
                     >

@@ -9,10 +9,10 @@ export default function Section() {
             <div style={{ width: "80%", display: "flex", flexDirection: "column" }}>
 
                 <div style={{ height: "100px", alignItems: "center", justifyContent: "center" }} className={styles.flex}>
-                    <h3>
-                        <div className={styles.titleWhy}>Why choose</div>
+                    
+                        <div className={styles.titleWhy}>Why Choose</div>
                         <div className={styles.titleWhyBlue}>Copiers Utah</div>
-                    </h3>
+                    
                 </div>
                 <div style={{ height: "200px", justifyContent: "space-between" }} className={styles.flex}>
                     <div className={styles.space}>

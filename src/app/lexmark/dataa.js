@@ -147,22 +147,11 @@ const Lexmark = () => {
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
             <div className={styles.paragraph}>
-              Konica Minolta copiers are renowned for their exceptional
-              reliability, making them a trusted choice for businesses of all
-              sizes. With a long-standing reputation in the industry, Konica
-              Minolta has consistently delivered copiers that are built to last.
-              Their machines are designed with durability in mind, ensuring they
-              can handle high volumes of printing and copying without
-              compromising on performance.
+            Lexmark printers are well-known for their unparalleled efficiency and high-performance capabilities, making them an ideal choice for businesses seeking reliable printing solutions. With a legacy of excellence in the industry, Lexmark has continuously produced printers that offer exceptional durability and top-notch printing quality. Designed to withstand heavy workloads, Lexmark printers ensure consistent performance even under demanding conditions. Business owners can rely on Lexmark's robust machines to meet their printing needs without compromising on speed or quality.
             </div>
-            <div className={styles.paragraph}>
+            <div style={{marginBottom:"50px"}} className={styles.paragraph}>
               One of the key factors that contribute to the reliability of
-              Konica Minolta copiers is their robust construction. These
-              machines are built using high-quality components and materials,
-              ensuring they can withstand the demands of daily office use. From
-              sturdy paper trays to reliable feed mechanisms, every aspect of
-              the copier is engineered to minimize downtime and maximize
-              productivity.
+              Lexmark sets itself apart with cutting-edge, user-friendly printing solutions that enhance productivity and workflow efficiency. With a strong commitment to reliability and cost-effectiveness, Lexmark remains a trusted partner for businesses seeking tailored, high-performance printing solutions.
             </div>
 
             <div className={`${styles.row} ${styles.hidden}`}>

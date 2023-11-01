@@ -89,8 +89,8 @@ export default function Data() {
               </div>
               <h1>
                 <div className={styles.homepageTitle}>
-                  Explore Our Copier Buying And Leasing Solutions
-              </div>
+                  Buy or Lease a Copier
+                </div>
               </h1>
               <div className={styles.paragraphSmall}>
                 We provide a variety of high-quality copiers for your business needs. Whether you buy or lease, our cutting-edge solutions will boost your office efficiency to new heights.
@@ -113,7 +113,7 @@ export default function Data() {
           </div>
         </div>
         <div className={styles.needSpace}>
-          <div className={styles.titleBig}>Our
+          <div className={styles.titleBig}>Other
             <div className={styles.blue}>Services</div>
           </div>
           <div className={styles.row}>
@@ -129,7 +129,7 @@ export default function Data() {
                   </div>
                   <div className={styles.centerStuff}>
                     <div className={styles.serviceTitle} >Copier Repair</div>
-                    <div className={styles.serviceParagraph}>Copier repairs offer businesses a budget-friendly way to keep their office equipment in top shape, ensuring smooth operations without breaking the bank.</div>
+                    <div className={styles.serviceParagraph}>Experiencing copier issues? We've got you covered! Our expert technitians are your go-to team for fast and reliable copier repairs. No matter the brand or model, we specialize in fixing copiers efficiently, ensuring minimal downtime for your business.</div>
                   </div>
                 </div>
               </Link>
@@ -145,8 +145,8 @@ export default function Data() {
                     </div>
                   </div>
                   <div className={styles.centerStuff}>
-                    <div className={styles.serviceTitle} >It Services</div>
-                    <div className={styles.serviceParagraph}>IT services are a cost-effective solution for businesses, providing essential tech expertise and support without a big upfront investment.</div>
+                    <div className={styles.serviceTitle} >IT Services</div>
+                    <div className={styles.serviceParagraph}>Experience expert IT services with lightning-fast solutions and clear communication. Upgrade your business technology effortlessly.</div>
                   </div>
                 </div>
               </Link>
@@ -163,7 +163,7 @@ export default function Data() {
                   </div>
                   <div className={styles.centerStuff}>
                     <div className={styles.serviceTitle} >Short Term Rentals</div>
-                    <div className={styles.serviceParagraph}>Copier rentals are a cost-effective way for businesses to access the latest copier technology without making a large upfront investment</div>
+                    <div className={styles.serviceParagraph}>Elevate your event with our short-term copier rentals. Seamless solutions for conventions and temporary needs.</div>
                   </div>
                 </div>
               </Link>
@@ -176,7 +176,7 @@ export default function Data() {
         <div id="quote" className={styles.section}>
           <div className={styles.thirdSectionRow}>
             <div className={styles.side}>
-              <div className={styles.tonerTitle}>Toner Cartridges of Superior Quality For Sale</div>
+              <div className={styles.tonerTitle}>Toner Cartridges For Sale</div>
               <div className={styles.buttonContainer}>
                 <Link href={'/toner'}>
                   <button className={styles.button}>Browse Toner</button>
@@ -195,9 +195,11 @@ export default function Data() {
         </div>
 
         <div className={styles.fourthSection}>
-          <h3>
-            <div className={styles.customerTitleLarge}>Our Top <div className={styles.blue}>Products</div></div>
-          </h3>
+          <div>
+            <div className={styles.titleBig}>Our
+              <div className={styles.blue}>Products</div>
+            </div>
+          </div>
           <div className={styles.copierRow}>
 
             <Link href={'/lexmark'}>
@@ -223,7 +225,7 @@ export default function Data() {
                   <Image
                     src="/static/Konika.webp"
                     alt="buy a used or new business copier"
-                    width={200}
+                    width={190}
                     height={175}
                   />
                 </div>
@@ -265,7 +267,7 @@ export default function Data() {
           />
         </div>
         <div className={styles.reviewSection}>
-          <div className={styles.customerTitle} >Trusted by hundreds of <div className={styles.blueSmall}>happy customers</div></div>
+          <div className={styles.customerTitle} >Trusted by Hundreds of <div className={styles.blueSmall}>Happy customers</div></div>
           <div className={styles.rowSpaced}>
             <div className={styles.boxReview}>
               <div className={styles.starRow}>
@@ -296,7 +298,7 @@ export default function Data() {
                 </div>
               </div>
               <div className={styles.paragraphReview}>Great company to work with. They have friendly staff and were able to get me up and running within a few days.
-            </div>
+              </div>
             </div>
             <div className={styles.boxReview}>
               <div className={styles.starRow}>

@@ -87,7 +87,7 @@ const Epson = () => {
                   /></div>
                   <div className={styles.paragraphSmall}>
                     Epson copiers are multifunction devices.
-                    </div>
+                  </div>
                 </div>
                 <div className={styles.bulletContainer}>
                   <div>   <Image
@@ -98,7 +98,7 @@ const Epson = () => {
                   /></div>
                   <div className={styles.paragraphSmall}>
                     They produce high-quality output.
-                    </div>
+                  </div>
                 </div>
                 <div className={styles.bulletContainer}>
                   <div>   <Image
@@ -109,7 +109,7 @@ const Epson = () => {
                   /></div>
                   <div className={styles.paragraphSmall}>
                     They have an easy-to-use interface.
-                    </div>
+                  </div>
                 </div>
                 <div className={styles.bulletContainer}>
                   <div>   <Image
@@ -120,7 +120,7 @@ const Epson = () => {
                   /></div>
                   <div className={styles.paragraphSmall}>
                     They are cost-effective.
-                    </div>
+                  </div>
                 </div>
                 <div className={styles.bulletContainer}>
                   <div>   <Image
@@ -131,7 +131,7 @@ const Epson = () => {
                   /></div>
                   <div className={styles.paragraphSmall}>
                     Epson copiers utilize advanced printing technologies.
-                    </div>
+                  </div>
                 </div>
                 <div className={styles.buttonCenter}>
                   <h2>
@@ -141,7 +141,7 @@ const Epson = () => {
                         className={styles.button}
                       >
                         Request a quote
-                    </button>
+                      </button>
                     </Link>
                   </h2>
                 </div>
@@ -162,7 +162,7 @@ const Epson = () => {
               reports. With Epson copiers, you can expect vivid and accurate
               prints that make a lasting impression.
             </div>
-            <div className={`${styles.paragraph} ${styles.hidden}`}>
+            <div style={{ marginBottom: "50px" }} className={`${styles.paragraph} ${styles.hidden}`}>
               Epson copiers are also renowned for their reliability and
               durability. Epson is a trusted brand known for manufacturing
               high-quality products, and their copiers are no exception. These
@@ -179,11 +179,11 @@ const Epson = () => {
             <div className={`${styles.row} ${styles.hidden}`}>
               <div className={styles.box}>
                 <Image src={'/static/desktop.webp'} height={100} width={100} alt={'Desktop printers for sale'} />
-                <h3>
-                  <div className={styles.titleMid}>
-                    Business Class Desktop Printers
+
+                <div className={styles.titleMid}>
+                  Business Class Desktop Printers
                 </div>
-                </h3>
+
                 <Link href={"/desktop"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
@@ -195,11 +195,11 @@ const Epson = () => {
                   alt={'color copiers for sale'}
                   width={100}
                 />
-                <h3>
-                  <div className={styles.titleMid}>
-                    Color Multifunction Copiers
-                  </div>
-                </h3>
+
+                <div className={styles.titleMid}>
+                  Color Multifunction Copiers
+                </div>
+
                 <Link href={"/multicolor"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
@@ -211,9 +211,9 @@ const Epson = () => {
                   width={100}
                   alt={'black and white copiers for sale'}
                 />
-                <h3>
-                  <div className={styles.titleMid}>Black And White Copiers</div>
-                </h3>
+
+                <div className={styles.titleMid}>Black And White Copiers</div>
+
                 <Link href={'/black-white'}>
                   <button className={styles.button}>See Options</button>
                 </Link>
