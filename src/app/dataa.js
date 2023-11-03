@@ -22,7 +22,7 @@ export default function Data() {
   const [toggle, setToggle] = useState(true);
   const [number, setNumber] = useState("");
   const [images, setImages] = useState({
-    imageOne: true, imageTwo: false, imageThree: false
+    imageOne: true, imageTwo: false, imageThree: false, imageFour: false
   })
   const [message, setMessage] = useState("this is the test message");
   const tawkMessengerRef = useRef();
@@ -75,25 +75,20 @@ export default function Data() {
 
 
   useEffect(() => {
-    var interval = setInterval(function image() {
-      debugger
-      if (images.imageOne === true) {
-        setImages({ imageOne: false, imageTwo: true, imageThree: false })
-      } else if (images.imageTwo === true) {
-        setImages({ imageOne: false, imageTwo: false, imageThree: true })
-      } else if (images.imageThree === true) {
-        setImages({ imageOne: true, imageTwo: false, imageThree: false })
-      }
-      // debugger
-      return () => {
-        // debugger
-        console.log("clear interval")
-        clearInterval(interval)
-      }
-    }, 1000)
-  }, [])
+    const interval = setInterval(() => {
+      setImages({
+        imageOne: images.imageFour,
+        imageTwo: images.imageOne,
+        imageThree: images.imageTwo,
+        imageFour: images.imageThree,
+      });
+    }, 4000);
+
+    //Clearing the interval
+    return () => clearInterval(interval);
+  }, [images.imageOne, images.imageTwo, images.imageThree, images.imageFour]);
   console.log(images, "images")
-  
+
   return (
     <div className={styles.main}>
       <TawkMessengerReact
@@ -149,11 +144,21 @@ export default function Data() {
                   height={500}
                 />
               </div>
-              <div className={images.imageThree ? styles.showing : styles.hidden}>
+              <div className={images.imageFour ? styles.showing : styles.hidden}>
 
                 < Image
                   style={{ borderRadius: "8px" }}
                   src="/static/man.webp"
+                  alt="buy a used or new business copier"
+                  width={500}
+                  height={500}
+                />
+              </div>
+              <div className={images.imageThree ? styles.showing : styles.hidden}>
+
+                < Image
+                  style={{ borderRadius: "8px" }}
+                  src="/static/copierGirl.webp"
                   alt="buy a used or new business copier"
                   width={500}
                   height={500}
