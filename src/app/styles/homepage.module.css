@@ -4,6 +4,17 @@
     color: white;
     background-color: white;
   }
+
+.hidden{
+  opacity: 0;
+  position: absolute;
+  /* transition: all .3s ease-in-out; */
+}
+.showing{
+  transition: all .3s ease-in;
+  opacity: 1;
+}
+
   .boxContainer{
     display: flex;
     justify-content: space-evenly;
@@ -929,6 +940,10 @@
     align-items: center;
     justify-content: flex-start;
   }
+ 
+ 
+
+ 
 
   @media(max-width: 1200px) {
     .paragraphSmall{

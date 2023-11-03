@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Section from "../app/components/Section";
@@ -19,7 +19,11 @@ export default function Data() {
   const [name, setName] = useState("");
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [email, setEmail] = useState("");
+  const [toggle, setToggle] = useState(true);
   const [number, setNumber] = useState("");
+  const [images, setImages] = useState({
+    imageOne: true, imageTwo: false, imageThree: false
+  })
   const [message, setMessage] = useState("this is the test message");
   const tawkMessengerRef = useRef();
   const captchaRef = useRef(null);
@@ -69,6 +73,27 @@ export default function Data() {
     });
   };
 
+
+  useEffect(() => {
+    var interval = setInterval(function image() {
+      debugger
+      if (images.imageOne === true) {
+        setImages({ imageOne: false, imageTwo: true, imageThree: false })
+      } else if (images.imageTwo === true) {
+        setImages({ imageOne: false, imageTwo: false, imageThree: true })
+      } else if (images.imageThree === true) {
+        setImages({ imageOne: true, imageTwo: false, imageThree: false })
+      }
+      // debugger
+      return () => {
+        // debugger
+        console.log("clear interval")
+        clearInterval(interval)
+      }
+    }, 1000)
+  }, [])
+  console.log(images, "images")
+  
   return (
     <div className={styles.main}>
       <TawkMessengerReact
@@ -103,12 +128,41 @@ export default function Data() {
             </div>
 
             <div className={styles.displayNone}>
-              <Image
-                src="/static/Group.webp"
-                alt="buy a used or new business copier"
-                width={500}
-                height={300}
-              />
+
+              <div className={images.imageOne ? styles.showing : styles.hidden}>
+                <Image
+                  style={{ borderRadius: "8px" }}
+                  src="/static/womanNobg.webp"
+                  alt="buy a used or new business copier"
+                  width={500}
+                  height={500}
+                />
+              </div>
+
+              <div className={images.imageTwo ? styles.showing : styles.hidden}>
+
+                < Image
+                  style={{ borderRadius: "8px" }}
+                  src="/static/manWomanNobg.webp"
+                  alt="buy a used or new business copier"
+                  width={500}
+                  height={500}
+                />
+              </div>
+              <div className={images.imageThree ? styles.showing : styles.hidden}>
+
+                < Image
+                  style={{ borderRadius: "8px" }}
+                  src="/static/man.webp"
+                  alt="buy a used or new business copier"
+                  width={500}
+                  height={500}
+                />
+              </div>
+
+
+
+
             </div>
           </div>
         </div>
