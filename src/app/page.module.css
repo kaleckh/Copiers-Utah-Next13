@@ -170,6 +170,9 @@
     position: fixed;
     width: 100%;
   }
+  .sectionContainer{
+    color: black;
+  }
 
   .description p {
     align-items: center;

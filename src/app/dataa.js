@@ -4,17 +4,12 @@ import Head from "next/head";
 import Image from "next/image";
 import Section from "../app/components/Section";
 import Header from "./components/Header";
-import Sliver from './components/sliverr'
-import { PatternFormat } from "react-number-format";
 import Link from "next/link";
 import styles from "./styles/homepage.module.css";
-import { Quote } from "./SVG/Quote";
-import ReCAPTCHA from "react-google-recaptcha";
 import Footer from "./components/Footer";
 import { useRouter } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 export default function Data() {
-
 
   const [name, setName] = useState("");
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
@@ -82,7 +77,7 @@ export default function Data() {
         imageThree: images.imageTwo,
         imageFour: images.imageThree,
       });
-    }, 4000);
+    }, 8000);
 
     //Clearing the interval
     return () => clearInterval(interval);
@@ -312,18 +307,50 @@ export default function Data() {
 
         </div>
         <div className={`${styles.sectionMedium} ${styles.hideBox} `}>
-          <Image
-            src="/static/why.webp"
-            alt="buy a used or new business copier"
-            width={575}
-            height={350}
-          />
-          <Image
-            src="/static/problems.webp"
-            alt="buy a used or new business copier"
-            width={575}
-            height={350}
-          />
+          <div className={styles.image1}>
+            <div className={styles.titleSmallWhite}>What We Do</div>
+            <div className={styles.paragraphNormal}>Copiers Utah offers new copiers sales, leases and rentals. Plus, we run Utah's leading copier rebuild center for top-notch refurbished copiers. Our skilled technicians can repair nearly any coiper brand. For cutting-edge IT services, check out our sister company, Alien IT Services. Your one stop solution for quality and expertise. </div>
+          </div>
+          <div className={styles.image2}>
+            <div className={styles.titleSmallWhite}>Our Promise</div>
+            <div className={styles.paragraphNormal}>We uphold the highest standards of integrity in our products and services. Our copier rebuild service agreements encompass all toner, parts and on-site repairs, and a first year replacement gurantee. When you choose us, rest assured your copier will operate seamlessly in your office, providing you with complete peace of mind.</div>
+          </div>
+        </div>
+        <div style={{ paddingTop: "80px" }} className={styles.section}>
+          <div style={{ width: "55%" }} className={styles.imageContainerParagraph}>
+            <Image
+              src="/static/buy.webp"
+              alt="buy a used or new business copier"
+              width={400}
+              height={400}
+            />
+            <button style={{ width: "70%", marginBottom: "70px" }} className={styles.buttonBlue}>Learn More</button>
+          </div>
+          <div className={styles.sectionContainer}>
+            <div className={styles.paragraphTitle}>Copiers And Printers</div>
+            <div className={styles.paragraphMedium}>Welcome to Copiers Utah, your one-stop destination for all things copiers in the heart of Utah. We're here to cater to all your copier needs, whether it's sales, leasing options, or short-term rentals. Our shelves are stocked with top-notch copiers from trusted brands like Lexmark, Konica Minolta, and Epson, ensuring that you find the perfect fit for your specific business requirements.</div>
+            <div className={styles.paragraphMedium}>Got a copier on the fritz? No worries. Our team of skilled technicians is dedicated to keeping your machines in top shape with expert repair and maintenance services. We understand the hustle of running a business, and we're here to make sure your copiers keep up with the pace.</div>
+            <div className={styles.paragraphMedium}>At Copiers Utah, we don't just offer products; we offer a promise of quality and reliability. Our goal is to provide not only top-tier copiers but also top-tier service, setting the standard for excellence in the industry. Whether you need a long-term copier solution or a quick fix, we've got your back with our expertise and dedication.</div>
+          </div>
+        </div>
+        <div style={{ flexDirection: "row-reverse", width: "100vw", backgroundColor: "rgb(224 224 224)", padding: "50px" }} className={styles.section}>
+          <div style={{ width: "55%", paddingTop: "30px" }} className={styles.imageContainerParagraph}>
+            <Image
+              src="/static/itWork.png"
+              alt="buy a used or new business copier"
+              width={400}
+              height={400}
+            />
+            <a target="_blank" href="https://www.alienitservices.com/">
+              <button style={{ marginBottom: "70px" }} className={styles.buttonBlue}>Learn More</button>
+            </a>
+          </div>
+          <div className={styles.sectionContainer}>
+            <div className={styles.paragraphTitle}>Managed It Services And Support</div>
+            <div className={styles.paragraphMedium}>Welcome to Alien IT Services, your trusted provider of easy IT support and managed IT services in Utah. From comprehensive network security to proactive approaches in ransomware protection and secure setup, we offer a range of expert IT services tailored to streamline your digital solutions. Our reliable support team is dedicated to ensuring efficient data management and secure collaboration for Utah businesses. With a strong focus on cloud computing and backup and restore solutions, Alien IT Services is your go-to partner for all things IT.</div>
+            <div className={styles.paragraphMedium}>At Alien IT Services, we believe in taking a proactive approach to IT solutions. Our comprehensive range of services includes technical support, printer support, and software and app support for businesses in Utah. We specialize in ensuring network efficiency and secure data management, offering reliable support and fix for broken hardware when you need it most. With a strong focus on delivering expert IT services and reliable support, Alien IT Services is committed to providing top-notch digital solutions for businesses in the Utah area.  </div>
+            <div className={styles.paragraphMedium}>In the fast-paced world of technology, having a reliable IT support system is crucial for Utah businesses. Alien IT Services offers a wide range of IT solutions, including managed IT services and network security, tailored to meet the specific needs of local businesses. Our skilled team specializes in delivering secure collaboration and efficient data management, ensuring seamless operations and secure setup. With a strong emphasis on delivering expert IT services and reliable support, Alien IT Services is committed to providing tailored digital solutions for businesses in the heart of Utah.</div>
+          </div>
         </div>
         <div className={styles.reviewSection}>
           <div className={styles.customerTitle} >Trusted by Hundreds of <div className={styles.blueSmall}>Happy customers</div></div>
