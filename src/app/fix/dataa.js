@@ -272,14 +272,12 @@ const Fix = () => {
             )}
         </div>
         <div>
-          <div className={`${styles.fifty} ${styles.pic} ${styles.hidden}`}>
-            <div className={styles.overlay}>
+          <div className={`${styles.fifty} ${styles.pic} ${styles.hidden}`}>            
               <div style={{ width: "90%" }}>
-                <div className={styles.paragraph}>At Copiers Utah, our commitment to exceptional service extends beyond just offering reliable copiers. We take immense pride in providing top-notch maintenance services that go the extra mile to keep your office running smoothly and efficiently. Our dedicated team of friendly and skilled technicians is here to ensure that your copiers are always in optimal condition, delivering consistent performance and minimizing any disruptions to your workflow.<div />
+                <div className={styles.paragraph}>A Copiers Utah, our commitment to exceptional service extends beyond just offering reliable copiers. We take immense pride in providing top-notch maintenance services that go the extra mile to keep your office running smoothly and efficiently. Our dedicated team of friendly and skilled technicians is here to ensure that your copiers are always in optimal condition, delivering consistent performance and minimizing any disruptions to your workflow.<div />
                   <div className={styles.paragraph}>What sets us apart is our unparalleled ability to work seamlessly with all major copier brands. We understand the unique equipment needs of every business, and our unwavering support is available to you, regardless of the copier brand you use. Our experienced technicians possess comprehensive knowledge and expertise to handle maintenance and repairs for a wide range of copier models, including renowned brands like Konica Minolta, Lexmark, Epson, and more. Rest assured, we have the expertise and resources to meet your copier requirements with utmost precision and care.</div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </div>
