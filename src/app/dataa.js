@@ -204,7 +204,7 @@ export default function Data() {
                 <div className={styles.centerStuff}>
                   <div className={styles.serviceTitle} >IT Services</div>
                   <div className={styles.serviceParagraph}>
-                  Level up your business tech game effortlessly by diving into our expert IT services. We're all about quick solutions and crystal-clear communication, making the whole process smooth as silk for you. Let's upgrade your tech with a touch of ease and expertise.</div>
+                    Level up your business tech game effortlessly by diving into our expert IT services. We're all about quick solutions and crystal-clear communication, making the whole process smooth as silk for you. Let's upgrade your tech with a touch of ease and expertise.</div>
                 </div>
                 <Link href={'/it'}>
                   <button className={styles.button}>See Details!</button>
@@ -320,7 +320,7 @@ export default function Data() {
         <div className={`${styles.sectionMedium} ${styles.hideBox} `}>
           <div className={styles.image1}>
             <div className={styles.titleSmallWhite}>What We Do</div>
-            <div className={styles.paragraphNormal}>Copiers Utah offers new copiers sales, leases and rentals. Plus, we run Utah's leading copier rebuild center for top-notch refurbished copiers. Our skilled technicians can repair nearly any coiper brand. For cutting-edge IT services, check out our sister company, Alien IT Services. Your one stop solution for quality and expertise. </div>
+            <div className={styles.paragraphNormal}>Copiers Utah offers new copiers sales, leases and rentals. Plus, we run Utah's leading copier rebuild center for top-notch refurbished copiers. Our skilled technicians can repair nearly any copier brand. For cutting-edge IT services, check out our sister company, Alien IT Services. Your one stop solution for quality and expertise. </div>
           </div>
           <div className={styles.image2}>
             <div className={styles.titleSmallWhite}>Our Promise</div>
@@ -335,7 +335,9 @@ export default function Data() {
               width={400}
               height={400}
             />
-            <button style={{ width: "70%", marginBottom: "70px" }} className={styles.buttonBlue}>Learn More</button>
+            <Link href={'/buy'}>
+              <button style={{ marginBottom: "70px" }} className={styles.buttonBlue}>Learn More</button>
+            </Link>
           </div>
           <div className={styles.sectionContainer}>
             <div className={styles.paragraphTitle}>Copiers And Printers</div>
@@ -352,9 +354,10 @@ export default function Data() {
               width={400}
               height={400}
             />
-            <a target="_blank" href="https://www.alienitservices.com/">
+            <Link href={'https://www.alienitservices.com/'} target="_blank">
               <button style={{ marginBottom: "70px" }} className={styles.buttonBlue}>Learn More</button>
-            </a>
+            </Link>
+
           </div>
           <div className={styles.sectionContainer}>
             <div className={styles.paragraphTitle}>Managed It Services And Support</div>
