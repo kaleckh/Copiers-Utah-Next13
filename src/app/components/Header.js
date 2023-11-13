@@ -20,7 +20,7 @@ export default function Header() {
               <Link href={'/'}>
                 <Image
                   src="/static/logo.webp"
-                  alt="buy a used or new business copier"
+                  alt="copiers utah logo"
                   fill={true}
                 />
               </Link>
@@ -77,7 +77,7 @@ export default function Header() {
             <div className={styles.cartContainer}>
               <Image
                 src="/static/cart.webp"
-                alt="buy a used or new business copier"
+                alt="cart icon"
                 fill={true}
               />
             </div>

@@ -20,7 +20,7 @@ const BreadCrumbs = ({ breadCrumbs }) => {
                         <div className={styles.arrow}>
                             <Image
                                 src="/static/right-arrow.webp"
-                                alt="buy a used or new business copier"
+                                alt="right arrow "
                                 width={15}
                                 height={15}
                             />

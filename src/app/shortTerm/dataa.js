@@ -213,7 +213,7 @@ const ShortTerm = () => {
                   <div>
                     <Image
                       src="/static/contructionIcon.webp"
-                      alt="buy a used or new business copier"
+                      alt="construction icon"
                       width={50}
                       height={60}
                     />
@@ -225,7 +225,7 @@ const ShortTerm = () => {
                 <div>
                   <Image
                     src="/static/building.webp"
-                    alt="buy a used or new business copier"
+                    alt="icon of a building"
                     width={50}
                     height={60}
                   />
@@ -236,7 +236,7 @@ const ShortTerm = () => {
                 <div>
                   <Image
                     src="/static/snow.webp"
-                    alt="buy a used or new business copier"
+                    alt="snow icon"
                     width={50}
                     height={60}
                   />
@@ -248,7 +248,7 @@ const ShortTerm = () => {
               <div>
                 <Image
                   src="/static/rental.webp"
-                  alt="buy a used or new business copier"
+                  alt="rental icon"
                   width={50}
                   height={60}
                 />

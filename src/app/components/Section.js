@@ -20,7 +20,7 @@ export default function Section() {
                         <div className={styles.row}>
                             <Image
                                 src="/static/seen.webp"
-                                alt="buy a used or new business copier"
+                                alt="double checkmarks"
                                 width={35}
                                 height={25}
                                 style={{ paddingRight: "10px" }}
@@ -30,7 +30,7 @@ export default function Section() {
                         <div className={styles.row}>
                             <Image
                                 src="/static/seen.webp"
-                                alt="buy a used or new business copier"
+                                alt="double checkmarks"
                                 width={35}
                                 style={{ paddingRight: "10px" }}
                                 height={25}
@@ -40,7 +40,7 @@ export default function Section() {
                         <div className={styles.row}>
                             <Image
                                 src="/static/seen.webp"
-                                alt="buy a used or new business copier"
+                                alt="double checkmarks"
                                 width={35}
                                 style={{ paddingRight: "10px" }}
                                 height={25}
@@ -52,7 +52,7 @@ export default function Section() {
                         <div className={styles.row}>
                             <Image
                                 src="/static/seen.webp"
-                                alt="buy a used or new business copier"
+                                alt="double checkmarks"
                                 width={35}
                                 height={25}
                                 style={{ paddingRight: "10px" }}
@@ -62,7 +62,7 @@ export default function Section() {
                         <div className={styles.row}>
                             <Image
                                 src="/static/seen.webp"
-                                alt="buy a used or new business copier"
+                                alt="double checkmarks"
                                 width={35}
                                 height={25}
                                 style={{ paddingRight: "10px" }}
@@ -72,7 +72,7 @@ export default function Section() {
                         <div className={styles.row}>
                             <Image
                                 src="/static/seen.webp"
-                                alt="buy a used or new business copier"
+                                alt="double checkmarks"
                                 width={35}
                                 height={25}
                                 style={{ paddingRight: "10px" }}
