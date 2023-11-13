@@ -172,55 +172,66 @@ export default function Data() {
           </div>
           <div className={styles.row}>
             <div className={styles.boxContainer}>
-              <Link href={'/fix'}>
-                <div className={styles.box}>
-                  <div className={styles.iconContainer}>
+
+              <div className={styles.box}>
+                <div className={styles.iconContainer}>
+                  <Image
+                    src="/static/repairs.webp"
+                    alt="copier repair Icon"
+                    fill={true}
+                  />
+                </div>
+                <div className={styles.centerStuff}>
+                  <div className={styles.serviceTitle} >Copier Repair</div>
+                  <div className={styles.serviceParagraph}>Experiencing copier issues? We've got you covered! Our expert technitians are your go-to team for fast and reliable copier repairs. No matter the brand or model, we specialize in fixing copiers efficiently, ensuring minimal downtime for your business.</div>
+                </div>
+                <Link href={'/fix'}>
+                  <button className={styles.button}>See Details!</button>
+                </Link>
+              </div>
+
+
+              <div className={styles.box}>
+                <div>
+                  <div style={{ width: "70px" }} className={styles.iconContainer}>
                     <Image
-                      src="/static/repairs.webp"
-                      alt="copier repair Icon"
+                      src="/static/it.webp"
+                      alt="It services Icon"
                       fill={true}
                     />
                   </div>
-                  <div className={styles.centerStuff}>
-                    <div className={styles.serviceTitle} >Copier Repair</div>
-                    <div className={styles.serviceParagraph}>Experiencing copier issues? We've got you covered! Our expert technitians are your go-to team for fast and reliable copier repairs. No matter the brand or model, we specialize in fixing copiers efficiently, ensuring minimal downtime for your business.</div>
-                  </div>
                 </div>
-              </Link>
-              <Link href={'/it'}>
-                <div className={styles.box}>
-                  <div>
-                    <div style={{ width: "70px" }} className={styles.iconContainer}>
-                      <Image
-                        src="/static/it.webp"
-                        alt="It services Icon"
-                        fill={true}
-                      />
-                    </div>
-                  </div>
-                  <div className={styles.centerStuff}>
-                    <div className={styles.serviceTitle} >IT Services</div>
-                    <div className={styles.serviceParagraph}>Experience expert IT services with lightning-fast solutions and clear communication. Upgrade your business technology effortlessly.</div>
-                  </div>
+                <div className={styles.centerStuff}>
+                  <div className={styles.serviceTitle} >IT Services</div>
+                  <div className={styles.serviceParagraph}>
+                  Level up your business tech game effortlessly by diving into our expert IT services. We're all about quick solutions and crystal-clear communication, making the whole process smooth as silk for you. Let's upgrade your tech with a touch of ease and expertise.</div>
                 </div>
-              </Link>
+                <Link href={'/it'}>
+                  <button className={styles.button}>See Details!</button>
+                </Link>
+              </div>
+
             </div>
             <div>
-              <Link href={'/shortTerm'}>
-                <div className={styles.box}>
-                  <div className={styles.iconContainer}>
-                    <Image
-                      src="/static/rental.webp"
-                      alt="copier rental Icon"
-                      fill={true}
-                    />
-                  </div>
-                  <div className={styles.centerStuff}>
-                    <div className={styles.serviceTitle} >Short Term Rentals</div>
-                    <div className={styles.serviceParagraph}>Elevate your event with our short-term copier rentals. Seamless solutions for conventions and temporary needs.</div>
-                  </div>
+
+              <div className={styles.box}>
+                <div className={styles.iconContainer}>
+                  <Image
+                    src="/static/rental.webp"
+                    alt="copier rental Icon"
+                    fill={true}
+                  />
                 </div>
-              </Link>
+                <div className={styles.centerStuff}>
+                  <div className={styles.serviceTitle} >Short Term Rentals</div>
+                  <div className={styles.serviceParagraph}>
+                    Upgrade your event vibes with our short-term copier rentals – perfect for conventions and those temporary document crunch times. Our top-notch copiers handle the heavy printing load with ease, ensuring your materials are on point. Count on us for laid-back, efficient, and pro-level copier rental services.</div>
+                </div>
+                <Link href={'/shortTerm'}>
+                  <button className={styles.button}>See Details!</button>
+                </Link>
+              </div>
+
             </div>
           </div>
         </div>
