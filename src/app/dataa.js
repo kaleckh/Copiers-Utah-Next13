@@ -123,7 +123,7 @@ export default function Data() {
                 <Image
                   style={{ borderRadius: "8px" }}
                   src="/static/womanNobg.webp"
-                  alt="buy a used or new business copier"
+                  alt="woman using a copier rental"
                   width={500}
                   height={500}
                 />
@@ -134,7 +134,7 @@ export default function Data() {
                 < Image
                   style={{ borderRadius: "8px" }}
                   src="/static/manWomanNobg.webp"
-                  alt="buy a used or new business copier"
+                  alt="people looking at copier leasing terms"
                   width={500}
                   height={500}
                 />
@@ -144,7 +144,7 @@ export default function Data() {
                 < Image
                   style={{ borderRadius: "8px" }}
                   src="/static/man.webp"
-                  alt="buy a used or new business copier"
+                  alt="copier copier maintenance man"
                   width={500}
                   height={500}
                 />
@@ -154,7 +154,7 @@ export default function Data() {
                 < Image
                   style={{ borderRadius: "8px" }}
                   src="/static/copierGirl.webp"
-                  alt="buy a used or new business copier"
+                  alt="woman using a copier machine"
                   width={500}
                   height={500}
                 />
@@ -177,7 +177,7 @@ export default function Data() {
                   <div className={styles.iconContainer}>
                     <Image
                       src="/static/repairs.webp"
-                      alt="buy a used or new business copier"
+                      alt="copier repair Icon"
                       fill={true}
                     />
                   </div>
@@ -193,7 +193,7 @@ export default function Data() {
                     <div style={{ width: "70px" }} className={styles.iconContainer}>
                       <Image
                         src="/static/it.webp"
-                        alt="buy a used or new business copier"
+                        alt="It services Icon"
                         fill={true}
                       />
                     </div>
@@ -211,7 +211,7 @@ export default function Data() {
                   <div className={styles.iconContainer}>
                     <Image
                       src="/static/rental.webp"
-                      alt="buy a used or new business copier"
+                      alt="copier rental Icon"
                       fill={true}
                     />
                   </div>
@@ -240,7 +240,7 @@ export default function Data() {
             <div className={`${styles.background} ${styles.displayNoneSmall}`}>
               <Image
                 src="/static/yellowLexmark.webp"
-                alt="buy a used or new business copier"
+                alt="yellow lexmark toner"
                 width={300}
                 height={250}
               />
@@ -263,7 +263,7 @@ export default function Data() {
               >
                 <h2 className={styles.title}>Lexmark</h2>
                 <div className={styles.imageContainerSmall}>
-                  <Image alt={"A Lexmark Copier For Sale"} src={'/static/Lexmark.webp'} fill={true} />
+                  <Image alt={"lexmark copier for sale"} src={'/static/Lexmark.webp'} fill={true} />
                 </div>
                 <button className={styles.buttonBlue}>See Details</button>
               </div>
@@ -278,7 +278,7 @@ export default function Data() {
                 <div className={styles.imageContainer}>
                   <Image
                     src="/static/Konika.webp"
-                    alt="buy a used or new business copier"
+                    alt="konika minolta copier"
                     width={190}
                     height={175}
                   />
@@ -295,7 +295,7 @@ export default function Data() {
                 <div className={styles.imageContainer}>
                   <Image
                     src="/static/epsonL.webp"
-                    alt="buy a used or new business copier"
+                    alt="Epson copier"
                     width={175}
                     height={160}
                   />
@@ -320,7 +320,7 @@ export default function Data() {
           <div style={{ width: "55%" }} className={styles.imageContainerParagraph}>
             <Image
               src="/static/buy.webp"
-              alt="buy a used or new business copier"
+              alt="cartoon image of woman using copier"
               width={400}
               height={400}
             />
@@ -328,16 +328,16 @@ export default function Data() {
           </div>
           <div className={styles.sectionContainer}>
             <div className={styles.paragraphTitle}>Copiers And Printers</div>
-            <div className={styles.paragraphMedium}>Welcome to Copiers Utah, your one-stop destination for all things copiers in the heart of Utah. We're here to cater to all your copier needs, whether it's sales, leasing options, or short-term rentals. Our shelves are stocked with top-notch copiers from trusted brands like Lexmark, Konica Minolta, and Epson, ensuring that you find the perfect fit for your specific business requirements.</div>
-            <div className={styles.paragraphMedium}>Got a copier on the fritz? No worries. Our team of skilled technicians is dedicated to keeping your machines in top shape with expert repair and maintenance services. We understand the hustle of running a business, and we're here to make sure your copiers keep up with the pace.</div>
-            <div className={styles.paragraphMedium}>At Copiers Utah, we don't just offer products; we offer a promise of quality and reliability. Our goal is to provide not only top-tier copiers but also top-tier service, setting the standard for excellence in the industry. Whether you need a long-term copier solution or a quick fix, we've got your back with our expertise and dedication.</div>
+            <div className={styles.paragraphMedium}>Welcome to Copiers Utah, your ultimate destination for comprehensive copier solutions in the heart of Utah. Whether you're looking for copiers for sale, leasing options, or convenient short-term copier rentals, we've got you covered. Our shelves boast a diverse selection of top-notch copiers from renowned brands such as Lexmark, Konica Minolta, and Epson, ensuring you'll find the perfect fit for your specific business requirements.</div>
+            <div className={styles.paragraphMedium}>Encountering issues with your copier? No need to worry. Our dedicated team of skilled technicians is committed to maintaining your machines in peak condition through expert repair and meticulous maintenance services. We understand the challenges of running a business, and we're here to ensure your copiers keep up with the fast-paced demands.</div>
+            <div className={styles.paragraphMedium}>At Copiers Utah, we don't just provide products; we deliver a promise of quality and reliability. Our mission is to offer not only top-tier copiers but also unparalleled service, setting the industry standard for excellence. Whether you're seeking a long-term copier solution or a quick fix, count on us for our extensive expertise and unwavering dedication to meeting your copier needs.</div>
           </div>
         </div>
         <div style={{ flexDirection: "row-reverse", width: "100vw", backgroundColor: "rgb(224 224 224)", padding: "50px" }} className={styles.section}>
           <div style={{ width: "55%", paddingTop: "30px" }} className={styles.imageContainerParagraph}>
             <Image
               src="/static/itWork.png"
-              alt="buy a used or new business copier"
+              alt="cartoon image of man using computer"
               width={400}
               height={400}
             />
@@ -362,7 +362,7 @@ export default function Data() {
                   <div>5.0</div>
                   <Image
                     src="/static/star.webp"
-                    alt="buy a used or new business copier"
+                    alt="star icon"
                     width={20}
                     height={20}
                   />
@@ -377,7 +377,7 @@ export default function Data() {
                   <div>5.0</div>
                   <Image
                     src="/static/star.webp"
-                    alt="buy a used or new business copier"
+                    alt="star icon"
                     width={20}
                     height={20}
                   />
@@ -393,7 +393,7 @@ export default function Data() {
                   <div>5.0</div>
                   <Image
                     src="/static/star.webp"
-                    alt="buy a used or new business copier"
+                    alt="star icon"
                     width={20}
                     height={20}
                   />
