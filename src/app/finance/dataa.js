@@ -97,7 +97,7 @@ const Finance = () => {
           {quoteToggle ? (
             <div>
               <div className={styles.container}>
-                <h2 className={styles.black}>Get Your free Quote!</h2>
+                <h2 className={styles.black}>Get Your Quote!</h2>
                 <div
                   style={{
                     width: "100%",

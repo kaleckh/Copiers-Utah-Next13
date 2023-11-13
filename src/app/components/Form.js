@@ -60,7 +60,7 @@ const Form = (props) => {
   console.log(Secret_Key, "this is key")
   return (
     <div className={styles.container}>
-      <div className={styles.black}>Get Your free Quote!</div>
+      <div className={styles.black}>Get Your Quote!</div>
       <div
         style={{
           width: "100%",
