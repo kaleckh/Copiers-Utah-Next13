@@ -31,7 +31,7 @@
   .logoSpaceContainer {
     height: 15vh;
     display: flex;
-    width: 80%;
+    width: 95%;
     justify-content: center;
     position: sticky;
   }
@@ -83,7 +83,7 @@
   
   .headerPieces {
     margin: 0px;
-    color: rgb(115,115,115);
+    color: rgb(66 66 66);
     font-weight: 300;
     cursor: pointer;
     /* text-decoration: none;

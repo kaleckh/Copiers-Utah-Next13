@@ -142,7 +142,7 @@
   }
   .flex{
     display: flex;
-    padding-top: 20px;
+    height: 90px;
     align-items: center;
   }
   .titleBigBlue {
@@ -237,9 +237,11 @@
   .paragraph {
     color: black;
     font-size: 25px;
+    width: 85%;
     font-weight: 200;
-    padding: 5px;
-    font-weight: 200; 
+    padding: 20px;
+    text-align: center;
+    font-weight: 300; 
   }
   .Overview {
     color: black;
@@ -427,7 +429,6 @@
   .section {
     height: fit-content;
     flex-direction: column;
-    padding: 30px;
     display: flex;
     justify-content: flex-end;
     background-color: white;

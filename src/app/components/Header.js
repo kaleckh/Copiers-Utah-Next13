@@ -32,6 +32,12 @@ export default function Header() {
               </Link>
             </div>
             <div className={styles.pieceContainer}>
+              <Link href="/refurbished">
+                <div className={styles.headerPieces}>Refurbished Machines</div>
+                <div className={styles.lineSmall}></div>
+              </Link>
+            </div>
+            <div className={styles.pieceContainer}>
               <Link href="/shortTerm">
                 <div className={styles.headerPieces}>Rentals</div>
                 <div className={styles.lineSmall}></div>
@@ -54,13 +60,7 @@ export default function Header() {
                 <div className={styles.headerPieces}>Product Line</div>
                 <div className={styles.lineSmall}></div>
               </Link>
-            </div>
-            <div className={`${styles.pieceContainer} ${styles.hidden}`}>
-              <Link href="/refurbished">
-                <div className={styles.headerPieces}>Refurbished Machines</div>
-                <div className={styles.lineSmall}></div>
-              </Link>
-            </div>
+            </div>            
             <div className={`${styles.pieceContainer} ${styles.hidden}`}>
               <Link href="/finance">
                 <div className={styles.headerPieces}>Financing</div>

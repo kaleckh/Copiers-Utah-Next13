@@ -261,10 +261,13 @@ const Refurbished = () => {
       <div className={styles.section}>
         <div className={styles.center}>
           <div className={styles.flex}>
-            <h1>
+            <h1 style={{ display: "flex", alignItems: "center", paddingBottom: "10px" }}>
               <div className={styles.titleBig}>Our Top</div>
-              <div className={styles.titleBigBlue}>Multicolor Machines</div>
-            </h1>/
+              <div className={styles.titleBigBlue}>Refurbished Machines</div>
+            </h1>
+          </div>
+          <div className={styles.paragraph}>
+            <div>Copiers Utah is the home to the premier copier remanufactoring facility in the state of Utah. We rebuild copiers to the highest standards anywhere in the state and beyond. We have developed a 54-step process to evaluate all machines and we provide a full replacement for each refurbished copier! Contact Us Today!</div>
           </div>
         </div>
         <div className={styles.grid}>
@@ -309,7 +312,7 @@ const Refurbished = () => {
                         className={styles.buttonBlue}
                       >
                         See Details
-                    </button>
+                      </button>
                     </Link>
                   </div>
                   <div className={styles.fifty}>
