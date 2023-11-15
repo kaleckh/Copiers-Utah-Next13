@@ -260,12 +260,76 @@ const Refurbished = () => {
       <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.center}>
+          <h1 style={{ display: "flex", alignItems: "center", paddingBottom: "10px", justifyContent: "center" }}>
+            <div className={styles.titleBig}>Our Top</div>
+            <div className={styles.titleBigBlue}>Refurbished Machines</div>
+          </h1>
+          <div className={styles.paragraph}>Copiers Utah is the home to the premier copier remanufacturing facility in the state of Utah. We rebuild copiers to the highest standards anywhere in the state and beyond. We have developed a 33-step process to evaluate all machines and we provide a full replacement warranty with our service agreements. Check out our refurbished copiers below!</div>
+          <div className={styles.grid}>
+            {copiers.map((copier) => {
+              return (
+                <div key={copier.modelNumber} className={styles.box}>
+                  <div className={styles.titleBlackSmall}>{copier.model}</div>
+                  <div>
+                    <Image
+                      src={`/static/${copier.image}`}
+                      width={200}
+                      height={200}
+                      alt={"copiers utah"}
+                    ></Image>
+                  </div>
+                  <div className={styles.somethingContainer}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <Link href={'/product'}>
+                        <button
+                          onClick={() => {
+                            localStorage.setItem('Image', `${copier.image}`)
+                            localStorage.setItem('Model', `${copier.model}`)
+                            localStorage.setItem(
+                              'PagesPerMinute',
+                              `${copier.PagesPerMinute}`,
+                            )
+                            localStorage.setItem('paperSize', `${copier.paperSize}`)
+                            localStorage.setItem('brand', `${copier.brand}`)
+                            localStorage.setItem('timeOut', `${copier.timeOut}`)
+                            localStorage.setItem('type', `${copier.type}`)
+                            localStorage.setItem(
+                              'description',
+                              `${copier.description}`,
+                            )
+                          }}
+                          className={styles.buttonBlue}
+                        >
+                          See Details
+                        </button>
+                      </Link>
+                    </div>
+                    <div className={styles.fifty}>
+                      <div className={styles.rowNumber}>
+                        <div className={styles.numberContainer}>
+                          Model:
+                        </div>
+                        <div>{copier.modelNumber}</div>
+                      </div>
+                      <div className={styles.rowNumber}></div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
           <div className={styles.flex}>
             <h1 style={{ display: "flex", alignItems: "center", paddingBottom: "10px" }}>
               <div className={styles.titleBig}>Our Remanufactoring </div>
               <div className={styles.titleBigBlue}>Process</div>
             </h1>
-           
+
           </div>
           <div className={styles.paragraph}>
             <div>We do not just refurbish or recondition our copiers, we rebuild them to specifications as close to as new as possible. That is why we can include a full replacement warranty with all our service agreements. Try getting a full replacement guarantee with one of our competitors on even a brand-new machine. That is unlikely at best, more likely impossible. But we offer it as standard addition to all our service agreements on our rebuilt copiers. Why? Because we know these multifunction copiers inside and out. They’ve been tested and restored. We are confident in our work and we can fix everything. In the rare instance something terrible goes wrong, we simply replace the copier, no hassles, no worries!</div>
@@ -294,69 +358,7 @@ const Refurbished = () => {
             </div>
           </ol>
         </div>
-         <h1 style={{ display: "flex", alignItems: "center", paddingBottom: "10px", justifyContent:"center" }}>
-              <div className={styles.titleBig}>Our Top</div>
-              <div className={styles.titleBigBlue}>Refurbished Machines</div>
-            </h1>
-        <div className={styles.grid}>
-          {copiers.map((copier) => {
-            return (
-              <div key={copier.modelNumber} className={styles.box}>
-                <div className={styles.titleBlackSmall}>{copier.model}</div>
-                <div>
-                  <Image
-                    src={`/static/${copier.image}`}
-                    width={200}
-                    height={200}
-                    alt={"copiers utah"}
-                  ></Image>
-                </div>
-                <div className={styles.somethingContainer}>
-                  <div
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <Link href={'/product'}>
-                      <button
-                        onClick={() => {
-                          localStorage.setItem('Image', `${copier.image}`)
-                          localStorage.setItem('Model', `${copier.model}`)
-                          localStorage.setItem(
-                            'PagesPerMinute',
-                            `${copier.PagesPerMinute}`,
-                          )
-                          localStorage.setItem('paperSize', `${copier.paperSize}`)
-                          localStorage.setItem('brand', `${copier.brand}`)
-                          localStorage.setItem('timeOut', `${copier.timeOut}`)
-                          localStorage.setItem('type', `${copier.type}`)
-                          localStorage.setItem(
-                            'description',
-                            `${copier.description}`,
-                          )
-                        }}
-                        className={styles.buttonBlue}
-                      >
-                        See Details
-                      </button>
-                    </Link>
-                  </div>
-                  <div className={styles.fifty}>
-                    <div className={styles.rowNumber}>
-                      <div className={styles.numberContainer}>
-                        Model:
-                      </div>
-                      <div>{copier.modelNumber}</div>
-                    </div>
-                    <div className={styles.rowNumber}></div>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
+
       </div>
       <Section></Section>
       <Footer />
