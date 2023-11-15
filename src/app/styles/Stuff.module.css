@@ -130,11 +130,22 @@
     font-size: 30px;
     font-weight: 300;
     padding-bottom: 25px;
-    text-align: center;
+
   }
+  .something{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+  }
+  .listItem{
+    font-size: 21px;
+    padding: 3px;
+  }
+  
   .titleBig {
     color: black;
-    font-size: 30px;
+    font-size: 38px;
     font-weight: 600;
     padding: 10px;
     
@@ -147,7 +158,7 @@
   }
   .titleBigBlue {
     color: rgb(1,51,93);
-    font-size: 30px;
+    font-size: 38px;
     font-weight: 600;
     
     text-align: center;
@@ -239,9 +250,13 @@
     font-size: 25px;
     width: 85%;
     font-weight: 200;
-    padding: 20px;
-    text-align: center;
+    padding: 20px;    
     font-weight: 300; 
+  }
+  .list{
+    padding: 20px;   
+    width: 85%; 
+
   }
   .Overview {
     color: black;

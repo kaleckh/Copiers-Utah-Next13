@@ -342,8 +342,8 @@ export default function Data() {
           <div className={styles.sectionContainer}>
             <div className={styles.paragraphTitle}>Copiers And Printers</div>
             <div className={styles.paragraphMedium}>Welcome to Copiers Utah, your ultimate destination for comprehensive copier solutions in the heart of Utah. Whether you're looking for copiers for sale, leasing options, or convenient short-term copier rentals, we've got you covered. Our shelves boast a diverse selection of top-notch copiers from renowned brands such as Lexmark, Konica Minolta, and Epson, ensuring you'll find the perfect fit for your specific business requirements.</div>
-            <div className={styles.paragraphMedium}>Encountering issues with your copier? No need to worry. Our dedicated team of skilled technicians is committed to maintaining your machines in peak condition through expert repair and meticulous maintenance services. We understand the challenges of running a business, and we're here to ensure your copiers keep up with the fast-paced demands.</div>
-            <div className={styles.paragraphMedium}>At Copiers Utah, we don't just provide products; we deliver a promise of quality and reliability. Our mission is to offer not only top-tier copiers but also unparalleled service, setting the industry standard for excellence. Whether you're seeking a long-term copier solution or a quick fix, count on us for our extensive expertise and unwavering dedication to meeting your copier needs.</div>
+            <div className={styles.paragraphMedium}>Encountering issues with your copier? No need to worry. Our dedicated team of skilled technicians is committed to maintaining your machines in peak condition through expert repair and maintenance services. We understand the challenges of running a business, and we're here to ensure your copiers keep up with the fast-paced demands.</div>
+            <div className={styles.paragraphMedium}>At Copiers Utah, we don't just provide products; we deliver a promise of quality and reliability. Our mission is to offer not only top-tier copiers but also unparalleled service, with all copier rentals and sales. Whether you're seeking a long-term copier solution or a quick fix, count on us for our extensive expertise and unwavering dedication to meeting your copier needs.</div>
           </div>
         </div>
         <div style={{ flexDirection: "row-reverse", width: "100vw", backgroundColor: "rgb(224 224 224)", padding: "50px" }} className={styles.section}>
@@ -397,7 +397,7 @@ export default function Data() {
                   />
                 </div>
               </div>
-              <div className={styles.paragraphReview}>Great company to work with. They have friendly staff and were able to get me up and running within a few days.
+              <div className={styles.paragraphReview}>Great company to work with. They have friendly staff and were able to get me up and running in a few days with an awesome refurbished copier!
               </div>
             </div>
             <div className={styles.boxReview}>

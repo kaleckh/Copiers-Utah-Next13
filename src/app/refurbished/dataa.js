@@ -262,14 +262,42 @@ const Refurbished = () => {
         <div className={styles.center}>
           <div className={styles.flex}>
             <h1 style={{ display: "flex", alignItems: "center", paddingBottom: "10px" }}>
+              <div className={styles.titleBig}>Our Remanufactoring </div>
+              <div className={styles.titleBigBlue}>Process</div>
+            </h1>
+           
+          </div>
+          <div className={styles.paragraph}>
+            <div>We do not just refurbish or recondition our copiers, we rebuild them to specifications as close to as new as possible. That is why we can include a full replacement warranty with all our service agreements. Try getting a full replacement guarantee with one of our competitors on even a brand-new machine. That is unlikely at best, more likely impossible. But we offer it as standard addition to all our service agreements on our rebuilt copiers. Why? Because we know these multifunction copiers inside and out. They’ve been tested and restored. We are confident in our work and we can fix everything. In the rare instance something terrible goes wrong, we simply replace the copier, no hassles, no worries!</div>
+          </div>
+          <ol className={styles.something}>
+            <div className={styles.list}>
+              <div className={styles.title}>-Receiving the Copiers</div>
+              <li className={styles.listItem}>Before rebuilding any machines, we select the best performing models from the top copier manufacturers.</li>
+              <li className={styles.listItem}>We source the best quality copier machines with the lowest meters from numerous sources around the nation.</li>
+              <li className={styles.listItem}>We check all incoming inventory for any frame damage or any component problems. We set any problematic copiers aside. We only rebuild the best copiers to start with.</li>
+              <li className={styles.listItem}>We do a full review of any known issues from the computers within the copiers. Any major problems are addressed or if there was an unrepairable problem the machine is set aside. Again, we only rebuild the best machines.</li>
+              <li className={styles.listItem}>We remove any previous customer information from the hard drives, with a military-grade wipe.</li>
+            </div>
+            <div className={styles.list}>
+              <div className={styles.title}>-Rebuilding the Copiers</div>
+              <li className={styles.listItem}>At this point we begin our 33-step copier rebuilding process. These steps include checking, reconditioning, and/or replacing any mechanical components and any consumable components such as drums and toner.</li>
+              <li className={styles.listItem}>Then we test and test and test, all drawers, all components, and make any adjustments or repairs as needed.</li>
+              <li className={styles.listItem}>We then prepare the internal applications and settings for placement</li>
+              <li className={styles.listItem}>Once the copier passes all phases of the rebuild process the proper documentation is placed on the copier and it is inventoried for sale.</li>
+            </div>
+            <div className={styles.list}>
+              <div className={styles.title}>-Final Inspection and Placement</div>
+              <li className={styles.listItem}>We always have our top copier technicians review the checklist and run a final battery of tests to make sure the copier is running perfectly. Every copier gets two sets of eyes.</li>
+              <li className={styles.listItem}>Once we receive final placement instructions, we preset the copier with the customer’s information either prior to delivery or at the customer’s site.</li>
+              <li className={styles.listItem}>Delivery is handled by the same in-house technicians who rebuilt the machines. We want every multifunction copier machine to be placed in the top condition without any damage from vibrations or movement in shipping.</li>
+            </div>
+          </ol>
+        </div>
+         <h1 style={{ display: "flex", alignItems: "center", paddingBottom: "10px", justifyContent:"center" }}>
               <div className={styles.titleBig}>Our Top</div>
               <div className={styles.titleBigBlue}>Refurbished Machines</div>
             </h1>
-          </div>
-          <div className={styles.paragraph}>
-            <div>Copiers Utah is the home to the premier copier remanufactoring facility in the state of Utah. We rebuild copiers to the highest standards anywhere in the state and beyond. We have developed a 54-step process to evaluate all machines and we provide a full replacement for each refurbished copier! Contact Us Today!</div>
-          </div>
-        </div>
         <div className={styles.grid}>
           {copiers.map((copier) => {
             return (
