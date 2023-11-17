@@ -728,6 +728,14 @@
     display: flex;
     justify-content: center;
   }
+  .sectionHidden {
+    height: fit-content;
+    padding: 30px;
+    background-color: white;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
   .whoBox{
     height: 250px;
     width: 400px;
@@ -1183,11 +1191,20 @@
   }
   
   @media (max-width: 790px) {
+    .boxContainer{
+      margin: 10px;
+    }
+    .serviceParagraph{
+      line-height: 17px;
+    }
+    .button{
+      margin: 10px;
+    }
     .woman {
       width: 100%;
     }
     .customerTitle{
-      font-size: 13px;
+      font-size: 18px;
       padding-bottom: 10px;
     }
     .customerTitleLarge{
@@ -1219,8 +1236,17 @@
       display: none;
     }
     .box{
-      width: 175px;
-      height: 200px;
+      width: 200px;      
+      height: fit-content;
+    }
+    .sectionContainer{
+      display: none;
+    }
+    .imageContainerParagraph{
+      display: none;
+    }
+    .sectionHidden{
+      display: none;
     }
     .iconContainer{
       width: 45px;
@@ -1308,7 +1334,7 @@
       margin-left: 0px;
     }
     .row{
-      height: 500px;
+      height: fit-content;
     }
   
   }

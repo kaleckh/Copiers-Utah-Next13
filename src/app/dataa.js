@@ -118,7 +118,6 @@ export default function Data() {
             </div>
 
             <div className={styles.displayNone}>
-
               <div className={images.imageOne ? styles.showing : styles.hidden}>
                 <Image
                   style={{ borderRadius: "8px" }}
@@ -327,7 +326,7 @@ export default function Data() {
             <div className={styles.paragraphNormal}>We uphold the highest standards of integrity in our products and services. Our copier rebuild service agreements encompass all toner, parts and on-site repairs, and a first year replacement gurantee. When you choose us, rest assured your copier will operate seamlessly in your office, providing you with complete peace of mind.</div>
           </div>
         </div>
-        <div style={{ paddingTop: "80px" }} className={styles.section}>
+        <div style={{ paddingTop: "80px" }} className={styles.sectionHidden}>
           <div style={{ width: "55%" }} className={styles.imageContainerParagraph}>
             <Image
               src="/static/buy.webp"
@@ -346,7 +345,7 @@ export default function Data() {
             <div className={styles.paragraphMedium}>At Copiers Utah, we don't just provide products; we deliver a promise of quality and reliability. Our mission is to offer not only top-tier copiers but also unparalleled service, with all copier rentals and sales. Whether you're seeking a long-term copier solution or a quick fix, count on us for our extensive expertise and unwavering dedication to meeting your copier needs.</div>
           </div>
         </div>
-        <div style={{ flexDirection: "row-reverse", width: "100vw", backgroundColor: "rgb(224 224 224)", padding: "50px" }} className={styles.section}>
+        <div style={{ flexDirection: "row-reverse", width: "100vw", backgroundColor: "rgb(224 224 224)", padding: "50px" }} className={styles.sectionHidden}>
           <div style={{ width: "55%", paddingTop: "30px" }} className={styles.imageContainerParagraph}>
             <Image
               src="/static/itWork.png"
