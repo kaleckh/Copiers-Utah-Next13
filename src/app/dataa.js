@@ -370,7 +370,7 @@ export default function Data() {
           <div className={styles.rowSpaced}>
             <div className={styles.boxReview}>
               <div className={styles.starRow}>
-                <div className={styles.titleSmall}>Tara Bennets</div>
+                <div style={{padding:"1px"}} className={styles.titleSmall}>Tara Bennets</div>
                 <div className={styles.flexCenter}>
                   <div>5.0</div>
                   <Image

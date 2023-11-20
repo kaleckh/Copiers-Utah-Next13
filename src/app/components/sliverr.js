@@ -15,12 +15,7 @@ import styles from '../styles/buy.module.css'
 const Sliver = () => {
   return (
     <div className={styles.sliver}>
-      <div className={styles.padding}>
-        <Link href="https://www.facebook.com/copiersforlessutah/">
-          <div className={styles.iconContainer}>
-            <Image src={'/static/facebook.webp'} fill={true} />
-          </div>
-        </Link>
+      <div className={styles.padding}>        
         <Link href="https://www.linkedin.com/in/copiers-utah-5b2b85148/">
           <div className={styles.iconContainer}>
             <Image src={'/static/linkedin.webp'} fill={true} />
@@ -42,11 +37,11 @@ const Sliver = () => {
           </Link>
         </div>
       </div>
-      <div style={{color:"white"}}>
+      <div style={{ color: "white", fontSize:"9px" }}>
         Dont Know Where To Start?{' '}
-        <a style={{ paddingLeft: '15px', color: "white" }} href="tel:8012610510">
+        <a style={{ paddingLeft: '15px', color: "white", fontSize:"9px" }} href="tel:8012610510">
           Call Us At (801)-261 0510
-          </a>
+        </a>
       </div>
     </div>
   )
