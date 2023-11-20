@@ -154,7 +154,7 @@ const Buy = (props) => {
 
                   <div className={styles.space}>
 
-                    <input
+                    <textarea
                       onChange={() => {
                         setMessage(event.target.value);
                       }}

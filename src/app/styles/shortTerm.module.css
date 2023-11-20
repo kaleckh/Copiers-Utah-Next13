@@ -577,6 +577,7 @@
     }
     .title{
       font-size: 20px;
+      padding: 30px;
     }
     .black{
       font-size: 18px;
@@ -599,6 +600,7 @@
     }
     .container {
       width: 95vw;
+      height: 60vh;
     }
     .hidden{
       display: none;

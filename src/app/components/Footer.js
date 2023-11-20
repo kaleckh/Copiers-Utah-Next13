@@ -32,8 +32,7 @@ export default function Footer() {
             </a>
             <a href="https://www.facebook.com/copiersforlessutah/">
               <Image src={'/static/facebook.webp'} width={20} height={20} />
-            </a>
-            
+            </a>            
           </div>
         </div>
         <div className={styles.line}></div>

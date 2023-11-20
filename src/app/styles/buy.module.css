@@ -773,9 +773,13 @@
     }
     .container{
       height: fit-content;
+      margin-top: 50px;
     }
     .column{
       display: none;
+    }
+    .space{
+      width: 95%;
     }
   }
   

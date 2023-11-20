@@ -101,7 +101,7 @@ const ShortTerm = () => {
               ) : (
                   <div>
                     <div className={styles.container}>
-                      <h2 className={styles.black}>Get Your Quote!</h2>
+                      <div className={styles.black}>Get Your Quote!</div>
                       <div
                         style={{
                           width: "100%",
@@ -153,7 +153,7 @@ const ShortTerm = () => {
 
                         <div className={styles.space}>
 
-                          <input
+                          <textarea
                             onChange={() => {
                               setMessage(event.target.value);
                             }}
