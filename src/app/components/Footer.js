@@ -23,16 +23,16 @@ export default function Footer() {
           <div style={{ paddingBottom: "30px" }} className={styles.footerTags}>
             today!
           </div>
-          <div className={styles.even}>            
+          <div className={styles.even}>
             <a href="https://www.linkedin.com/in/copiers-utah-5b2b85148/">
               <Image src={'/static/linkedin.webp'} width={20} height={20} />
             </a>
-            <a href="https://twitter.com/CopiersUtahReal">
+            <a href="https://twitter.com/bizinUSAok">
               <Image src={'/static/twitter.webp'} width={20} height={20} />
             </a>
             <a href="https://www.facebook.com/copiersforlessutah/">
               <Image src={'/static/facebook.webp'} width={20} height={20} />
-            </a>            
+            </a>
           </div>
         </div>
         <div className={styles.line}></div>

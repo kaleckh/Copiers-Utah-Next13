@@ -1236,6 +1236,9 @@
     .hideBox{
       display: none;
     }
+    .customerTitle{
+      font-size: 15px;
+    }
     .centerStuff{
       height: 185px;
     }

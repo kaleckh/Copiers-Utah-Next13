@@ -30,12 +30,7 @@ const Sliver = () => {
           <Link href="https://www.facebook.com/copiersforlessutah/">
             <Image src={'/static/facebook.webp'} fill={true} />
           </Link>
-        </div>
-        <div className={styles.iconContainer}>
-          <Link href="https://www.youtube.com/channel/UCnn6gVWPfQc5_q-CozIZAxA">
-            <Image src={'/static/youtube.webp'} fill={true} />
-          </Link>
-        </div>
+        </div>        
       </div>
       <div style={{ color: "white", fontSize:"9px" }}>
         Dont Know Where To Start?{' '}
