@@ -718,6 +718,7 @@
     background-position: center center;
   }
   .sectionContainer{
+    display: block;
     color: black;
   }
   .section {
@@ -1243,14 +1244,12 @@
       height: 185px;
     }
     .section{
-      padding: 0px;
+      height: fit-content;
+      padding: 15px;
     }
     .box{
       width: 200px;      
       height: fit-content;
-    }
-    .sectionContainer{
-      display: none;
     }
     .imageContainerParagraph{
       display: none;
@@ -1328,9 +1327,6 @@
     .secondSection {
       height: fit-content;
     } 
-    .section{
-      height: 350px;
-    }
     .middle {
       height: 15%;
     }
@@ -1345,6 +1341,9 @@
     }
     .row{
       height: fit-content;
+    }
+    .paragraphMedium{
+    padding: 0px;
     }
   
   }
