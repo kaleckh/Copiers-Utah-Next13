@@ -22,7 +22,7 @@ const Sliver = () => {
           </div>
         </Link>
         <div className={styles.iconContainer}>
-          <Link href="https://twitter.com/CopiersUtahReal">
+          <Link href="https://twitter.com/bizinUSAok">
             <Image src={'/static/twitter.webp'} fill={true} />
           </Link>
         </div>
@@ -30,7 +30,7 @@ const Sliver = () => {
           <Link href="https://www.facebook.com/copiersforlessutah/">
             <Image src={'/static/facebook.webp'} fill={true} />
           </Link>
-        </div>        
+        </div>          
       </div>
       <div style={{ color: "white", fontSize:"9px" }}>
         Dont Know Where To Start?{' '}

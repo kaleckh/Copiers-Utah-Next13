@@ -441,6 +441,9 @@
     height: 53vh;
     background-color: gray;
   }
+  .eighty{
+    width: 80%;
+  }
   .section {
     height: fit-content;
     flex-direction: column;

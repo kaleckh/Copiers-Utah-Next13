@@ -271,7 +271,7 @@ export default function Data() {
 
                 className={styles.copierContainer}
               >
-                <h2 className={styles.title}>Lexmark</h2>
+                <h2 className={styles.title}>Rebuilt Color Copiers</h2>
                 <div className={styles.imageContainerSmall}>
                   <Image alt={"lexmark copier for sale"} src={'/static/Lexmark.webp'} fill={true} />
                 </div>
@@ -284,7 +284,7 @@ export default function Data() {
                 className={styles.copierContainer}
 
               >
-                <h2 className={styles.title}>Konica Minolta</h2>
+                <h2 className={styles.title}>New Color Copiers</h2>
                 <div className={styles.imageContainer}>
                   <Image
                     src="/static/Konika.webp"
@@ -296,12 +296,12 @@ export default function Data() {
                 <button className={styles.buttonBlue}>See Details</button>
               </div>
             </Link>
-            <Link href={'/epson'}>
+            <Link href={'/black-white'}>
               <div
                 className={styles.copierContainer}
 
               >
-                <h2 className={styles.title}>Epson</h2>
+                <h2 className={styles.title}>Black And White Copiers</h2>
                 <div className={styles.imageContainer}>
                   <Image
                     src="/static/epsonL.webp"
