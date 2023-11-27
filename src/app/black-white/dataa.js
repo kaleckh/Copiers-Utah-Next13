@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 import Sliver from '../components/sliverr'
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
-import styles from '../styles/Stuff.module.css'
+import styles from '../styles/black.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const BlackWhite = () => {
   const [name, setName] = useState('')
@@ -143,7 +143,21 @@ const BlackWhite = () => {
       <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className={styles.section}>
         <div className={styles.center}>
-          <h1 className={styles.title}>Our Top Black and White Copiers</h1>
+        <div style={{ justifyContent: "center", alignItems: "center" }} className={styles.section}>
+          <div className={styles.eighty}>
+            <div className={styles.titleCenter}>Black And White Copiers</div>
+            <div className={styles.title}>Reliability</div>
+            <div className={styles.paragraph}>Discover the unparalleled reliability with our range of black and white copiers and printers. In the fast paced world of business, you need equipment you can depend on. Our machines are engineered to deliver consistent, high quality prints, ensuring your important documents are ready when you need them. Trust in the power of reliability to keep your office running smoothly. </div>
+          </div>
+          <div className={styles.eighty}>
+            <div className={styles.title}>Speed</div>
+            <div className={styles.paragraph}>Speed is of the essense, and our black and white copiers and printers are designed to keep up with your business demands. Experience blazing-fast printing that doesnt compromise on quality. Whether your handling a small print job or a large batch of documents, our machines boast impressive speeds to meet your deadlines. Dont let slow pringing hinder your progress- upgrade to the speed and efficiency of our black and white printing solutions today.</div>
+          </div>
+          <div className={styles.eighty}>
+            <div className={styles.title}>Cost Of Operations</div>
+            <div className={styles.paragraph}>Cutting age tech meets cost-effectiveness with our black and white copiers and printers. We understand the importance of managing operational costs without sacrificing performance. Our machines are not only energy-efficient but also cost effective to operate. Make a smart investment in your business with out black and white printing solution, delivering affordability without compromising on quality.</div>
+          </div>
+        </div>
           <div className={styles.line}></div>
         </div>
         <div className={styles.grid}>
@@ -206,22 +220,7 @@ const BlackWhite = () => {
               </div>
             )
           })}
-        </div>
-        <div style={{ justifyContent: "center", alignItems:"center" }} className={styles.section}>
-          <div className={styles.eighty}>
-            <div className={styles.title}>Black And White Copiers</div>
-            <div className={styles.titleBlackSmall}>Reliability</div>
-            <div className={styles.paragraph}>Discover the unparalleled reliability with our range of black and white copiers and printers. In the fast paced world of business, you need equipment you can depend on. Our machines are engineered to deliver consistent, high quality prints, ensuring your important documents are ready when you need them. Trust in the power of reliability to keep your office running smoothly. </div>
-          </div>
-          <div className={styles.eighty}>
-            <div>Speed</div>
-            <div>Speed is of the essense, and our black and white copiers and printers are designed to keep up with your business demands. Experience blazing-fast printing that doesnt compromise on quality. Whether your handling a small print job or a large batch of documents, our machines boast impressive speeds to meet your deadlines. Dont let slow pringing hinder your progress- upgrade to the speed and efficiency of our black and white printing solutions today.</div>
-          </div>
-          <div className={styles.eighty}>
-            <div>Cost Of Operations</div>
-            <div>Cutting age tech meets cost-effectiveness with our black and white copiers and printers. We understand the importance of managing operational costs without sacrificing performance. Our machines are not only energy-efficient but also cost effective to operate. Make a smart investment in your business with out black and white printing solution, delivering affordability without compromising on quality.</div>
-          </div>
-        </div>
+        </div>        
       </div>
       <Footer />
     </div>

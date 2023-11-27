@@ -26,14 +26,14 @@ export default function Header() {
               </Link>
             </div>
             <div className={styles.pieceContainer}>
-              <Link href="/">
-                <div className={styles.headerPieces}>Home</div>
+              <Link href="/new">
+                <div className={styles.headerPieces}>New</div>
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>
             <div className={styles.pieceContainer}>
               <Link href="/refurbished">
-                <div className={styles.headerPieces}>Refurbished Machines</div>
+                <div className={styles.headerPieces}>Refurbished</div>
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>

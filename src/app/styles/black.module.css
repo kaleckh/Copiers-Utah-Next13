@@ -127,10 +127,17 @@
   
   .title {
     color: black;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 26px;
+    font-weight: 500;
+    padding: 20px;
+    padding-bottom: 25px;    
+  }
+  .titleCenter {
+    color: black;
+    font-size: 35px;
+    font-weight: 400;
     padding-bottom: 25px;
-
+    text-align: center;
   }
   .something{
     display: flex;
@@ -247,8 +254,8 @@
   
   .paragraph {
     color: black;
-    font-size: 25px;
-    width: 85%;
+    font-size: 23px;
+    width: 100%;
     font-weight: 200;
     padding: 20px;    
     font-weight: 300; 
@@ -442,12 +449,14 @@
     background-color: gray;
   }
   .eighty{
-    width: 80%;
+    width: 90%;
   }
   .section {
     height: fit-content;
     flex-direction: column;
     display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
     justify-content: flex-end;
     background-color: white;
   }
@@ -588,10 +597,8 @@
     text-align: center;
   }
   .titleBlackMed{
-    font-size: 22px;
-    text-align: center;
+    font-size: 22px;    
     padding: 10px;
-    text-align: center;
   }
 
   .rowNumber{
@@ -673,7 +680,7 @@
       padding-left: 5px;
     }
     .title{
-      font-size: 25px;
+      font-size: 20px;
     }
     .listItem{
       font-size: 18px;

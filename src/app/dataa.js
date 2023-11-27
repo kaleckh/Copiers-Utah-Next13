@@ -266,7 +266,7 @@ export default function Data() {
           </div>
           <div className={styles.copierRow}>
 
-            <Link href={'/lexmark'}>
+            <Link href={'/refurbished'}>
               <div
 
                 className={styles.copierContainer}
@@ -278,7 +278,7 @@ export default function Data() {
                 <button className={styles.buttonBlue}>See Details</button>
               </div>
             </Link>
-            <Link href={'/konika'}>
+            <Link href={'/new'}>
               <div
 
                 className={styles.copierContainer}
