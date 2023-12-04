@@ -19,7 +19,7 @@ const Refurbished = () => {
     const [message, setMessage] = useState('this is the test message')
     const [copiers, setCopiers] = useState([
         {
-            model: 'Konica Minolta C658',
+            model: 'Lexmark XM9145',
             modelNumber: '21K0300',
             image: 'c658.webp',
             PagesPerMinute: '65',
@@ -27,16 +27,16 @@ const Refurbished = () => {
             ScanSpeed: '240 per minute',
             timeOut: '6.5 ',
             type: 'Refurbished',
-            brand: 'konica',
+            brand: 'Lexmark',
             description:
                 'The C658 is a heft workforce copier-printer with a footpring only a couple inches larger than a typical copier. Its internal parts are more robust to handle higher speeds, volume, and longevity.',
         },
         {
-            model: 'Konica Minolta C758',
-            modelNumber: 'Bizhub C758',
+            model: 'Lexmark XM 9155',
+            modelNumber: '7421-239',
             image: 'c758.webp',
             PagesPerMinute: '75',
-            brand: 'konica',
+            brand: 'Lexmark',
             paperSize: '12 x 18',
             ScanSpeed: '120',
             timeOut: '3.6 ',
@@ -45,10 +45,10 @@ const Refurbished = () => {
             type: 'Refurbished',
         },
         {
-            model: 'Konica Minolta C558',
-            modelNumber: 'Bizhub C458',
+            model: 'Lexmark 9165',
+            modelNumber: '7421-439',
             image: 'c558.webp',
-            brand: 'konica',
+            brand: 'Lexmark',
             PagesPerMinute: '55',
             paperSize: '12 x 18',
             ScanSpeed: '80',
@@ -58,11 +58,11 @@ const Refurbished = () => {
                 'The C558 is a speedy workhorse copier, offering a robust platform fit for high volumes or longevity in smaller offices',
         },
         {
-            model: 'Konica Minolta C368',
-            modelNumber: 'Bizhub C350i',
+            model: 'Lexmark XC 9325',
+            modelNumber: '7580-198',
             image: 'c368.webp',
             PagesPerMinute: '43',
-            brand: 'konica',
+            brand: 'Lexmark',
             paperSize: '12 x 18',
             ScanSpeed: '160',
             timeOut: '6.5 ',
@@ -71,35 +71,23 @@ const Refurbished = () => {
                 'The C368 is a meduium sized office copier-printer with premier color quality and all the functionality of a large office copier. ',
         },
         {
-            model: 'Konica Minolta C258',
-            modelNumber: 'Bizhub C258',
+            model: 'Lexmark XC9335',
+            modelNumber: '7580-298',
             image: 'c258.webp',
             PagesPerMinute: '25',
-            brand: 'konica',
+            brand: 'Lexmark',
             paperSize: '12/ x 18',
             timeOut: '7.3 ',
             type: 'Refurbished',
             description:
                 'The C258 is a small office copier-printer with all the functionality and options of a large office copier. This is our most cost effective 12x18-capable rebuilt machine that does not sacrifice any color quality.',
-        },
+        },    
         {
-            model: 'Konica Minolta C308',
-            modelNumber: 'Bizhub C300i',
-            image: 'c308.webp',
-            PagesPerMinute: '30',
-            paperSize: '8.3 x 11.7',
-            brand: 'konica',
-            timeOut: '6 ',
-            type: 'Refurbished',
-            description:
-                'The C308 is a small-medium sized office copier-printer with premier color quality and all the functionality of a large office copier.',
-        },
-        {
-            model: 'Konica Minolta C458',
+            model: 'Lexmark XC9445',
             PagesPerMinute: '45',
-            modelNumber: 'Bizhub C458',
+            modelNumber: '7580-498',
             image: 'c458.webp',
-            brand: 'konica',
+            brand: 'Lexmark',
             paperSize: '12 x 18',
             ScanSpeed: '120',
             timeOut: '5.1 ',
@@ -108,8 +96,8 @@ const Refurbished = () => {
                 'The C458 is out most popular copier-printer. It is ideal for most sized offices, provides top color quality, and full functionality and speed to handel every office need.',
         },
         {
-            model: 'Lexmark XC6152',
-            modelNumber: ' 7563-197',
+            model: 'Lexmark XC9455',
+            modelNumber: ' 7580-698',
             PagesPerMinute: '52',
             image: 'xc6152.webp',
             paperSize: '44.8 x 25.54',
@@ -120,85 +108,58 @@ const Refurbished = () => {
             description:
                 'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
         },
-        // {
-        //   model: 'Lexmark XC8160',
-        //   modelNumber: ' 7563-197',
-        //   PagesPerMinute: '52',
-        //   image: 'xc6152.webp',
-        //   paperSize: '44.8 x 25.54',
-        //   ScanSpeed: '120',
-        //   brand: 'lexmark',
-        //   type: 'Refurbished',
-        //   timeOut: '6.5 ',
-        //   description:
-        //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
-        // },
-        // {
-        //   model: 'Lexmark XC4140',
-        //   modelNumber: ' 7563-197',
-        //   PagesPerMinute: '52',
-        //   image: 'xc4140.webp',
-        //   paperSize: '44.8 x 25.54',
-        //   ScanSpeed: '120',
-        //   brand: 'lexmark',
-        //   type: 'Refurbished',
-        //   timeOut: '6.5 ',
-        //   description:
-        //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
-        // },
-        // {
-        //   model: 'Lexmark C4150',
-        //   modelNumber: ' 7563-197',
-        //   PagesPerMinute: '52',
-        //   image: 'xc4150.webp',
-        //   paperSize: '44.8 x 25.54',
-        //   ScanSpeed: '120',
-        //   brand: 'lexmark',
-        //   type: 'Refurbished',
-        //   timeOut: '6.5 ',
-        //   description:
-        //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
-        // },
-        // {
-        //   model: 'Lexmark M1246',
-        //   modelNumber: ' 7563-197',
-        //   PagesPerMinute: '52',
-        //   image: 'm1246.webp',
-        //   paperSize: '44.8 x 25.54',
-        //   ScanSpeed: '120',
-        //   brand: 'lexmark',
-        //   type: 'Refurbished',
-        //   timeOut: '6.5 ',
-        //   description:
-        //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
-        // },
-        // {
-        //   model: 'Lexmark M5163',
-        //   modelNumber: ' 7563-197',
-        //   PagesPerMinute: '52',
-        //   image: 'm1246.webp',
-        //   paperSize: '44.8 x 25.54',
-        //   ScanSpeed: '120',
-        //   brand: 'lexmark',
-        //   type: 'Refurbished',
-        //   timeOut: '6.5 ',
-        //   description:
-        //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
-        // },
-        // {
-        //   model: 'Lexmark XM7155',
-        //   modelNumber: ' 7563-197',
-        //   PagesPerMinute: '52',
-        //   image: 'm1246.webp',
-        //   paperSize: '44.8 x 25.54',
-        //   ScanSpeed: '120',
-        //   brand: 'lexmark',
-        //   type: 'Refurbished',
-        //   timeOut: '6.5 ',
-        //   description:
-        //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
-        // },
-
+        {
+          model: 'Lexmark XC9465',
+          modelNumber: ' 7580-898',
+          PagesPerMinute: '52',
+          image: 'xc6152.webp',
+          paperSize: '44.8 x 25.54',
+          ScanSpeed: '120',
+          brand: 'Lexmark',
+          type: 'Refurbished',
+          timeOut: '6.5 ',
+          description:
+            'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
+        },
+        {
+          model: 'Lexmark XC4140',
+          modelNumber: ' 7528-196',
+          PagesPerMinute: '52',
+          image: 'xc4140.webp',
+          paperSize: '44.8 x 25.54',
+          ScanSpeed: '120',
+          brand: 'lexmark',
+          type: 'Refurbished',
+          timeOut: '6.5 ',
+          description:
+            'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
+        },
+        {
+          model: 'Lexmark C4150',
+          modelNumber: ' 40C9054',
+          PagesPerMinute: '52',
+          image: 'm1246.webp',
+          paperSize: '44.8 x 25.54',
+          ScanSpeed: '120',
+          brand: 'lexmark',
+          type: 'Refurbished',
+          timeOut: '6.5 ',
+          description:
+            'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
+        },
+        {
+          model: 'Lexmark M1246',
+          modelNumber: ' 4600‑690',
+          PagesPerMinute: '52',
+          image: 'm1246.webp',
+          paperSize: '44.8 x 25.54',
+          ScanSpeed: '120',
+          brand: 'lexmark',
+          type: 'Refurbished',
+          timeOut: '6.5 ',
+          description:
+            'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
+        },
 
     ])
     const router = useRouter()
@@ -257,7 +218,7 @@ const Refurbished = () => {
 
 
             <Header />
-            <BreadCrumbs breadCrumbs={breadCrumbs} />
+            <BreadCrumbs breadCrumbs={breadCrumbs} />            
             <div className={styles.section}>
                 <div className={styles.center}>
                     <h1 style={{ display: "flex", alignItems: "center", paddingBottom: "10px", justifyContent: "center" }}>

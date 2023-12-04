@@ -22,6 +22,7 @@ const ShortTerm = () => {
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [nameRes, setNameRes] = useState(false);
   const [toggle, setToggle] = useState(false);
+  // const [quoteToggle, setQuoteToggle] = useState(false);
   const [messageRes, setMessageRes] = useState(false);
   const [quote, setQuote] = useState(false);
   const [name, setName] = useState("");
@@ -47,7 +48,7 @@ const ShortTerm = () => {
   }, [message, number, name, email, recaptchaResponse])
 
   async function sendEmail() {
-
+    debugger
     const requestOptions =
     {
       method: "POST",
@@ -180,8 +181,8 @@ const ShortTerm = () => {
                         />
                       </div>
                       <button
-                        onClick={(e) => {
-                          setQuoteToggle(!quoteToggle);
+                        onClick={(e) => {                          
+                          setQuote(!quote);
                           sendEmail(e);
                         }}
                         className={styles.buttonBlue}
