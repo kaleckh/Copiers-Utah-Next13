@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Data from './dataa'
+import Script from "next/script";
 
 export const metadata = {
   title: 'Copiers for Sale and Rent | Office Copy Machines | Copiers Utah',
@@ -7,6 +8,23 @@ export const metadata = {
 }
 export default function Home() {
   return (
-    <Data />
+    <>
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+
+      <Script strategy="lazyOnload">
+        {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+                    page_path: window.location.pathname,
+                    });
+                `}
+      </Script>
+      <Data />
+    </>
   );
 }
