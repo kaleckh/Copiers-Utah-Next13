@@ -29,8 +29,6 @@ export async function POST(req, res) {
 
     try {
         const response = await axios.post(url, data, { headers })
-
-
         return NextResponse.json({ "success": response.data })
     } catch (error) {
         console.error('Error sending email:', error);

@@ -74,14 +74,15 @@ export default function Header() {
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>
-            <div className={styles.cartContainer}>
-              <Image
-                src="/static/cart.webp"
-                alt="cart icon"
-                fill={true}
-              />
-            </div>
-            <div className={styles.cartNumber}>{cart.length}</div>
+            <Link href={'/cart'}>
+              <div className={styles.cartContainer}>
+                <Image
+                  src="/static/cart.webp"
+                  alt="cart icon"
+                  fill={true}
+                />
+              </div>
+            </Link>
           </div>
         </div >
         <div className={styles.line}></div>
