@@ -450,6 +450,7 @@
   
   .smallParagraph {
     font-weight: 200;
+    font-size: 16px;
   }
   
   
@@ -487,8 +488,8 @@
   }
 
   .paragraphSmall{
-    font-size: 14px;
-    width: 80%;
+    font-size: 16px;
+    width: 90%;
     font-weight: 200;
     line-height: 30px;
   }
@@ -1009,9 +1010,9 @@
  
 
   @media(min-width: 1450px) {
-    .smallParagraph{
-      font-size: 20px;      
-    }
+   .paragraphSmall{
+    font-size: 20px;
+   }
     .mainContainer{
       width: 60%;
     }
