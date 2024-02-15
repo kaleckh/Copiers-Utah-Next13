@@ -1010,8 +1010,7 @@
 
   @media(min-width: 1200px) {
     .smallParagraph{
-      font-size: 20px;
-      width: 100%;
+      font-size: 20px;      
     }
     .mainContainer{
       width: 60%;
