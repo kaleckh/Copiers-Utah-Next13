@@ -130,9 +130,9 @@
     object-fit: cover;
     width: 100%;
   }
-  @media(min-width: 1200px) {
+  @media(min-width: 1450px) {
     .logoContainer{
-      height: 130px;
+      height: 150px;
     }
   }
 
