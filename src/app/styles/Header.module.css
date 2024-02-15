@@ -130,6 +130,12 @@
     object-fit: cover;
     width: 100%;
   }
+  @media(min-width: 1200px) {
+    .logoContainer{
+      height: 130px;
+    }
+  }
+
   
   @media (max-width: 600px) {
     .headerPieces {
