@@ -1147,6 +1147,16 @@
   }
 
   @media(max-width: 800px){
+    .serviceTitle{
+      padding: 0px;
+      padding-top: 10px;
+    }
+    .serviceParagraph{
+      padding: 5px;
+      padding: 10px;
+      height: fit-content;
+      font-size: 11px;
+    }
     .box{
       height: 250px;
       width: 200px;
@@ -1198,9 +1208,13 @@
     .container {
       width: 85vw;
     }
+    
   }
   
   @media (max-width: 790px) {
+    .titleBig{
+      font-size: 30px;
+    }
     .boxContainer{
       margin: 10px;
     }
@@ -1208,7 +1222,10 @@
       line-height: 17px;
     }
     .button{
-      margin: 10px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      width: auto;
+      font-size: 12px;
     }
     .woman {
       width: 100%;
@@ -1249,14 +1266,14 @@
       font-size: 15px;
     }
     .centerStuff{
-      height: 185px;
+      height: fit-content;
     }
     .section{
       height: fit-content;
       padding: 15px;
     }
     .box{
-      width: 200px;      
+      width: 170px;      
       height: fit-content;
     }
     .imageContainerParagraph{
