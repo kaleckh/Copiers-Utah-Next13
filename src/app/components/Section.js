@@ -77,7 +77,7 @@ export default function Section() {
                                 height={25}
                                 style={{ paddingRight: "10px" }}
                             />
-                            <div>Top Brands And Models To Fit Any Budget And Business Need</div>
+                            <div>Toner Of All Brands Sold</div>
                         </div>
                     </div>
                 </div>
