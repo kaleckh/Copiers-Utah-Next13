@@ -25,7 +25,7 @@ export default function Section() {
                                 height={25}
                                 style={{ paddingRight: "10px" }}
                             />
-                            <div>New And Used Copiers Available</div>
+                            <div>Premier remanufacturing facility in Utah</div>
                         </div>
                         <div className={styles.row}>
                             <Image
