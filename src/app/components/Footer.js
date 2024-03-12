@@ -1,6 +1,7 @@
 import styles from "../styles/Footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Logo from '../../../public/static/logo.webp'
 import { useRouter } from "next/navigation";
 export default function Footer() {
   const router = useRouter();
@@ -8,8 +9,16 @@ export default function Footer() {
     <div className={styles.footer}>
       <div className={styles.smallerContainer}>
         <div className={styles.exploreContainerGood}>
-          <div style={{ paddingBottom: "15px" }} className={styles.exploreContainerGood}>
-            <Image src={"/static/logo.webp"} width={100} height={75} />
+          <div style={{ paddingBottom: "15px" }} className={styles.logoContainer}>
+            <Image
+              src={Logo}
+              alt="Picture of the author"
+              sizes="100vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
+            />
           </div>
           <div className={styles.footerTags}>
             At Copiers Utah we promise transparent pricing

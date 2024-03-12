@@ -1,6 +1,9 @@
 "use client"
 import React, { useState, useRef, useEffect } from "react";
 import Head from "next/head";
+import Rental from '../../public/static/rental.webp'
+import It from '../../public/static/it.webp'
+// import Rental from '../../public/static/rental.webp'
 import Image from "next/image";
 import Section from "../app/components/Section";
 import Header from "./components/Header";
@@ -194,7 +197,7 @@ export default function Data() {
                 <div>
                   <div style={{ width: "70px" }} className={styles.iconContainer}>
                     <Image
-                      src="/static/it.webp"
+                      src={It}
                       alt="It services Icon"
                       fill={true}
                     />
@@ -216,7 +219,7 @@ export default function Data() {
               <div className={styles.box}>
                 <div className={styles.iconContainer}>
                   <Image
-                    src="/static/rental.webp"
+                    src={Rental}
                     alt="copier rental Icon"
                     fill={true}
                   />

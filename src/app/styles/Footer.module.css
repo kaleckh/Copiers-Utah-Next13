@@ -22,11 +22,14 @@
     font-size: 13px;
   }
   .exploreContainer {
-    
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    
+  }
+  .logoContainer{
+    position: relative;
+    width: 100px;
+    height: 70px;
   }
   .even{
     display: flex;

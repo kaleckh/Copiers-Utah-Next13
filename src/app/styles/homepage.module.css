@@ -1273,7 +1273,8 @@
       padding: 15px;
     }
     .box{
-      width: 170px;      
+      width: 190px;     
+      padding: 10px; 
       height: fit-content;
     }
     .imageContainerParagraph{

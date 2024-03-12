@@ -5,6 +5,7 @@ import Sliver from '../components/sliverr'
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Image from "next/image";
 import cart from "../cart/page";
+import Logo from '../../../public/static/logo.webp'
 import { CartContext } from "../../providers/cart";
 export default function Header() {
   const router = useRouter();
@@ -19,9 +20,13 @@ export default function Header() {
             <div className={styles.logoContainer}>
               <Link href={'/'}>
                 <Image
-                  src="/static/logo.webp"
-                  alt="copiers utah logo"
-                  fill={true}
+                  src={Logo}
+                  alt="Picture of the author"
+                  sizes="100vw"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
                 />
               </Link>
             </div>
