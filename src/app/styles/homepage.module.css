@@ -1029,8 +1029,18 @@
       font-size: 20px;
     }
     .box{
-      height: 300px;
-      width: 250px;
+      height: fit-content;
+      width: 300px;
+      padding: 10px;
+    }
+    .serviceParagraph{
+      height: fit-content;
+    }
+    .row{
+      align-items: flex-start;
+    }
+    .needSpace{
+      width: 90%;
     }
   }
   
@@ -1158,8 +1168,11 @@
       font-size: 11px;
     }
     .box{
-      height: 250px;
+      height: fit-content;
       width: 200px;
+    }
+    .serviceTitle{
+      font-size: 18px;
     }
   }
   @media (max-width: 700px) {
@@ -1168,7 +1181,7 @@
       font-size: 27px;
     }
     .row{
-      flex-direction: column;
+      flex-direction: column;      
       justify-content: space-evenly;
       height: 700px;
     }
@@ -1273,7 +1286,7 @@
       padding: 15px;
     }
     .box{
-      width: 190px;     
+      width: 250px;     
       padding: 10px; 
       height: fit-content;
     }
@@ -1366,6 +1379,7 @@
       margin-left: 0px;
     }
     .row{
+      align-items: center;
       height: fit-content;
     }
     .paragraphMedium{
@@ -1377,6 +1391,9 @@
   @media (max-width: 510px) {
     .center {
       font-size: 22px;
+    }
+    .box{
+      width: 200px;
     }
   }
   
