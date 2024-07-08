@@ -66,7 +66,7 @@ const TonerChoice = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        api_key: "api-A4D77AA0362911EEA716F23C91C88F4E",
+        api_key: process.env.SMTP_API,
         to: [`<info@copiersutah.com>`],
         sender: "<info@copiersutah.com>",
         subject: `This is${name}'s quote form. Her number is ${number}`,

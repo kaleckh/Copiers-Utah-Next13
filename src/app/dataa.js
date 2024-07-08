@@ -46,7 +46,7 @@ export default function Data() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
+        api_key: process.env.NEXT_PUBLIC_SMTP_API,
         to: [`<info@copiersutah.com>`],
         sender: "<info@copiersutah.com>",
         subject: `This is${name}'s quote form. Their number is ${number}`,
@@ -87,7 +87,7 @@ export default function Data() {
   }, [images.imageOne, images.imageTwo, images.imageThree, images.imageFour]);
   console.log(images, "images")
 
-  console.log(process.env.NEXT_PUBLIC_SMTP_API, 'env variables')
+  
 
   return (
     <div className={styles.main}>
