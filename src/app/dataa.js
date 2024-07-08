@@ -87,6 +87,8 @@ export default function Data() {
   }, [images.imageOne, images.imageTwo, images.imageThree, images.imageFour]);
   console.log(images, "images")
 
+  console.log(NEXT_PUBLIC_SMTP_API, 'env variables')
+
   return (
     <div className={styles.main}>
       <TawkMessengerReact
