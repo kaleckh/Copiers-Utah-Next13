@@ -103,11 +103,7 @@ const TonerChoice = (props) => {
     console.log("onLoad works!");
   };
 
-  const { paymentsApi } = new Client({
-    accessToken:
-      "EAAAEOBAWpWqMYtQnL6yMPRZZkl3ne8zZGGDli2HBC8pAivmZaGNoyOOtM-Uo7Ci",
-    environment: "sandbox",
-  });
+  
   async function getOrderData() {
     const response = await fetch(`/api/pay`);
     const data = await response.json();
