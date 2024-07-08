@@ -170,7 +170,7 @@ const Finance = () => {
                       justifyContent: "center",
                     }}
                     className="recaptcha"
-                    sitekey={NEXT_PUBLIC_SITE_KEY}
+                    sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
                     ref={captchaRef}
                     onChange={verifyCallback}
                   />
