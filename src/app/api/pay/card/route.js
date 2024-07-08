@@ -1,7 +1,5 @@
-import axios from 'axios';
 import { NextResponse } from 'next/server'
 import { APIContracts, APIControllers, Constants as SDKConstants } from 'authorizenet'
-import { promises } from 'fs';
 export async function POST(req, res) {
     const newData = await req.json()
 
