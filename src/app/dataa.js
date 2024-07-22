@@ -87,7 +87,7 @@ export default function Data() {
   }, [images.imageOne, images.imageTwo, images.imageThree, images.imageFour]);
   console.log(images, "images")
 
-  
+
 
   return (
     <div className={styles.main}>
@@ -195,7 +195,7 @@ export default function Data() {
               </div>
 
 
-              <div className={styles.box}>
+              <div className={`${styles.box} ${styles.smallHidden}`}>
                 <div>
                   <div style={{ width: "70px" }} className={styles.iconContainer}>
                     <Image
@@ -216,7 +216,7 @@ export default function Data() {
               </div>
 
             </div>
-            <div>
+            <div className={styles.boxContainer}>
 
               <div className={styles.box}>
                 <div className={styles.iconContainer}>

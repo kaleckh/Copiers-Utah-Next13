@@ -1272,6 +1272,9 @@
   }
   
   @media (max-width: 600px) {
+    .smallHidden{
+      display: none;
+    }
     .hideBox{
       display: none;
     }
@@ -1393,7 +1396,7 @@
       font-size: 22px;
     }
     .box{
-      width: 200px;
+      width: 80%;
     }
   }
   
