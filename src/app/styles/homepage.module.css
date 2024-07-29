@@ -1232,7 +1232,8 @@
       margin: 10px;
     }
     .serviceParagraph{
-      line-height: 17px;
+      font-size: 14px;      
+      line-height: 23px;
     }
     .button{
       margin-bottom: 10px;
@@ -1287,6 +1288,7 @@
     .section{
       height: fit-content;
       padding: 15px;
+      display: none;
     }
     .box{
       width: 250px;     
@@ -1314,11 +1316,10 @@
     .mainContainer{
       width: 100%;
     }
-    .row div{
-      font-size: 10px;
-    }
+    
     .reviewSection{
       height: 450px;
+      display: none;
     }
     .paragraphReview{
       font-size: 12px;

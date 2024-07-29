@@ -6,7 +6,7 @@ export default function Section() {
     const router = useRouter();
     return (
         <div className={styles.section}>
-            <div style={{ width: "80%", display: "flex", flexDirection: "column" }}>
+            <div style={{ margin: "5px" }}>
 
                 <div style={{ height: "100px", alignItems: "center", justifyContent: "center" }} className={styles.flex}>
                     
@@ -21,8 +21,8 @@ export default function Section() {
                             <Image
                                 src="/static/seen.webp"
                                 alt="double checkmarks"
-                                width={35}
-                                height={25}
+                                width={25}
+                                height={15}
                                 style={{ paddingRight: "10px" }}
                             />
                             <div>Premier remanufacturing facility in Utah</div>
@@ -31,9 +31,9 @@ export default function Section() {
                             <Image
                                 src="/static/seen.webp"
                                 alt="double checkmarks"
-                                width={35}
+                                width={25}
                                 style={{ paddingRight: "10px" }}
-                                height={25}
+                                height={15}
                             />
                             <div>Top Brands And Models To Fit Any Budget And Business Need</div>
                         </div>
@@ -41,9 +41,9 @@ export default function Section() {
                             <Image
                                 src="/static/seen.webp"
                                 alt="double checkmarks"
-                                width={35}
+                                width={25}
                                 style={{ paddingRight: "10px" }}
-                                height={25}
+                                height={15}
                             />
                             <div>Thoroughly Tested And Serviced Used Copiers </div>
                         </div>
@@ -53,8 +53,8 @@ export default function Section() {
                             <Image
                                 src="/static/seen.webp"
                                 alt="double checkmarks"
-                                width={35}
-                                height={25}
+                                width={25}
+                                height={15}
                                 style={{ paddingRight: "10px" }}
                             />
                             <div>Wide Range Of New And Used Copiers For Sale In Utah</div>
@@ -63,8 +63,8 @@ export default function Section() {
                             <Image
                                 src="/static/seen.webp"
                                 alt="double checkmarks"
-                                width={35}
-                                height={25}
+                                width={25}
+                                height={15}
                                 style={{ paddingRight: "10px" }}
                             />
                             <div>New And Used Copiers Available</div>
@@ -73,8 +73,8 @@ export default function Section() {
                             <Image
                                 src="/static/seen.webp"
                                 alt="double checkmarks"
-                                width={35}
-                                height={25}
+                                width={25}
+                                height={15}
                                 style={{ paddingRight: "10px" }}
                             />
                             <div>Toner Of All Brands Sold</div>

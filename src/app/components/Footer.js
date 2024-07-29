@@ -22,14 +22,8 @@ export default function Footer() {
           </div>
           <div className={styles.footerTags}>
             At Copiers Utah we promise transparent pricing
-          </div>
-          <div className={styles.footerTags}>
             high-quality equipment, and exceptional service
-          </div>
-          <div className={styles.footerTags}>
             on all new, used and refurbished copiers! Contact us
-          </div>
-          <div style={{ paddingBottom: "30px" }} className={styles.footerTags}>
             today!
           </div>
           <div className={styles.even}>
