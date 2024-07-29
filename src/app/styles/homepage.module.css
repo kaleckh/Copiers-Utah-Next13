@@ -18,6 +18,11 @@
   .boxContainer{
     display: flex;
     justify-content: space-evenly;
+    width: 70%;
+  }
+  .boxContainerTwo  {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
   }
   .logoSpace {  
@@ -1230,6 +1235,11 @@
     }
     .boxContainer{
       margin: 10px;
+      width: 95%;
+    }
+    .boxContainerTwo{
+      display: flex;
+      justify-content: center;
     }
     .serviceParagraph{
       font-size: 14px;      

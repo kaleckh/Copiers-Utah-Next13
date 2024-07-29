@@ -6,15 +6,14 @@ export default function Section() {
     const router = useRouter();
     return (
         <div className={styles.section}>
-            <div style={{ margin: "5px" }}>
-
+            <div className={styles.secondSection}>
                 <div style={{ height: "100px", alignItems: "center", justifyContent: "center" }} className={styles.flex}>
                     
                         <div className={styles.titleWhy}>Why Choose</div>
                         <div className={styles.titleWhyBlue}>Copiers Utah</div>
                     
                 </div>
-                <div style={{ height: "200px", justifyContent: "space-between" }} className={styles.flex}>
+                <div style={{ height: "200px", justifyContent: "space-between" }} className={styles.flexSection}>
                     <div className={styles.space}>
 
                         <div className={styles.row}>

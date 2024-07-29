@@ -175,7 +175,7 @@ export default function Data() {
             <div className={styles.blue}>Services</div>
           </div>
           <div className={styles.row}>
-            <div className={styles.boxContainer}>
+            <div className={styles.boxContainerTwo}>
 
               <div className={styles.box}>
                 <div className={styles.iconContainer}>
