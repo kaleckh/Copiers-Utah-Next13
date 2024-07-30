@@ -334,7 +334,7 @@ const Refurbished = () => {
           <div className={styles.paragraph}>
             <div>We do not just refurbish or recondition our copiers, we rebuild them to specifications as close to as new as possible. That is why we can include a full replacement warranty with all our service agreements. Try getting a full replacement guarantee with one of our competitors on even a brand-new machine. That is unlikely at best, more likely impossible. But we offer it as standard addition to all our service agreements on our rebuilt copiers. Why? Because we know these multifunction copiers inside and out. They’ve been tested and restored. We are confident in our work and we can fix everything. In the rare instance something terrible goes wrong, we simply replace the copier, no hassles, no worries!</div>
           </div>
-          <ol className={styles.something}>
+          {/* <ol className={styles.something}>
             <div className={styles.list}>
               <div className={styles.title}>-Receiving the Copiers</div>
               <li className={styles.listItem}>Before rebuilding any machines, we select the best performing models from the top copier manufacturers.</li>
@@ -356,7 +356,7 @@ const Refurbished = () => {
               <li className={styles.listItem}>Once we receive final placement instructions, we preset the copier with the customer’s information either prior to delivery or at the customer’s site.</li>
               <li className={styles.listItem}>Delivery is handled by the same in-house technicians who rebuilt the machines. We want every multifunction copier machine to be placed in the top condition without any damage from vibrations or movement in shipping.</li>
             </div>
-          </ol>
+          </ol> */}
         </div>
 
       </div>
