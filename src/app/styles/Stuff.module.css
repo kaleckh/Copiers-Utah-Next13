@@ -250,6 +250,7 @@
     font-size: 25px;
     width: 85%;
     font-weight: 200;
+    line-height: 25px;
     padding: 20px;    
     font-weight: 300; 
   }
@@ -677,6 +678,8 @@
     }
     .listItem{
       font-size: 18px;
+      line-height: 25px;
+      line-height: 25px;
     }
     .list{
       width: 100%;
@@ -687,6 +690,7 @@
       width: 95%;
       font-weight: 200;
       padding: 10px;
+      line-height: 25px;
       text-align: center;
       font-weight: 300;
     }
