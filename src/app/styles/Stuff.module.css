@@ -141,6 +141,7 @@
   .listItem{
     font-size: 21px;
     padding: 3px;
+    margin: 5px;
   }
   
   .titleBig {
@@ -690,7 +691,7 @@
       width: 95%;
       font-weight: 200;
       padding: 10px;
-      line-height: 25px;
+      line-height: 30px;
       text-align: center;
       font-weight: 300;
     }
