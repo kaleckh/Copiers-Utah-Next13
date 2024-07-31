@@ -1011,6 +1011,16 @@
     align-items: center;
     justify-content: flex-start;
   }
+
+  @media (max-width: 1600px){
+    .boxContainer{
+      display: none
+    }
+
+    .boxContainerTwo{
+      width: 75%;
+    }
+  }
  
  
 
@@ -1112,6 +1122,11 @@
   }
   
   @media (max-width: 950px) {
+    .boxContainerTwo{
+      width: 85%;
+      justify-content: space-evenly;
+    }
+    
     .displayNoneSmall{
       display: none;
     }
@@ -1174,7 +1189,8 @@
     }
     .box{
       height: fit-content;
-      width: 200px;
+      width: 70%;
+      margin: 5px;
     }
     .serviceTitle{
       font-size: 18px;
@@ -1186,13 +1202,14 @@
       font-size: 27px;
     }
     .row{
-      flex-direction: column;      
-      justify-content: space-evenly;
-      height: 700px;
+      display: flex;
+      flex-direction: column;            
+      align-items: center;
+      
     }
-    .needSpace{
-      height: 750px;
+    .needSpace{      
       justify-content: space;
+
     }
   }
   
@@ -1239,7 +1256,9 @@
     }
     .boxContainerTwo{
       display: flex;
+      align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
     .serviceParagraph{
       font-size: 14px;      
@@ -1301,7 +1320,7 @@
       display: none;
     }
     .box{
-      width: 250px;     
+      width: 95%;     
       padding: 10px; 
       height: fit-content;
     }

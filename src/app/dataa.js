@@ -195,7 +195,7 @@ export default function Data() {
               </div>
 
 
-              <div className={`${styles.box} ${styles.smallHidden}`}>
+              <div className={`${styles.box} `}>
                 <div>
                   <div style={{ width: "70px" }} className={styles.iconContainer}>
                     <Image
