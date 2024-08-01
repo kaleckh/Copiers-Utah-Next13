@@ -558,6 +558,14 @@
 }
 
 @media (max-width: 750px) {
+  .column{
+    width: 95%;
+    margin: 5px;
+    align-items: center;
+  }
+  .copierContainer{
+    width: auto;
+  }
   .konika {
     height: 36vh;
   }
@@ -567,6 +575,7 @@
   }
   .row {
     width: 100%;
+    flex-direction: column;
   }
   .bulletContainer {
     padding: 8px;

@@ -128,8 +128,7 @@ const Product = () => {
           <div className={styles.column}>
             <h1 className={styles.bigTitle}>{model}</h1>
             <div>
-              <div>
-                <div style={{ color: "black", fontSize: "18px", paddingLeft: "10px" }}>About</div>
+              <div>                
                 <div className={styles.bulletContainer}>
                   <div>   <Image
                     src="/static/seen.webp"
