@@ -1067,15 +1067,18 @@
       flex-direction: column;
       align-items: center;
     }
+    .sectionMedium{
+      display: none;
+    }
   }
   @media (max-width: 1000px) {
     .container {
       width: 50vw;
     }
-    .sectionMedium{
+    /* .sectionMedium{
       align-items: center;
       height: 800px;
-    }
+    } */
     .main {
       height: fit-content;
     }
