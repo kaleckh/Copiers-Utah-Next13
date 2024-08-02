@@ -1,15 +1,9 @@
 import styles from "../styles/Header.module.css";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Sliver from "../components/sliverr";
-import React, { useEffect, useRef, useState, useContext } from "react";
 import Image from "next/image";
 import Logo from "../../public/static/logo.webp";
-import { CartContext } from "../providers/cart";
 export default function Header() {
-  const router = useRouter();
-  const { cart, setCart, cartLook, setRealPrice } = useContext(CartContext);
-
   return (
     <div>
       <Sliver />

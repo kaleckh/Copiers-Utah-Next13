@@ -2,17 +2,10 @@
 import { useState, useRef, useEffect } from "react";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
-import Head from "next/head";
 import Image from "next/image";
-// import Form from "./Form";
-import { Metadata } from "next";
-import Sliver from "../components/Sliverr";
 import { PatternFormat } from "react-number-format";
 import ReCAPTCHA from "react-google-recaptcha";
-// import Logo from "../Photos/logo.webp";
-
 import styles from "../styles/It.module.css";
-
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 

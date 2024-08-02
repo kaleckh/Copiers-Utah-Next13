@@ -3,28 +3,18 @@ import React, { useRef, useEffect } from "react";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import Link from "next/link";
-import { Metadata } from "next";
 import Footer from "../components/Footer";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Image from "next/image";
-import { PatternFormat } from "react-number-format";
 import styles from "../styles/Refurbished.module.css";
-import { useRouter } from "next/navigation";
-import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
+
 const Product = () => {
-  const router = useRouter();
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const tawkMessengerRef = useRef();
-  const [gray, setGray] = useState(true);
-  const [grayBottom, setGrayBottom] = useState(true);
   const [brandDescription, setBrandDescription] = useState();
-  const [quote, setQuote] = useState(false);
-  const [model, setModel] = useState();
   const [description, setDescription] = useState();
-  const [image, setImage] = useState();
-  const [type, setType] = useState();
   const [timeOut, setTimeOut] = useState();
   const [printSpeed, setPrintSpeed] = useState();
   const [paperSize, setpaperSize] = useState();
@@ -33,16 +23,12 @@ const Product = () => {
   const [defaultType, setDefaultType] = useState("products");
   const [defaultImage, setDefaultImage] = useState("epson.jpg");
   const [almostLastBullet, setAlmostLastBullet] = useState();
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
+
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  var verifyCallback = function (response) {
-    setRecaptchaResponse(response);
-  };
   const captchaRef = useRef(null);
+
   useEffect(() => {
     const storedModel = localStorage.getItem("Model");
     const photo = localStorage.getItem("Image");

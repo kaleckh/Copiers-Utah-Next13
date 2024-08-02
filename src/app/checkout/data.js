@@ -1,16 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../../components/Header";
-import axios from "axios";
-import Image from "next/image";
-import Sliver from "../components/Sliverr";
 import { CartContext } from "../../providers/cart";
 import BreadCrumbs from "../components/BreadCrumbs";
-import Head from "next/head";
 import styles from "../styles/checkout.module.css";
 import Footer from "../components/Footer";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useRouter } from "next/navigation";
+
 const Checkout = (props) => {
   const router = useRouter();
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);

@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import ImageCarousel from "../components/Carousel";
-import Services from '../components/Services'
+import Services from "../components/Services";
 import Image from "next/image";
 import Section from "../components/Section";
 import Header from "../components/Header";
@@ -11,7 +11,6 @@ import styles from "../styles/homepage.module.css";
 import Footer from "../components/Footer";
 import { useRouter } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-
 
 export default function Homepage() {
   const [name, setName] = useState("");

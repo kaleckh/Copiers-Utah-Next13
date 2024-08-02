@@ -20,7 +20,6 @@ const ShortTerm = () => {
   const [message, setMessage] = useState("");
   const captchaRef = useRef(null);
 
-
   const onLoad = () => {
     console.log("onLoad works!");
   };

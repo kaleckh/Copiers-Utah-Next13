@@ -19,7 +19,6 @@ const Fix = () => {
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [zipCode, setZipCode] = useState("");
   const [ErrorMsg, setErrorMsg] = useState("");
   const [valid_token, setValidToken] = useState([]);
   const [token, setToken] = useState();

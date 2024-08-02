@@ -5,10 +5,7 @@ import Header from "../../components/Header";
 import Image from "next/image";
 import Section from "../../components/Section";
 import { CartContext } from "../../providers/cart";
-import { Client } from "square";
-import Sliver from "../components/Sliverr";
 import styles from "../styles/fileChoice.module.css";
-
 import Footer from "../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Link from "next/link";
@@ -21,7 +18,6 @@ const TonerChoice = (props) => {
   const oem = searchParams.get("oem");
   const toners = useContext(TonerContext);
   const toner = toners.find((toner) => toner.oem === oem);
-
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const { cart, setCart, cartLook, tonerOem } = useContext(CartContext);
   const [aboveOne, setAboveOne] = useState(false);

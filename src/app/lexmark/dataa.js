@@ -1,36 +1,21 @@
 "use client";
 import React, { useRef } from "react";
 import Header from "../../components/Header";
-import Head from "next/head";
 import Link from "next/link";
 import Section from "../../components/Section";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Footer from "../components/Footer";
 import Image from "next/image";
-import { Metadata } from "next";
-import { PatternFormat } from "react-number-format";
 import styles from "../styles/lexmark.module.css";
-import { useRouter } from "next/navigation";
-import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import { useState } from "react";
+
 const Lexmark = () => {
-  const router = useRouter();
-  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const tawkMessengerRef = useRef();
-  const [gray, setGray] = useState(true);
-  const [grayBottom, setGrayBottom] = useState(true);
-  const [quote, setQuote] = useState(false);
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
+
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  var verifyCallback = function (response) {
-    setRecaptchaResponse(response);
-  };
-  const captchaRef = useRef(null);
+
   const breadCrumbs = [{ name: "Home", url: "/" }];
 
   return (

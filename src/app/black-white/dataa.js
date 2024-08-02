@@ -1,12 +1,9 @@
 "use client";
 import React, { useRef, useState } from "react";
 import Header from "../../components/Header";
-import { Metadata } from "next";
 import BreadCrumbs from "../components/BreadCrumbs";
-import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
-import Sliver from "../components/Sliverr";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "../styles/black.module.css";

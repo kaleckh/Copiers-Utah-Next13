@@ -20,8 +20,6 @@ const Buy = (props) => {
   const [message, setMessage] = useState("");
   const tawkMessengerRef = useRef();
 
-
-
   const sendEmail = (e) => {
     e.preventDefault();
     console.log("Sending");

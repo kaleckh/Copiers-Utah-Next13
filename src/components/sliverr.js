@@ -1,15 +1,5 @@
-import React, {
-  useState,
-  forwardRef,
-  useImperativeHandle,
-  useRef,
-  useEffect,
-} from "react";
 import Link from "next/link";
 import Image from "next/image";
-//   import { MDBInput, MDBTextArea } from 'mdb-react-ui-kit'
-import Axios from "axios";
-import ReCAPTCHA from "react-google-recaptcha";
 import styles from "../styles/buy.module.css";
 
 const Sliver = () => {

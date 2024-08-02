@@ -1,9 +1,7 @@
 import styles from "../styles/Footer.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 export default function Section() {
-  const router = useRouter();
   return (
     <div className={styles.section}>
       <div className={styles.secondSection}>

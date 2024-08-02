@@ -2,37 +2,21 @@
 import React, { useRef } from "react";
 import Header from "../../components/Header";
 import Head from "next/head";
-import Form from "../components/Form";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Section from "../../components/Section";
 import Footer from "../components/Footer";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Sliver from "../components/Sliverr";
 import styles from "../styles/konika.module.css";
-import { useRouter } from "next/navigation";
-import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
 const Konica = () => {
-  const router = useRouter();
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const tawkMessengerRef = useRef();
-  const [gray, setGray] = useState(true);
-  const [grayBottom, setGrayBottom] = useState(true);
-  const [quote, setQuote] = useState(false);
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
+
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  var verifyCallback = function (response) {
-    setRecaptchaResponse(response);
-  };
-  const captchaRef = useRef(null);
-
   const breadCrumbs = [{ name: "Home", url: "/" }];
 
   return (
