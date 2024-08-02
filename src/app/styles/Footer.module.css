@@ -11,7 +11,7 @@
 
 .titleWhy {
   padding-right: 8px;
-  font-size: 30px
+  font-size: 30px;
 }
 
 .titleWhyBlue {
@@ -44,7 +44,6 @@
 }
 
 .exploreContainer2 {
-
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -67,7 +66,6 @@
   justify-content: space-evenly;
   width: 100%;
   height: 70%;
-
 }
 
 .footerTitle {
@@ -92,7 +90,7 @@
   height: 100%;
 }
 
-.secondSection{
+.secondSection {
   width: 60%;
 }
 
@@ -133,7 +131,6 @@
   justify-content: space-evenly;
 }
 
-
 .logo {
   height: 150px;
 }
@@ -151,11 +148,11 @@
   font-weight: 250;
 }
 
-.sectionSection{
+.sectionSection {
   width: 60%;
 }
 
-@media(max-width:1200px) {
+@media (max-width: 1200px) {
   .footer {
     flex-direction: column-reverse;
     height: fit-content;
@@ -163,7 +160,6 @@
 }
 
 @media (max-width: 650px) {
-
   .footerTags {
     font-size: 13px;
     width: 70%;
@@ -198,14 +194,12 @@
 
   .exploreContainer {
     justify-content: center;
-
   }
 
   .h4 {
     margin: 3px;
   }
-  .secondSection{
+  .secondSection {
     width: 100%;
   }
-
 }

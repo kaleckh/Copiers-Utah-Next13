@@ -57,7 +57,7 @@ const Form = (props) => {
       console.log(error);
     }
   };
-  console.log(Secret_Key, "this is key")
+  console.log(Secret_Key, "this is key");
   return (
     <div className={styles.container}>
       <div className={styles.black}>Get Your Quote!</div>

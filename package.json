@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prettier": "prettier . --write",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +17,7 @@
     "fs": "^0.0.1-security",
     "net": "^1.0.2",
     "next": "13.4.7",
+    "prettier": "^3.3.3",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-google-recaptcha": "^3.1.0",

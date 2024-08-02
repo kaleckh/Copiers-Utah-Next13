@@ -1,8 +1,6 @@
-import Data from './data'
+import Data from "./data";
 const cart = () => {
-    return (
-        <Data />
-    )
-}
+  return <Data />;
+};
 
-export default cart
+export default cart;

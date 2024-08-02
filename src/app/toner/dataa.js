@@ -62,7 +62,6 @@ const Buy = (props) => {
         },
       }),
     }).then((res) => {
-
       if (res.status === 200) {
         console.log("Response succeeded!");
         // setSubmitted(true);
@@ -84,14 +83,10 @@ const Buy = (props) => {
     console.log("onLoad works!");
   };
 
-  const breadCrumbs = [
-    { name: "Home", url: "/" },
-  ]
+  const breadCrumbs = [{ name: "Home", url: "/" }];
 
   return (
     <div className={styles.main}>
-
-
       <div>
         <TawkMessengerReact
           onLoad={onLoad}
@@ -107,11 +102,21 @@ const Buy = (props) => {
         <div style={{ width: "80%", display: "flex" }}>
           <div className={styles.filter}>
             <div className={styles.centerNormal}>
-              <div style={{ fontSize: "18px", width: "70%", fontWeight: "400" }} className={styles.titleBig}>Filter</div>
+              <div
+                style={{ fontSize: "18px", width: "70%", fontWeight: "400" }}
+                className={styles.titleBig}
+              >
+                Filter
+              </div>
             </div>
             <div className={styles.columnCenter}>
               <div className={styles.centerNormal}>
-                <div style={{ fontSize: "15px", width: "100%", fontWeight: "300" }} className={styles.titleSmall}>Brands</div>
+                <div
+                  style={{ fontSize: "15px", width: "100%", fontWeight: "300" }}
+                  className={styles.titleSmall}
+                >
+                  Brands
+                </div>
               </div>
               <div className={styles.row}>
                 <div className={styles.width}>
@@ -135,7 +140,9 @@ const Buy = (props) => {
               </div>
             </div>
             <div className={styles.columnCenter}>
-              <div style={{ fontSize: "16px" }} className={styles.titleBig}>color</div>
+              <div style={{ fontSize: "16px" }} className={styles.titleBig}>
+                color
+              </div>
               <div className={styles.row}>
                 <input className={styles.space} type="checkbox" />
                 <div>Black</div>
@@ -172,12 +179,10 @@ const Buy = (props) => {
                     // }}
                     className={styles.box}
                   >
-
                     <Link
                       onClick={() => {
-                        setTonerOem(toner.oem)
-                        localStorage.setItem("tonerOem", toner.oem)
-
+                        setTonerOem(toner.oem);
+                        localStorage.setItem("tonerOem", toner.oem);
                       }}
                       className={styles.somethingElse}
                       href={`/tonerChoice?oem=${toner.oem}`}
@@ -190,7 +195,10 @@ const Buy = (props) => {
                       ></Image>
                       <div className={styles.titleSmallBlack}>{toner.name}</div>
                       <div style={{ width: "100%" }}>
-                        <div style={{ paddingRight: "15px" }} className={styles.row}>
+                        <div
+                          style={{ paddingRight: "15px" }}
+                          className={styles.row}
+                        >
                           <div className={styles.row}>
                             <div
                               style={{
@@ -200,13 +208,18 @@ const Buy = (props) => {
                               }}
                             >
                               <div
-
-                                style={{ paddingRight: "5px", color: "rgb(2,50,92)" }}
+                                style={{
+                                  paddingRight: "5px",
+                                  color: "rgb(2,50,92)",
+                                }}
                                 className={styles.price}
                               >
                                 $
-                            </div>
-                              <div style={{ color: "rgb(2,50,92)" }} className={styles.modelSmallish}>
+                              </div>
+                              <div
+                                style={{ color: "rgb(2,50,92)" }}
+                                className={styles.modelSmallish}
+                              >
                                 {toner.price}
                               </div>
                             </div>
@@ -217,7 +230,7 @@ const Buy = (props) => {
                               className={styles.priceSmall}
                             >
                               OEM:
-                          </div>
+                            </div>
                             <div className={styles.modelSmall}>{toner.oem}</div>
                           </div>
                         </div>
@@ -226,13 +239,17 @@ const Buy = (props) => {
                           className={styles.rowOem}
                         >
                           <div
-                            style={{ paddingRight: "8px", paddingBottom: "5px" }}
+                            style={{
+                              paddingRight: "8px",
+                              paddingBottom: "5px",
+                            }}
                             className={styles.priceMedium}
                           >
                             Models:
-                        </div>
-                          <div className={styles.modelSmall}>{toner.models}</div>
-
+                          </div>
+                          <div className={styles.modelSmall}>
+                            {toner.models}
+                          </div>
                         </div>
                       </div>
                     </Link>

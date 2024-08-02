@@ -56,8 +56,17 @@
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    Roobert,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -66,7 +75,6 @@
   text-decoration: none;
   will-change: transform;
 }
-
 
 .button {
   appearance: none;
@@ -79,8 +87,17 @@
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    Roobert,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -131,7 +148,6 @@
   font-size: 30px;
   font-weight: 300;
   padding-bottom: 25px;
-
 }
 
 .something {
@@ -268,7 +284,6 @@
 .list {
   padding: 20px;
   width: 85%;
-
 }
 
 .Overview {
@@ -433,7 +448,6 @@
   height: 30%;
   width: 77%;
 }
-
 
 .aboutRow {
   display: flex;
@@ -711,7 +725,7 @@
 @media (max-width: 650px) {
   .titleBig {
     font-size: 22px;
-    padding: 0px
+    padding: 0px;
   }
 
   .titleBigBlue {

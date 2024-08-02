@@ -22,8 +22,17 @@
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    Roobert,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -64,8 +73,6 @@
   letter-spacing: 1px;
 }
 
-
-
 .button:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
@@ -103,8 +110,17 @@
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    Roobert,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -280,7 +296,6 @@
 .column {
   display: flex;
   flex-direction: column;
-
 }
 
 .text {
@@ -298,7 +313,6 @@
 .bulletPoints li {
   color: black;
   font-size: 20px;
-
 }
 
 .bulletBox {
@@ -325,7 +339,7 @@
   align-items: center;
   letter-spacing: 1px;
   padding-right: 20px;
-  width: 100%
+  width: 100%;
 }
 
 .title {
@@ -436,7 +450,6 @@
   grid-column-start: 1;
 }
 
-
 .container {
   padding: 20px;
   display: flex;
@@ -454,9 +467,7 @@
   height: 1.5px;
   background-color: rgb(174, 171, 178);
   color: rgb(245, 247, 248);
-  ;
   width: 80%;
-
 }
 
 .number {
@@ -650,7 +661,6 @@
   .paragraph {
     padding: 10px;
   }
-
 }
 
 @media (max-width: 1000px) {
@@ -758,12 +768,11 @@
   .paddedBox {
     width: 100%;
   }
-
 }
 
 @media (max-width: 640px) {
-  .padding {        
-    display: none;    
+  .padding {
+    display: none;
   }
 
   .iconContainer {
@@ -804,14 +813,13 @@
     font-size: 17px;
   }
 
-
   .eighty {
     height: fit-content;
     width: 95%;
   }
 
   .main {
-    height: fit-content
+    height: fit-content;
   }
 
   .row {

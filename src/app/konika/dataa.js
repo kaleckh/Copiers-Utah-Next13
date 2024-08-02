@@ -1,45 +1,42 @@
-"use client"
-import React, { useRef } from 'react'
-import Header from '../components/Header'
-import Head from 'next/head'
-import Form from '../components/Form'
+"use client";
+import React, { useRef } from "react";
+import Header from "../components/Header";
+import Head from "next/head";
+import Form from "../components/Form";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Section from "../components/Section";
-import Footer from '../components/Footer'
-import { Metadata } from 'next'
-import Image from 'next/image'
+import Footer from "../components/Footer";
+import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import Sliver from '../components/sliverr'
-import styles from '../styles/konika.module.css'
-import { useRouter } from 'next/navigation'
-import ReCAPTCHA from 'react-google-recaptcha'
-import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
-import { useState } from 'react'
+import Sliver from "../components/sliverr";
+import styles from "../styles/konika.module.css";
+import { useRouter } from "next/navigation";
+import ReCAPTCHA from "react-google-recaptcha";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import { useState } from "react";
 const Konica = () => {
-  const router = useRouter()
-  const [recaptchaResponse, setRecaptchaResponse] = useState(false)
-  const tawkMessengerRef = useRef()
-  const [gray, setGray] = useState(true)
-  const [grayBottom, setGrayBottom] = useState(true)
-  const [quote, setQuote] = useState(false)
+  const router = useRouter();
+  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
+  const tawkMessengerRef = useRef();
+  const [gray, setGray] = useState(true);
+  const [grayBottom, setGrayBottom] = useState(true);
+  const [quote, setQuote] = useState(false);
   const handleMinimize = () => {
-    tawkMessengerRef.current.minimize()
-  }
+    tawkMessengerRef.current.minimize();
+  };
   const onLoad = () => {
-    console.log('onLoad works!')
-  }
+    console.log("onLoad works!");
+  };
   var verifyCallback = function (response) {
-    setRecaptchaResponse(response)
-  }
-  const captchaRef = useRef(null)
+    setRecaptchaResponse(response);
+  };
+  const captchaRef = useRef(null);
 
-  const breadCrumbs = [
-    { name: "Home", url: "/" },
-  ]
+  const breadCrumbs = [{ name: "Home", url: "/" }];
 
   return (
     <div className={styles.main}>
-
       <Head>
         <title>
           New and Used Lexmark Copiers | High-Quality and Affordable | Copiers
@@ -64,13 +61,13 @@ const Konica = () => {
       </div>
       <Header />
       <BreadCrumbs breadCrumbs={breadCrumbs} />
-      <div className={styles.height}
+      <div
+        className={styles.height}
         style={{
-
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          justifyContent: "flex-start",
         }}
       >
         <div className={styles.lineColumn}>
@@ -86,81 +83,92 @@ const Konica = () => {
                 alt={"a checkmark"}
               />
             </div>
-
-
           </div>
           <div className={styles.column}>
             <div>
               <div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
                     Konica Minolta copiers have multifunction capabilities,
                     allowing them to print, scan, copy, and fax documents.
-                    </div>
+                  </div>
                 </div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
-                    Customizable workflows are available to improve
-                    productivity with Konica Minolta copiers.
-                    </div>
+                    Customizable workflows are available to improve productivity
+                    with Konica Minolta copiers.
+                  </div>
                 </div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
                     Konica Minolta is committed to sustainability and offers
                     eco-friendly features.
-                    </div>
+                  </div>
                 </div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
-                    Advanced security features are included to protect
-                    sensitive data on Konica Minolta copiers.
-                    </div>
+                    Advanced security features are included to protect sensitive
+                    data on Konica Minolta copiers.
+                  </div>
                 </div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
                     Konica Minolta copiers produce high-quality color or
                     black-and-white documents.
-                    </div>
+                  </div>
                 </div>
                 <div className={styles.buttonContainer}>
                   <div className={styles.buttonCenter}>
                     <h2>
-                      <Link href={'/buy'}>
-                        <button
-                          className={styles.button}
-                        >
+                      <Link href={"/buy"}>
+                        <button className={styles.button}>
                           Request a quote
-                    </button>
+                        </button>
                       </Link>
                     </h2>
                   </div>
@@ -168,7 +176,6 @@ const Konica = () => {
               </div>
             </div>
           </div>
-
         </div>
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -194,9 +201,9 @@ const Konica = () => {
             <div className={`${styles.row} ${styles.hidden}`}>
               <div className={styles.box}>
                 <Image
-                  src={'/static/desktop.webp'}
+                  src={"/static/desktop.webp"}
                   height={100}
-                  alt={'Konika Minolta Desktop copiers'}
+                  alt={"Konika Minolta Desktop copiers"}
                   width={100}
                 />
                 <div className={styles.titleMid}>
@@ -207,15 +214,12 @@ const Konica = () => {
                   <button className={styles.button}>See Options</button>
                 </Link>
               </div>
-              <div
-
-                className={styles.box}
-              >
+              <div className={styles.box}>
                 <Image
-                  src={'/static/colorCopier.webp'}
+                  src={"/static/colorCopier.webp"}
                   height={100}
                   width={100}
-                  alt={'Konika Minolta Color Copiers'}
+                  alt={"Konika Minolta Color Copiers"}
                 />
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
@@ -226,13 +230,13 @@ const Konica = () => {
               </div>
               <div className={styles.box}>
                 <Image
-                  src={'/static/blackAndWhite.webp'}
+                  src={"/static/blackAndWhite.webp"}
                   height={100}
                   width={100}
-                  alt={'Black and White Konika Minolta Copiers'}
+                  alt={"Black and White Konika Minolta Copiers"}
                 />
                 <div className={styles.titleMid}>Black And White Copiers</div>
-                <Link href={'/black-white'}>
+                <Link href={"/black-white"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
               </div>
@@ -243,7 +247,7 @@ const Konica = () => {
       <Section />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Konica
+export default Konica;

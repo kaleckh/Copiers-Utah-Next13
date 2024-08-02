@@ -57,7 +57,7 @@ const TonerChoice = (props) => {
     }
   }, [quantity, toner.price]);
 
-  useEffect(() => { });
+  useEffect(() => {});
   const sendSuccessEmail = (e) => {
     e.preventDefault();
     fetch("https://api.smtp2go.com/v3/email/send", {
@@ -103,19 +103,18 @@ const TonerChoice = (props) => {
     console.log("onLoad works!");
   };
 
-  
   async function getOrderData() {
     const response = await fetch(`/api/pay`);
     const data = await response.json();
     setNumber(
-      data.data.order.fulfillments[0].shipment_details.recipient.phone_number
+      data.data.order.fulfillments[0].shipment_details.recipient.phone_number,
     );
     setEmail(
-      data.data.order.fulfillments[0].shipment_details.recipient.email_address
+      data.data.order.fulfillments[0].shipment_details.recipient.email_address,
     );
     setOrderId(data.data.order.id);
     setName(
-      data.data.order.fulfillments[0].shipment_details.recipient.display_name
+      data.data.order.fulfillments[0].shipment_details.recipient.display_name,
     );
     setData(data.data.order.fulfillments[0].shipment_details.recipient.address);
   }
@@ -166,7 +165,6 @@ const TonerChoice = (props) => {
 
     const response = await fetch("/api/pay/distribution", requestOptions);
     const data1 = await response.json();
-
   }
 
   // function successCallback() {
@@ -184,7 +182,7 @@ const TonerChoice = (props) => {
   const breadCrumbs = [
     { name: "Home", url: "/" },
     { name: `Toners`, url: `/toner` },
-  ]
+  ];
   return (
     <div className={styles.main}>
       <div>
@@ -200,7 +198,6 @@ const TonerChoice = (props) => {
       <div className={styles.mainContent}>
         <div className={styles.center}>
           <div className={styles.column}>
-
             {/* <div className={styles.titleSmall}> OEM #: {toner.oem}</div> */}
             <div className={styles.imageContainer}>
               <Image src={toner.image} width={300} height={250} />
@@ -227,9 +224,7 @@ const TonerChoice = (props) => {
                     </div>
                   </div>
                   <div className={styles.detailColumn}>
-                    <div className={styles.titleSmall}>
-                      Shipping Weight:
-                    </div>
+                    <div className={styles.titleSmall}>Shipping Weight:</div>
 
                     <div className={styles.titleSmall}>
                       Condition: <div className={styles.small}>New</div>
@@ -239,15 +234,31 @@ const TonerChoice = (props) => {
               </div>
               <div className={styles.line}></div>
             </div>
-            <div style={{ paddingTop: "10px", marginBottom: "10px", paddingBottom: "20px", display: "flex", width: "35%", paddingRight: "10px" }} className={styles.titleSmall}>
+            <div
+              style={{
+                paddingTop: "10px",
+                marginBottom: "10px",
+                paddingBottom: "20px",
+                display: "flex",
+                width: "35%",
+                paddingRight: "10px",
+              }}
+              className={styles.titleSmall}
+            >
               Qty
               <div className={styles.centerBottom}>
                 <div className={styles.centerPlus}>
-                  <div onClick={() => {
-                    setQuantity(quantity + 1)
-                  }} className={styles.plus}>+</div>
+                  <div
+                    onClick={() => {
+                      setQuantity(quantity + 1);
+                    }}
+                    className={styles.plus}
+                  >
+                    +
+                  </div>
                 </div>
-                <input style={{ textAlign: "center" }}
+                <input
+                  style={{ textAlign: "center" }}
                   onChange={(event) => {
                     setQuantity(event.target.value);
                   }}
@@ -256,12 +267,16 @@ const TonerChoice = (props) => {
                   type="number"
                 />
                 <div className={styles.centerPlus}>
-                  <div onClick={() => {
-                    if (quantity > 1) {
-                      setQuantity(quantity - 1)
-                    }
-
-                  }} className={styles.minus}>-</div>
+                  <div
+                    onClick={() => {
+                      if (quantity > 1) {
+                        setQuantity(quantity - 1);
+                      }
+                    }}
+                    className={styles.minus}
+                  >
+                    -
+                  </div>
                 </div>
               </div>
             </div>
@@ -270,7 +285,6 @@ const TonerChoice = (props) => {
                 className={styles.buttonBlue}
                 onClick={(e) => {
                   getOrderData().then(() => {
-
                     setOrderData().then(() => {
                       sendSuccessEmail(e);
                       createDistribution();
@@ -298,14 +312,13 @@ const TonerChoice = (props) => {
                         ];
                         setCart(updatedCart);
                         // JSON.stringify(`localStorage`.setItem("cart", updatedCart))
-
                       }}
                     >
                       Add To Cart
                     </div>
                   ) : (
-                      <div>Already Added</div>
-                    )}
+                    <div>Already Added</div>
+                  )}
                 </button>
               </Link>
             </div>

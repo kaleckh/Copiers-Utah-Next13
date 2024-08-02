@@ -1,6 +1,6 @@
 import React from "react";
 
-export  const Twitter = () => {
+export const Twitter = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ export  const Twitter = () => {
         fontSize="none"
         textAnchor="none"
         style={{
-          mixBlendMode:"normal"
+          mixBlendMode: "normal",
         }}
       >
         <g transform="scale(5.12,5.12)">
@@ -36,4 +36,3 @@ export  const Twitter = () => {
     </svg>
   );
 };
-

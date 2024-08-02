@@ -14,40 +14,49 @@ export const CartProvider = ({ children }) => {
   let [personInfo, setPersonInfo] = useState({});
   let [totalAmount, setTotalAmount] = useState();
 
-
-
   useEffect(() => {
     if (cart.length > 0) {
-      localStorage.setItem("cart", JSON.stringify(cart))
+      localStorage.setItem("cart", JSON.stringify(cart));
     }
-
   }, [cart]);
 
   useEffect(() => {
-    var price = 0
+    var price = 0;
     cart.map((item) => {
-      price = price + item.price * item.quantity
-    })
-    price = price + 2.99
-    setTotalAmount(price.toFixed(2))
-  }, [cart])
+      price = price + item.price * item.quantity;
+    });
+    price = price + 2.99;
+    setTotalAmount(price.toFixed(2));
+  }, [cart]);
 
   useEffect(() => {
     if (realPrice !== undefined) {
-      localStorage.setItem("realPrice", JSON.stringify(realPrice))
+      localStorage.setItem("realPrice", JSON.stringify(realPrice));
     }
-  }, [realPrice])
+  }, [realPrice]);
 
   useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem("cart")) ?? [])
-    setTonerOem((localStorage.getItem("tonerOem")))
-
-  }, [])
-
-
+    setCart(JSON.parse(localStorage.getItem("cart")) ?? []);
+    setTonerOem(localStorage.getItem("tonerOem"));
+  }, []);
 
   return (
-    <CartContext.Provider value={{ cart, setCart, setRealPrice, cardInfo, setCardInfo, personInfo, setPersonInfo, totalAmount, billingInfo, setBillingInfo, tonerOem, setTonerOem }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        setCart,
+        setRealPrice,
+        cardInfo,
+        setCardInfo,
+        personInfo,
+        setPersonInfo,
+        totalAmount,
+        billingInfo,
+        setBillingInfo,
+        tonerOem,
+        setTonerOem,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

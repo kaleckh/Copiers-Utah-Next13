@@ -1,11 +1,11 @@
 import styles from "../styles/Header.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Sliver from '../components/sliverr'
+import Sliver from "../components/sliverr";
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Image from "next/image";
 import cart from "../cart/page";
-import Logo from '../../../public/static/logo.webp'
+import Logo from "../../../public/static/logo.webp";
 import { CartContext } from "../../providers/cart";
 export default function Header() {
   const router = useRouter();
@@ -18,14 +18,14 @@ export default function Header() {
         <div className={styles.logoSpaceContainer}>
           <div className={styles.logoSpace}>
             <div className={styles.logoContainer}>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <Image
                   src={Logo}
                   alt="Picture of the author"
                   sizes="100vw"
                   style={{
-                    width: '100%',
-                    height: 'auto',
+                    width: "100%",
+                    height: "auto",
                   }}
                 />
               </Link>
@@ -79,21 +79,16 @@ export default function Header() {
                 <div className={styles.lineSmall}></div>
               </Link>
             </div>
-            <Link href={'/cart'}>
+            <Link href={"/cart"}>
               <div className={styles.cartContainer}>
-                <Image
-                  src="/static/cart.webp"
-                  alt="cart icon"
-                  fill={true}
-                />
+                <Image src="/static/cart.webp" alt="cart icon" fill={true} />
               </div>
             </Link>
           </div>
-        </div >
-        <div className={styles.line}></div>
-        <div className={styles.headerContainer}>
         </div>
-      </header >
+        <div className={styles.line}></div>
+        <div className={styles.headerContainer}></div>
+      </header>
     </div>
   );
 }

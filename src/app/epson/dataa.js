@@ -1,39 +1,37 @@
-"use client"
-import React, { useRef } from 'react'
-import Header from '../components/Header'
-import { Metadata } from 'next'
+"use client";
+import React, { useRef } from "react";
+import Header from "../components/Header";
+import { Metadata } from "next";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Section from "../components/Section";
 import Link from "next/link";
-import Footer from '../components/Footer'
-import Image from 'next/image'
-import { PatternFormat } from 'react-number-format'
-import styles from '../styles/epson.module.css'
-import { useRouter } from 'next/navigation'
-import ReCAPTCHA from 'react-google-recaptcha'
-import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
-import { useState } from 'react'
+import Footer from "../components/Footer";
+import Image from "next/image";
+import { PatternFormat } from "react-number-format";
+import styles from "../styles/epson.module.css";
+import { useRouter } from "next/navigation";
+import ReCAPTCHA from "react-google-recaptcha";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import { useState } from "react";
 const Epson = () => {
-  const router = useRouter()
-  const [recaptchaResponse, setRecaptchaResponse] = useState(false)
-  const tawkMessengerRef = useRef()
-  const [gray, setGray] = useState(true)
-  const [grayBottom, setGrayBottom] = useState(true)
-  const [quote, setQuote] = useState(false)
+  const router = useRouter();
+  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
+  const tawkMessengerRef = useRef();
+  const [gray, setGray] = useState(true);
+  const [grayBottom, setGrayBottom] = useState(true);
+  const [quote, setQuote] = useState(false);
   const handleMinimize = () => {
-    tawkMessengerRef.current.minimize()
-  }
+    tawkMessengerRef.current.minimize();
+  };
   const onLoad = () => {
-    console.log('onLoad works!')
-  }
+    console.log("onLoad works!");
+  };
   var verifyCallback = function (response) {
-    setRecaptchaResponse(response)
-  }
-  const captchaRef = useRef(null)
+    setRecaptchaResponse(response);
+  };
+  const captchaRef = useRef(null);
 
-  const breadCrumbs = [
-    { name: "Home", url: "/" },
-  ]
+  const breadCrumbs = [{ name: "Home", url: "/" }];
 
   return (
     <div className={styles.main}>
@@ -49,15 +47,14 @@ const Epson = () => {
       <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div
         style={{
-          height: 'fit-content',
+          height: "fit-content",
           padding: "20px",
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          justifyContent: "flex-start",
         }}
       >
-
         <div className={`${styles.row}`}>
           <div className={styles.copierContainer}>
             <div className={styles.center}>
@@ -70,8 +67,6 @@ const Epson = () => {
             </div>
           </div>
 
-
-
           <div className={styles.column}>
             <div className={styles.lineColumn}>
               <h1 className={styles.color}>Epson</h1>
@@ -79,76 +74,85 @@ const Epson = () => {
             <div>
               <div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
                     Epson copiers are multifunction devices.
                   </div>
                 </div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
                     They produce high-quality output.
                   </div>
                 </div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
                     They have an easy-to-use interface.
                   </div>
                 </div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
                     They are cost-effective.
                   </div>
                 </div>
                 <div className={styles.bulletContainer}>
-                  <div>   <Image
-                    src="/static/seen.webp"
-                    width={25}
-                    height={25}
-                    alt={"a seen"}
-                  /></div>
+                  <div>
+                    {" "}
+                    <Image
+                      src="/static/seen.webp"
+                      width={25}
+                      height={25}
+                      alt={"a seen"}
+                    />
+                  </div>
                   <div className={styles.paragraphSmall}>
                     Epson copiers utilize advanced printing technologies.
                   </div>
                 </div>
                 <div className={styles.buttonCenter}>
                   <h2>
-                    <Link href={'/buy'}>
-                      <button
-
-                        className={styles.button}
-                      >
-                        Request a quote
-                      </button>
+                    <Link href={"/buy"}>
+                      <button className={styles.button}>Request a quote</button>
                     </Link>
                   </h2>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
@@ -162,7 +166,10 @@ const Epson = () => {
               reports. With Epson copiers, you can expect vivid and accurate
               prints that make a lasting impression.
             </div>
-            <div style={{ marginBottom: "50px" }} className={`${styles.paragraph} ${styles.hidden}`}>
+            <div
+              style={{ marginBottom: "50px" }}
+              className={`${styles.paragraph} ${styles.hidden}`}
+            >
               Epson copiers are also renowned for their reliability and
               durability. Epson is a trusted brand known for manufacturing
               high-quality products, and their copiers are no exception. These
@@ -178,7 +185,12 @@ const Epson = () => {
 
             <div className={`${styles.row} ${styles.hidden}`}>
               <div className={styles.box}>
-                <Image src={'/static/desktop.webp'} height={100} width={100} alt={'Desktop printers for sale'} />
+                <Image
+                  src={"/static/desktop.webp"}
+                  height={100}
+                  width={100}
+                  alt={"Desktop printers for sale"}
+                />
 
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
@@ -190,9 +202,9 @@ const Epson = () => {
               </div>
               <div className={styles.box}>
                 <Image
-                  src={'/static/colorCopier.webp'}
+                  src={"/static/colorCopier.webp"}
                   height={100}
-                  alt={'color copiers for sale'}
+                  alt={"color copiers for sale"}
                   width={100}
                 />
 
@@ -206,15 +218,15 @@ const Epson = () => {
               </div>
               <div className={styles.box}>
                 <Image
-                  src={'/static/blackAndWhite.webp'}
+                  src={"/static/blackAndWhite.webp"}
                   height={100}
                   width={100}
-                  alt={'black and white copiers for sale'}
+                  alt={"black and white copiers for sale"}
                 />
 
                 <div className={styles.titleMid}>Black And White Copiers</div>
 
-                <Link href={'/black-white'}>
+                <Link href={"/black-white"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
               </div>
@@ -225,7 +237,7 @@ const Epson = () => {
       <Section />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Epson
+export default Epson;

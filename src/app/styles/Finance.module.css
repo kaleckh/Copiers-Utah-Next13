@@ -1,593 +1,600 @@
 .main {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+.logoSpace {
+  height: 30%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button {
+  appearance: none;
+  background-color: rgb(254, 190, 104);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-sizing: border-box;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family:
+    Roobert,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  will-change: transform;
+}
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.center {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  height: 55vh;
+}
+
+.centerLine {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.centerLarge {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 50px;
+  font-weight: 400;
+  justify-content: center;
+  align-items: flex-end;
+  letter-spacing: 1px;
+}
+
+.button:disabled {
+  pointer-events: none;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.buttonContainer {
+  width: 200px;
+}
+
+.paragraphContainer {
+  width: 50%;
+}
+
+.smaller {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+
+.paragraph {
+  color: rgb(109, 113, 132);
+  font-size: 25px;
+  font-weight: 200;
+}
+
+.logo {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+
+.menuRow {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+}
+
+.image {
+  width: 500px;
+}
+
+.section {
+  width: 250px;
+  height: 225px;
+  box-shadow: 1px 1px 9px gray;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  border-radius: 15px;
+}
+
+.repair {
+  background-image: url("/static/repair.jpg");
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+
+.toner {
+  background-image: url("/static/toner.jpg");
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+
+.itWork {
+  background-image: url("/static/itWork.jpg");
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+
+.construction {
+  background-image: url("/static/construction.jpg");
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+
+.woman {
+  background-image: url("/static/financing.webp");
+  height: 67vh;
+  width: 49vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+
+.shade {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.shadeBig {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.shadeBig:hover {
+  padding: 10px;
+  padding-bottom: 55px;
+  background-color: gray;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.shade:hover {
+  background-color: gray;
+  transition: all 0.3s ease-in-out;
+}
+
+.sectionBig {
+  box-shadow: 1px 1px 9px gray;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  border-radius: 15px;
+}
+
+.smallRow {
+  display: flex;
+}
+
+.square {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+  font-weight: 200;
+}
+
+.titleBig {
+  font-size: 50px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+}
+
+.smallTitle {
+  font-weight: 500;
+  padding: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+}
+
+.titleBig {
+  color: black;
+  font-size: 50px;
+  letter-spacing: 1.5px;
+}
+
+.titleContainer {
+  width: 28%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 110%;
+}
+
+.rowX {
+  display: flex;
+}
+
+.button-43 {
+  background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-43:hover {
+  background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(245, 247, 248);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 55vh;
+  width: 30vw;
+  border-radius: 10px;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+
+.black {
+  font-size: 30px;
+  color: black;
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-bottom: 1px black solid;
+  background-color: transparent;
+  border-color: rgb(169, 172, 173);
+  font-size: 17px;
+}
+
+.numberContainer {
+  width: 95%;
+  display: flex;
+  align-items: center;
+}
+
+.light {
+  font-weight: 250;
+  color: rgb(169, 172, 173);
+}
+
+.subHeader {
+  font-weight: 200;
+  padding: 10px;
+}
+
+.textarea {
+  width: 100%;
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.space {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.inputSingle {
+  width: 100%;
+  outline: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid rgb(210, 210, 210);
+  color: black;
+}
+
+.button:disabled {
+  pointer-events: none;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.selected {
+  width: 60%;
+  height: 30px;
+  color: rgb(147, 147, 147);
+  border-color: rgb(147, 147, 147);
+}
+
+.inputDouble {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 50vw;
   }
-  
-  .logoSpace {
-    height: 30%;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 45vw;
+    font-size: 27px;
   }
-  
-  .button {
-    appearance: none;
-    background-color: rgb(254, 190, 104);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    box-sizing: border-box;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0;
-    min-height: 30px;
-    min-width: 0;
-    outline: none;
-    padding: 16px 24px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 200px;
-    will-change: transform;
-  }
-  .button:disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  
-  .center {
-    width: 40%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    height: 55vh;
-  }
-  
-  .centerLine {
-    display: flex;
-    justify-content: center;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  
-  .centerLarge {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    font-size: 50px;
-    font-weight: 400;
-    justify-content: center;
-    align-items: flex-end;
-    letter-spacing: 1px;
-  }
-  
-  .button:disabled {
-    pointer-events: none;
-  }
-  
-  .button:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
-  }
-  
-  .button:active {
-    box-shadow: none;
-    transform: translateY(0);
-  }
-  
-  .buttonContainer {
-    width: 200px;
-  }
-  
-  .paragraphContainer {
-    width: 50%;
-  }
-  
-  .smaller {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-  }
-  
-  .paragraph {
-    color: rgb(109, 113, 132);
-    font-size: 25px;
-    font-weight: 200;
-  }
-  
-  .logo {
-    width: 170px;
-    height: 170px;
-    object-fit: contain;
-  }
-  
-  .menuRow {
-    display: flex;
-    justify-content: space-around;
-    width: 25%;
-  }
-  
-  .image {
-    width: 500px;
-  }
-  
-  .section {
-    width: 250px;
-    height: 225px;
-    box-shadow: 1px 1px 9px gray;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: black;
-    border-radius: 15px;
-  }
-  
-  .repair {
-    background-image: url("/static/repair.jpg");
-    height: 30vh;
-    width: 20vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-  }
-  
-  .toner {
-    background-image: url("/static/toner.jpg");
-    height: 30vh;
-    width: 20vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-  }
-  
-  .itWork {
-    background-image: url("/static/itWork.jpg");
-    height: 30vh;
-    width: 20vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-  }
-  
-  .construction {
-    background-image: url("/static/construction.jpg");
-    height: 30vh;
-    width: 20vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-  }
-  
   .woman {
-    background-image: url("/static/financing.webp");
-    height: 67vh;
-    width: 49vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
+    display: none;
   }
-  
-  .shade {
-    padding: 10px;
-    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 80vw;
+    font-size: 27px;
   }
-  
-  .shadeBig {
-    padding: 10px;
-    border-radius: 10px;
+  .woman {
+    display: none;
   }
-  
-  .shadeBig:hover {
-    padding: 10px;
-    padding-bottom: 55px;
-    background-color: gray;
-    transition: all 0.3s ease-in-out;
-    border-radius: 10px;
-  }
-  
-  .shade:hover {
-    background-color: gray;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .sectionBig {
-    box-shadow: 1px 1px 9px gray;
-    width: 500px;
-    height: 400px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    color: black;
-    border-radius: 15px;
-  }
-  
-  .smallRow {
-    display: flex;
-  }
-  
-  .square {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-  }
-  
-  .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .text {
-    text-align: center;
-    font-weight: 200;
-  }
-  
-  .titleBig {
-    font-size: 50px;
-    font-weight: 500;
-    color: black;
-    text-align: center;
-  }
-  
-  .smallTitle {
-    font-weight: 500;
-    padding: 15px;
-    color: black;
-    font-size: 20px;
-  }
-  
-  .title {
-    font-size: 40px;
-    font-weight: 400;
-    color: black;
-    text-align: center;
-  }
-  
-  .titleBig {
-    color: black;
-    font-size: 50px;
-    letter-spacing: 1.5px;
-  }
-  
-  .titleContainer {
-    width: 28%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
-    height: 110%;
-  }
-  
-  .rowX {
-    display: flex;
-  }
-  
+}
+
+@media (min-width: 768px) {
   .button-43 {
-    background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-    color: #ffffff;
-    display: flex;
-    font-size: 16px;
-    justify-content: center;
-    padding: 1rem 1.75rem;
-    text-decoration: none;
-    width: 100%;
-    border: 0;
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    padding: 1rem 2rem;
   }
-  
-  .button-43:hover {
-    background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
-  }
-  
-  .container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgb(245, 247, 248);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height: 55vh;
-    width: 30vw;
-    border-radius: 10px;
-  }
-  
-  
-  
-  .number {
-    background-color: #5fcf80;
-    color: #fff;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    font-size: 0.8em;
-    margin-right: 4px;
-    line-height: 30px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-radius: 100%;
-  }
-  
-  .black {
-    font-size: 30px;
-    color: black;
-  }
-  
-  .input {
-    border: none;
-    outline: none;
-    border-bottom: 1px black solid;
-    background-color: transparent;
-    border-color: rgb(169, 172, 173);
-    font-size: 17px;
-  }
-  
-  .numberContainer {
-    width: 95%;
-    display: flex;
-    align-items: center;
-  }
-  
-  .light {
-    font-weight: 250;
-    color: rgb(169, 172, 173);
-  }
-  
-  .subHeader {
-    font-weight: 200;
-    padding: 10px;
-  }
-  
-  .textarea {
-    width: 100%;
-    border-bottom: 1px solid black;
-    color: black;
-  }
-  
-  .textarea:focus {
-    outline: none;
-  }
-  
-  .space {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-  }
-  
-  .inputSingle {
-    width: 100%;
-    outline: none;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: transparent;
-    border: 1px solid rgb(210,210,210);
-    color: black;
-  }
-  
-  .button:disabled {
-    pointer-events: none;
-  }
-  
-  .button:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
-  }
-  
-  .button:active {
-    box-shadow: none;
-    transform: translateY(0);
-  }
-  
-  .selected {
-    width: 60%;
-    height: 30px;
-    color: rgb(147, 147, 147);
-    border-color: rgb(147, 147, 147);
-  }
-  
-  .inputDouble {
-    display: flex;
-    align-items: center;
-  }
-  
-  @media (max-width: 1000px) {
-    .container {
-      width: 50vw;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .container {
-      width: 45vw;
-      font-size: 27px;
-    }
-    .woman {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .container {
-      width: 80vw;
-      font-size: 27px;
-    }
-    .woman {
-      display: none;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .button-43 {
-      padding: 1rem 2rem;
-    }
-  }
-  
-  .photoBox {
-    width: 800px;
-    height: 350px;
-    background-color: white;
-  }
-  
-  .eighty {
-    width: 90%;
-  }
-  
-  .secondSection {
-    height: 82vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
-  }
-  
-  .thirdSection {
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  .optionContainer {
-    display: flex;
-    width: 100%;
-    height: 20%;
-    justify-content: space-around;
-  }
-  
-  .info {
-    color: rgb(109, 113, 132);
-    line-height: 23px;
-  }
-  
-  .optionsContainer {
-    display: flex;
-    width: 20%;
-    height: 50%;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-  }
-  
-  .logoSpaceContainer {
-    height: 15vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .columnContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 80%;
-  }
-  
-  .infoSmall {
-    color: black;
-    font-size: 17px;
-  }
-  
-  .infoMedium {
-    color: black;
-    font-weight: 400;
-    font-size: 20px;
-  }
-  
-  .infoBig {
-    color: black;
-    font-weight: 700;
-    font-size: 30px;
-  }
-  
-  .parent {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  
-  .parent div {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    grid-row-start: 1;
-    grid-column-start: 1;
-  }
-  
-  .container {
-    padding: 20px;
-    background-color: rgb(245, 247, 248);
-    height: 65vh;
-    width: 30vw;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  .end {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
-  }
-  
-  .line {
-    height: 1px;
-    width: 80%;
-    background-color: rgb(218, 221, 233);
-  }
-  
-  .number {
-    background-color: #5fcf80;
-    color: #fff;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    font-size: 0.8em;
-    margin-right: 4px;
-    line-height: 30px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-radius: 100%;
-  }
-  
-  .black {
-    font-size: 30px;
-  }
-  
-  /* input {
+}
+
+.photoBox {
+  width: 800px;
+  height: 350px;
+  background-color: white;
+}
+
+.eighty {
+  width: 90%;
+}
+
+.secondSection {
+  height: 82vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.thirdSection {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.optionContainer {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  justify-content: space-around;
+}
+
+.info {
+  color: rgb(109, 113, 132);
+  line-height: 23px;
+}
+
+.optionsContainer {
+  display: flex;
+  width: 20%;
+  height: 50%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.logoSpaceContainer {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.columnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.infoSmall {
+  color: black;
+  font-size: 17px;
+}
+
+.infoMedium {
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.infoBig {
+  color: black;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.parent div {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.container {
+  padding: 20px;
+  background-color: rgb(245, 247, 248);
+  height: 65vh;
+  width: 30vw;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.end {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.line {
+  height: 1px;
+  width: 80%;
+  background-color: rgb(218, 221, 233);
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+
+.black {
+  font-size: 30px;
+}
+
+/* input {
       border: none;
       outline: none;
       border-bottom: 1px black solid;
@@ -595,141 +602,149 @@
       border-color: rgb(169, 172, 173);
       font-size: 17px;
   } */
-  
-  .numberContainer {
-    width: 95%;
-    display: flex;
-    align-items: center;
-  }
-  
-  .light {
-    font-weight: 250;
-    color: rgb(169, 172, 173);
-  }
-  
-  .space {
-    display: flex;
+
+.numberContainer {
+  width: 95%;
+  display: flex;
+  align-items: center;
+}
+
+.light {
+  font-weight: 250;
+  color: rgb(169, 172, 173);
+}
+
+.space {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.buttonBlue {
+  appearance: none;
+  border: none;
+  background-color: rgb(1, 51, 93);
+  width: 80%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family:
+    Roobert,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  will-change: transform;
+}
+.buttonBlue:disabled {
+  opacity: 0.5;
+}
+.phoneNumber {
+  background-color: transparent;
+  outline: none;
+  color: rgb(117, 117, 117);
+  border: none;
+  border: 1px solid rgb(210, 210, 210);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 20px;
+}
+.phoneNumber:focus {
+  border: none;
+}
+
+.selected {
+  width: 60%;
+  height: 30px;
+  color: rgb(147, 147, 147);
+  border-color: rgb(147, 147, 147);
+}
+
+.inputDouble {
+}
+
+@media (max-width: 1200px) {
+  .row {
     width: 100%;
-    justify-content: center;
   }
-  .buttonBlue {
-    appearance: none;
-    border: none;
-    background-color: rgb(1,51,93);
-    width: 80%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border: none;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-    padding: 10px;
+  .center {
     text-align: center;
-    text-decoration: none;
-    will-change: transform;
   }
-  .buttonBlue:disabled{
-    opacity: .5;
+}
+
+@media (max-width: 700px) {
+  .woman {
+    display: none;
   }
-  .phoneNumber {
-    background-color: transparent;
-    outline: none;
-    color: rgb(117, 117, 117);
-    border: none;
-    border: 1px solid rgb(210,210,210);
-    padding: 10px;
-    border-radius: 5px;
+  .row {
+    justify-content: center;
     width: 100%;
-    font-size: 20px;
   }
-  .phoneNumber:focus {
-    border: none;
+  .center {
+    text-align: center;
+    width: 80%;
   }
-  
-  .selected {
-    width: 60%;
-    height: 30px;
-    color: rgb(147, 147, 147);
-    border-color: rgb(147, 147, 147);
+  .title {
+    font-size: 29px;
   }
-  
-  .inputDouble {
+  .optionContainer {
+    height: 35%;
   }
-  
-  @media (max-width: 1200px) {
-    .row {
-      width: 100%;
-    }
-    .center {
-      text-align: center;
-    }
+  .optionsContainer {
+    height: 50%;
+    width: 30%;
   }
-  
-  @media (max-width: 700px) {
-    .woman {
-      display: none;
-    }
-    .row {
-      justify-content: center;
-      width: 100%;
-    }
-    .center {
-      text-align: center;
-      width: 80%;
-    }
-    .title {
-      font-size: 29px;
-    }
-    .optionContainer {
-      height: 35%;
-    }
-    .optionsContainer {
-      height: 50%;
-      width: 30%;
-    }
-    .info {
-      width: 100%;
-    }
+  .info {
+    width: 100%;
   }
-  
-  @media (max-width: 600px) {
-    .columnContainer {
-      flex-direction: column;
-      align-items: flex-end;
-    }
-    .logoSpace {
-      width: 95%;
-      justify-content: space-around;
-    }
-    .infoMedium {
-      font-size: 17px;
-      text-align: end;
-    }
-    .infoBig {
-      font-size: 25px;
-    }
-    .thirdSection {
-      height: 66vh;
-    }
-    .optionContainer {
-      height: 62%;
-    }
-    .row {
-      height: 130%;
-    }
-    .center {
-      height: 100%;
-    }
-    .title {
-      display: none;
-    }
-    .container {
-      width: 95vw;
-    }
+}
+
+@media (max-width: 600px) {
+  .columnContainer {
+    flex-direction: column;
+    align-items: flex-end;
   }
-  
+  .logoSpace {
+    width: 95%;
+    justify-content: space-around;
+  }
+  .infoMedium {
+    font-size: 17px;
+    text-align: end;
+  }
+  .infoBig {
+    font-size: 25px;
+  }
+  .thirdSection {
+    height: 66vh;
+  }
+  .optionContainer {
+    height: 62%;
+  }
+  .row {
+    height: 130%;
+  }
+  .center {
+    height: 100%;
+  }
+  .title {
+    display: none;
+  }
+  .container {
+    width: 95vw;
+  }
+}

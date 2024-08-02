@@ -1,30 +1,29 @@
-
-import axios from 'axios';
-import { NextResponse } from 'next/server'
+import axios from "axios";
+import { NextResponse } from "next/server";
 
 export async function POST(req, res) {
-    const newData = await req.json()
+  const newData = await req.json();
 
-    const url = 'https://uat.portal.suppliesnet.net/PurchaseOrders/PurchaseOrder.asmx';
+  const url =
+    "https://uat.portal.suppliesnet.net/PurchaseOrders/PurchaseOrder.asmx";
 
-    const items = newData.cart.map((item, index) => {
-        return ` 
+  const items = newData.cart.map((item, index) => {
+    return ` 
         <dmi:PurchaseOrderLine>
             <dmi:Rank>${index + 1}</dmi:Rank>
             <dmi:OEMNumber>${item.oem}</dmi:OEMNumber>
             <dmi:OrderQuantity>${item.quantity}</dmi:OrderQuantity>
             <dmi:UOM>EA</dmi:UOM>
             <dmi:UnitPrice>${item.price}</dmi:UnitPrice>
-        </dmi:PurchaseOrderLine>`
-    })
+        </dmi:PurchaseOrderLine>`;
+  });
 
+  const headers = {
+    "Content-Type": "text/xml",
+    SOAPAction: "http://portal.suppliesnet.net/PlaceOrder",
+  };
 
-    const headers = {
-        'Content-Type': 'text/xml',
-        'SOAPAction': "http://portal.suppliesnet.net/PlaceOrder"
-    };
-
-    const data = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dmi="http://portal.suppliesnet.net">
+  const data = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dmi="http://portal.suppliesnet.net">
     <soapenv:Body>
         <dmi:PlaceOrder>
             <dmi:PurchaseOrders>
@@ -55,16 +54,13 @@ export async function POST(req, res) {
             </dmi:PurchaseOrders>
         </dmi:PlaceOrder>
     </soapenv:Body>
-</soapenv:Envelope>`
+</soapenv:Envelope>`;
 
+  try {
+    const response = await axios.post(url, data, { headers });
 
-
-    try {
-        const response = await axios.post(url, data, { headers })
-
-
-        return NextResponse.json({ "succesful": response.status })
-    } catch (error) {
-        console.error('Error creating payment link:', error);
-    }
+    return NextResponse.json({ succesful: response.status });
+  } catch (error) {
+    console.error("Error creating payment link:", error);
+  }
 }

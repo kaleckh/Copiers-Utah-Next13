@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import Image from "next/image";
 import Section from "../components/Section";
-import Sliver from '../components/sliverr'
-import { Metadata } from 'next'
+import Sliver from "../components/sliverr";
+import { Metadata } from "next";
 // import Form from "./Form";
 import { PatternFormat } from "react-number-format";
 import Head from "next/head";
@@ -40,34 +40,34 @@ const Buy = (props) => {
   };
 
   async function sendEmail() {
-
-    const requestOptions =
-    {
+    const requestOptions = {
       method: "POST",
       body: JSON.stringify({
-
         from: "Buy A Copier",
         name: name,
         message: message,
         number: number,
         email: email,
       }),
-    }
+    };
     try {
-
-      const response = await fetch('/api/pay/quote', requestOptions);
+      const response = await fetch("/api/pay/quote", requestOptions);
 
       const data1 = await response.json();
-      console.log(data1, "this is the response")
-    } catch (err) {
-    }
+      console.log(data1, "this is the response");
+    } catch (err) {}
   }
   useEffect(() => {
-    if (message.length > 1 && number.length > 1 && name.length > 1 && email.length > 1 && recaptchaResponse !== false) {
-      setToggle(true)
+    if (
+      message.length > 1 &&
+      number.length > 1 &&
+      name.length > 1 &&
+      email.length > 1 &&
+      recaptchaResponse !== false
+    ) {
+      setToggle(true);
     }
-
-  }, [message, number, name, email, recaptchaResponse])
+  }, [message, number, name, email, recaptchaResponse]);
 
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
@@ -114,7 +114,6 @@ const Buy = (props) => {
                   }}
                 >
                   <div className={styles.space}>
-
                     <input
                       style={{ marginRight: "10px" }}
                       className={styles.inputSingle}
@@ -140,7 +139,6 @@ const Buy = (props) => {
                     />
                   </div>
                   <div className={styles.space}>
-
                     <PatternFormat
                       format="+1 (###) ### ####"
                       allowEmptyFormatting
@@ -153,7 +151,6 @@ const Buy = (props) => {
                   </div>
 
                   <div className={styles.space}>
-
                     <input
                       onChange={() => {
                         setMessage(event.target.value);
@@ -193,10 +190,10 @@ const Buy = (props) => {
               </div>
             </div>
           ) : (
-              <h2 className={styles.title}>
-                Awesome, we will be contacting you shortly!
-              </h2>
-            )}
+            <h2 className={styles.title}>
+              Awesome, we will be contacting you shortly!
+            </h2>
+          )}
         </div>
         <div
           style={{
@@ -248,7 +245,6 @@ const Buy = (props) => {
           </div>
           {cash ? (
             <div className={styles.eighty}>
-
               <div className={styles.paragraph}>
                 Copier leasing is a cost-effective way for businesses to access
                 the latest copier technology without making a large upfront
@@ -279,42 +275,54 @@ const Buy = (props) => {
               <div
                 style={{
                   justifyContent: "space-evenly",
-                  width: "100%"
-
+                  width: "100%",
                 }}
                 className={`${styles.column} ${styles.hidden}`}
               >
-                <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: "23px",
+                    fontWeight: "400",
+                  }}
+                >
+                  Key Information
+                </div>
                 <div className={styles.row}>
                   <div className={styles.bulletPoints}>
                     <div className={styles.bulletBox}>
                       Low initial investment and predictable monthly payment
                     </div>
-                    <div className={styles.bulletBox}>Potential tax benefits for businesses</div>
-
+                    <div className={styles.bulletBox}>
+                      Potential tax benefits for businesses
+                    </div>
                   </div>
                   <div className={styles.bulletPoints}>
-                    <div className={styles.bulletBox}>Customizable lease terms and payment plans</div>
-                    <div className={styles.bulletBox}>Fixed monthly payments help businesses budget</div>
+                    <div className={styles.bulletBox}>
+                      Customizable lease terms and payment plans
+                    </div>
+                    <div className={styles.bulletBox}>
+                      Fixed monthly payments help businesses budget
+                    </div>
                   </div>
                   <div className={styles.bulletPoints}>
-
                     <div className={styles.bulletBox}>
                       Option to purchase the equipment at the end of the lease
                       term
                     </div>
-                    <div className={styles.bulletBox}>Access to the latest copier technology</div>
+                    <div className={styles.bulletBox}>
+                      Access to the latest copier technology
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           ) : (
-              <></>
-            )}
+            <></>
+          )}
 
           {rent ? (
             <div className={styles.eighty}>
-
               <div className={styles.paragraph}>
                 Are you looking for copiers for sale or rent in Utah? Copier
                 rental is a cost-effective solution for businesses in need of
@@ -339,25 +347,40 @@ const Buy = (props) => {
               <div
                 style={{
                   justifyContent: "space-evenly",
-                  width: "100%"
-
+                  width: "100%",
                 }}
                 className={`${styles.column} ${styles.hidden}`}
               >
-                <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: "23px",
+                    fontWeight: "400",
+                  }}
+                >
+                  Key Information
+                </div>
                 <div className={styles.row}>
                   <div className={styles.bulletPoints}>
-                    <div className={styles.bulletBox}>No large upfront investment required</div>
-                    <div className={styles.bulletBox}>Low-risk option to test out new copier equipment</div>
-
+                    <div className={styles.bulletBox}>
+                      No large upfront investment required
+                    </div>
+                    <div className={styles.bulletBox}>
+                      Low-risk option to test out new copier equipment
+                    </div>
                   </div>
                   <div className={styles.bulletPoints}>
-                    <div className={styles.bulletBox}>No large upfront investment required</div>
-                    <div className={styles.bulletBox}>Customizable rental terms and payment plans</div>
+                    <div className={styles.bulletBox}>
+                      No large upfront investment required
+                    </div>
+                    <div className={styles.bulletBox}>
+                      Customizable rental terms and payment plans
+                    </div>
                   </div>
                   <div className={styles.bulletPoints}>
-
-                    <div className={styles.bulletBox}>Low-risk option to test out new copier equipment</div>
+                    <div className={styles.bulletBox}>
+                      Low-risk option to test out new copier equipment
+                    </div>
                     <div className={styles.bulletBox}>
                       Ability to own the equipment at the end of the rental term
                     </div>
@@ -366,8 +389,8 @@ const Buy = (props) => {
               </div>
             </div>
           ) : (
-              <></>
-            )}
+            <></>
+          )}
           {finance ? (
             <div className={styles.eighty}>
               <div className={styles.paragraph}>
@@ -391,12 +414,19 @@ const Buy = (props) => {
               <div
                 style={{
                   justifyContent: "space-evenly",
-                  width: "100%"
-
+                  width: "100%",
                 }}
                 className={`${styles.column} ${styles.hidden}`}
               >
-                <div style={{ color: "black", fontSize: "23px", fontWeight: "400" }}>Key Information</div>
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: "23px",
+                    fontWeight: "400",
+                  }}
+                >
+                  Key Information
+                </div>
                 <div className={styles.row}>
                   <div className={styles.bulletPoints}>
                     <div className={styles.bulletBox}>
@@ -406,7 +436,6 @@ const Buy = (props) => {
                       Enjoy flexible terms and payments tailored to your
                       business needs
                     </div>
-
                   </div>
                   <div className={styles.bulletPoints}>
                     <div className={styles.bulletBox}>
@@ -418,8 +447,9 @@ const Buy = (props) => {
                     </div>
                   </div>
                   <div className={styles.bulletPoints}>
-
-                    <div className={styles.bulletBox}>No large upfront investment required</div>
+                    <div className={styles.bulletBox}>
+                      No large upfront investment required
+                    </div>
                     <div className={styles.bulletBox}>
                       Ability to preserve credit lines for other business needs
                     </div>
@@ -428,8 +458,8 @@ const Buy = (props) => {
               </div>
             </div>
           ) : (
-              <></>
-            )}
+            <></>
+          )}
         </div>
       </div>
       <Section />

@@ -1,619 +1,623 @@
 .main {
-    width: 100%;
-    height: fit-content;
-    background-color: white;
-    color: white;
-  }
-  
-  .logoSpace {
-    height: 30%;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  .buttonBlue {
-    appearance: none;
-    border: none;
-    background-color: rgb(1,51,93);
-    width: 80%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border: none;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    will-change: transform;
-  }
+  width: 100%;
+  height: fit-content;
+  background-color: white;
+  color: white;
+}
 
-  .buttonBlue:disabled{
-    opacity: .5;
+.logoSpace {
+  height: 30%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buttonBlue {
+  appearance: none;
+  border: none;
+  background-color: rgb(1, 51, 93);
+  width: 80%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family:
+    Roobert,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  will-change: transform;
+}
+
+.buttonBlue:disabled {
+  opacity: 0.5;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.centerLarge {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 50px;
+  font-weight: 400;
+  justify-content: center;
+  align-items: flex-end;
+  letter-spacing: 1px;
+}
+
+.button:disabled {
+  pointer-events: none;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.buttonContainer {
+  width: 200px;
+}
+
+.thirdSection {
+  display: flex;
+  height: 30%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.paragraphContainer {
+  width: 50%;
+}
+
+.smaller {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+
+.paragraph {
+  color: black;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 200;
+  width: 80%;
+  line-height: 35px;
+}
+
+.logo {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+
+.menuRow {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+}
+
+.image {
+  width: 500px;
+}
+
+.section {
+  height: fit-content;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.repair {
+  background-image: url("/static/repair.jpg");
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+
+.toner {
+  background-image: url("/static/toner.jpg");
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+
+.itWork {
+  background-image: url("/static/itWork.jpg");
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+
+.construction {
+  background-image: url("/static/construction.jpg");
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+}
+.phoneNumber {
+  background-color: transparent;
+  outline: none;
+  color: rgb(117, 117, 117);
+  border: none;
+  border-bottom: 1px black solid;
+  width: 100%;
+  font-size: 20px;
+}
+.phoneNumber:focus {
+  border: none;
+}
+.copiersTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  color: black;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+.woman {
+  background-image: url("/static/copier.jpg");
+  height: 66vh;
+  width: 40vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.shade {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.shadeBig {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.shadeBig:hover {
+  padding: 10px;
+  padding-bottom: 55px;
+  background-color: gray;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.shade:hover {
+  background-color: gray;
+  transition: all 0.3s ease-in-out;
+}
+
+.sectionBig {
+  box-shadow: 1px 1px 9px gray;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  border-radius: 15px;
+}
+
+.smallRow {
+  display: flex;
+}
+
+.square {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+.column {
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Realcolumn {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 80vw;
+  padding-bottom: 35px;
+  padding-top: 20px;
+}
+.small {
+  color: black;
+  font-size: 30px;
+}
+
+.text {
+  text-align: center;
+  font-weight: 200;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+}
+.titleSmall {
+  font-size: 28px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+}
+
+.titleBig {
+  color: black;
+  font-size: 50px;
+  letter-spacing: 1.5px;
+}
+
+.titleContainer {
+  width: 28%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.photoBox {
+  width: 800px;
+  height: 350px;
+  background-color: white;
+}
+
+.row li {
+  font-size: 18px;
+  padding: 8px;
+}
+
+.secondSection {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 30px;
+}
+
+.logoSpaceContainer {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.columnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.infoSmall {
+  color: black;
+  font-size: 17px;
+}
+
+.infoMedium {
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.infoBig {
+  color: black;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.parent div {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(245, 247, 248);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 55vh;
+  width: 30vw;
+  border-radius: 10px;
+}
+
+.line {
+  height: 2px;
+  width: 80%;
+  background-color: rgb(229, 229, 229);
+}
+.lineRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.eighty {
+  width: 80%;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+.box {
+  background-color: rgb(239, 245, 252);
+  padding: 25px;
+  width: 350px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: rgb(1, 51, 93);
+}
+
+.black {
+  font-size: 30px;
+  color: black;
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-bottom: 1px black solid;
+  background-color: transparent;
+  border-color: rgb(169, 172, 173);
+  font-size: 17px;
+}
+
+.numberContainer {
+  width: 95%;
+  display: flex;
+  align-items: center;
+}
+
+.light {
+  font-weight: 250;
+  color: rgb(169, 172, 173);
+}
+
+.subHeader {
+  font-weight: 200;
+  padding: 10px;
+}
+
+.textarea {
+  width: 100%;
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.space {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+.phoneNumber {
+  background-color: transparent;
+  outline: none;
+  color: rgb(117, 117, 117);
+  border: none;
+  border: 1px solid rgb(210, 210, 210);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 20px;
+}
+
+.inputSingle {
+  width: 100%;
+  outline: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid rgb(210, 210, 210);
+  color: black;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.selected {
+  width: 60%;
+  height: 30px;
+  color: rgb(147, 147, 147);
+  border-color: rgb(147, 147, 147);
+}
+
+.inputDouble {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 50vw;
   }
-  
-  .center {
-    display: flex;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 45vw;
+    font-size: 27px;
+  }
+  .woman {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95vw;
+    font-size: 27px;
+  }
+  .woman {
+    display: none;
+  }
+  .columnContainer {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .logoSpace {
+    width: 80%;
+  }
+  .infoBig {
+    font-size: 25px;
+  }
+  .infoMedium {
+    font-size: 17px;
+    text-align: end;
+  }
+  .logoSpace {
+    width: 95%;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 850px) {
+  .row {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .black {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 800px) {
+  .copiersTitle {
+    font-size: 20px;
+  }
+  .Realcolumn {
+    height: 450px;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    padding-bottom: 0px;
   }
-  
-  .centerLarge {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    font-size: 50px;
-    font-weight: 400;
+  .title {
+    font-size: 20px;
+    padding: 30px;
+  }
+  .black {
+    font-size: 18px;
+  }
+  .titleSmall {
+    padding: 5px;
+    font-size: 13px;
+    color: rgb(101, 101, 101);
+  }
+  .copiersTitleBlue {
+    color: rgb(1, 51, 93);
+    padding-left: 10px;
+    font-size: 20px;
+  }
+  .woman {
+    display: none;
+  }
+  .row {
     justify-content: center;
-    align-items: flex-end;
-    letter-spacing: 1px;
   }
-  
-  .button:disabled {
-    pointer-events: none;
+  .container {
+    width: 95vw;
+    height: 60vh;
   }
-  
-  .button:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
+  .hidden {
+    display: none;
   }
-  
-  .button:active {
-    box-shadow: none;
-    transform: translateY(0);
-  }
-  
-  .buttonContainer {
-    width: 200px;
-  }
-  
-  .thirdSection {
-    display: flex;
-    height: 30%;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .paragraphContainer {
-    width: 50%;
-  }
-  
-  .smaller {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-  }
-  
   .paragraph {
     color: black;
     text-align: center;
     padding: 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
-    width: 80%;
-    line-height: 35px;
-  }
-  
-  .logo {
-    width: 170px;
-    height: 170px;
-    object-fit: contain;
-  }
-  
-  .menuRow {
-    display: flex;
-    justify-content: space-around;
-    width: 25%;
-  }
-  
-  .image {
-    width: 500px;
-  }
-  
-  .section {
-    height: fit-content;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-  }
-  
-  .repair {
-    background-image: url("/static/repair.jpg");
-    height: 30vh;
-    width: 20vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-  }
-  
-  .toner {
-    background-image: url("/static/toner.jpg");
-    height: 30vh;
-    width: 20vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-  }
-  
-  .itWork {
-    background-image: url("/static/itWork.jpg");
-    height: 30vh;
-    width: 20vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-  }
-  
-  .construction {
-    background-image: url("/static/construction.jpg");
-    height: 30vh;
-    width: 20vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-  }
-  .phoneNumber {
-    background-color: transparent;
-    outline: none;
-    color: rgb(117, 117, 117);
-    border: none;
-    border-bottom: 1px black solid;
-    width: 100%;
-    font-size: 20px;
-  }
-  .phoneNumber:focus {
-    border: none;
-  }
-  .copiersTitle {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-weight: 400;
-    color: black;
-    font-size: 30px;
-    padding: 10px;
-    text-align: center; 
-  }
-  
-  .woman {
-    background-image: url("/static/copier.jpg");
-    height: 66vh;
-    width: 40vw;
-    background-size: cover;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  
-  .shade {
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  .shadeBig {
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  .shadeBig:hover {
-    padding: 10px;
-    padding-bottom: 55px;
-    background-color: gray;
-    transition: all 0.3s ease-in-out;
-    border-radius: 10px;
-  }
-  
-  .shade:hover {
-    background-color: gray;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .sectionBig {
-    box-shadow: 1px 1px 9px gray;
-    width: 500px;
-    height: 400px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    color: black;
-    border-radius: 15px;
-  }
-  
-  .smallRow {
-    display: flex;
-  }
-  
-  .square {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-  }
-  
-  .column {
-    display: flex;
-    
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .Realcolumn {
-    display: flex;
-    justify-content: space-evenly;
-    height: 100%;
-    width: 80vw;
-    padding-bottom: 35px;
-    padding-top: 20px;
-  }
-  .small{
-    color: black;
-    font-size: 30px;
-  }
-  
-  
-  .text {
-    text-align: center;
-    font-weight: 200;
-  }
-  
-  .title {
-    font-size: 28px;
-    font-weight: 400;
-    color: black;
-    text-align: center;
-  }
-  .titleSmall {
-    font-size: 28px;
-    font-weight: 400;
-    color: black;
-    text-align: center;
-  }
-  
-  
-  .titleBig {
-    color: black;
-    font-size: 50px;
-    letter-spacing: 1.5px;
-  }
-  
-  .titleContainer {
-    width: 28%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .photoBox {
-    width: 800px;
-    height: 350px;
-    background-color: white;
-  }
-  
-  .row li {
-    font-size: 18px;
-    padding: 8px;
-  }
-  
-  .secondSection {
-    height: 50%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 30px;
-  }
-  
-  .logoSpaceContainer {
-    height: 15vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .columnContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 80%;
-  }
-  
-  .infoSmall {
-    color: black;
-    font-size: 17px;
-  }
-  
-  .infoMedium {
-    color: black;
-    font-weight: 400;
-    font-size: 20px;
-  }
-  
-  .infoBig {
-    color: black;
-    font-weight: 700;
-    font-size: 30px;
-  }
-  
-  .parent {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  
-  .parent div {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    grid-row-start: 1;
-    grid-column-start: 1;
-  }
-  
-  .container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgb(245, 247, 248);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height: 55vh;
-    width: 30vw;
-    border-radius: 10px;
-  }
-  
-  .line {
-    height: 2px;
-    width: 80%;
-    background-color: rgb(229, 229, 229);
-  }
-  .lineRow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  .eighty{
-    width: 80%;
-  }
-  
-  .number {
-    background-color: #5fcf80;
-    color: #fff;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    font-size: 0.8em;
-    margin-right: 4px;
-    line-height: 30px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-radius: 100%;
-  }
-  .box{
-    background-color: rgb(239, 245, 252);
-    padding: 25px;
-    width: 350px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: rgb(1,51,93);
-  }
-  
-  .black {
-    font-size: 30px;
-    color: black;
-  }
-  
-  .input {
-    border: none;
-    outline: none;
-    border-bottom: 1px black solid;
-    background-color: transparent;
-    border-color: rgb(169, 172, 173);
-    font-size: 17px;
-  }
-  
-  .numberContainer {
     width: 95%;
-    display: flex;
-    align-items: center;
+    line-height: 27px;
   }
-  
-  .light {
-    font-weight: 250;
-    color: rgb(169, 172, 173);
-  }
-  
-  .subHeader {
-    font-weight: 200;
-    padding: 10px;
-  }
-  
-  .textarea {
-    width: 100%;
-    border-bottom: 1px solid black;
-    color: black;
-  }
-  
-  .textarea:focus {
-    outline: none;
-  }
-  
-  .space {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-  }
-  .phoneNumber {
-    background-color: transparent;
-    outline: none;
-    color: rgb(117, 117, 117);
-    border: none;
-    border: 1px solid rgb(210,210,210);
-    padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 20px;
-  }
-  
-  .inputSingle {
-    width: 100%;
-    outline: none;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: transparent;
-    border: 1px solid rgb(210,210,210);
-    color: black;
-  }
-  
-  .button:disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  
-  .button:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
-  }
-  
-  .button:active {
-    box-shadow: none;
-    transform: translateY(0);
-  }
-  
-  .selected {
-    width: 60%;
-    height: 30px;
-    color: rgb(147, 147, 147);
-    border-color: rgb(147, 147, 147);
-  }
-  
-  .inputDouble {
-    display: flex;
-    align-items: center;
-  }
-  
-  @media (max-width: 1000px) {
-    .container {
-      width: 50vw;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .container {
-      width: 45vw;
-      font-size: 27px;
-    }
-    .woman {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .container {
-      width: 95vw;
-      font-size: 27px;
-    }
-    .woman {
-      display: none;
-    }
-    .columnContainer {
-      flex-direction: column;
-      align-items: flex-end;
-    }
-    .logoSpace {
-      width: 80%;
-    }
-    .infoBig {
-      font-size: 25px;
-    }
-    .infoMedium {
-      font-size: 17px;
-      text-align: end;
-    }
-    .logoSpace {
-      width: 95%;
-      justify-content: space-around;
-    }
-  }
-  
-  @media (max-width: 850px) {
-    .row {
-      width: 100%;
-      justify-content: space-around;
-    }
-    .black {
-      font-size: 27px;
-    }
-  }
-  
-  @media (max-width: 800px) {
-    .copiersTitle{
-      font-size: 20px;
-    }
-    .Realcolumn{
-      height: 450px;
-      flex-direction: column;
-      align-items: center;
-      padding-bottom: 0px;
-
-    }
-    .title{
-      font-size: 20px;
-      padding: 30px;
-    }
-    .black{
-      font-size: 18px;
-    }
-    .titleSmall{
-       padding:5px; 
-       font-size: 13px;
-        color: rgb(101,101,101)
-    }
-    .copiersTitleBlue{
-      color: rgb(1,51,93);
-       padding-left: 10px;
-        font-size: 20px 
-    }
-    .woman {
-      display: none;
-    }
-    .row {
-      justify-content: center;
-    }
-    .container {
-      width: 95vw;
-      height: 60vh;
-    }
-    .hidden{
-      display: none;
-    }
-    .paragraph{
-      color: black;
-      text-align: center;
-      padding: 20px;
-      font-size: 16px;
-      font-weight: 200;
-      width: 95%;
-      line-height: 27px;
-  
-    }
-  }
-  
+}
