@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Data from "./dataa";
+import Data from "./homepage";
 import Script from "next/script";
 
 export const metadata = {
