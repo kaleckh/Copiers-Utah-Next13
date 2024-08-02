@@ -1,15 +1,15 @@
 "use client";
 import React, { useRef } from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import Head from "next/head";
 import Form from "../components/Form";
 import BreadCrumbs from "../components/BreadCrumbs";
-import Section from "../components/Section";
+import Section from "../../components/Section";
 import Footer from "../components/Footer";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Sliver from "../components/sliverr";
+import Sliver from "../components/Sliverr";
 import styles from "../styles/konika.module.css";
 import { useRouter } from "next/navigation";
 import ReCAPTCHA from "react-google-recaptcha";

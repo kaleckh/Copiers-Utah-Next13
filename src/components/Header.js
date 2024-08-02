@@ -4,9 +4,8 @@ import Link from "next/link";
 import Sliver from "../components/sliverr";
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Image from "next/image";
-import cart from "../cart/page";
-import Logo from "../../../public/static/logo.webp";
-import { CartContext } from "../../providers/cart";
+import Logo from "../../public/static/logo.webp";
+import { CartContext } from "../providers/cart";
 export default function Header() {
   const router = useRouter();
   const { cart, setCart, cartLook, setRealPrice } = useContext(CartContext);

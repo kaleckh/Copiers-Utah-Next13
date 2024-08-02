@@ -1,9 +1,9 @@
 "use client";
 import React, { useRef } from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import { Metadata } from "next";
 import BreadCrumbs from "../components/BreadCrumbs";
-import Section from "../components/Section";
+import Section from "../../components/Section";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import Image from "next/image";

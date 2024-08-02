@@ -1,16 +1,14 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Head from "next/head";
-import ImageCarousel from "./components/Carousel";
-import Services from '../app/components/Services'
-
-// import Rental from '../../public/static/rental.webp'
+import ImageCarousel from "../components/Carousel";
+import Services from '../components/Services'
 import Image from "next/image";
-import Section from "./components/Section";
-import Header from "./components/Header";
+import Section from "../components/Section";
+import Header from "../components/Header";
 import Link from "next/link";
-import styles from "./styles/homepage.module.css";
-import Footer from "./components/Footer";
+import styles from "../styles/homepage.module.css";
+import Footer from "../components/Footer";
 import { useRouter } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
@@ -18,8 +16,6 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 export default function Homepage() {
   const [name, setName] = useState("");
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const [email, setEmail] = useState("");
-  const [toggle, setToggle] = useState(true);
   const [number, setNumber] = useState("");
   const [images, setImages] = useState({
     imageOne: true,
@@ -32,9 +28,6 @@ export default function Homepage() {
   const captchaRef = useRef(null);
   const onLoad = () => {
     console.log("onLoad works!");
-  };
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
   };
   const router = useRouter();
   var verifyCallback = function (response) {

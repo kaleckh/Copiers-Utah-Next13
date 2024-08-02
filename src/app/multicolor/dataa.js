@@ -1,9 +1,9 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import Head from "next/head";
 import BreadCrumbs from "../components/BreadCrumbs";
-import Sliver from "../components/sliverr";
+import Sliver from "../components/Sliverr";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import { useRouter } from "next/navigation";

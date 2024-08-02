@@ -1,19 +1,11 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Header from "../components/Header";
-import Image from "next/image";
-import Section from "../components/Section";
-import Sliver from "../components/sliverr";
-import { Metadata } from "next";
-// import Form from "./Form";
+import Header from "../../components/Header";
+import Section from "../../components/Section";
 import { PatternFormat } from "react-number-format";
-import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
-// import Menu from "../Photos/menu.png";
-// import Repair from "../Photos/repair.jpg";
-import styles from "../styles/buy.module.css";
-
-import Footer from "../components/Footer";
+import styles from "../../styles/buy.module.css";
+import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Buy = (props) => {

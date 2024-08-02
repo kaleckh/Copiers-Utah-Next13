@@ -1,7 +1,7 @@
 import styles from "../styles/Footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../../public/static/logo.webp";
+import Logo from "../../public/static/logo.webp";
 import { useRouter } from "next/navigation";
 export default function Footer() {
   const router = useRouter();

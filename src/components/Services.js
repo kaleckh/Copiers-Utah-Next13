@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/homepage.module.css";
-import It from "../../../public/static/it.webp";
-import Rental from "../../../public/static/rental.webp";
+import It from "../../public/static/it.webp";
+import Rental from "../../public/static/rental.webp";
 
 const Services = () => {
   const [images, setImages] = useState({

@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState, useContext } from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import axios from "axios";
 import Image from "next/image";
-import Sliver from "../components/sliverr";
+import Sliver from "../components/Sliverr";
 import { CartContext } from "../../providers/cart";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Head from "next/head";

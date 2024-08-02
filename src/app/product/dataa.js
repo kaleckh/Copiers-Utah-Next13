@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import Header from "../components/Header";
-import Section from "../components/Section";
+import Header from "../../components/Header";
+import Section from "../../components/Section";
 import Link from "next/link";
 import { Metadata } from "next";
 import Footer from "../components/Footer";

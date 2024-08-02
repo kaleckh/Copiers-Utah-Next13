@@ -1,15 +1,11 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import Header from "../components/Header";
-import Sliver from "../components/sliverr";
-import Section from "../components/Section";
-import Head from "next/head";
+import Header from "../../components/Header";
+import Section from "../../components/Section";
 import Axios from "axios";
-import { Metadata } from "next";
 import { PatternFormat } from "react-number-format";
-import Image from "next/image";
-import styles from "../styles/Fix.module.css";
-import Footer from "../components/Footer";
+import styles from "../../styles/Fix.module.css";
+import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import ReCAPTCHA from "react-google-recaptcha";
 

@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useEffect, useRef, useState, useContext } from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import Image from "next/image";
-import Section from "../components/Section";
+import Section from "../../components/Section";
 import { CartContext } from "../../providers/cart";
 import { Client } from "square";
-import Sliver from "../components/sliverr";
+import Sliver from "../components/Sliverr";
 import styles from "../styles/fileChoice.module.css";
 
 import Footer from "../components/Footer";

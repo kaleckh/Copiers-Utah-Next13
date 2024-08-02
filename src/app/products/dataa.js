@@ -1,15 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Header from "../components/Header";
-import Section from "../components/Section";
+import Header from "../../components/Header";
+import Section from "../../components/Section";
 import Head from "next/head";
-import Sliver from "../components/sliverr";
 import Link from "next/link";
 import Image from "next/image";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import { useRouter } from "next/navigation";
-import { Metadata } from "next";
-import styles from "../styles/product.module.css";
+import styles from "../../styles/product.module.css";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Products = () => {
   const [name, setName] = useState("");

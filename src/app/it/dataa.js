@@ -1,12 +1,12 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import Header from "../components/Header";
-import Section from "../components/Section";
+import Header from "../../components/Header";
+import Section from "../../components/Section";
 import Head from "next/head";
 import Image from "next/image";
 // import Form from "./Form";
 import { Metadata } from "next";
-import Sliver from "../components/sliverr";
+import Sliver from "../components/Sliverr";
 import { PatternFormat } from "react-number-format";
 import ReCAPTCHA from "react-google-recaptcha";
 // import Logo from "../Photos/logo.webp";

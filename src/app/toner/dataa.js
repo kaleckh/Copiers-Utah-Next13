@@ -1,28 +1,17 @@
 "use client";
 import React, { useContext, useRef, useState } from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import Image from "next/image";
-import { CartContext, Context } from "../../providers/cart";
+import { CartContext } from "../../providers/cart";
 import Link from "next/link";
-import Sliver from "../components/sliverr";
-import { Metadata } from "next";
-// import Form from "./Form";
-import { PatternFormat } from "react-number-format";
-import Head from "next/head";
-import ReCAPTCHA from "react-google-recaptcha";
-// import Menu from "../Photos/menu.png";
-// import Repair from "../Photos/repair.jpg";
-import styles from "../styles/filter.module.css";
-
-import Footer from "../components/Footer";
+import styles from "../../styles/filter.module.css";
+import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { TonerContext } from "../../providers/toner";
-import BreadCrumbs from "../components/BreadCrumbs";
+import BreadCrumbs from "../../components/BreadCrumbs";
 
 const Buy = (props) => {
   const toners = useContext(TonerContext);
-  // const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
-  // const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [name, setName] = useState("");
@@ -31,11 +20,7 @@ const Buy = (props) => {
   const [message, setMessage] = useState("");
   const tawkMessengerRef = useRef();
 
-  const callback = (name, message, number) => {
-    setName(name);
-    setMessage(message);
-    setNumber(number);
-  };
+
 
   const sendEmail = (e) => {
     e.preventDefault();

@@ -1,11 +1,11 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import Head from "next/head";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Image from "next/image";
 import Footer from "../components/Footer";
-import Sliver from "../components/sliverr";
+import Sliver from "../components/Sliverr";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";

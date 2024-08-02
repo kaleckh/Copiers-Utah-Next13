@@ -1,29 +1,18 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
-import Header from "../components/Header";
-// import Form from "./Form";
-import Section from "../components/Section";
+import Header from "../../components/Header";
+import Section from "../../components/Section";
 import { PatternFormat } from "react-number-format";
 import Image from "next/image";
-import { Metadata } from "next";
-import Sliver from "../components/sliverr";
-import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
-// import Logo from "../Photos/logo.webp";
-// import Menu from "../Photos/menu.png";
-// import Repair from "../Photos/repair.jpg";
-import styles from "../styles/shortTerm.module.css";
-
-import Footer from "../components/Footer";
+import styles from "../../styles/shortTerm.module.css";
+import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const ShortTerm = () => {
   const tawkMessengerRef = useRef();
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const [nameRes, setNameRes] = useState(false);
   const [toggle, setToggle] = useState(false);
-  // const [quoteToggle, setQuoteToggle] = useState(false);
-  const [messageRes, setMessageRes] = useState(false);
   const [quote, setQuote] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,9 +20,7 @@ const ShortTerm = () => {
   const [message, setMessage] = useState("");
   const captchaRef = useRef(null);
 
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
+
   const onLoad = () => {
     console.log("onLoad works!");
   };
