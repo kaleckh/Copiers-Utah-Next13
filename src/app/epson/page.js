@@ -13,7 +13,7 @@ export const metadata = {
     "Epson copiers, used Epson copiers, new Epson copiers, office copiers, copiers Utah, affordable copiers",
 };
 
-const breadCrumbs = [{ name: "Home", url: "/" }];
+const breadCrumbs = [{ name: "products", url: "/products" }];
 
 const epson = () => {
   return (

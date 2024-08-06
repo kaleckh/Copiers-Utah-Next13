@@ -6,7 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { PatternFormat } from "react-number-format";
 import Image from "next/image";
 
-const EpsonInfo = () => {
+const KonicaInfo = () => {
 
     return (
         <div
@@ -201,6 +201,6 @@ const EpsonInfo = () => {
     );
 };
 
-export default EpsonInfo;
+export default KonicaInfo;
 
 
