@@ -1,4 +1,10 @@
-import Data from "./dataa";
+import Header from "../../components/Header";
+import BreadCrumbs from "../../components/BreadCrumbs";
+import Section from "../../components/Section";
+import EpsonInfo from "./components/EpsonInfo";
+import Footer from "../../components/Footer";
+import styles from "../../styles/epson.module.css";
+
 export const metadata = {
   title: " Epson Copiers - High-Quality and Affordable | Copiers Utah",
   description:
@@ -6,8 +12,19 @@ export const metadata = {
   keywords:
     "Epson copiers, used Epson copiers, new Epson copiers, office copiers, copiers Utah, affordable copiers",
 };
+
+const breadCrumbs = [{ name: "Home", url: "/" }];
+
 const epson = () => {
-  return <Data />;
+  return (
+    <div className={styles.main}>
+      <Header />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
+      <EpsonInfo />
+      <Section />
+      <Footer />
+    </div>
+  );
 };
 
 export default epson;
