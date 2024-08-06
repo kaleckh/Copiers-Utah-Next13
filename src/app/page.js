@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Data from "./homepage";
 import Script from "next/script";
 

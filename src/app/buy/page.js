@@ -1,4 +1,4 @@
-import Data from "./dataa";
+import BuyPage from ".";
 export const metadata = {
   title:
     "Get a Quote for High-Quality New and Refurbished Copiers | Copiers Utah",
@@ -8,7 +8,7 @@ export const metadata = {
     "office copiers, copiers for sale, refurbished copiers, get a quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah",
 };
 const buy = () => {
-  return <Data />;
+  return <BuyPage />;
 };
 
 export default buy;

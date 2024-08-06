@@ -3,82 +3,35 @@ import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../../components/Header";
 import Image from "next/image";
 import { CartContext } from "../../providers/cart";
-import styles from "../styles/cart.module.css";
+import styles from "../../styles/cart.module.css";
 import Link from "next/link";
-import BreadCrumbs from "../components/BreadCrumbs";
-import Footer from "../components/Footer";
+import BreadCrumbs from "../../components/BreadCrumbs";
+import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Cart = () => {
-  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const [name, setName] = useState("");
-  const [orderId, setOrderId] = useState("");
-  const { cart, setCart, cartLook, setRealPrice, tonerOem } =
-    useContext(CartContext);
-  const [noChange, setFalse] = useState(false);
-  const [something, setSomething] = useState(false);
-  const [price, setPrice] = useState("");
+
+  const { cart, setCart, setRealPrice, tonerOem } = useContext(CartContext);
   const [total, setTotal] = useState(0);
-  const [newPrice, setNewPrice] = useState("");
-  const [number, setNumber] = useState("");
-  const [message, setMessage] = useState("");
   const tawkMessengerRef = useRef();
 
+  
   async function createLink() {
     const response = await fetch("/api/pay", { method: "POST" });
     const data = await response.json();
     window.location.replace(data.redirect);
   }
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    console.log("Sending");
 
-    fetch("https://api.smtp2go.com/v3/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        api_key: process.env.SMTP_API,
-        to: [`<info@copiersutah.com>`],
-        sender: "<info@copiersutah.com>",
-        subject: `This is${name}'s quote form. Her number is ${number}`,
-        text_body: `${message}`,
-        html_body: `<h1>${message}</h1>`,
-        template_id: "5120871",
-        template_data: {
-          message: message,
-          from: "buy a copier",
-          number: number,
-          name: name,
-        },
-      }),
-    }).then((res) => {
-      console.log(res);
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        // setSubmitted(true);
-        // setName("");
-        // setEmail("");
-        // setBody("");
-      }
-    });
-  };
-  var removeCartItem = function (id) {
-    setCart(cart.splice(id, 1));
-  };
+  // var removeCartItem = function (id) {
+  //   setCart(cart.splice(id, 1));
+  // };
 
-  var verifyCallback = function (response) {
-    setRecaptchaResponse(response);
-  };
-
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
   const onLoad = () => {
     console.log("onLoad works!");
   };
+
+
   const newPriceAction = function () {
     let arr = [0];
 
@@ -92,13 +45,17 @@ const Cart = () => {
     setTotal(addedResult.toFixed(2));
   };
 
+
   const decimal = function (item) {
     setRealPrice(item.toFixed(2));
     return item.toFixed(2);
   };
+
+
   useEffect(() => {
     newPriceAction();
   }, [cart]);
+
 
   const breadCrumbs = [
     { name: "Home", url: "/" },
@@ -284,7 +241,7 @@ const Cart = () => {
             </div>
             <div className={styles.buttonContainterB}>
               <Link href={"/toner"}>
-                <button onClick={() => {}} className={styles.buttonCheck}>
+                <button onClick={() => { }} className={styles.buttonCheck}>
                   Add More Items
                 </button>
               </Link>

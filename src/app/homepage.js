@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import Head from "next/head";
 import ImageCarousel from "../components/Carousel";
 import Services from "../components/Services";
 import Image from "next/image";
@@ -9,79 +8,14 @@ import Header from "../components/Header";
 import Link from "next/link";
 import styles from "../styles/homepage.module.css";
 import Footer from "../components/Footer";
-import { useRouter } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 export default function Homepage() {
-  const [name, setName] = useState("");
-  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const [number, setNumber] = useState("");
-  const [images, setImages] = useState({
-    imageOne: true,
-    imageTwo: false,
-    imageThree: false,
-    imageFour: false,
-  });
-  const [message, setMessage] = useState("this is the test message");
   const tawkMessengerRef = useRef();
-  const captchaRef = useRef(null);
+
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  const router = useRouter();
-  var verifyCallback = function (response) {
-    setRecaptchaResponse(response);
-  };
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    console.log("Sending");
-
-    fetch("https://api.smtp2go.com/v3/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        api_key: process.env.NEXT_PUBLIC_SMTP_API,
-        to: [`<info@copiersutah.com>`],
-        sender: "<info@copiersutah.com>",
-        subject: `This is${name}'s quote form. Their number is ${number}`,
-        text_body: `${message}`,
-        html_body: `<h1>${message}</h1>`,
-        template_id: "5120871",
-        template_data: {
-          message: message,
-          number: number,
-          name: name,
-        },
-      }),
-    }).then((res) => {
-      console.log(res);
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        // setSubmitted(true);
-        // setName("");
-        // setEmail("");
-        // setBody("");
-      }
-    });
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setImages({
-        imageOne: images.imageFour,
-        imageTwo: images.imageOne,
-        imageThree: images.imageTwo,
-        imageFour: images.imageThree,
-      });
-    }, 8000);
-
-    //Clearing the interval
-    return () => clearInterval(interval);
-  }, [images.imageOne, images.imageTwo, images.imageThree, images.imageFour]);
-  console.log(images, "images");
 
   return (
     <div className={styles.main}>
@@ -115,7 +49,6 @@ export default function Homepage() {
                 </Link>
               </div>
             </div>
-
             <ImageCarousel />
           </div>
         </div>

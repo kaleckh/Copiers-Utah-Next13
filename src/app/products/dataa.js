@@ -6,7 +6,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../components/Footer";
-import { useRouter } from "next/navigation";
 import styles from "../../styles/product.module.css";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Products = () => {
@@ -14,13 +13,8 @@ const Products = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("this is the test message");
-  const router = useRouter();
 
   const tawkMessengerRef = useRef();
-
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
   const onLoad = () => {
     console.log("onLoad works!");
   };

@@ -1,19 +1,14 @@
 "use client";
 import React, { useRef, useState } from "react";
 import Header from "../../components/Header";
-import BreadCrumbs from "../components/BreadCrumbs";
+import BreadCrumbs from "../../components/BreadCrumbs";
 import Image from "next/image";
-import Footer from "../components/Footer";
-import { useRouter } from "next/navigation";
+import Footer from "../../components/Footer";
 import Link from "next/link";
-import styles from "../styles/Stuff.module.css";
+import styles from "../../styles/Stuff.module.css";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Desktop = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
-  const [message, setMessage] = useState("this is the test message");
   const [copiers, setCopiers] = useState([
     {
       model: "Lexmark C6160 Desktop Printer",
@@ -80,43 +75,13 @@ const Desktop = () => {
       type: "Desktop",
     },
   ]);
-  const router = useRouter();
 
   const tawkMessengerRef = useRef();
 
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  const sendEmail = (e) => {
-    e.preventDefault();
-    console.log("Sending");
-    let data = {
-      name,
-      email,
-      message,
-      number,
-    };
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log("Response received");
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        // setSubmitted(true);
-        // setName("");
-        // setEmail("");
-        // setBody("");
-      }
-    });
-  };
+
   const breadCrumbs = [
     { name: "Home", url: "/" },
     { name: `Products Sold`, url: `/products` },

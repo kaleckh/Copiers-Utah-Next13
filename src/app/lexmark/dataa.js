@@ -3,10 +3,10 @@ import React, { useRef } from "react";
 import Header from "../../components/Header";
 import Link from "next/link";
 import Section from "../../components/Section";
-import BreadCrumbs from "../components/BreadCrumbs";
-import Footer from "../components/Footer";
+import BreadCrumbs from "../../components/BreadCrumbs";
+import Footer from "../../components/Footer";
 import Image from "next/image";
-import styles from "../styles/lexmark.module.css";
+import styles from "../../styles/lexmark.module.css";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Lexmark = () => {

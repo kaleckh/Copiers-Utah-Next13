@@ -2,12 +2,12 @@
 import React, { useRef } from "react";
 import Header from "../../components/Header";
 import Head from "next/head";
-import BreadCrumbs from "../components/BreadCrumbs";
+import BreadCrumbs from "../../components/BreadCrumbs";
 import Section from "../../components/Section";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/konika.module.css";
+import styles from "../../styles/konika.module.css";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
 const Konica = () => {

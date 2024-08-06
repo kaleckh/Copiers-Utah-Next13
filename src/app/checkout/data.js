@@ -2,33 +2,26 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Header from "../../components/Header";
 import { CartContext } from "../../providers/cart";
-import BreadCrumbs from "../components/BreadCrumbs";
-import styles from "../styles/checkout.module.css";
-import Footer from "../components/Footer";
+import BreadCrumbs from "../../components/BreadCrumbs";
+import styles from "../../styles/checkout.module.css";
+import Footer from "../../components/Footer";
 import { useRouter } from "next/navigation";
 
 const Checkout = (props) => {
   const router = useRouter();
-  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const [identity, setIdentity] = useState({});
-  const [orderId, setOrderId] = useState("");
   const [bottomToggle, setBottomToggle] = useState(false);
   const [po, setPo] = useState("1234");
   const [city, setCity] = useState();
   const [hidden, setHidden] = useState(false);
   const [hiddenBottom, setHiddenBottom] = useState(false);
-  const [preShip, setPreShip] = useState();
   const [exp, setExp] = useState();
   const [billing, setBilling] = useState(false);
   const [csv, setCsv] = useState();
   const [card, setCard] = useState();
-  const [localCart, setLocalCart] = useState();
-  const [cardInfoLocal, setCardInfoLocal] = useState({});
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
-  const [noChange, setFalse] = useState(false);
   const [realPriceLocal, setRealPriceLocal] = useState();
   const {
     realPrice,
@@ -127,10 +120,10 @@ const Checkout = (props) => {
     }
   }
 
-  useEffect(() => {
-    setRealPriceLocal(JSON.parse(localStorage.getItem("realPrice")));
-    setPreShip(JSON.parse(localStorage.getItem("realPrice")) - 2);
-  }, []);
+  // useEffect(() => {
+  //   setRealPriceLocal(JSON.parse(localStorage.getItem("realPrice")));
+  //   setPreShip(JSON.parse(localStorage.getItem("realPrice")) - 2);
+  // }, []);
 
   useEffect(() => {
     setTotal(totalAmount - 2.99);

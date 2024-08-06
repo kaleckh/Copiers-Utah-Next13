@@ -3,10 +3,10 @@ import React, { useRef, useEffect } from "react";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import Link from "next/link";
-import Footer from "../components/Footer";
-import BreadCrumbs from "../components/BreadCrumbs";
+import Footer from "../../components/Footer";
+import BreadCrumbs from "../../components/BreadCrumbs";
 import Image from "next/image";
-import styles from "../styles/Refurbished.module.css";
+import styles from "../../styles/Refurbished.module.css";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from "react";
 
@@ -15,6 +15,7 @@ const Product = () => {
   const tawkMessengerRef = useRef();
   const [brandDescription, setBrandDescription] = useState();
   const [description, setDescription] = useState();
+  const [model, setModel] = useState();
   const [timeOut, setTimeOut] = useState();
   const [printSpeed, setPrintSpeed] = useState();
   const [paperSize, setpaperSize] = useState();

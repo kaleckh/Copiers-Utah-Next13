@@ -1,15 +1,13 @@
 "use client";
 import React, { useRef } from "react";
 import Header from "../../components/Header";
-import BreadCrumbs from "../components/BreadCrumbs";
+import BreadCrumbs from "../../components/BreadCrumbs";
 import Section from "../../components/Section";
 import Link from "next/link";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import Image from "next/image";
-import styles from "../styles/epson.module.css";
-import { useRouter } from "next/navigation";
+import styles from "../../styles/epson.module.css";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import { useState } from "react";
 
 const Epson = () => {
   const tawkMessengerRef = useRef();

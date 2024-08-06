@@ -5,8 +5,8 @@ import Section from "../../components/Section";
 import Image from "next/image";
 import { PatternFormat } from "react-number-format";
 import ReCAPTCHA from "react-google-recaptcha";
-import styles from "../styles/It.module.css";
-import Footer from "../components/Footer";
+import styles from "../../styles/It.module.css";
+import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const It = (props) => {
@@ -21,9 +21,7 @@ const It = (props) => {
   const captchaRef = useRef(null);
   const tawkMessengerRef = useRef();
 
-  const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
+
   async function sendEmail() {
     debugger;
     const requestOptions = {
@@ -41,8 +39,9 @@ const It = (props) => {
       debugger;
       const data1 = await response.json();
       console.log(data1, "this is the response");
-    } catch (err) {}
+    } catch (err) { }
   }
+
   useEffect(() => {
     if (
       message.length > 1 &&
@@ -54,13 +53,18 @@ const It = (props) => {
       setToggle(true);
     }
   }, [message, number, name, email, recaptchaResponse]);
+
+
   const onLoad = () => {
     console.log("onLoad works!");
   };
 
+
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
   };
+
+
   return (
     <div className={styles.main}>
       <div>
@@ -195,6 +199,7 @@ const It = (props) => {
                 flexDirection: "column",
                 alignItems: "center",
                 height: "96%",
+                margin: "10px"
               }}
             >
               <div className={styles.itSupport} />
