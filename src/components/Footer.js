@@ -4,7 +4,7 @@ import Link from "next/link";
 import Logo from "../../public/static/logo.webp";
 import { useRouter } from "next/navigation";
 export default function Footer() {
-  const router = useRouter();
+  
   return (
     <div className={styles.footer}>
       <div className={styles.smallerContainer}>

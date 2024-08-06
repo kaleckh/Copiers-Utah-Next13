@@ -1,11 +1,27 @@
-import React from "react";
+"use client"
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import styles from "../../../styles/buy.module.css";
 import Image from "next/image";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Payment = ({ breadCrumbs }) => {
+    const [finance, setFinance] = useState(false)
+    const [cash, setCash] = useState(false)
+    const [rent, setRent] = useState(true)
+    const tawkMessengerRef = useRef();
+
+    const onLoad = () => {
+        console.log("onLoad works!");
+    };
     return (
         <>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <TawkMessengerReact
+                onLoad={onLoad}
+                propertyId="5abd4931d7591465c7090c65"
+                widgetId="default"
+                useRef={tawkMessengerRef}
+            />
+            <div style={{ display: "flex", alignItems: "center", justifyContent:"center", paddingTop:'20px' }}>
                 <div className={styles.paddedBox}>Copiers Utah Payment Options</div>
             </div>
             <div className={styles.thirdSection}>
