@@ -15,7 +15,7 @@ export const metadata = {
 };
 
 
-const breadCrumbs = [{ name: "products", url: "/products" }];
+const breadCrumbs = [{ name: "Products", url: "/products" }];
 
 const konika = () => {
   return (
