@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import Image from "next/image";
 import Section from "../../components/Section";
 import { CartContext } from "../../providers/cart";
-import styles from "../../styles/shortTerm.module.css";
+import styles from "../../styles/fileChoice.module.css";
 import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Link from "next/link";
