@@ -5,13 +5,13 @@ import Header from "../../components/Header";
 import Image from "next/image";
 import Section from "../../components/Section";
 import { CartContext } from "../../providers/cart";
-import styles from "../styles/fileChoice.module.css";
-import Footer from "../components/Footer";
+import styles from "../../styles/shortTerm.module.css";
+import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { TonerContext } from "@/providers/toner";
-import BreadCrumbs from "../components/BreadCrumbs";
+import BreadCrumbs from "../../components/BreadCrumbs";
 
 const TonerChoice = (props) => {
   const searchParams = useSearchParams();
