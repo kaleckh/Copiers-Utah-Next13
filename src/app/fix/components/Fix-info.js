@@ -7,9 +7,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 
 const FixInfo = () => {
-    
+
     const [quoteToggle, setQuoteToggle] = useState(false);
     const tawkMessengerRef = useRef();
+    const captchaRef = useRef(null);
     const [toggle, setToggle] = useState(false);
 
     const onLoad = () => {
@@ -151,16 +152,16 @@ const FixInfo = () => {
                                 className={styles.padding}
                             >
                                 <ReCAPTCHA
-                    style={{
-                      marginBottom: "10px",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                    className="recaptcha"
-                    sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
-                    ref={captchaRef}
-                    onChange={verifyCallback}
-                  /> 
+                                    style={{
+                                        marginBottom: "10px",
+                                        display: "flex",
+                                        justifyContent: "center",
+                                    }}
+                                    className="recaptcha"
+                                    sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
+                                    ref={captchaRef}
+                                    onChange={verifyCallback}
+                                />
                             </div>
                             <button
                                 onClick={(e) => {
