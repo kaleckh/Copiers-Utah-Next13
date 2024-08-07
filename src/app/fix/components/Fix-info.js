@@ -8,6 +8,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const FixInfo = () => {
 
+    var verifyCallback = function (response) {
+        setRecaptchaResponse(response);
+    };
+
     const [quoteToggle, setQuoteToggle] = useState(false);
     const tawkMessengerRef = useRef();
     const captchaRef = useRef(null);
