@@ -14,7 +14,6 @@ export const metadata = {
 
 const breadCrumbs = [{ name: "Home", url: "/" }];
 
-
 const New = () => {
   return (
     <div className={styles.main}>

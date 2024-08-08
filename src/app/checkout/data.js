@@ -204,7 +204,7 @@ const Checkout = (props) => {
   const breadCrumbs = [
     { name: "Home", url: "/" },
     { name: `Toners`, url: `/toner` },
-    { name: `${tonerOem}`, url: `/tonerChoice?oem=${tonerOem}` },
+    { name: `${tonerOem}`, url: `/toner-choice?oem=${tonerOem}` },
     { name: `Your Cart`, url: `/cart` },
   ];
 

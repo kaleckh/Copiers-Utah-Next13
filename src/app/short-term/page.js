@@ -17,8 +17,8 @@ const refurbished = () => {
   return (
     <>
       <Header />
-      <RentalQuote/>
-      <RentalInfo/>
+      <RentalQuote />
+      <RentalInfo />
       <Section />
       <Footer />
     </>

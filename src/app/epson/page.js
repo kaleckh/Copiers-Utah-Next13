@@ -15,7 +15,7 @@ export const metadata = {
 
 const breadCrumbs = [{ name: "products", url: "/products" }];
 
-const epson = () => {
+const Epson = () => {
   return (
     <div className={styles.main}>
       <Header />
@@ -27,4 +27,4 @@ const epson = () => {
   );
 };
 
-export default epson;
+export default Epson;

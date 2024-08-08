@@ -6,7 +6,6 @@ import Footer from "../../components/Footer";
 import styles from "../../styles/epson.module.css";
 import Lexmark from "./dataa";
 
-
 export const metadata = {
   title:
     " New and Used Lexmark Copiers | High-Quality and Affordable | Copiers Utah",

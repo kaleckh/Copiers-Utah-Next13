@@ -14,7 +14,6 @@ export const metadata = {
     "Lexmark copiers, used Lexmark copiers, new Lexmark copiers, office copiers, copiers Utah, affordable copiers",
 };
 
-
 const breadCrumbs = [{ name: "Products", url: "/products" }];
 
 const konika = () => {

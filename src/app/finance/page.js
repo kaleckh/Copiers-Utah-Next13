@@ -4,7 +4,6 @@ import styles from "../../styles/Finance.module.css";
 import Footer from "../../components/Footer";
 import FinanceInfo from "./components/File-info";
 
-
 export const metadata = {
   title: "Financing and Buying Copiers | Get a Quote Today | Copiers Utah",
   description:
@@ -16,10 +15,11 @@ const finance = () => {
   return (
     <div className={styles.main}>
       <Header />
-      <FinanceInfo/>
+      <FinanceInfo />
       <Section />
       <Footer />
-    </div>);
+    </div>
+  );
 };
 
 export default finance;

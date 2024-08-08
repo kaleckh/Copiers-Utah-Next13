@@ -10,18 +10,15 @@ import Footer from "../../components/Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Cart = () => {
-
   const { cart, setCart, setRealPrice, tonerOem } = useContext(CartContext);
   const [total, setTotal] = useState(0);
   const tawkMessengerRef = useRef();
 
-  
   async function createLink() {
     const response = await fetch("/api/pay", { method: "POST" });
     const data = await response.json();
     window.location.replace(data.redirect);
   }
-
 
   // var removeCartItem = function (id) {
   //   setCart(cart.splice(id, 1));
@@ -30,7 +27,6 @@ const Cart = () => {
   const onLoad = () => {
     console.log("onLoad works!");
   };
-
 
   const newPriceAction = function () {
     let arr = [0];
@@ -45,22 +41,19 @@ const Cart = () => {
     setTotal(addedResult.toFixed(2));
   };
 
-
   const decimal = function (item) {
     setRealPrice(item.toFixed(2));
     return item.toFixed(2);
   };
 
-
   useEffect(() => {
     newPriceAction();
   }, [cart]);
 
-
   const breadCrumbs = [
     { name: "Home", url: "/" },
     { name: `Toners`, url: `/toner` },
-    { name: `${tonerOem}`, url: `/tonerChoice?oem=${tonerOem}` },
+    { name: `${tonerOem}`, url: `/toner-choice?oem=${tonerOem}` },
   ];
 
   return (
@@ -241,7 +234,7 @@ const Cart = () => {
             </div>
             <div className={styles.buttonContainterB}>
               <Link href={"/toner"}>
-                <button onClick={() => { }} className={styles.buttonCheck}>
+                <button onClick={() => {}} className={styles.buttonCheck}>
                   Add More Items
                 </button>
               </Link>

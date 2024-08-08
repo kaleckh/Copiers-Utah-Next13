@@ -12,7 +12,6 @@ const BreadCrumbs = ({ breadCrumbs }) => {
               {breadCrumb.name}
             </div>
           </Link>
-          {/* <div style={{ color: "black", paddingLeft: "10px" }}>/</div> */}
           {breadCrumbs?.length - 1 !== index && (
             <div className={styles.arrow}>
               <Image

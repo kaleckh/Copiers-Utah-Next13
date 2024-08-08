@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import { CartProvider } from "../providers/cart";
 import { TonerProvider } from "../providers/toner";
 import { OrderProvider } from "../providers/orders";
+import WhyCopiers from "../components/Section";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <TonerProvider>
         <OrderProvider>
-          <CartProvider>
+          <CartProvider>            
             <body className={inter.className}>{children}</body>
           </CartProvider>
         </OrderProvider>

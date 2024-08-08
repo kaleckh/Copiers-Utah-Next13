@@ -11,7 +11,6 @@ export const metadata = {
     "Copiers Utah: Quality copiers for sale/rent. Pick from various office machines with advanced features & affordable prices. Contact us now! ",
 };
 
-
 export default function Home() {
   return (
     <>

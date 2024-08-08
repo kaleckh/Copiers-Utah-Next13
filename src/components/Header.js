@@ -36,7 +36,7 @@ export default function Header() {
               </Link>
             </div>
             <div className={styles.pieceContainer}>
-              <Link href="/shortTerm">
+              <Link href="/short-term">
                 <div className={styles.headerPieces}>Rentals</div>
                 <div className={styles.lineSmall}></div>
               </Link>

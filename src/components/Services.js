@@ -93,7 +93,7 @@ const Services = () => {
                 laid-back, efficient, and pro-level copier rental services.
               </div>
             </div>
-            <Link href={"/shortTerm"}>
+            <Link href={"/short-term"}>
               <button className={styles.button}>See Details!</button>
             </Link>
           </div>

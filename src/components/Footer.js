@@ -4,7 +4,6 @@ import Link from "next/link";
 import Logo from "../../public/static/logo.webp";
 import { useRouter } from "next/navigation";
 export default function Footer() {
-  
   return (
     <div className={styles.footer}>
       <div className={styles.smallerContainer}>
@@ -61,7 +60,7 @@ export default function Footer() {
           <Link href="/buy">
             <h4 className={styles.h4}>Copiers for sale</h4>
           </Link>
-          <Link href="/shortTerm">
+          <Link href="/short-term">
             <h4 className={styles.h4}>Copier Rentals</h4>
           </Link>
           <Link href="/fix">

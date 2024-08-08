@@ -168,7 +168,7 @@ const Buy = (props) => {
                         localStorage.setItem("tonerOem", toner.oem);
                       }}
                       className={styles.somethingElse}
-                      href={`/tonerChoice?oem=${toner.oem}`}
+                      href={`/toner-choice?oem=${toner.oem}`}
                     >
                       <Image
                         style={{ borderRadius: "5px" }}

@@ -2,7 +2,6 @@ import styles from "../styles/Footer.module.css";
 import Image from "next/image";
 // import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 export default function Section() {
-  
   const onLoad = () => {
     console.log("onLoad works!");
   };
