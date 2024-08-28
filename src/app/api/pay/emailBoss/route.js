@@ -9,7 +9,7 @@ export async function POST(req, res) {
   };
   const url = "https://api.smtp2go.com/v3/email/send";
   const data = {
-    api_key: process.env.SMTP_API,
+    api_key: process.env.NEXT_PUBLIC_SMTP_API,
     to: [`<info@copiersutah.com>`],
     sender: "<info@copiersutah.com>",
     subject: `This is kale's quote form. Her number is`,

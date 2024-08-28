@@ -30,7 +30,7 @@ const Buy = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        api_key: process.env.SMTP_API,
+        api_key: process.env.NEXT_PUBLIC_SMTP_API,
         to: [`<info@copiersutah.com>`],
         sender: "<info@copiersutah.com>",
         subject: `This is${name}'s quote form. Her number is ${number}`,
