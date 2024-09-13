@@ -169,7 +169,7 @@ const RefurbishedInfo = () => {
                       alignItems: "center",
                     }}
                   >
-                    <Link href={"/product"}>
+                    <Link href={"/buy"}>
                       <button
                         onClick={() => {
                           localStorage.setItem("Image", `${copier.image}`);
