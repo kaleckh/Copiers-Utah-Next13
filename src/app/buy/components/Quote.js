@@ -40,8 +40,7 @@ const Quote = () => {
     if (
       message.length > 1 &&
       number.length > 1 &&
-      name.length > 1 &&
-      email.length > 1 &&
+      name.length > 1 &&      
       recaptchaResponse !== false
     ) {
       setToggle(true);
