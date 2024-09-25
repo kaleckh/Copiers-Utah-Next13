@@ -14,13 +14,13 @@ export async function POST(req) {
     api_key: process.env.NEXT_PUBLIC_SMTP_API, // Ensure this environment variable is set correctly
     to: ['info@copiersutah.com'],
     sender: 'info@copiersutah.com',
-    subject: `This is kale's quote form. Her number is`,
+    subject: `This is ${newData.name} quote form. Her number is`,
     text_body: 'something',
     html_body: '<h1>something</h1>',
     template_id: '5120871',
     template_data: {
       name: newData.name,
-      from: newData.from,
+      from: `${newData.from} Discount Copier`,
       number: newData.number,
       Email: newData.email,
       message: newData.message,
