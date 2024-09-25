@@ -534,14 +534,14 @@ const Checkout = (props) => {
             </div>
 
             <button
-              onClick={() => {
-                chargeCard().then(() => {
-                  createDistribution().then(() => {
-                    sendEmailBoss();
-                    sendEmail();
-                  });
-                });
-              }}
+              // onClick={() => {
+              //   chargeCard().then(() => {
+              //     createDistribution().then(() => {
+              //       sendEmailBoss();
+              //       sendEmail();
+              //     });
+              //   });
+              // }}
               style={{ marginBottom: "15px" }}
               className={styles.button}
             >
