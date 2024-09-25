@@ -20,7 +20,7 @@ export async function POST(req) {
     template_id: '5120871',
     template_data: {
       name: newData.name,
-      from: `${newData.from} Discount Copier`,
+      from: `${newData.from} `,
       number: newData.number,
       Email: newData.email,
       message: newData.message,
