@@ -5,18 +5,31 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // First redirect
       {
         source: '/',
         has: [
           {
             type: 'host',
-            value: 'copiersutah.com', 
+            value: 'copiersutah.com',
           },
         ],
         destination: 'https://www.copiersutah.com',
-        permanent: true, 
+        permanent: true,
       },
-    ]
+      // Second redirect
+      {
+        source: '/old-page',
+        has: [
+          {
+            type: 'host',
+            value: 'https://copiersutah.com',
+          },
+        ],
+        destination: 'https://www.copiersutah.com',
+        permanent: true,
+      },
+    ];
   },
 };
 
