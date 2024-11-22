@@ -174,7 +174,7 @@ const Lexmark = () => {
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
-                <Link href={"/desktop"}>
+                <Link href={"/buy"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
               </div>
@@ -188,7 +188,7 @@ const Lexmark = () => {
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
                 </div>
-                <Link href={"/multicolor"}>
+                <Link href={"/buy"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
               </div>
@@ -200,7 +200,7 @@ const Lexmark = () => {
                   alt={"Black And White Lexmark Copier"}
                 />
                 <div className={styles.titleMid}>Black And White Copiers</div>
-                <Link href={"/black-white"}>
+                <Link href={"/buy"}>
                   <button className={styles.button}>See Options</button>
                 </Link>
               </div>
