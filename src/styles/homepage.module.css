@@ -1187,7 +1187,7 @@
   }
   .box {
     height: fit-content;
-    width: 70%;
+    width: 90%;
     margin: 5px;
   }
   .serviceTitle {
@@ -1418,6 +1418,6 @@
     font-size: 22px;
   }
   .box {
-    width: 80%;
+    width: 95%;
   }
 }
