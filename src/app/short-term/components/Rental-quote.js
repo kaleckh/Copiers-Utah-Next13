@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import styles from "../../../styles/shortTerm.module.css";
 import { PatternFormat } from "react-number-format";
+import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Image from "next/image";
 
@@ -12,6 +13,7 @@ const RentalQuote = () => {
   const [quote, setQuote] = useState(false);
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
+  const captchaRef = useRef(null);
   const tawkMessengerRef = useRef();
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
 
@@ -52,8 +54,14 @@ const RentalQuote = () => {
 
       const data1 = await response.json();
       console.log(data1, "this is the response");
-    } catch (err) {}
+    } catch (err) { }
   }
+
+
+  var verifyCallback = function (response) {
+    setRecaptchaResponse(response);
+  };
+
 
   return (
     <div className={styles.secondSection}>
@@ -145,16 +153,16 @@ const RentalQuote = () => {
                     className={styles.padding}
                   >
                     {/* <ReCAPTCHA
-                        style={{
-                          marginBottom: "10px",
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                        className="recaptcha"
-                        sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
-                        ref={captchaRef}
-                        onChange={verifyCallback}
-                      /> */}
+                      style={{
+                        marginBottom: "10px",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                      className="recaptcha"
+                      sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
+                      ref={captchaRef}
+                      onChange={verifyCallback}
+                    /> */}
                   </div>
                   <button
                     onClick={(e) => {
