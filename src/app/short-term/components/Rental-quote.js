@@ -152,7 +152,7 @@ const RentalQuote = () => {
                     style={{ height: "25%", display: "flex" }}
                     className={styles.padding}
                   >
-                    {/* <ReCAPTCHA
+                    <ReCAPTCHA
                       style={{
                         marginBottom: "10px",
                         display: "flex",
@@ -162,7 +162,7 @@ const RentalQuote = () => {
                       sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
                       ref={captchaRef}
                       onChange={verifyCallback}
-                    /> */}
+                    />
                   </div>
                   <button
                     onClick={(e) => {
