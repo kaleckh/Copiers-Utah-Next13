@@ -122,6 +122,11 @@ export default function Footer() {
                 Info@copiersutah.com
               </div>
             </div>
+            <div className={styles.flex}>
+              <div style={{ fontSize: "13px", fontWeight: "200" }}>
+                <Link href="/privacy">Privacy Policy</Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

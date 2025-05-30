@@ -1,0 +1,80 @@
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.heading {
+  color: #02325c;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.subheading {
+  color: #1e96c8;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.updated {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.paragraph {
+  color: #222;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.list {
+  margin-left: 24px;
+  margin-bottom: 18px;
+  color: #222;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.important {
+  background: #fef3e6;
+  border-left: 4px solid #febd68;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  color: #b05a00;
+  font-weight: 500;
+}
+
+.contactList {
+  margin-left: 24px;
+  margin-bottom: 18px;
+  color: #02325c;
+  font-size: 1.08rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 12px 4vw;
+    border-radius: 8px;
+  }
+  .heading {
+    font-size: 1.4rem;
+  }
+  .subheading {
+    font-size: 1.1rem;
+  }
+  .paragraph, .list, .contactList {
+    font-size: 1rem;
+  }
+} 
