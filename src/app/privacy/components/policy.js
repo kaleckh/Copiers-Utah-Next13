@@ -14,6 +14,11 @@ const Policy = () => {
       <h3 className={styles.subheading}>Our Commitment to Your Privacy</h3>
       <p className={styles.paragraph}>Copiers Utah respects your privacy and is committed to protecting your personal information. This privacy statement specifically covers our SMS/text messaging services and how we handle your mobile phone information.</p>
 
+      <h3 className={styles.subheading}>We Do NOT Share or Sell Your Information</h3>
+      <div className={styles.important}>
+        <strong>Important Promise:</strong> Copiers Utah will NEVER sell, rent, lease, or otherwise distribute your mobile phone number or personal information to third parties for marketing purposes. Your information stays with us and is used only for the services you've requested.
+      </div>
+      
       <h3 className={styles.subheading}>Information We Collect</h3>
       <p className={styles.paragraph}>When you opt-in to receive text messages from Copiers Utah, we collect:</p>
       <ul className={styles.list}>
@@ -32,11 +37,6 @@ const Policy = () => {
         <li>Send service-related notifications and alerts</li>
       </ul>
 
-      <h3 className={styles.subheading}>We Do NOT Share or Sell Your Information</h3>
-      <div className={styles.important}>
-        <strong>Important Promise:</strong> Copiers Utah will NEVER sell, rent, lease, or otherwise distribute your mobile phone number or personal information to third parties for marketing purposes. Your information stays with us and is used only for the services you've requested.
-      </div>
-
       <h3 className={styles.subheading}>Message Frequency and Charges</h3>
       <ul className={styles.list}>
         <li><strong>Frequency:</strong> Message frequency varies. You may receive promotional messages up to 4 times per month, maintenance reminders monthly, and service alerts as needed.</li>
@@ -48,7 +48,7 @@ const Policy = () => {
       <ul className={styles.list}>
         <li><strong>Opt Out:</strong> Reply STOP to any message to immediately unsubscribe</li>
         <li><strong>Get Help:</strong> Reply HELP to any message for assistance</li>
-        <li><strong>Contact Us:</strong> Call (801) 555-0123 with questions about your SMS preferences</li>
+        <li><strong>Contact Us:</strong> Call (801) 261-0510 with questions about your SMS preferences</li>
       </ul>
 
       <h3 className={styles.subheading}>Data Security</h3>
