@@ -63,6 +63,11 @@
   font-size: 1.08rem;
 }
 
+.link {
+  color: #02325c;
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 12px 4vw;

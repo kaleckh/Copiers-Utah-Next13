@@ -8,70 +8,36 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Policy = () => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>SMS/Text Message Privacy Statement</h2>
-      <p className={styles.updated}><strong>Last Updated:</strong> May 29, 2025</p>
+      <h2 className={styles.heading}>SMS Terms & Conditions</h2>
+      <p className={styles.updated}><strong>Last Updated:</strong> June 5, 2025</p>
 
-      <h3 className={styles.subheading}>Our Commitment to Your Privacy</h3>
-      <p className={styles.paragraph}>Copiers Utah respects your privacy and is committed to protecting your personal information. This privacy statement specifically covers our SMS/text messaging services and how we handle your mobile phone information.</p>
+      <h3 className={styles.subheading}>Product Description</h3>
+      <p className={styles.paragraph}>By providing your mobile phone number, you consent to receive SMS messages from Copiers Utah related to order details and service requests.</p>
 
-      <h3 className={styles.subheading}>We Do NOT Share or Sell Your Information</h3>
-      <div className={styles.important}>
-        <strong>Important Promise:</strong> Copiers Utah will NEVER sell, rent, lease, or otherwise distribute your mobile phone number or personal information to third parties for marketing purposes. Your information stays with us and is used only for the services you've requested.
-      </div>
+      <h3 className={styles.subheading}>Message Frequency</h3>
+      <ul className={styles.list}>
+        <li>Message frequency may vary.</li>
+      </ul>
+
+      <h3 className={styles.subheading}>Message and Data Rates</h3>
+      <ul className={styles.list}>
+        <li>Standard message and data rates may apply.</li>
+      </ul>
+
+      <h3 className={styles.subheading}>Opting Out</h3>
+      <p className={styles.paragraph}>You may opt out of receiving SMS messages at any time by replying with "STOP" to any SMS message you receive from us. After opting out, you will receive a confirmation message, and we will cease sending SMS messages to your number.</p>
       
-      <h3 className={styles.subheading}>Information We Collect</h3>
-      <p className={styles.paragraph}>When you opt-in to receive text messages from Copiers Utah, we collect:</p>
-      <ul className={styles.list}>
-        <li>Your mobile phone number</li>
-        <li>Your name (if provided)</li>
-        <li>Date and time of consent</li>
-        <li>Services you're interested in receiving updates about</li>
-      </ul>
 
-      <h3 className={styles.subheading}>How We Use Your Information</h3>
-      <p className={styles.paragraph}>We use your mobile phone number and related information solely to:</p>
-      <ul className={styles.list}>
-        <li>Send you copier and printer service updates</li>
-        <li>Provide maintenance reminders for your equipment</li>
-        <li>Share special offers and promotions for our services</li>
-        <li>Send service-related notifications and alerts</li>
-      </ul>
+      <h3 className={styles.subheading}>Help and Support</h3>
+      <p className={styles.paragraph}>If you need assistance or have questions about our SMS service, reply with "HELP" to any SMS message you receive, or contact our customer support team at +18012612039.</p>
 
-      <h3 className={styles.subheading}>Message Frequency and Charges</h3>
-      <ul className={styles.list}>
-        <li><strong>Frequency:</strong> Message frequency varies. You may receive promotional messages up to 4 times per month, maintenance reminders monthly, and service alerts as needed.</li>
-        <li><strong>Charges:</strong> Standard message and data rates from your mobile carrier apply. Copiers Utah does not charge for messages, but your carrier may.</li>
-      </ul>
-
-      <h3 className={styles.subheading}>Your Rights and Controls</h3>
-      <p className={styles.paragraph}>You have complete control over your SMS preferences:</p>
-      <ul className={styles.list}>
-        <li><strong>Opt Out:</strong> Reply STOP to any message to immediately unsubscribe</li>
-        <li><strong>Get Help:</strong> Reply HELP to any message for assistance</li>
-        <li><strong>Contact Us:</strong> Call (801) 261-0510 with questions about your SMS preferences</li>
-      </ul>
-
-      <h3 className={styles.subheading}>Data Security</h3>
-      <p className={styles.paragraph}>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Your mobile phone number is stored securely and accessed only by authorized personnel.</p>
-
-      <h3 className={styles.subheading}>Consent and Age Requirements</h3>
-      <p className={styles.paragraph}>By providing your mobile phone number and agreeing to receive text messages, you confirm that:</p>
-      <ul className={styles.list}>
-        <li>You are 18 years of age or older, or have parental consent</li>
-        <li>You are the primary user of the mobile phone number provided</li>
-        <li>You understand and agree to these privacy terms</li>
-      </ul>
-
-      <h3 className={styles.subheading}>Changes to This Policy</h3>
-      <p className={styles.paragraph}>We may update this SMS privacy policy from time to time. If we make material changes, we will notify you via text message and/or update the "Last Updated" date above.</p>
-
-      <h3 className={styles.subheading}>Contact Information</h3>
-      <p className={styles.paragraph}>For questions about this SMS privacy policy or your text message preferences:</p>
-      <ul className={styles.contactList}>
-        <li><strong>Phone:</strong> (801) 261-0510</li>
-        <li><strong>Email:</strong> info@copiersutah.com</li>
-        <li><strong>Mail:</strong> Copiers Utah, 554 W 8360 S, Sandy, UT 84070</li>
-      </ul>
+      <h3 className={styles.subheading}>Privacy Policy</h3>
+      <p className={styles.paragraph}>Your phone number will be handled in accordance with our Privacy Policy, available at <a href="https://www.copiersutah.com/privacy/" target="_blank" rel="noopener noreferrer" className={styles.link}>https://www.copiersutah.com/privacy/</a>. No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
+      
+      {/* <h3 className={styles.subheading}>Privacy Policy</h3>
+      <div className={styles.important}>
+        Your phone number will be handled in accordance with our Privacy Policy, available at https://www.copiersutah.com/privacy/. No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+      </div> */}
     </div>
   );
 };
