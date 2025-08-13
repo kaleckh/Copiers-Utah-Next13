@@ -31,6 +31,14 @@ export default function Home() {
                 `}
       </Script>
       <div className={styles.main}>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0PVB5X0WK" />
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-M0PVB5X0WK');
+        </script>
         <Header />
         <HomepageInfo />
         <Section />
