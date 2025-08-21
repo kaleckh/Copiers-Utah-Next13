@@ -82,7 +82,7 @@
 
 .flex {
   display: flex;
-  height: 100%;
+  height: 60%;
 }
 .flexSection {
   display: flex;
@@ -171,11 +171,19 @@
   }
 
   .exploreContainer2 {
-    display: none;
+    width: 100%;
+    padding: 15px 0;
   }
-
   .row div {
     font-size: 12px;
+  }
+  .smallerContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 70%;
+    padding-bottom: 20px;
   }
 
   .titleWhy {
@@ -189,7 +197,7 @@
   }
 
   .exploreContainerGood {
-    width: 80%;
+    width: 50%;
   }
 
   .exploreContainer {
