@@ -126,8 +126,9 @@ const Form = (props) => {
             justifyContent: "center",
           }}
           className="recaptcha"
-          sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
+          sitekey={SITE_KEY}
           ref={captchaRef}
+          onChange={setToken}
         />
       </div>
       <button

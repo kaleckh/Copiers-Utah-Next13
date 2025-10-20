@@ -152,7 +152,7 @@ const FinanceInfo = () => {
                             justifyContent: "center",
                           }}
                           className="recaptcha"
-                          sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
+                          sitekey={SITE_KEY}
                           ref={captchaRef}
                           onChange={verifyCallback}
                         />

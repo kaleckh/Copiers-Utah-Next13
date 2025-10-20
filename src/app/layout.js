@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <!-- Google tag (gtag.js) -->
+        {/* Google tag (gtag.js) */}
         <Script 
           async src="https://www.googletagmanager.com/gtag/js?id=G-MN2KYPVC8G"
           strategy="afterInteractive"
