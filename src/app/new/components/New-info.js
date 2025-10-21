@@ -7,148 +7,106 @@ import Image from "next/image";
 
 const NewInfo = () => {
   const tawkMessengerRef = useRef();
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [number, setNumber] = useState('')
+  const [message, setMessage] = useState('this is the test message')
   const [copiers, setCopiers] = useState([
     {
-      model: "Lexmark XM9145",
-      modelNumber: "21K0300",
-      image: "c658.webp",
-      PagesPerMinute: "65",
-      paperSize: "12 x 18",
-      ScanSpeed: "240 per minute",
-      timeOut: "6.5 ",
-      type: "Refurbished",
-      brand: "Lexmark",
-      description:
-        "The C658 is a heft workforce copier-printer with a footpring only a couple inches larger than a typical copier. Its internal parts are more robust to handle higher speeds, volume, and longevity.",
-    },
-    {
-      model: "Lexmark XM 9155",
-      modelNumber: "7421-239",
-      image: "c758.webp",
-      PagesPerMinute: "75",
-      brand: "Lexmark",
-      paperSize: "12 x 18",
-      ScanSpeed: "120",
-      timeOut: "3.6 ",
-      description:
-        "The C758 is a heft workforce copier-printer with a footpring only a couple inches larger than a typical copier. Its internal parts are more robust to handle higher speeds, volume, and longevity.",
-      type: "Refurbished",
-    },
-    {
-      model: "Lexmark 9165",
-      modelNumber: "7421-439",
-      image: "c558.webp",
-      brand: "Lexmark",
+      model: "Lexmark XC8355",
+      image: "9525.webp",
       PagesPerMinute: "55",
-      paperSize: "12 x 18",
-      ScanSpeed: "80",
-      timeOut: "4.4 ",
-      type: "Refurbished",
-      description:
-        "The C558 is a speedy workhorse copier, offering a robust platform fit for high volumes or longevity in smaller offices",
-    },
-    {
-      model: "Lexmark XC 9325",
-      modelNumber: "7580-198",
-      image: "c368.webp",
-      PagesPerMinute: "43",
+      paperSize: "8.5 X 14",
+      ScanSpeed: "240 sides per minute",
+      timeOut: "7.1",
+      type: "New",
       brand: "Lexmark",
-      paperSize: "12 x 18",
-      ScanSpeed: "160",
-      timeOut: "6.5 ",
-      type: "Refurbished",
       description:
-        "The C368 is a meduium sized office copier-printer with premier color quality and all the functionality of a large office copier. ",
+        "With the new XC8355 color A4 multifunction printer, you get reassuring versatility, exceptional sustainability, and surprising simplicity from such sophisticated technology. Boost your productivity with vivid prints — up to 55 pages per minute*. Intuitively navigate the 10-inch color touchscreen, and save time with single-pass two-sided scanning.",
     },
     {
-      model: "Lexmark XC9335",
-      modelNumber: "7580-298",
-      image: "c258.webp",
+      model: "Lexmark XC9525",
+      image: "9525.webp",
       PagesPerMinute: "25",
       brand: "Lexmark",
-      paperSize: "12/ x 18",
-      timeOut: "7.3 ",
-      type: "Refurbished",
+      paperSize: "12 x 18",
+      ScanSpeed: "200 sides per minute",
+      timeOut: "7.1",
       description:
-        "The C258 is a small office copier-printer with all the functionality and options of a large office copier. This is our most cost effective 12x18-capable rebuilt machine that does not sacrifice any color quality.",
+        "With the new XC9525 color A3 multifunction printer, you get reassuring versatility, exceptional sustainability, and surprising simplicity from such sophisticated technology. Boost your productivity with vivid prints — up to 25 pages per minute*. Intuitively navigate the 10-inch color touchscreen, and save time with single-pass two-sided scanning.",
+      type: "New",
     },
     {
-      model: "Lexmark XC9445",
-      PagesPerMinute: "45",
-      modelNumber: "7580-498",
-      image: "c458.webp",
+      model: "Lexmark XC9535",
+      image: "9525.webp",
+      brand: "Lexmark",
+      PagesPerMinute: "35",
+      paperSize: "12 x 18",
+      ScanSpeed: "200 sides per minute",
+      timeOut: "7.1",
+      type: "New",
+      description:
+        "With the new XC9535 color A3 multifunction printer, you get reassuring versatility, exceptional sustainability, and surprising simplicity from such sophisticated technology. Boost your productivity with vivid prints — up to 35 pages per minute*. Intuitively navigate the 10-inch color touchscreen, and save time with single-pass two-sided scanning.",
+    },
+    {
+      model: "Lexmark XC9635",
+      image: "9655.svg",
+      PagesPerMinute: "35",
       brand: "Lexmark",
       paperSize: "12 x 18",
-      ScanSpeed: "120",
-      timeOut: "5.1 ",
-      type: "Refurbished",
+      ScanSpeed: "240 sides per minute",
+      timeOut: "7.1",
+      type: "New",
       description:
-        "The C458 is out most popular copier-printer. It is ideal for most sized offices, provides top color quality, and full functionality and speed to handel every office need.",
+        "With the new XC9635 color A3 multifunction printer, you get reassuring versatility, exceptional sustainability, and surprising simplicity from such sophisticated technology. Boost your productivity with vivid prints — up to 35 pages per minute*. Intuitively navigate the 10-inch color touchscreen, and save time with single-pass two-sided scanning.",
     },
     {
-      model: "Lexmark XC9455",
-      modelNumber: " 7580-698",
-      PagesPerMinute: "52",
-      image: "xc6152.webp",
-      paperSize: "44.8 x 25.54",
-      ScanSpeed: "120",
-      brand: "lexmark",
-      type: "Refurbished",
-      timeOut: "6.5 ",
-      description:
-        "The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ",
-    },
-    {
-      model: "Lexmark XC9465",
-      modelNumber: " 7580-898",
-      PagesPerMinute: "52",
-      image: "xc6152.webp",
-      paperSize: "44.8 x 25.54",
-      ScanSpeed: "120",
+      model: "Lexmark XC9645",
+      image: "9655.svg",
+      PagesPerMinute: "45",
       brand: "Lexmark",
-      type: "Refurbished",
-      timeOut: "6.5 ",
+      paperSize: "12 x 18",
+      ScanSpeed: "240 sides per minute",
+      timeOut: "7.1",
+      type: "New",
       description:
-        "The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ",
+        "With the new XC9645 color A3 multifunction printer, you get reassuring versatility, exceptional sustainability, and surprising simplicity from such sophisticated technology. Boost your productivity with vivid prints — up to 45 pages per minute*. Intuitively navigate the 10-inch color touchscreen, and save time with single-pass two-sided scanning.",
     },
     {
-      model: "Lexmark XC4140",
-      modelNumber: " 7528-196",
-      PagesPerMinute: "52",
-      image: "xc4140.webp",
-      paperSize: "44.8 x 25.54",
-      ScanSpeed: "120",
-      brand: "lexmark",
-      type: "Refurbished",
-      timeOut: "6.5 ",
+      model: "Lexmark XC9655",
+      PagesPerMinute: "55",
+      image: "9655.svg",
+      brand: "Lexmark",
+      paperSize: "12 x 18",
+      ScanSpeed: "240 sides per minute",
+      timeOut: "7.1",
+      type: "New",
       description:
-        "The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ",
+        "With the new XC9655 color A3 multifunction printer, you get reassuring versatility, exceptional sustainability, and surprising simplicity from such sophisticated technology. Boost your productivity with vivid prints — up to 55 pages per minute*. Intuitively navigate the 10-inch color touchscreen, and save time with single-pass two-sided scanning.",
     },
     {
-      model: "Lexmark C4150",
-      modelNumber: " 40C9054",
-      PagesPerMinute: "52",
-      image: "m1246.webp",
-      paperSize: "44.8 x 25.54",
-      ScanSpeed: "120",
-      brand: "lexmark",
-      type: "Refurbished",
-      timeOut: "6.5 ",
+      model: "Lexmark XC4342",
+      PagesPerMinute: "42",
+      image: "4342.png",
+      paperSize: "8.5 X 14",
+      ScanSpeed: "84 sides per minute",
+      brand: "Lexmark",
+      type: "New",
+      timeOut: "6.4",
       description:
-        "The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ",
+        "The Lexmark XC4342 is designed for performance, security, and ease of use for mid-to-large workgroups at speeds up to 42 pages per minute*.",
     },
     {
-      model: "Lexmark M1246",
-      modelNumber: " 4600‑690",
-      PagesPerMinute: "52",
-      image: "m1246.webp",
-      paperSize: "44.8 x 25.54",
-      ScanSpeed: "120",
-      brand: "lexmark",
-      type: "Refurbished",
-      timeOut: "6.5 ",
+      model: "Lexmark XM5365",
+      PagesPerMinute: "65",
+      image: "5365.png",
+      paperSize: "8.5 X 14",
+      ScanSpeed: "150 sides per minute",
+      brand: "Lexmark",
+      type: "New",
+      timeOut: "4.2",
       description:
-        "The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ",
+        "Put output at up to 65 ppm* in more places with the Lexmark XM5365, the multifunction product with features and performance to satisfy even large workgroups.",
     },
   ]);
 
@@ -214,7 +172,7 @@ const NewInfo = () => {
                       alignItems: "center",
                     }}
                   >
-                    <Link href={"/buy"}>
+                    <Link href={"/product"}>
                       <button
                         onClick={() => {
                           localStorage.setItem("Image", `${copier.image}`);
@@ -230,6 +188,7 @@ const NewInfo = () => {
                           localStorage.setItem("brand", `${copier.brand}`);
                           localStorage.setItem("timeOut", `${copier.timeOut}`);
                           localStorage.setItem("type", `${copier.type}`);
+                          localStorage.setItem("ScanSpeed", `${copier.ScanSpeed}`);
                           localStorage.setItem(
                             "description",
                             `${copier.description}`,
@@ -243,7 +202,6 @@ const NewInfo = () => {
                   </div>
                   <div className={styles.fifty}>
                     <div className={styles.rowNumber}>
-                      <div className={styles.numberContainer}>Model:</div>
                       <div>{copier.modelNumber}</div>
                     </div>
                     <div className={styles.rowNumber}></div>

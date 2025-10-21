@@ -90,7 +90,7 @@ const Checkout = (props) => {
         zip: billingZip,
       });
     }
-  }, [billingAddress, billingCity, billingZip, billingState, hiddenBottom, address, city, state, zip]);
+  }, [billingAddress, billingCity, billingZip, billingState, address, city, hiddenBottom, state, zip]);
 
   async function callBack() {}
   // useEffect(() => {
