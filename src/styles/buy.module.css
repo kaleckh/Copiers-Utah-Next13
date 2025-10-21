@@ -88,6 +88,7 @@
 }
 
 .thirdSection {
+  background-color: white;
   display: flex;
   height: 30%;
   align-items: center;
@@ -485,6 +486,7 @@
 }
 
 .paddedBox {
+  background-color: white;
   color: black;
   padding: 10px;
   font-size: 25px;

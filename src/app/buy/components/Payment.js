@@ -26,6 +26,7 @@ const Payment = ({ breadCrumbs }) => {
       />
       <div
         style={{
+          backgroundColor: "white",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
