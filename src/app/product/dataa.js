@@ -42,6 +42,7 @@ const Product = () => {
   }
   var verifyCallback = function (response) {
     setRecaptchaResponse(response)
+    console.log(response)
   }
   const captchaRef = useRef(null)
   useEffect(() => {
@@ -202,11 +203,7 @@ const Product = () => {
                 <Link href={'/buy'}>
                   <button style={{ margin: "15px" }} className={styles.button}>Get A Quote</button>
                 </Link>
-                <ReCAPTCHA
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                  ref={captchaRef}
-                  onChange={verifyCallback}
-                />
+                
               </div>
             </div>
           </div>

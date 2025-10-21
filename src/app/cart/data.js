@@ -48,7 +48,7 @@ const Cart = () => {
 
   useEffect(() => {
     newPriceAction();
-  }, [cart]);
+  }, [cart, newPriceAction]);
 
   const breadCrumbs = [
     { name: "Home", url: "/" },
@@ -103,7 +103,7 @@ const Cart = () => {
                   </div>
                   <div className={styles.buggy}>
                     <div style={{ width: "200px" }}>
-                      <Image src={toner.image} width={150} height={150} />
+                      <Image src={toner.image} width={150} height={150} alt={toner.name} />
                     </div>
                     <div className={styles.priceBox}>
                       <div className={styles.cartTitle}>{toner.name}</div>

@@ -196,7 +196,7 @@ const TonerChoice = (props) => {
           <div className={styles.column}>
             {/* <div className={styles.titleSmall}> OEM #: {toner.oem}</div> */}
             <div className={styles.imageContainer}>
-              <Image src={toner.image} width={300} height={250} />
+              <Image src={toner.image} width={300} height={250} alt={toner.name} />
             </div>
           </div>
           <div className={styles.centerFeature}>
