@@ -203,7 +203,6 @@ const Product = () => {
                 <Link href={'/buy'}>
                   <button style={{ margin: "15px" }} className={styles.button}>Get A Quote</button>
                 </Link>
-                
               </div>
             </div>
           </div>
