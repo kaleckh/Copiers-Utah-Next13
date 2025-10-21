@@ -66,14 +66,14 @@ const Checkout = (props) => {
       id: po,
     });
     // setPersonInfo(identity)
-  }, [firstName, lastName, email, phone, city, address, state, zip, po]);
+  }, [firstName, lastName, email, phone, city, address, state, zip, po, setPersonInfo]);
   useEffect(() => {
     setCardInfo({
       card: card,
       csv: csv,
       exp: exp,
     });
-  }, [csv, card, exp]);
+  }, [csv, card, exp, setCardInfo]);
   useEffect(() => {
     if (hiddenBottom === false) {
       setBillingInfo({
@@ -90,7 +90,7 @@ const Checkout = (props) => {
         zip: billingZip,
       });
     }
-  }, [billingAddress, billingCity, billingZip, billingState]);
+  }, [billingAddress, billingCity, billingZip, billingState, hiddenBottom, address, city, state, zip]);
 
   async function callBack() {}
   // useEffect(() => {

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:check": "node dev-env.js && next dev",
     "prettier": "prettier . --write",
     "build": "next build",
     "start": "next start",
