@@ -19,12 +19,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <!-- Google tag (gtag.js) -->
         <Script 
           async src="https://www.googletagmanager.com/gtag/js?id=G-MN2KYPVC8G"
           strategy="afterInteractive"
         />
-        <Script>
+        <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

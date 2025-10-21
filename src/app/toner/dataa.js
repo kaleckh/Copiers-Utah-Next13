@@ -175,6 +175,7 @@ const Buy = (props) => {
                         src={toner.image}
                         width={180}
                         height={180}
+                        alt={toner.name || "Toner product"}
                       ></Image>
                       <div className={styles.titleSmallBlack}>{toner.name}</div>
                       <div style={{ width: "100%" }}>
