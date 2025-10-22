@@ -95,7 +95,7 @@ const RefurbishedInfo = () => {
     {
       model: "Konica Minolta BizHub C250I",
       PagesPerMinute: "25",
-      image: "C250i.png",
+      image: "C250i.webp",
       brand: "Konica",
       paperSize: "12 x 18",
       ScanSpeed: "200 sides per minute",
@@ -107,7 +107,7 @@ const RefurbishedInfo = () => {
     {
       model: "Konica Minolta BizHub C360I",
       PagesPerMinute: "36",
-      image: "C360i.png",
+      image: "C360i.webp",
       brand: "Konica",
       paperSize: "12 x 18",
       ScanSpeed: "200 sides per minute",
@@ -119,7 +119,7 @@ const RefurbishedInfo = () => {
     {
       model: "Konica Minolta BizHub C450I",
       PagesPerMinute: "45",
-      image: "C450i.png",
+      image: "C450i.webp",
       brand: "Konica",
       paperSize: "12 x 18",
       ScanSpeed: "280 sides per minute",
@@ -241,59 +241,65 @@ const RefurbishedInfo = () => {
         <div className={styles.grid}>
           {copiers.map((copier) => {
             return (
-              <div key={copier.modelNumber} className={styles.box}>
-                <div className={styles.titleBlackSmall}>{copier.model}</div>
-                <div>
-                  <Image
-                    src={`/static/${copier.image}`}
-                    width={200}
-                    height={200}
-                    alt={"copiers utah"}
-                  ></Image>
-                </div>
-                <div className={styles.somethingContainer}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Link href={"/product"}>
+              <Link 
+                key={copier.modelNumber} 
+                href={"/product"}
+                onClick={() => {
+                  localStorage.setItem("Image", `${copier.image}`);
+                  localStorage.setItem("Model", `${copier.model}`);
+                  localStorage.setItem(
+                    "PagesPerMinute",
+                    `${copier.PagesPerMinute}`,
+                  );
+                  localStorage.setItem(
+                    "paperSize",
+                    `${copier.paperSize}`,
+                  );
+                  localStorage.setItem("brand", `${copier.brand}`);
+                  localStorage.setItem("timeOut", `${copier.timeOut}`);
+                  localStorage.setItem("type", `${copier.type}`);
+                  localStorage.setItem(
+                    "description",
+                    `${copier.description}`,
+                  );
+                }}
+                style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}
+              >
+                {/* <Link href={"/product"} className={styles.box} style={{ cursor: 'pointer' }}> */}
+                  <div className={styles.titleBlackSmall}>{copier.model}</div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Image
+                      src={`/static/${copier.image}`}
+                      width={200}
+                      height={0}
+                      alt={"copiers utah"}
+                      style={{ height: 'auto' }}
+                    ></Image>
+                  </div>
+                  <div className={styles.somethingContainer}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
                       <button
-                        onClick={() => {
-                          localStorage.setItem("Image", `${copier.image}`);
-                          localStorage.setItem("Model", `${copier.model}`);
-                          localStorage.setItem(
-                            "PagesPerMinute",
-                            `${copier.PagesPerMinute}`,
-                          );
-                          localStorage.setItem(
-                            "paperSize",
-                            `${copier.paperSize}`,
-                          );
-                          localStorage.setItem("brand", `${copier.brand}`);
-                          localStorage.setItem("timeOut", `${copier.timeOut}`);
-                          localStorage.setItem("type", `${copier.type}`);
-                          localStorage.setItem(
-                            "description",
-                            `${copier.description}`,
-                          );
-                        }}
                         className={styles.buttonBlue}
+                        // onClick={(e) => e.preventDefault()}
                       >
                         See Details
                       </button>
-                    </Link>
-                  </div>
-                  <div className={styles.fifty}>
-                    <div className={styles.rowNumber}>
-                      <div>{copier.modelNumber}</div>
                     </div>
-                    <div className={styles.rowNumber}></div>
+                    <div className={styles.fifty}>
+                      <div className={styles.rowNumber}>
+                        <div>{copier.modelNumber}</div>
+                      </div>
+                      <div className={styles.rowNumber}></div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                {/* </Link> */}
+              </Link>
             );
           })}
         </div>
