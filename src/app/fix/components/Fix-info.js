@@ -160,7 +160,7 @@ const FixInfo = () => {
                     justifyContent: "center",
                   }}
                   className="recaptcha"
-                  sitekey={process.env.RECAPTCHA_SITE_KEY}
+                  sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
                   ref={captchaRef}
                   onChange={verifyCallback}
                 />

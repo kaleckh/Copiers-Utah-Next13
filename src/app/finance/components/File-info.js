@@ -34,7 +34,7 @@ const FinanceInfo = () => {
 
   const captchaRef = useRef(null);
 
-  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+  const SITE_KEY = process.env.NEXT_PUBLIC_SITE_KEY;
   const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
   async function sendEmail() {
     const requestOptions = {

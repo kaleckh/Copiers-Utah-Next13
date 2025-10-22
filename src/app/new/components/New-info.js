@@ -154,60 +154,63 @@ const NewInfo = () => {
         <div className={styles.grid}>
           {copiers.map((copier) => {
             return (
-              <div key={copier.modelNumber} className={styles.box}>
-                <div className={styles.titleBlackSmall}>{copier.model}</div>
-                <div>
-                  <Image
-                    src={`/static/${copier.image}`}
-                    width={200}
-                    height={200}
-                    alt={"copiers utah"}
-                  ></Image>
-                </div>
-                <div className={styles.somethingContainer}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Link href={"/product"}>
+              <Link 
+                key={copier.modelNumber} 
+                href={"/product"}
+                onClick={() => {
+                  localStorage.setItem("Image", `${copier.image}`);
+                  localStorage.setItem("Model", `${copier.model}`);
+                  localStorage.setItem(
+                    "PagesPerMinute",
+                    `${copier.PagesPerMinute}`,
+                  );
+                  localStorage.setItem(
+                    "paperSize",
+                    `${copier.paperSize}`,
+                  );
+                  localStorage.setItem("brand", `${copier.brand}`);
+                  localStorage.setItem("timeOut", `${copier.timeOut}`);
+                  localStorage.setItem("type", `${copier.type}`);
+                  localStorage.setItem("ScanSpeed", `${copier.ScanSpeed}`);
+                  localStorage.setItem(
+                    "description",
+                    `${copier.description}`,
+                  );
+                }}
+                style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}
+              >
+                  <div className={styles.titleBlackSmall}>{copier.model}</div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Image
+                      src={`/static/${copier.image}`}
+                      width={200}
+                      height={0}
+                      alt={"copiers utah"}
+                      style={{ height: 'auto' }}
+                    ></Image>
+                  </div>
+                  <div className={styles.somethingContainer}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
                       <button
-                        onClick={() => {
-                          localStorage.setItem("Image", `${copier.image}`);
-                          localStorage.setItem("Model", `${copier.model}`);
-                          localStorage.setItem(
-                            "PagesPerMinute",
-                            `${copier.PagesPerMinute}`,
-                          );
-                          localStorage.setItem(
-                            "paperSize",
-                            `${copier.paperSize}`,
-                          );
-                          localStorage.setItem("brand", `${copier.brand}`);
-                          localStorage.setItem("timeOut", `${copier.timeOut}`);
-                          localStorage.setItem("type", `${copier.type}`);
-                          localStorage.setItem("ScanSpeed", `${copier.ScanSpeed}`);
-                          localStorage.setItem(
-                            "description",
-                            `${copier.description}`,
-                          );
-                        }}
                         className={styles.buttonBlue}
                       >
                         See Details
                       </button>
-                    </Link>
-                  </div>
-                  <div className={styles.fifty}>
-                    <div className={styles.rowNumber}>
-                      <div>{copier.modelNumber}</div>
                     </div>
-                    <div className={styles.rowNumber}></div>
+                    <div className={styles.fifty}>
+                      <div className={styles.rowNumber}>
+                        <div>{copier.modelNumber}</div>
+                      </div>
+                      <div className={styles.rowNumber}></div>
+                    </div>
                   </div>
-                </div>
-              </div>
+              </Link>
             );
           })}
         </div>
