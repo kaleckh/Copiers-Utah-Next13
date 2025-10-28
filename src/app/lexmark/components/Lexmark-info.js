@@ -22,9 +22,9 @@ const LexmarkInfo = () => {
         <div className={styles.copierContainer}>
           <div className={styles.center}>
             <Image
-              src="/static/epson.jpg"
-              width={300}
-              height={300}
+              src="/static/Lexmark.webp"
+              width={150}
+              height={250}
               alt={"a seen"}
             />
           </div>
@@ -32,7 +32,7 @@ const LexmarkInfo = () => {
 
         <div className={styles.column}>
           <div className={styles.lineColumn}>
-            <h1 className={styles.color}>Epson</h1>
+            <h1 className={styles.color}>Lexmark</h1>
           </div>
           <div>
             <div>
@@ -47,7 +47,7 @@ const LexmarkInfo = () => {
                   />
                 </div>
                 <div className={styles.paragraphSmall}>
-                  Epson copiers are multifunction devices.
+                  The most reliable copier in the world!
                 </div>
               </div>
               <div className={styles.bulletContainer}>
@@ -61,7 +61,8 @@ const LexmarkInfo = () => {
                   />
                 </div>
                 <div className={styles.paragraphSmall}>
-                  They produce high-quality output.
+                  85% marketshare in HealthCare & Pharmacies because it always
+                  works.
                 </div>
               </div>
               <div className={styles.bulletContainer}>
@@ -75,7 +76,7 @@ const LexmarkInfo = () => {
                   />
                 </div>
                 <div className={styles.paragraphSmall}>
-                  They have an easy-to-use interface.
+                  Simple to use color, icon driven touch screen.
                 </div>
               </div>
               <div className={styles.bulletContainer}>
@@ -89,7 +90,7 @@ const LexmarkInfo = () => {
                   />
                 </div>
                 <div className={styles.paragraphSmall}>
-                  They are cost-effective.
+                  Known for their fast print speeds and efficient performance.
                 </div>
               </div>
               <div className={styles.bulletContainer}>
@@ -103,7 +104,9 @@ const LexmarkInfo = () => {
                   />
                 </div>
                 <div className={styles.paragraphSmall}>
-                  Epson copiers utilize advanced printing technologies.
+                  Security is a top priority for Lexmark, and their copiers
+                  come with advanced security features like user
+                  authentication and data encryption
                 </div>
               </div>
               <div className={styles.buttonCenter}>
@@ -120,30 +123,23 @@ const LexmarkInfo = () => {
       <div className={styles.konikaBottom}>
         <div className={styles.bottomProductContainer}>
           <div className={styles.paragraph}>
-            Epson copiers are known for their exceptional print quality. Whether
-            you need to print text documents or vibrant graphics, Epson copiers
-            deliver sharp, clear, and professional-looking output. Their
-            advanced inkjet technology ensures precise color reproduction and
-            high-resolution printing, making them ideal for tasks such as
-            creating marketing materials, presentations, and reports. With Epson
-            copiers, you can expect vivid and accurate prints that make a
-            lasting impression.
+            Lexmark printers are well-known for their unparalleled efficiency
+            and high-performance capabilities, making them an ideal choice for
+            businesses seeking reliable printing solutions. With a legacy of
+            excellence in the industry, Lexmark has continuously produced
+            printers that offer exceptional durability and top-notch printing
+            quality. Designed to withstand heavy workloads, Lexmark printers
+            ensure consistent performance even under demanding conditions.
+            Business owners can rely on Lexmark's robust machines to meet
+            their printing needs without compromising on speed or quality.
           </div>
-          <div
-            style={{ marginBottom: "50px" }}
-            className={`${styles.paragraph} ${styles.hidden}`}
-          >
-            Epson copiers are also renowned for their reliability and
-            durability. Epson is a trusted brand known for manufacturing
-            high-quality products, and their copiers are no exception. These
-            machines are built to withstand heavy usage and can handle large
-            printing volumes without compromising on performance. With robust
-            construction and well-engineered mechanisms, Epson copiers offer
-            long-term reliability, reducing downtime and maintenance costs. This
-            makes them a cost-effective choice for businesses that rely on
-            consistent and uninterrupted printing operations. Epson copiers
-            provide peace of mind, knowing that your printing needs will be met
-            efficiently and reliably.
+          <div style={{ marginBottom: "50px" }} className={`${styles.paragraph} ${styles.hidden}`}>
+            One of the key factors that contribute to the reliability of
+            Lexmark sets itself apart with cutting-edge, user-friendly
+            printing solutions that enhance productivity and workflow
+            efficiency. With a strong commitment to reliability and
+            cost-effectiveness, Lexmark remains a trusted partner for
+            businesses seeking tailored, high-performance printing solutions.
           </div>
 
           <div className={`${styles.row} ${styles.hidden}`}>
@@ -167,7 +163,7 @@ const LexmarkInfo = () => {
               <Image
                 src={"/static/colorCopier.webp"}
                 height={100}
-                alt={"color copiers for sale"}
+                alt={"Lexmark Color Copier for sale"}
                 width={100}
               />
 
@@ -182,7 +178,7 @@ const LexmarkInfo = () => {
                 src={"/static/blackAndWhite.webp"}
                 height={100}
                 width={100}
-                alt={"black and white copiers for sale"}
+                alt={"Black and White Lexmark Copier"}
               />
 
               <div className={styles.titleMid}>Black And White Copiers</div>
