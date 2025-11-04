@@ -14,7 +14,7 @@ const NewInfo = () => {
   const [copiers, setCopiers] = useState([
     {
       model: "Lexmark XC8355",
-      image: "9525.webp",
+      image: "XC8355.png",
       PagesPerMinute: "55",
       paperSize: "8.5 X 14",
       ScanSpeed: "240 sides per minute",
@@ -26,7 +26,7 @@ const NewInfo = () => {
     },
     {
       model: "Lexmark XC9525",
-      image: "9525.webp",
+      image: "XC9525.png",
       PagesPerMinute: "25",
       brand: "Lexmark",
       paperSize: "12 x 18",
@@ -38,7 +38,7 @@ const NewInfo = () => {
     },
     {
       model: "Lexmark XC9535",
-      image: "9525.webp",
+      image: "XC9535.png",
       brand: "Lexmark",
       PagesPerMinute: "35",
       paperSize: "12 x 18",

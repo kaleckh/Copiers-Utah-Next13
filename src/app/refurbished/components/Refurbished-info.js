@@ -155,7 +155,7 @@ const RefurbishedInfo = () => {
     {
       model: "Lexmark XC9225",
       PagesPerMinute: "25",
-      image: "9225.jpg",
+      image: "XC9225.png",
       paperSize: "12 X 18",
       ScanSpeed: "160 sides per minute",
       brand: "Lexmark",
@@ -167,7 +167,7 @@ const RefurbishedInfo = () => {
     {
       model: "Lexmark XC9235",
       PagesPerMinute: "35",
-      image: "9225.jpg",
+      image: "XC9235.jpg",
       paperSize: "12 X 18",
       ScanSpeed: "160 sides per minute",
       brand: "Lexmark",
