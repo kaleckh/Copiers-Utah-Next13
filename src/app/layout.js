@@ -20,16 +20,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Google tag (gtag.js) */}
-        <Script 
-          async src="https://www.googletagmanager.com/gtag/js?id=G-MN2KYPVC8G"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics">
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-995653351" />
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());        
-            gtag('config', 'G-MN2KYPVC8G');
+            gtag('js', new Date());
+            gtag('config', 'AW-995653351');
           `}
         </Script>
       </head>
