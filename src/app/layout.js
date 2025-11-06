@@ -18,9 +18,9 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      <body className={inter.className}>
         {/* Google tag (gtag.js) */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-995653351" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-995653351" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -29,8 +29,6 @@ export default function RootLayout({ children }) {
             gtag('config', 'AW-995653351');
           `}
         </Script>
-      </head>
-      <body className={inter.className}>
         <TonerProvider>
           <OrderProvider>
             <CartProvider>            

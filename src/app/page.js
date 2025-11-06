@@ -1,4 +1,3 @@
-import Script from "next/script";
 import Section from "../components/Section";
 import Header from "../components/Header";
 import styles from "../styles/homepage.module.css";
@@ -13,29 +12,11 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
-      <Script
-        id="Google Working"
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script id="google" strategy="lazyOnload">
-        {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                    page_path: window.location.pathname,
-                    });
-                `}
-      </Script>
-      <div className={styles.main}>
-        <Header />
-        <HomepageInfo />
-        <Section />
-        <Footer />
-      </div>
-    </>
+    <div className={styles.main}>
+      <Header />
+      <HomepageInfo />
+      <Section />
+      <Footer />
+    </div>
   );
 }
