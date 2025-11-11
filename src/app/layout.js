@@ -8,6 +8,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Script from "next/script";
 
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || "G-NPE2R79Y77";
+
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -18,17 +20,27 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
         {/* Google tag (gtag.js) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-995653351" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-995653351');
-          `}
-        </Script>
+        {GOOGLE_ADS_ID ? (
+          <>
+            <Script
+              id="gtag-src"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+              strategy="beforeInteractive"
+            />
+            <Script id="gtag-inline" strategy="beforeInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GOOGLE_ADS_ID}');
+              `}
+            </Script>
+          </>
+        ) : null}
+      </head>
+      <body className={inter.className}>
         <TonerProvider>
           <OrderProvider>
             <CartProvider>            
